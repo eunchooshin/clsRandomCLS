@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CLS Speaking Random 20200729</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- partial:index.partial.html -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Noto+Sans+KR:wght@300&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Black+Han+Sans&family=Cute+Font&family=Do+Hyeon&family=Gaegu&family=Gamja+Flower&family=Jua&family=Nanum+Gothic:wght@700&family=Noto+Sans+KR&family=Noto+Serif+KR&family=Stylish&family=Sunflower:wght@500&family=Yeon+Sung&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/07c56cd7f1.js" crossorigin="anonymous"></script>
+
+  <nav class="navbar">
+        <div class="navbar_logo">
+            <i class="fa fa-comments-o" aria-hidden="true"></i>
+            <a href="#">CLS</a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="">CLS</a></li>
+            <li><a href="">CLS Teachers</a></li>
+            <li><a href="">CLS Moms</a></li>
+            <li><a href="">CLS Students</a></li>
+        </ul>
+        <ul class="navbar_icons">
+            <li class="fa fa-facebook-official" aria-hidden="true"></li>
+            <li class="fa fa-twitter" aria-hidden="true"></li>
+            <li class="fa fa-google-plus-official" aria-hidden="true"></li>
+        </ul>
+
+        <a href="#" class="navbar_toggleBtn"><i class="fas fa-bars"></i>
+        </a>
+    </nav>
+    <div class="sidebar">
+      <ul class="sidebar_menu">
+        <div class="clsPhonicsRandom">CLS Speaking Random</div>
+        <div id="buttons">
+            <button class="dropdown-btn">조동사 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+              <input type="button" value="    can" onclick="getRandomCan()">
+              <input type="button" value="    may" onclick="getRandomMay()">
+              <input type="button" value="    should" onclick="getRandomShould()">
+              <input type="button" value="should have p.p." onclick="getRandomShouldHavePP()">
+              <input type="button" value="must have p.p." onclick="getRandomMustHavePP()">
+              <input type="button" value="cannot have p.p." onclick="getRandomCannotHavePP()">
+              <input type="button" value="may have p.p." onclick="getRandomMayHavePP()">
+              <input type="button" value="    used to" onclick="getRandomUsedTo()">
+              <input type="button" value="    had better" onclick="getRandomHadBetter()">
+              <input type="button" value="    would rather" onclick="getRandomWouldRather()">
+              <input type="button" value="    may as well" onclick="getRandomWouldRather()">
+            </div>
+          
+            <button class="dropdown-btn">명사 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+              <input type="button" value="    인칭대명사(주)" onclick="pronoun5()">
+              <input type="button" value="    인칭대명사(소)" onclick="pronoun8()">
+              <input type="button" value="    인칭대명사(소)" onclick="pronoun9()">
+              <input type="button" value="    인칭대명사(목)" onclick="pronoun10()">
+              <input type="button" value="    지시대명사" onclick="pronoun2()">
+              <input type="button" value="    의문사" onclick="pronoun3()">
+              <input type="button" value="    재귀대명사" onclick="pronoun13()">
+            </div>
+            <button class="dropdown-btn">동사 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+              <input type="button" value="    be동사" onclick="getRandomDouble0()">
+              <input type="button" value="    일반동사" onclick="getRandomDouble1()">
+            </div>
+            <button class="dropdown-btn">시제
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+              <input type="button" value="    현재" onclick="getRandomDouble1()">
+              <input type="button" value="    과거" onclick="getRandomPast()">
+              <input type="button" value="    미래" onclick="getRandomFuture()">
+
+              <input type="button" value="    진행" onclick="getRandomContinuous()">
+              <input type="button" value="    완료" onclick="getRandomPerfect()">
+              <input type="button" value="    완료진행" onclick="getRandomPerfectContinuous()">
+              <input type="button" value="    과거완료" onclick="getRandomPastPerfect()">
+              <input type="button" value="    미래완료" onclick="getRandomFuturePerfect()">
+
+            </div>
+
+            <button class="dropdown-btn">수동태 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+              <input type="button" value="    일반수동태" onclick="getRandomPassive()">
+              <input type="button" value="    진행수동태" onclick="getRandomPassive2()">
+              <input type="button" value="    완료수동태" onclick="getRandomPassive3()">
+              <input type="button" value="  조동사수동태" onclick="getRandomPassive4()">
+
+            </div>
+
+            <button class="dropdown-btn">분사 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+              <input type="button" value=" 분사 ing" onclick="getRandomParticipleIng()">
+              <input type="button" value=" 분사 p.p." onclick="getRandomParticiplePP()">
+              <input type="button" value=" 분사 구문" onclick="getRandomParticiple2()">
+              <input type="button" value=" 비인칭 독립 분사구문" onclick="getRandomParticiple3()">
+              <input type="button" value=" with 목적어 분사" onclick="getRandomParticiple4()">
+
+            </div>
+
+
+            <button class="dropdown-btn">관계사 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+              <input type="button" value=" 관계대명사 주격1" onclick="getRandomReletives1()">
+              <input type="button" value=" 관계대명사 주격2" onclick="getRandomReletives11()">
+              <input type="button" value=" 관계대명사 목적격" onclick="getRandomReletives2()">
+              <input type="button" value=" 관계대명사 소유격" onclick="getRandomReletives3()">
+              <input type="button" value=" 관계대명사 what" onclick="getRandomReletivesWhat()">
+              <input type="button" value=" 관계대명사 전체" onclick="getRandomReletives()">
+              <input type="button" value=" 관계부사" onclick="getRandomReletives4()">
+              <input type="button" value=" 복합관계대명사" onclick="getRandomReletives5()">
+              <input type="button" value=" 복합관계부사" onclick="getRandomReletives6()">
+
+            </div>
+
+
+            <button class="dropdown-btn">가정법 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+              <input type="button" value=" 가정법이 아닌 조건절" onclick="getRandomCondition0()">
+              <input type="button" value=" 가정법 과거" onclick="getRandomCondition1()">
+              <input type="button" value=" 가정법 과거완료" onclick="getRandomCondition2()">
+              <input type="button" value=" 가정법 과거+과거완료" onclick="getRandomCondition12()">
+              <input type="button" value=" 가정법 I wish" onclick="getRandomCondition3()">
+              <input type="button" value=" 가정법 as if" onclick="getRandomCondition4()">
+              <input type="button" value=" 혼합가정법" onclick="getRandomCondition5()">
+              <input type="button" value=" 가정법 전체" onclick="getRandomCondition()">
+
+
+            </div>
+        </ul>
+        </a>
+    </div>
+
+</div>
+<div id="divRandom">CLS</div>
+
+<footer class="footer">
+    <div>
+        logo.png
+    </div>
+    <div>
+        CLS 소개 | 이용약관 | 개인정보취급방침 | 사이트맵 </br>
+        씨엘에스(CLS)영어학원 | 교육원장 신은추 | 사업자등록번호 369-95-00512 | 대전광역시 유성구 반석로 32, 5층 | 문의 042)826-0582 </br>
+        Copyright © Communicative Language School. All rights reserved. 
+    </div>
+
+<!--// 태그는 문서나 특정 섹션(section)의 푸터(footer)를 정의할 때 사용합니다.
+    - 저자(author) 정보
+    - 저작권 정보
+    - 연락처
+    - 사이트맵(sitemap)
+    - 페이지 맨 위로 되돌아갈 수 있는 Top 버튼
+    - 연관 페이지 등 -->
+    
+</footer>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script><script  src="./script.js"></script>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+#sectioncontainer {
+  margin-top: 20px;
+}
+
+/* Keep from sticking to sides */
+.cards-container {
+  max-width: 95%;
+}
+
+.board-item {
+  margin: 5px 0;
+  will-change: transform;
+}
+
+.board-item-content {
+  word-break: break-all;
+  position: relative;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  font-size: 17px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 1px 3px 0 rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 3px 0 rgba(0,0,0,0.2);
+  margin: 5px;
+}
+
+.delete {
+  pointer-events: auto;
+}
+
+.box {
+  margin-top: 30px;
+}
+
+
+
+footer {
+  margin-top: 2rem;
+}
+
+
+.dropdown-container {
+    display: none;
+  font-family: 'Gamja Flower', cursive;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: 4px;
+}
+
+.toggleSwitch {
+  width: 2.5rem;
+  margin: 1rem;
+  height: 1.5rem;
+  display: block;
+  margin-left: auto;
+  position: relative;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 0.5rem 1px rgba(0 0 0 / 15%);
+  cursor: pointer;
+}
+
+.toggleSwitch .toggleButton {
+  width: 1.3rem;
+  height: 1.3rem;
+  position: absolute;
+  top: 50%;
+  left: .1rem;
+  transform: translateY(-50%);
+  border-radius: 60%;
+  background: hsl(171, 100%, 41%);
+}
+
+/* 체크박스가 체크되면 변경 이벤트 */
+#switchRoundedDefault:checked~.toggleSwitch {
+  background: hsl(171, 100%, 41%);
+}
+
+#switchRoundedDefault:checked~.toggleSwitch .toggleButton {
+  left: calc(100% - 1.4rem);
+  background: #fff;
+}
+
+.toggleSwitch,
+.toggleButton {
+  transition: all 0.2s;
+}
+
+/* 체크박스가 체크되면 변경 이벤트2 */
+
+#switchRoundedDanger:checked~.toggleSwitch {
+  background: hsl(348, 100%, 61%);
+}
+
+#switchRoundedDanger:checked~.toggleSwitch .toggleButton {
+  left: calc(100% - 1.4rem);
+  background: #fff;
+}
+
+.toggleSwitch,
+.toggleButton {
+  transition: all 0.2s;
+}
+
+/* 체크박스가 체크되면 변경 이벤트3 */
+
+#switchRoundedWarning:checked~.toggleSwitch {
+  background: hsl(48, 100%, 67%);
+}
+
+#switchRoundedWarning:checked~.toggleSwitch .toggleButton {
+  left: calc(100% - 1.4rem);
+  background: #fff;
+}
+
+.toggleSwitch,
+.toggleButton {
+  transition: all 0.2s;
+}

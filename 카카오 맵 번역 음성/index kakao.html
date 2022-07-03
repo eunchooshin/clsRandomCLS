@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API연습</title>
+</head>
+
+<body>
+    <h1>카카오 맵, 번역, 음성합성 연습</h1>
+
+
+    <div id="map" style="width:500px;height:400px;"></div>
+
+
+    <!-- 참고 https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input -->
+
+
+    <label for="inputTranslate">한국어 입력창 :</label>
+    <input id='inputTranslate' onclick="clearInput()" onchange='printName()' />
+    
+    <p>여기에 나온다 : <span id="targetPtag"> </span></p>
+    
+
+
+
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d5465759df1f886cc18132afb0ad89e4"></script>
+    <script>
+        // function printName() {
+        //     const translated = document.getElementById('translate').value;
+        //     document.getElementById("result").innerText = translated;
+        // }
+
+
+
+
+        var mapLat = 36.391713739948028
+        var mapLng = 127.3130758574538
+        var clsLat = 36.391501229366355
+        var clsLng = 127.31113156824074
+
+
+        var container = document.getElementById('map');
+        var options = {
+            center: new kakao.maps.LatLng(mapLat, mapLng),
+            level: 3
+        };
+
+        var map = new kakao.maps.Map(container, options);
+
+
+        // 마커가 표시될 위치입니다 
+        var markerPosition = new kakao.maps.LatLng(clsLat, clsLng);
+
+        // 일반마커
+        // 마커를 생성합니다
+        // var marker = new kakao.maps.Marker({
+        //     position: markerPosition
+        // });
+
+        // // 마커가 지도 위에 표시되도록 설정합니다
+        // marker.setMap(map);
+
+        // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+        // marker.setMap(null);    
+
+        // var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        var imageSrc = './clsLogoGreen.png', // 마커이미지의 주소입니다    
+            imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
+            imageOption = { offset: new kakao.maps.Point(27, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+        // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+            markerPosition = new kakao.maps.LatLng(clsLat, clsLng); // 마커가 표시될 위치입니다
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition,
+            image: markerImage // 마커이미지 설정 
+        });
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+
+    </script>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+
+        function printName() {
+            const beforeTranslation = document.getElementById('inputTranslate').value;
+            $.ajax({
+                    method: "GET",
+                    url: "https://dapi.kakao.com/v2/translation/translate",
+                    data: { query: beforeTranslation, src_lang: "kr", target_lang: "en" },
+                    headers: { Authorization: "KakaoAK 4fa3a1890d37bd3c60507b53aad1d00b" }
+                })
+                    .done(function (msg) {
+                        // alert("Data Saved: " + msg); // 이건 나중에 지워도 됨
+                        // console.log(msg);
+                        // console.log(msg.translated_text[0]);
+                        // temp1.documents[0].translated_text.Array(1)
+                        // document.getElementById('inputTranslate').value = '';
+                        $("span").empty();
+                        $("span").append(msg.translated_text[0]);
+                    });
+                    document.getElementById('inputTranslate').value ='';
+        }
+
+        
+        // function clearInput() {
+        //                 const beforeTranslation = document.getElementById('inputTranslate').value;
+
+        //     if 
+        //     document.getElementById('targetPtag').value.clear;
+        // }
+
+
+
+
+
+        // 카카오 음성합성 Text-to-Speech
+        $.ajax({
+            method: "POST",
+            url: "https://kakaoi-newtone-openapi.kakao.com/v1/synthesize",
+            data: { speak: "John", location: "Boston" },
+            headers: { Authorization: "KakaoAK 4fa3a1890d37bd3c60507b53aad1d00b" }
+
+        })
+            .done(function (msg) {
+                alert("Data Saved: " + msg);
+            });
+
+
+    </script>
+</body>
+
+</html>

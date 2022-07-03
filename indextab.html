@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CLS|SpeakingRandom</title>
+  <!-- Bulma Version 0.9.0-->
+  <link rel='stylesheet prefetch' href='https://unpkg.com/bulma@0.9.0/css/bulma.min.css'>
+  <link rel="stylesheet" href="../css/kanban.css">
+
+</head>
+
+<body>
+  <nav class="navbar has-shadow">
+    <div class="container">
+      <div class="navbar-brand"><a class="navbar-item" href="../">
+          <img src="../images/clsLogo.png" alt="Bulma: a modern CSS framework based on Flexbox" /></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+
+        <div class="tile is-parent">
+          <article class="tile is-child notification">
+            <div class="box">5
+              <h1 class="title" id="divRandom">CLS Speaking Random</h1>
+
+            </div>
+            <div class="box">5
+              <h2 class="title" id="divRandom2">CLS English is here in a few seconds. / Think before you see English.
+              </h2>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification">
+        <div class="content">
+            <div class="tabs is-boxed is-centered main-menu" id="nav">
+              <ul>
+                <li data-target="pane-1" id="1">
+                  <a>
+                    <span class="icon is-small"><i class="fa fa-image"></i></span>
+                    <span>단어</span>
+                  </a>
+                </li>
+                <li data-target="pane-2" id="2" class="is-active">
+                  <a>
+                    <span class="icon is-small"><i class="fab fa-empire"></i></span>
+                    <span>의미</span>
+                  </a>
+                </li>
+                <li data-target="pane-3" id="3">
+                  <a>
+                    <span class="icon is-small"><i class="fab fa-superpowers"></i></span>
+                    <span>문장</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane" id="pane-1">
+          <button class="dropdown-btn button is-warning" onclick="pronoun5()">단어</button>
+          <div class="box dropdown-content">7
+            <div class="dropdown-container">
+              <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">명사</button>
+              <div class="dropdown-container">
+                <button class="button" onclick="pronoun5()">0 명사전체</button>
+                <button class="button" onclick="pronoun5()">1 명사</button>
+                <button class="button" onclick="pronoun5()">2 명사</button>
+                <button class="button" onclick="pronoun5()">3 명사</button>
+                <button class="button" onclick="pronoun5()">4 명사</button>
+                <button class="button" onclick="pronoun5()">5 명사</button>
+                <button class="button" onclick="pronoun5()">6 명사</button>
+                <button class="button" onclick="pronoun5()">7 명사</button>
+                <button class="button" onclick="pronoun5()">8 명사</button>
+                <button class="button" onclick="pronoun5()">9 명사</button>
+              </div>
+              <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">동사</button>
+              <div class="dropdown-container">
+                <button class="button" onclick="pronoun5()">0 동사전체</button>
+                <button class="button" onclick="pronoun5()">1 동사</button>
+                <button class="button" onclick="pronoun5()">2 동사</button>
+                <button class="button" onclick="pronoun5()">3 동사</button>
+                <button class="button" onclick="pronoun5()">4 동사</button>
+                <button class="button" onclick="pronoun5()">5 동사</button>
+                <button class="button" onclick="pronoun5()">6 동사</button>
+                <button class="button" onclick="pronoun5()">7 동사</button>
+                <button class="button" onclick="pronoun5()">8 동사</button>
+                <button class="button" onclick="pronoun5()">9 동사</button>
+              </div>
+              <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">형용사</button>
+              <div class="dropdown-container">
+                <button class="button" onclick="pronoun5()">0 형용사전체</button>
+                <button class="button" onclick="pronoun5()">1 형용사</button>
+                <button class="button" onclick="pronoun5()">2 형용사</button>
+                <button class="button" onclick="pronoun5()">3 형용사</button>
+                <button class="button" onclick="pronoun5()">4 형용사</button>
+                <button class="button" onclick="pronoun5()">5 형용사</button>
+                <button class="button" onclick="pronoun5()">6 형용사</button>
+                <button class="button" onclick="pronoun5()">7 형용사</button>
+                <button class="button" onclick="pronoun5()">8 형용사</button>
+                <button class="button" onclick="pronoun5()">9 형용사</button>
+              </div>
+              <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">부사</button>
+              <div class="dropdown-container">
+                <button class="button" onclick="pronoun5()">0 부사전체</button>
+                <button class="button" onclick="pronoun5()">1 부사</button>
+                <button class="button" onclick="pronoun5()">2 부사</button>
+                <button class="button" onclick="pronoun5()">3 부사</button>
+                <button class="button" onclick="pronoun5()">4 부사</button>
+                <button class="button" onclick="pronoun5()">5 부사</button>
+                <button class="button" onclick="pronoun5()">6 부사</button>
+                <button class="button" onclick="pronoun5()">7 부사</button>
+                <button class="button" onclick="pronoun5()">8 부사</button>
+                <button class="button" onclick="pronoun5()">9 부사</button>
+              </div>
+              <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">대명사</button>
+              <div class="dropdown-container">
+                <button class="button" onclick="pronoun5()">0 대명사전체</button>
+                <button class="button" onclick="pronoun5()">1 대명사</button>
+                <button class="button" onclick="pronoun5()">2 대명사</button>
+                <button class="button" onclick="pronoun5()">3 대명사</button>
+                <button class="button" onclick="pronoun5()">4 대명사</button>
+                <button class="button" onclick="pronoun5()">5 대명사</button>
+                <button class="button" onclick="pronoun5()">6 대명사</button>
+                <button class="button" onclick="pronoun5()">7 대명사</button>
+                <button class="button" onclick="pronoun5()">8 대명사</button>
+                <button class="button" onclick="pronoun5()">9 대명사</button>
+              </div>
+              <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">접속사</button>
+              <div class="dropdown-container">
+                <button class="button" onclick="pronoun5()">0 접속사전체</button>
+                <button class="button" onclick="pronoun5()">1 접속사</button>
+                <button class="button" onclick="pronoun5()">2 접속사</button>
+                <button class="button" onclick="pronoun5()">3 접속사</button>
+                <button class="button" onclick="pronoun5()">4 접속사</button>
+                <button class="button" onclick="pronoun5()">5 접속사</button>
+                <button class="button" onclick="pronoun5()">6 접속사</button>
+                <button class="button" onclick="pronoun5()">7 접속사</button>
+                <button class="button" onclick="pronoun5()">8 접속사</button>
+                <button class="button" onclick="pronoun5()">9 접속사</button>
+              </div>
+              <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">감탄사</button>
+              <div class="dropdown-container">
+                <button class="button" onclick="pronoun5()">0 감탄사전체</button>
+          
+              </div>
+              <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">전치사</button>
+              <div class="dropdown-container">
+                <button class="button" onclick="pronoun5()">0 전치사전체</button>
+                <button class="button" onclick="pronoun5()">1 전치사</button>
+                <button class="button" onclick="pronoun5()">2 전치사</button>
+                <button class="button" onclick="pronoun5()">3 전치사</button>
+                <button class="button" onclick="pronoun5()">4 전치사</button>
+                <button class="button" onclick="pronoun5()">5 전치사</button>
+                <button class="button" onclick="pronoun5()">6 전치사</button>
+                <button class="button" onclick="pronoun5()">7 전치사</button>
+                <button class="button" onclick="pronoun5()">8 전치사</button>
+                <button class="button" onclick="pronoun5()">9 전치사</button>
+              </div>
+              <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">관사</button>
+              <div class="dropdown-container">
+                <button class="button" onclick="pronoun5()">0 관사전체</button>
+                <button class="button" onclick="pronoun5()">1 관사</button>
+                <button class="button" onclick="pronoun5()">2 관사</button>
+                <button class="button" onclick="pronoun5()">3 관사</button>
+                <button class="button" onclick="pronoun5()">4 관사</button>
+                <button class="button" onclick="pronoun5()">5 관사</button>
+                <button class="button" onclick="pronoun5()">6 관사</button>
+                <button class="button" onclick="pronoun5()">7 관사</button>
+                <button class="button" onclick="pronoun5()">8 관사</button>
+                <button class="button" onclick="pronoun5()">9 관사</button>
+              </div>
+            </div>
+          </div>              </div>
+              <div class="tab-pane" id="pane-2">
+                <button class="dropdown-btn button is-success" onclick="pronoun5()">의미</button>
+                <div class="box dropdown-content">8
+                  <div class="dropdown-container">
+                    <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">시제</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 시제전체</button>
+                      <button class="button" onclick="pronoun5()">1 시제</button>
+                      <button class="button" onclick="pronoun5()">2 시제</button>
+                      <button class="button" onclick="pronoun5()">3 시제</button>
+                      <button class="button" onclick="pronoun5()">4 시제</button>
+                      <button class="button" onclick="pronoun5()">5 시제</button>
+                      <button class="button" onclick="pronoun5()">6 시제</button>
+                      <button class="button" onclick="pronoun5()">7 시제</button>
+                      <button class="button" onclick="pronoun5()">8 시제</button>
+                      <button class="button" onclick="pronoun5()">9 시제</button>
+                    </div>
+                    <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">조동사</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 조동사전체</button>
+                      <button class="button" onclick="pronoun5()">1 조동사</button>
+                      <button class="button" onclick="pronoun5()">2 조동사</button>
+                      <button class="button" onclick="pronoun5()">3 조동사</button>
+                      <button class="button" onclick="pronoun5()">4 조동사</button>
+                      <button class="button" onclick="pronoun5()">5 조동사</button>
+                      <button class="button" onclick="pronoun5()">6 조동사</button>
+                      <button class="button" onclick="pronoun5()">7 조동사</button>
+                      <button class="button" onclick="pronoun5()">8 조동사</button>
+                      <button class="button" onclick="pronoun5()">9 조동사</button>
+                    </div>
+                    <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">동명사</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 동명사전체</button>
+                      <button class="button" onclick="pronoun5()">1 동명사</button>
+                      <button class="button" onclick="pronoun5()">2 동명사</button>
+                      <button class="button" onclick="pronoun5()">3 동명사</button>
+                      <button class="button" onclick="pronoun5()">4 동명사</button>
+                      <button class="button" onclick="pronoun5()">5 동명사</button>
+                      <button class="button" onclick="pronoun5()">6 동명사</button>
+                      <button class="button" onclick="pronoun5()">7 동명사</button>
+                      <button class="button" onclick="pronoun5()">8 동명사</button>
+                      <button class="button" onclick="pronoun5()">9 동명사</button>
+                    </div>
+                    <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">분사</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 분사전체</button>
+                      <button class="button" onclick="pronoun5()">1 분사</button>
+                      <button class="button" onclick="pronoun5()">2 분사</button>
+                      <button class="button" onclick="pronoun5()">3 분사</button>
+                      <button class="button" onclick="pronoun5()">4 분사</button>
+                      <button class="button" onclick="pronoun5()">5 분사</button>
+                      <button class="button" onclick="pronoun5()">6 분사</button>
+                      <button class="button" onclick="pronoun5()">7 분사</button>
+                      <button class="button" onclick="pronoun5()">8 분사</button>
+                      <button class="button" onclick="pronoun5()">9 분사</button>
+                    </div>
+                    <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">수동태</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 수동태전체</button>
+                      <button class="button" onclick="pronoun5()">1 수동태</button>
+                      <button class="button" onclick="pronoun5()">2 수동태</button>
+                      <button class="button" onclick="pronoun5()">3 수동태</button>
+                      <button class="button" onclick="pronoun5()">4 수동태</button>
+                      <button class="button" onclick="pronoun5()">5 수동태</button>
+                      <button class="button" onclick="pronoun5()">6 수동태</button>
+                      <button class="button" onclick="pronoun5()">7 수동태</button>
+                      <button class="button" onclick="pronoun5()">8 수동태</button>
+                      <button class="button" onclick="pronoun5()">9 수동태</button>
+                    </div>
+                    <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">부정사</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 부정사전체</button>
+                      <button class="button" onclick="pronoun5()">1 부정사</button>
+                      <button class="button" onclick="pronoun5()">2 부정사</button>
+                      <button class="button" onclick="pronoun5()">3 부정사</button>
+                      <button class="button" onclick="pronoun5()">4 부정사</button>
+                      <button class="button" onclick="pronoun5()">5 부정사</button>
+                      <button class="button" onclick="pronoun5()">6 부정사</button>
+                      <button class="button" onclick="pronoun5()">7 부정사</button>
+                      <button class="button" onclick="pronoun5()">8 부정사</button>
+                      <button class="button" onclick="pronoun5()">9 부정사</button>
+                    </div>
+                    <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">비교구문</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 비교구문전체</button>
+                      <button class="button" onclick="pronoun5()">1 비교구문</button>
+                      <button class="button" onclick="pronoun5()">2 비교구문</button>
+                      <button class="button" onclick="pronoun5()">3 비교구문</button>
+                      <button class="button" onclick="pronoun5()">4 비교구문</button>
+                      <button class="button" onclick="pronoun5()">5 비교구문</button>
+                      <button class="button" onclick="pronoun5()">6 비교구문</button>
+                      <button class="button" onclick="pronoun5()">7 비교구문</button>
+                      <button class="button" onclick="pronoun5()">8 비교구문</button>
+                      <button class="button" onclick="pronoun5()">9 비교구문</button>
+                    </div>
+                    <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">관계사</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 관계사전체</button>
+                      <button class="button" onclick="pronoun5()">1 관계사</button>
+                      <button class="button" onclick="pronoun5()">2 관계사</button>
+                      <button class="button" onclick="pronoun5()">3 관계사</button>
+                      <button class="button" onclick="pronoun5()">4 관계사</button>
+                      <button class="button" onclick="pronoun5()">5 관계사</button>
+                      <button class="button" onclick="pronoun5()">6 관계사</button>
+                      <button class="button" onclick="pronoun5()">7 관계사</button>
+                      <button class="button" onclick="pronoun5()">8 관계사</button>
+                      <button class="button" onclick="pronoun5()">9 관계사</button>
+                    </div>
+                    <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">가정법</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 가정법전체</button>
+                      <button class="button" onclick="pronoun5()">1 가정법</button>
+                      <button class="button" onclick="pronoun5()">2 가정법</button>
+                      <button class="button" onclick="pronoun5()">3 가정법</button>
+                      <button class="button" onclick="pronoun5()">4 가정법</button>
+                      <button class="button" onclick="pronoun5()">5 가정법</button>
+                      <button class="button" onclick="pronoun5()">6 가정법</button>
+                      <button class="button" onclick="pronoun5()">7 가정법</button>
+                      <button class="button" onclick="pronoun5()">8 가정법</button>
+                      <button class="button" onclick="pronoun5()">9 가정법</button>
+                    </div>
+                    <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">의문사&의문문</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 의문사&의문문전체</button>
+                      <button class="button" onclick="pronoun5()">1 의문사&의문문</button>
+                      <button class="button" onclick="pronoun5()">2 의문사&의문문</button>
+                      <button class="button" onclick="pronoun5()">3 의문사&의문문</button>
+                      <button class="button" onclick="pronoun5()">4 의문사&의문문</button>
+                      <button class="button" onclick="pronoun5()">5 의문사&의문문</button>
+                      <button class="button" onclick="pronoun5()">6 의문사&의문문</button>
+                      <button class="button" onclick="pronoun5()">7 의문사&의문문</button>
+                      <button class="button" onclick="pronoun5()">8 의문사&의문문</button>
+                      <button class="button" onclick="pronoun5()">9 의문사&의문문</button>
+                    </div>
+                    <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">일치</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 일치전체</button>
+                      <button class="button" onclick="pronoun5()">1 일치</button>
+                      <button class="button" onclick="pronoun5()">2 일치</button>
+                      <button class="button" onclick="pronoun5()">3 일치</button>
+                      <button class="button" onclick="pronoun5()">4 일치</button>
+                      <button class="button" onclick="pronoun5()">5 일치</button>
+                      <button class="button" onclick="pronoun5()">6 일치</button>
+                      <button class="button" onclick="pronoun5()">7 일치</button>
+                      <button class="button" onclick="pronoun5()">8 일치</button>
+                      <button class="button" onclick="pronoun5()">9 일치</button>
+                    </div>
+                    <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">화법</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 화법전체</button>
+                      <button class="button" onclick="pronoun5()">1 화법</button>
+                      <button class="button" onclick="pronoun5()">2 화법</button>
+                      <button class="button" onclick="pronoun5()">3 화법</button>
+                      <button class="button" onclick="pronoun5()">4 화법</button>
+                      <button class="button" onclick="pronoun5()">5 화법</button>
+                      <button class="button" onclick="pronoun5()">6 화법</button>
+                      <button class="button" onclick="pronoun5()">7 화법</button>
+                      <button class="button" onclick="pronoun5()">8 화법</button>
+                      <button class="button" onclick="pronoun5()">9 화법</button>
+                    </div>
+                    <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">특수구문</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 특수구문전체</button>
+                      <button class="button" onclick="pronoun5()">1 특수구문</button>
+                      <button class="button" onclick="pronoun5()">2 특수구문</button>
+                      <button class="button" onclick="pronoun5()">3 특수구문</button>
+                      <button class="button" onclick="pronoun5()">4 특수구문</button>
+                      <button class="button" onclick="pronoun5()">5 특수구문</button>
+                      <button class="button" onclick="pronoun5()">6 특수구문</button>
+                      <button class="button" onclick="pronoun5()">7 특수구문</button>
+                      <button class="button" onclick="pronoun5()">8 특수구문</button>
+                      <button class="button" onclick="pronoun5()">9 특수구문</button>
+                    </div>
+                  </div>
+                </div>              </div>
+              <div class="tab-pane" id="pane-3">
+
+                <button class="dropdown-btn button is-danger" onclick="pronoun5()">문장</button>
+                <div class="box dropdown-content">9
+                  <div class="dropdown-container">
+                    <button class="dropdown-btn button is-danger is-light" onclick="pronoun5()">23 문장</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 문장전체</button>
+                      <button class="button" onclick="pronoun5()">1 문장</button>
+                      <button class="button" onclick="pronoun5()">2 문장</button>
+                      <button class="button" onclick="pronoun5()">3 문장</button>
+                      <button class="button" onclick="pronoun5()">4 문장</button>
+                      <button class="button" onclick="pronoun5()">5 문장</button>
+                      <button class="button" onclick="pronoun5()">6 문장</button>
+                      <button class="button" onclick="pronoun5()">7 문장</button>
+                      <button class="button" onclick="pronoun5()">8 문장</button>
+                      <button class="button" onclick="pronoun5()">9 문장</button>
+                    </div>
+                    <button class="dropdown-btn button is-danger is-light" onclick="pronoun5()">24 문장의 종류</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 문장전체</button>
+                      <button class="button" onclick="pronoun5()">1 문장</button>
+                      <button class="button" onclick="pronoun5()">2 문장</button>
+                      <button class="button" onclick="pronoun5()">3 문장</button>
+                      <button class="button" onclick="pronoun5()">4 문장</button>
+                      <button class="button" onclick="pronoun5()">5 문장</button>
+                      <button class="button" onclick="pronoun5()">6 문장</button>
+                      <button class="button" onclick="pronoun5()">7 문장</button>
+                      <button class="button" onclick="pronoun5()">8 문장</button>
+                      <button class="button" onclick="pronoun5()">9 문장</button>
+                    </div>
+                    <button class="dropdown-btn button is-danger is-light" onclick="pronoun5()">25 문장의 구성요소</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 문장전체</button>
+                      <button class="button" onclick="pronoun5()">1 문장</button>
+                      <button class="button" onclick="pronoun5()">2 문장</button>
+                      <button class="button" onclick="pronoun5()">3 문장</button>
+                      <button class="button" onclick="pronoun5()">4 문장</button>
+                      <button class="button" onclick="pronoun5()">5 문장</button>
+                      <button class="button" onclick="pronoun5()">6 문장</button>
+                      <button class="button" onclick="pronoun5()">7 문장</button>
+                      <button class="button" onclick="pronoun5()">8 문장</button>
+                      <button class="button" onclick="pronoun5()">9 문장</button>
+                    </div>
+                    <button class="dropdown-btn button is-danger is-light" onclick="pronoun5()">26 문장의 5형식</button>
+                    <div class="dropdown-container">
+                      <button class="button" onclick="pronoun5()">0 문장전체</button>
+                      <button class="button" onclick="pronoun5()">1 문장</button>
+                      <button class="button" onclick="pronoun5()">2 문장</button>
+                      <button class="button" onclick="pronoun5()">3 문장</button>
+                      <button class="button" onclick="pronoun5()">4 문장</button>
+                      <button class="button" onclick="pronoun5()">5 문장</button>
+                      <button class="button" onclick="pronoun5()">6 문장</button>
+                      <button class="button" onclick="pronoun5()">7 문장</button>
+                      <button class="button" onclick="pronoun5()">8 문장</button>
+                      <button class="button" onclick="pronoun5()">9 문장</button>
+                    </div>
+                
+                
+                  </div>
+                </div>
+              </div>
+            </div>
+            </section>
+
+
+
+        </div>
+      </article>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="footer is-fixed-bottom">
+    <div class="content has-text-centered">
+      <p>
+        CLS 소개 | 이용약관 | 개인정보취급방침 | 사이트맵 </br>
+        씨엘에스(CLS)영어학원 | 교육원장 신은추 | 사업자등록번호 369-95-00512 | 대전광역시 유성구 반석로 32, 5층 | 문의 042)826-0582 </br>
+        Copyright © Communicative Language School. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js'></script>
+  <script src="../js/kanban.js"></script>
+              <script src="../js/bulma.js"></script>
+              <script src="../js/tabs.js"></script>
+
+</body>
+
+</html>

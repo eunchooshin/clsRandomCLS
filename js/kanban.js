@@ -271,60 +271,25 @@ const consonantVal = 'bcdfghjklmnpqrstvwxyz';
 const vowelVal = 'aeiou';
 const constantUpperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const constantLowerCase = 'abcdefghijklmnopqrstuvwxyz';
-const pronounBox = new Array(
-  '나는 ',
-  '너는 ',
-  '그는 ',
-  '그녀는 ',
-  '그것은 ',
-  '우리는 ',
-  '너희들은 ',
-  '그들은 '
-);
-const pronounBoxK = new Array(
-  '나는 ',
-  '너는 ',
-  '그는 ',
-  '그녀는 ',
-  '그것은 ',
-  '우리는 ',
-  '너희들은 ',
-  '그들은 '
-);
-const pronounBoxE = new Array(
-  'I ',
-  'You ',
-  'He ',
-  'She ',
-  'It ',
-  'We ',
-  'You ',
-  'They '
-);
-const pronounBoxBeE = new Array(
-  'I am ',
-  'You are ',
-  'He is ',
-  'She is ',
-  'It is ',
-  'We are ',
-  'You are ',
-  'They are '
-);
+const pronounBox = new Array('나는 ', '너는 ', '그는 ', '그녀는 ', '그것은 ', '우리는 ', '너희들은 ', '그들은 ');
+const pronounBoxK = new Array('나는 ', '너는 ', '그는 ', '그녀는 ', '그것은 ', '우리는 ', '너희들은 ', '그들은 ');
+const pronounBoxE = new Array('I ', 'You ', 'He ', 'She ', 'It ', 'We ', 'You ', 'They ');
+const pronounBoxBeE = new Array('I am ', 'You are ', 'He is ', 'She is ', 'It is ', 'We are ', 'You are ', 'They are ');
+const pronounBoxHaveE = new Array('I have ', 'You have ', 'He has ', 'She has ', 'It has ', 'We have ', 'You have ', 'They have ');
 
 const prepositionK = new Array();
 const prepositionE = new Array();
 
-const noun1personK = new Array("성인","천사","이모","아기","상사","소년","형제","선장","아이","직원","부부","사촌","고객","아빠","딸","치과의사","의사","기술자","가족","아버지","바보","친구","신사","소녀","할아버지","사람","영웅","인간","남편","나는","아이","왕","여성","어머니","간호사","부모","사람들","경찰","왕자","여왕","그녀","여동생","아들","학생","10대의","삼촌","우리","아내","여성","여러분","농부","외국인","여걸","소방관","충고하는 사람","10대 소년","여행자","동료","학급친구","한 방 사람","인간","육군 대장","거지","승객","시민","어릿광대","상인","거짓말쟁이","임자","적","지배자","도둑","방문자","여행자","단짝","교수","고용주","피고용인","음악가","배우","여배우","하인","지도자","해녀","계산원","뱃사람","사냥꾼","경영자","변호사","시장","고객","이발사","남자","여성","운동선수","지원자","악마","요정","반대자","청중","탐험가","백만장자","기어오르는 사람","동무","주인","이야기하는 사람","상인","지휘자","시민","일반인","목수","교대자","선조","범죄자","사람들","비서","유권자","우두머리","조카","조카딸","시인","강도","겁쟁이","교사","디저트","노예","해군","벌목꾼","불교도","소비자","저자","의사","정치가","천재","살인자","작곡가","해군대장","황제","공주");
-const noun1personE = new Array("adult","angel","aunt","baby","boss","boy","brother","captain","child","clerk","couple","cousin","customer","dad","daughter","dentist","doctor","engineer","family","father","fool","friend","gentleman","girl","grandfather","guy","hero","human","husband","I","kid","king","lady","mother","nurse","parent","people","police","prince","queen","she","sister","son","student","teen","uncle","we","wife","woman","you","farmer","foreigner","heroine","fireman","adviser","teenager","tourist","mate","classmate","roommate","mankind","general","beggar","passenger","citizen","clown","trader","liar","owner","enemy","ruler","thief","visitor","traveler","pal","professor","employer","employee","musician","actor","actress","servant","leader","diver","cashier","sailor","hunter","manager","lawyer","mayor","client","barber","male","female","athlete","volunteer","devil","fairy","opponent","audience","explorer","millionaire","climber","fellow","host","narrator","merchant","director","civil","civilian","carpenter","relay","ancestor","criminal","folk","secretary","voter","chief","nephew","niece","poet","robbery","coward","instructor","dessert","slave","navy","logger","Buddhist","consumer","author","physician","politician","genius","murderer","composer","admiral","emperor","princess");
-const noun2objectK = new Array("사고","오후","나이","항공사","비행기","사과","팔","등","공","풍선","바구니","박쥐","화장실","건전지","콩","침대","침실","쇠고기","종","자전거","영수증","혈액","게시판","배","몸","폭탄","뼈","책","부츠","병","바닥","그릇","뇌","브레이크","가지","브랜드","빵","다리","거품","단추","(동물)우리","사탕","모자","자동차","당근","수레","현금","성","체인점","의자","원","교실","동영상","시계","천","구름","동전","쿠키","구석","비용","면 목화","관","커튼","책상","일기","접시","인형","문","귀","지구","달걀","엔진","지우개","눈","얼굴","부채","농장","파일","손가락","화재","국기","꽃","안개","음식","발","축구","과일","유령","선물","유리","장갑","접착제","금","포도","풀","머리카락","손","모자","머리","심장","열","헬기","숙제","꿀","얼음","그것","청바지","열쇠","칼","잎","다리","편지","선","입술","우편","남자","지도","고기","우유","거울","돈","달","산","입","영화관","목","신문","코","메모","석유","바지","종이","배","사진","주머니","감자","상","경주","비","무지개","반지","바위","지붕","소금","모래","가위","선박","신발","피부","치마","눈","양말","숟가락","돌","딸기","지하철","설탕","태양","탁자","꼬리","테이프","전화","교과서","것","치아","장난감","나무","우산","채소","수박","창문","목재","비누","총","쓰레기","옷","의복","지갑","양배추","지갑","팔꿈치","무기","초","발가락","손수건","요리기구","쓰레기","무덤","사전","쟁반","소나기","껍질","발목","맥주","베개","약","철도","바지","식물","완두콩","견과","땅콩","목구멍","철","손톱","뺨","밧줄","위","연","담장","마늘","강철","기둥","우편엽서","눈물","막대기","분수","서랍","소설","상록수","생산품","짐","저널","뒤꿈치","여권","자동차","입방체","지느러미","여과기","꾸러미","꾸러미","잡지","막대기","자물쇠","구멍","후추","손잡이","파도","식품","수레바퀴","오이","손목","꽃병","식초","씨","발톱","곡물","묘","약","버섯","갈고리","연료","내용물","(여행의) 수하물","땀","건설","동화","복숭아","잔디","혀","꽃","창조물","깃털","풍자만화","둥지","식료품류","칠판","벽돌","항아리","제분기","풍차","젓가락","소지품","면허","돼지고기","(특정 작업을 위해 고안된) 장치","눈썹","단지","온도계","소매","뿌리","추첨","실","바늘","컨테이너","발자국","상품","눈금","온실","보물","굴뚝","성냥","활","뿔","주먹","폐","막대","사다리","모서리","농작물","주름","시집","시","위성","물질","꾸러미","표면","무거운 짐","연장","근육","신경","얼굴의 생김새","불꽃","반도","주전자","꼬리표","양상추","탄알","통나무","삽","자석","물살","도끼","콩","곡식","매","대륙","엄지손가락","끈","화살","손바닥","수도꼭지","덫","세포","세탁","기계","빵 한 덩어리","자원","액체","독감");
-const noun2objectE = new Array("accident","afternoon","age","airline","airplane","apple","arm","back","ball","balloon","basket","bat","bathroom","battery","bean","bed","bedroom","beef","bell","bicycle","bill","blood","board","boat","body","bomb","bone","book","boot","bottle","bottom","bowl","brain","brake","branch","brand","bread","bridge","bubble","button","cage","candy","cap","car","carrot","cart","cash","castle","chain","chair","circle","classroom","clip","clock","cloth","cloud","coin","cookie","corner","cost","cotton","crown","curtain","desk","diary","dish","doll","door","ear","earth","egg","engine","eraser","eye","face","fan","farm","file","finger","fire","flag","flower","fog","food","foot","football","fruit","ghost","gift","glass","glove","glue","gold","grape","grass","hair","hand","hat","head","heart","heat","helicopter","homework","honey","ice","it","jeans","key","knife","leaf","leg","letter","line","lip","mail","man","map","meat","milk","mirror","money","moon","mountain","mouth","movie","neck","newspaper","nose","note","oil","pants","paper","pear","picture","pocket","potato","prize","race","rain","rainbow","ring","rock","roof","salt","sand","scissors","ship","shoe","skin","skirt","snow","sock","spoon","stone","strawberry","subway","sugar","sun","table","tail","tape","telephone","textbook","thing","tooth","toy","tree","umbrella","vegetable","watermelon","window","wood","soap","gun","trash","clothes","clothing","wallet","cabbage","purse","elbow","weapon","candle","toe","handkerchief","cooker","garbage","grave","dictionary","tray","shower","shell","ankle","beer","pillow","medicine","railroad","trousers","plant","pea","nut","peanut","throat","iron","nail","cheek","rope","stomach","kite","fence","garlic","steel","post","postcard","tear","pole","fountain","drawer","novel","evergreen","product","load","journal","heel","passport","automobile","cube","fin","filter","pack","package","magazine","bar","lock","hole","pepper","handle","wave","diet","wheel","cucumber","wrist","vase","vinegar","seed","claw","grain","tomb","drug","mushroom","hook","fuel","content","baggage","sweat","construction","fairy tale","peach","lawn","tongue","bloom","creature","feather","cartoon","nest","grocery","blackboard","brick","jar","mill","windmill","chopstick","belonging","license","pork","device","eyebrow","pot","thermometer","sleeve","root","lot","thread","needle","container","footprint","merchandise","scale","greenhouse","treasure","chimney","match","bow","horn","fist","lung","rod","ladder","edge","crop","wrinkle","poetry","poem","satellite","material","parcel","surface","burden","tool","muscle","nerve","feature","flame","peninsula","kettle","label","lettuce","bullet","log","spade","magnet","current","ax","soy","cereal","falcon","continent","thumb","string","arrow","palm","faucet","trap","cell","laundry","instrument","loaf","resource","fluid","influenza");
-const noun3animalK = new Array("동물","개미","곰","벌","새","벌레","고양이","소","개","돌고래","오리","코끼리","물고기","여우","개구리","기린","말","사자","원숭이","쥐","돼지","강아지","토끼","호랑이","얼룩말","어린 양","사슴","상어","매","양","올빼미","거북이","게","비둘기","참새","달팽이","당나귀","염소","새끼 새","황소","거위","표범","수탉","칠면조","암탉","곤충","두꺼비");
-const noun3animalE = new Array("animal","ant","bear","bee","bird","bug","cat","cow","dog","dolphin","duck","elephant","fish","fox","frog","giraffe","horse","lion","monkey","mouse","pig","puppy","rabbit","tiger","zebra","lamb","deer","shark","hawk","sheep","owl","turtle","crab","pigeon","sparrow","snail","donkey","goat","chick","bull","goose","leopard","cock","turkey","hen","insect","toad");
-const noun4placeK = new Array("아카데미","공항","지역","은행","해변","교회","영화관","도시","동아리","대학","회사","콘서트","대회","나라","시골","출구","공장","분야","바닥","숲","앞","정원","문","땅","천국","언덕","집; 가정의","병원","집","부엌","호수","땅","도서관","거실","박물관","바다","사무소","궁전","공원","연필","장소","식당","화장실","강","도로","방","학교","바다","상점","하늘","남","공간","가게","거리","마을","벽","동물원","계단","입구","유치원","지옥","물웅덩이","운동장","항구","마을","연못","굴","골짜기","해안","작은 길","극장","횡단보도","시청","중심가","도시의 주택가","바닷가","오두막집","그늘","법정","화성","우체국","형무소","항구","빵집","지하실","사찰","태평양","대서양","과수원","교도소","지대","경사면","체육관","길","국경","행성","도랑","진료소","차고","장소","시내","우주");
-const noun4placeE = new Array("academy","airport","area","bank","beach","church","cinema","city","club","college","company","concert","contest","country","countryside","exit","factory","field","floor","forest","front","garden","gate","ground","heaven","hill","home","hospital","house","kitchen","lake","land","library","living room","museum","ocean","office","palace","park","pencil","place","restaurant","restroom","river","road","room","school","sea","shop","sky","south","space","store","street","town","wall","zoo","stair","entrance","kindergarten","hell","pool","playground","harbor","village","pond","cave","valley","coast","path","theater","crosswalk","city hall","downtown","uptown","shore","hut","shade","court","Mars","post office","prison","port","bakery","basement","temple","Pacific","Atlantic","orchard","jail","zone","slope","gym","route","frontier","planet","ditch","clinic","garage","location","stream","universe");
-const noun5conceptK = new Array("억양","주소","모험","공기","분노","예술","기반","야구","농구","목욕","전투","아름다움","탄생","생일","아침 식사","기업","달력","경우","기회","수업","감기","색","코미디","조건","군중","문화","주기","위험","데이트","날","죽음","대화","저녁식사","동쪽","오차","저녁","시험","예","사실","열","미래","몸짓","목표","신","그룹","습관","두통","역사","취미","휴일","시간","생각","직무","기쁨","교훈","빛","운","점심","수학","기억","마음","개월","아침","음악","이름","국가","자연","밤","정오","북","아무것도 없음","수","하나","부분","평화","소풍","분홍색","요점","힘","현재","문제","퍼즐","질문","권리","판매","과학","점수","계절","측면","크기","축구","노래","소리","속도","이야기","스트레스","만찬","시험","저것","그들","갈증","이것","시간","위쪽의","관광","탑","삼각형","여행","유형","목소리","전쟁","물","방법","날씨","결혼","주","주말","체중","서부","바람","단어","세계","연도","슬픔","정신이상","선택","아픔","정직","현명함","배구","암흑","상상력","웃음","새벽","나약함","골칫거리","명예","값","아픔","고독","소음","논쟁","초대","햇빛","해돋이","일몰","영광","필요","반","미움","기쁨","충고","의미","지루함","수학","두려움","운","편의","교통","언어","한밤중","거리","실패","도입","개발","감정","위치","보호","불쌍히 여김","우아함","경제","12개","친절","손해","식사","고난","자랑","발견","기쁨","도착","인내","대화","침묵","차이","통행","이유","사회","배달","경이","별명","한 쌍","상징","웅장","발명","기침","능력","용기","외관","생각하기","지정","실망","속임수","가을","1야드","공학","왕국","거래","싸움","지식","등급","매력","경험","조각","시력","관광","합계","요약","기록","주의","부","조화","비용","지출","이야기","직사각형","사과","작은 조각","준비","요술","축하","각도","경향","힘","분리","물질","규칙","시기","북극","남극","만족","야생","기간","도보여행","숨","정보","제안","졸업","순간","자신감","결과","의견","감탄","교육","호의","대화","고용","실업","지역","산업","공포","안전","대중(사회)","치료","시험","살아남음","휴식","1센트","1세기","센티미터","섭씨","연구","되풀이","회복","끝","자유","연설","행동","활동","어린 시절","비행","힘","길이","높이","말","우정","혼합","지불","접촉","계급","자기","장면","신용","재주","규칙","신청","사생활","커뮤니케이션","임무","법률","놀람","비율","폭풍","보랏빛","관습","운동","문법","상해","나쁜","상처","양","의식","병","경고","공포","격노","온도","슬픔","열","가려움","정사각형","인기","위험","존재","정부","실험","정도","수수께끼","예외","노동","치료","노력","처벌","성취","봄","환경","위치","탐험","환경","근원","대부분","소수","호기심","일","발음","중간","간격","종교","불평","종류","장애","가치","이익","연결","재산","윤곽","직업","유사점","엷은 안개","이야기","경우","서두름","의도","투쟁","방향","위치","요청","요구","번역","파괴","민주주의","부족","덩어리","산성","틈","예","끌어당김","완성","관계","관계","방어","결합","정정","안락","곡조","원인","죄","한계","한정","세금","걱정","성가","대조","전통","주제","해결","경향","선거","전기","결점","홍수","자유","목적","책임","합","환경","오염","행동","식욕","유리","불리","수확","폭력","장식","우화","반대","물리학","연합","위협","실행","감사","기후","오염","손해","헌신","광고","인구","숫자","효과","가난","부서","공동체","겁","증명","용기","범위","세부 사항","수술","교육","조직","실마리","산뜻한","수집","책임","의심","운임","여행","신화","기간","임금","자세","증거","향상","공격","맥박","지시","지휘자","적용","질","계산","방법","인내","운명","출발","개념","평판","불교","농업","구역","기회","운송 수단","입장","무질서","허가","목적지","지나간 자국","소비","자취","전설","구조","몫","지름","안전","충돌","번영","정치","범위","분쟁","응답","진화","혁명","살인","침입","구성","항해","상황","기능","분석","재활용","복습","보수","거절","예약","응답","퇴직","반작용","구제","환불","제한","결합","중심","집중","영향","압력","의기소침","표현","인상","원리","감정","(미래의) 전망","광경","의심");
-const noun5conceptE = new Array("accent","address","adventure","air","anger","art","base","baseball","basketball","bath","battle","beauty","birth","birthday","breakfast","business","calendar","case","chance","class","cold","color","comedy","condition","crowd","culture","cycle","danger","date","day","death","dialogue","dinner","east","error","evening","exam","example","fact","fever","future","gesture","goal","god","group","habit","headache","history","hobby","holiday","hour","idea","job","joy","lesson","light","luck","lunch","mathematics","memory","mind","month","morning","music","name","nation","nature","night","noon","north","nothing","number","one","part","peace","picnic","pink","point","power","present","problem","puzzle","question","right","sale","science","score","season","side","size","soccer","song","sound","speed","story","stress","supper","test","that","they","thirst","this","time","top","tour","tower","triangle","trip","type","voice","war","water","way","weather","wedding","week","weekend","weight","west","wind","word","world","year","sadness","madness","choice","ache","honesty","wisdom","volleyball","darkness","imagination","laughter","dawn","weakness","trouble","honor","price","pain","loneliness","noise","argument","invitation","sunlight","sunrise","sunset","glory","necessity","half","hatefulness","pleasure","advice","meaning","boredom","math","fear","fortune","convenience","traffic","language","midnight","distance","failure","introduction","development","emotion","position","protection","pity","grace","economy","dozen","kindness","damage","meal","hardship","pride","discovery","delight","arrival","patience","dialog","silence","difference","passage","reason","society","delivery","wonder","nickname","pair","symbol","grandeur","invention","cough","ability","courage","appearance","thought","appointment","disappointment","trick","autumn","yard","engineering","kingdom","trade","quarrel","knowledge","grade","charm","experience","piece","sight","sightseeing","sum","summary","record","attention","wealth","harmony","expense","expenditure","tale","rectangle","apology","bit","preparation","magic","celebration","angle","tendency","force","separation","matter","regulation","envy","the North Pole","the South Pole","satisfaction","wildness","period","hiking","breath","information","suggestion","graduation","moment","confidence","result","opinion","admiration","education","favor","conversation","employment","unemployment","region","industry","fright","safety","public","treatment","examination","survival","rest","cent","century","centimeter","centigrade","research","repetition","recovery","finale","freedom","speech","action","activity","childhood","flight","strength","length","height","saying","friendship","mixture","payment","contact","rank","self","scene","credit","talent","rule","proposal","privacy","communication","mission","law","alarm","rate","storm","violet","custom","movement","grammar","injury","evil","wound","amount","ceremony","disease","warning","horror","fury","temperature","grief","row","itch","square","popularity","risk","existence","government","experiment","degree","riddle","exception","labor","cure","effort","punishment","achievement","view","atmosphere","situation","exploration","environment","source","majority","minority","curiosity","task","pronunciation","medium","interval","religion","complaint","sort","handicap","value","profit","connection","property","outline","profession","similarity","mist","narration","occasion","haste","intention","conflict","direction","site","request","requirement","translation","destruction","democracy","lack","lump","acid","gap","instance","attraction","completion","relation","relationship","defense","combination","correction","comfort","tune","cause","crime","limit","limitation","tax","anxiety","anthem","contrast","tradition","subject","solution","trend","election","electricity","fault","flood","liberty","purpose","charge","addition","surroundings","contamination","behavior","appetite","advantage","disadvantage","harvest","violence","decoration","fable","objection","physics","association","threat","performance","appreciation","climate","pollution","harm","devotion","advertisement","population","figure","effect","poverty","department","community","cowardice","proof","bravery","extent","detail","operation","instruction","organization","clue","neat","collection","responsibility","doubt","fare","journey","myth","term","wage","posture","evidence","improvement","attack","pulse","indication","conductor","application","quality","account","method","endurance","fate","departure","concept","reputation","Buddhism","agriculture","district","opportunity","vehicle","admission","disorder","permission","destination","track","consumption","trace","legend","structure","share","diameter","security","impact","prosperity","politics","range","dispute","response","evolution","revolution","murder","invasion","composition","voyage","circumstance","function","analysis","recycling","review","reward","rejection","reservation","reply","retirement","reaction","relief","refund","restriction","union","center","concentration","influence","pressure","depression","expression","impression","principle","sentiment","prospect","spectacle","suspicion");
+const noun1personK = new Array("성인", "천사", "이모", "아기", "상사", "소년", "형제", "선장", "아이", "직원", "부부", "사촌", "고객", "아빠", "딸", "치과의사", "의사", "기술자", "가족", "아버지", "바보", "친구", "신사", "소녀", "할아버지", "사람", "영웅", "인간", "남편", "나는", "아이", "왕", "여성", "어머니", "간호사", "부모", "사람들", "경찰", "왕자", "여왕", "그녀", "여동생", "아들", "학생", "10대의", "삼촌", "우리", "아내", "여성", "여러분", "농부", "외국인", "여걸", "소방관", "충고하는 사람", "10대 소년", "여행자", "동료", "학급친구", "한 방 사람", "인간", "육군 대장", "거지", "승객", "시민", "어릿광대", "상인", "거짓말쟁이", "임자", "적", "지배자", "도둑", "방문자", "여행자", "단짝", "교수", "고용주", "피고용인", "음악가", "배우", "여배우", "하인", "지도자", "해녀", "계산원", "뱃사람", "사냥꾼", "경영자", "변호사", "시장", "고객", "이발사", "남자", "여성", "운동선수", "지원자", "악마", "요정", "반대자", "청중", "탐험가", "백만장자", "기어오르는 사람", "동무", "주인", "이야기하는 사람", "상인", "지휘자", "시민", "일반인", "목수", "교대자", "선조", "범죄자", "사람들", "비서", "유권자", "우두머리", "조카", "조카딸", "시인", "강도", "겁쟁이", "교사", "디저트", "노예", "해군", "벌목꾼", "불교도", "소비자", "저자", "의사", "정치가", "천재", "살인자", "작곡가", "해군대장", "황제", "공주");
+const noun1personE = new Array("adult", "angel", "aunt", "baby", "boss", "boy", "brother", "captain", "child", "clerk", "couple", "cousin", "customer", "dad", "daughter", "dentist", "doctor", "engineer", "family", "father", "fool", "friend", "gentleman", "girl", "grandfather", "guy", "hero", "human", "husband", "I", "kid", "king", "lady", "mother", "nurse", "parent", "people", "police", "prince", "queen", "she", "sister", "son", "student", "teen", "uncle", "we", "wife", "woman", "you", "farmer", "foreigner", "heroine", "fireman", "adviser", "teenager", "tourist", "mate", "classmate", "roommate", "mankind", "general", "beggar", "passenger", "citizen", "clown", "trader", "liar", "owner", "enemy", "ruler", "thief", "visitor", "traveler", "pal", "professor", "employer", "employee", "musician", "actor", "actress", "servant", "leader", "diver", "cashier", "sailor", "hunter", "manager", "lawyer", "mayor", "client", "barber", "male", "female", "athlete", "volunteer", "devil", "fairy", "opponent", "audience", "explorer", "millionaire", "climber", "fellow", "host", "narrator", "merchant", "director", "civil", "civilian", "carpenter", "relay", "ancestor", "criminal", "folk", "secretary", "voter", "chief", "nephew", "niece", "poet", "robbery", "coward", "instructor", "dessert", "slave", "navy", "logger", "Buddhist", "consumer", "author", "physician", "politician", "genius", "murderer", "composer", "admiral", "emperor", "princess");
+const noun2objectK = new Array("사고", "오후", "나이", "항공사", "비행기", "사과", "팔", "등", "공", "풍선", "바구니", "박쥐", "화장실", "건전지", "콩", "침대", "침실", "쇠고기", "종", "자전거", "영수증", "혈액", "게시판", "배", "몸", "폭탄", "뼈", "책", "부츠", "병", "바닥", "그릇", "뇌", "브레이크", "가지", "브랜드", "빵", "다리", "거품", "단추", "(동물)우리", "사탕", "모자", "자동차", "당근", "수레", "현금", "성", "체인점", "의자", "원", "교실", "동영상", "시계", "천", "구름", "동전", "쿠키", "구석", "비용", "면 목화", "관", "커튼", "책상", "일기", "접시", "인형", "문", "귀", "지구", "달걀", "엔진", "지우개", "눈", "얼굴", "부채", "농장", "파일", "손가락", "화재", "국기", "꽃", "안개", "음식", "발", "축구", "과일", "유령", "선물", "유리", "장갑", "접착제", "금", "포도", "풀", "머리카락", "손", "모자", "머리", "심장", "열", "헬기", "숙제", "꿀", "얼음", "그것", "청바지", "열쇠", "칼", "잎", "다리", "편지", "선", "입술", "우편", "남자", "지도", "고기", "우유", "거울", "돈", "달", "산", "입", "영화관", "목", "신문", "코", "메모", "석유", "바지", "종이", "배", "사진", "주머니", "감자", "상", "경주", "비", "무지개", "반지", "바위", "지붕", "소금", "모래", "가위", "선박", "신발", "피부", "치마", "눈", "양말", "숟가락", "돌", "딸기", "지하철", "설탕", "태양", "탁자", "꼬리", "테이프", "전화", "교과서", "것", "치아", "장난감", "나무", "우산", "채소", "수박", "창문", "목재", "비누", "총", "쓰레기", "옷", "의복", "지갑", "양배추", "지갑", "팔꿈치", "무기", "초", "발가락", "손수건", "요리기구", "쓰레기", "무덤", "사전", "쟁반", "소나기", "껍질", "발목", "맥주", "베개", "약", "철도", "바지", "식물", "완두콩", "견과", "땅콩", "목구멍", "철", "손톱", "뺨", "밧줄", "위", "연", "담장", "마늘", "강철", "기둥", "우편엽서", "눈물", "막대기", "분수", "서랍", "소설", "상록수", "생산품", "짐", "저널", "뒤꿈치", "여권", "자동차", "입방체", "지느러미", "여과기", "꾸러미", "꾸러미", "잡지", "막대기", "자물쇠", "구멍", "후추", "손잡이", "파도", "식품", "수레바퀴", "오이", "손목", "꽃병", "식초", "씨", "발톱", "곡물", "묘", "약", "버섯", "갈고리", "연료", "내용물", "(여행의) 수하물", "땀", "건설", "동화", "복숭아", "잔디", "혀", "꽃", "창조물", "깃털", "풍자만화", "둥지", "식료품류", "칠판", "벽돌", "항아리", "제분기", "풍차", "젓가락", "소지품", "면허", "돼지고기", "(특정 작업을 위해 고안된) 장치", "눈썹", "단지", "온도계", "소매", "뿌리", "추첨", "실", "바늘", "컨테이너", "발자국", "상품", "눈금", "온실", "보물", "굴뚝", "성냥", "활", "뿔", "주먹", "폐", "막대", "사다리", "모서리", "농작물", "주름", "시집", "시", "위성", "물질", "꾸러미", "표면", "무거운 짐", "연장", "근육", "신경", "얼굴의 생김새", "불꽃", "반도", "주전자", "꼬리표", "양상추", "탄알", "통나무", "삽", "자석", "물살", "도끼", "콩", "곡식", "매", "대륙", "엄지손가락", "끈", "화살", "손바닥", "수도꼭지", "덫", "세포", "세탁", "기계", "빵 한 덩어리", "자원", "액체", "독감");
+const noun2objectE = new Array("accident", "afternoon", "age", "airline", "airplane", "apple", "arm", "back", "ball", "balloon", "basket", "bat", "bathroom", "battery", "bean", "bed", "bedroom", "beef", "bell", "bicycle", "bill", "blood", "board", "boat", "body", "bomb", "bone", "book", "boot", "bottle", "bottom", "bowl", "brain", "brake", "branch", "brand", "bread", "bridge", "bubble", "button", "cage", "candy", "cap", "car", "carrot", "cart", "cash", "castle", "chain", "chair", "circle", "classroom", "clip", "clock", "cloth", "cloud", "coin", "cookie", "corner", "cost", "cotton", "crown", "curtain", "desk", "diary", "dish", "doll", "door", "ear", "earth", "egg", "engine", "eraser", "eye", "face", "fan", "farm", "file", "finger", "fire", "flag", "flower", "fog", "food", "foot", "football", "fruit", "ghost", "gift", "glass", "glove", "glue", "gold", "grape", "grass", "hair", "hand", "hat", "head", "heart", "heat", "helicopter", "homework", "honey", "ice", "it", "jeans", "key", "knife", "leaf", "leg", "letter", "line", "lip", "mail", "man", "map", "meat", "milk", "mirror", "money", "moon", "mountain", "mouth", "movie", "neck", "newspaper", "nose", "note", "oil", "pants", "paper", "pear", "picture", "pocket", "potato", "prize", "race", "rain", "rainbow", "ring", "rock", "roof", "salt", "sand", "scissors", "ship", "shoe", "skin", "skirt", "snow", "sock", "spoon", "stone", "strawberry", "subway", "sugar", "sun", "table", "tail", "tape", "telephone", "textbook", "thing", "tooth", "toy", "tree", "umbrella", "vegetable", "watermelon", "window", "wood", "soap", "gun", "trash", "clothes", "clothing", "wallet", "cabbage", "purse", "elbow", "weapon", "candle", "toe", "handkerchief", "cooker", "garbage", "grave", "dictionary", "tray", "shower", "shell", "ankle", "beer", "pillow", "medicine", "railroad", "trousers", "plant", "pea", "nut", "peanut", "throat", "iron", "nail", "cheek", "rope", "stomach", "kite", "fence", "garlic", "steel", "post", "postcard", "tear", "pole", "fountain", "drawer", "novel", "evergreen", "product", "load", "journal", "heel", "passport", "automobile", "cube", "fin", "filter", "pack", "package", "magazine", "bar", "lock", "hole", "pepper", "handle", "wave", "diet", "wheel", "cucumber", "wrist", "vase", "vinegar", "seed", "claw", "grain", "tomb", "drug", "mushroom", "hook", "fuel", "content", "baggage", "sweat", "construction", "fairy tale", "peach", "lawn", "tongue", "bloom", "creature", "feather", "cartoon", "nest", "grocery", "blackboard", "brick", "jar", "mill", "windmill", "chopstick", "belonging", "license", "pork", "device", "eyebrow", "pot", "thermometer", "sleeve", "root", "lot", "thread", "needle", "container", "footprint", "merchandise", "scale", "greenhouse", "treasure", "chimney", "match", "bow", "horn", "fist", "lung", "rod", "ladder", "edge", "crop", "wrinkle", "poetry", "poem", "satellite", "material", "parcel", "surface", "burden", "tool", "muscle", "nerve", "feature", "flame", "peninsula", "kettle", "label", "lettuce", "bullet", "log", "spade", "magnet", "current", "ax", "soy", "cereal", "falcon", "continent", "thumb", "string", "arrow", "palm", "faucet", "trap", "cell", "laundry", "instrument", "loaf", "resource", "fluid", "influenza");
+const noun3animalK = new Array("동물", "개미", "곰", "벌", "새", "벌레", "고양이", "소", "개", "돌고래", "오리", "코끼리", "물고기", "여우", "개구리", "기린", "말", "사자", "원숭이", "쥐", "돼지", "강아지", "토끼", "호랑이", "얼룩말", "어린 양", "사슴", "상어", "매", "양", "올빼미", "거북이", "게", "비둘기", "참새", "달팽이", "당나귀", "염소", "새끼 새", "황소", "거위", "표범", "수탉", "칠면조", "암탉", "곤충", "두꺼비");
+const noun3animalE = new Array("animal", "ant", "bear", "bee", "bird", "bug", "cat", "cow", "dog", "dolphin", "duck", "elephant", "fish", "fox", "frog", "giraffe", "horse", "lion", "monkey", "mouse", "pig", "puppy", "rabbit", "tiger", "zebra", "lamb", "deer", "shark", "hawk", "sheep", "owl", "turtle", "crab", "pigeon", "sparrow", "snail", "donkey", "goat", "chick", "bull", "goose", "leopard", "cock", "turkey", "hen", "insect", "toad");
+const noun4placeK = new Array("아카데미", "공항", "지역", "은행", "해변", "교회", "영화관", "도시", "동아리", "대학", "회사", "콘서트", "대회", "나라", "시골", "출구", "공장", "분야", "바닥", "숲", "앞", "정원", "문", "땅", "천국", "언덕", "집; 가정의", "병원", "집", "부엌", "호수", "땅", "도서관", "거실", "박물관", "바다", "사무소", "궁전", "공원", "연필", "장소", "식당", "화장실", "강", "도로", "방", "학교", "바다", "상점", "하늘", "남", "공간", "가게", "거리", "마을", "벽", "동물원", "계단", "입구", "유치원", "지옥", "물웅덩이", "운동장", "항구", "마을", "연못", "굴", "골짜기", "해안", "작은 길", "극장", "횡단보도", "시청", "중심가", "도시의 주택가", "바닷가", "오두막집", "그늘", "법정", "화성", "우체국", "형무소", "항구", "빵집", "지하실", "사찰", "태평양", "대서양", "과수원", "교도소", "지대", "경사면", "체육관", "길", "국경", "행성", "도랑", "진료소", "차고", "장소", "시내", "우주");
+const noun4placeE = new Array("academy", "airport", "area", "bank", "beach", "church", "cinema", "city", "club", "college", "company", "concert", "contest", "country", "countryside", "exit", "factory", "field", "floor", "forest", "front", "garden", "gate", "ground", "heaven", "hill", "home", "hospital", "house", "kitchen", "lake", "land", "library", "living room", "museum", "ocean", "office", "palace", "park", "pencil", "place", "restaurant", "restroom", "river", "road", "room", "school", "sea", "shop", "sky", "south", "space", "store", "street", "town", "wall", "zoo", "stair", "entrance", "kindergarten", "hell", "pool", "playground", "harbor", "village", "pond", "cave", "valley", "coast", "path", "theater", "crosswalk", "city hall", "downtown", "uptown", "shore", "hut", "shade", "court", "Mars", "post office", "prison", "port", "bakery", "basement", "temple", "Pacific", "Atlantic", "orchard", "jail", "zone", "slope", "gym", "route", "frontier", "planet", "ditch", "clinic", "garage", "location", "stream", "universe");
+const noun5conceptK = new Array("억양", "주소", "모험", "공기", "분노", "예술", "기반", "야구", "농구", "목욕", "전투", "아름다움", "탄생", "생일", "아침 식사", "기업", "달력", "경우", "기회", "수업", "감기", "색", "코미디", "조건", "군중", "문화", "주기", "위험", "데이트", "날", "죽음", "대화", "저녁식사", "동쪽", "오차", "저녁", "시험", "예", "사실", "열", "미래", "몸짓", "목표", "신", "그룹", "습관", "두통", "역사", "취미", "휴일", "시간", "생각", "직무", "기쁨", "교훈", "빛", "운", "점심", "수학", "기억", "마음", "개월", "아침", "음악", "이름", "국가", "자연", "밤", "정오", "북", "아무것도 없음", "수", "하나", "부분", "평화", "소풍", "분홍색", "요점", "힘", "현재", "문제", "퍼즐", "질문", "권리", "판매", "과학", "점수", "계절", "측면", "크기", "축구", "노래", "소리", "속도", "이야기", "스트레스", "만찬", "시험", "저것", "그들", "갈증", "이것", "시간", "위쪽의", "관광", "탑", "삼각형", "여행", "유형", "목소리", "전쟁", "물", "방법", "날씨", "결혼", "주", "주말", "체중", "서부", "바람", "단어", "세계", "연도", "슬픔", "정신이상", "선택", "아픔", "정직", "현명함", "배구", "암흑", "상상력", "웃음", "새벽", "나약함", "골칫거리", "명예", "값", "아픔", "고독", "소음", "논쟁", "초대", "햇빛", "해돋이", "일몰", "영광", "필요", "반", "미움", "기쁨", "충고", "의미", "지루함", "수학", "두려움", "운", "편의", "교통", "언어", "한밤중", "거리", "실패", "도입", "개발", "감정", "위치", "보호", "불쌍히 여김", "우아함", "경제", "12개", "친절", "손해", "식사", "고난", "자랑", "발견", "기쁨", "도착", "인내", "대화", "침묵", "차이", "통행", "이유", "사회", "배달", "경이", "별명", "한 쌍", "상징", "웅장", "발명", "기침", "능력", "용기", "외관", "생각하기", "지정", "실망", "속임수", "가을", "1야드", "공학", "왕국", "거래", "싸움", "지식", "등급", "매력", "경험", "조각", "시력", "관광", "합계", "요약", "기록", "주의", "부", "조화", "비용", "지출", "이야기", "직사각형", "사과", "작은 조각", "준비", "요술", "축하", "각도", "경향", "힘", "분리", "물질", "규칙", "시기", "북극", "남극", "만족", "야생", "기간", "도보여행", "숨", "정보", "제안", "졸업", "순간", "자신감", "결과", "의견", "감탄", "교육", "호의", "대화", "고용", "실업", "지역", "산업", "공포", "안전", "대중(사회)", "치료", "시험", "살아남음", "휴식", "1센트", "1세기", "센티미터", "섭씨", "연구", "되풀이", "회복", "끝", "자유", "연설", "행동", "활동", "어린 시절", "비행", "힘", "길이", "높이", "말", "우정", "혼합", "지불", "접촉", "계급", "자기", "장면", "신용", "재주", "규칙", "신청", "사생활", "커뮤니케이션", "임무", "법률", "놀람", "비율", "폭풍", "보랏빛", "관습", "운동", "문법", "상해", "나쁜", "상처", "양", "의식", "병", "경고", "공포", "격노", "온도", "슬픔", "열", "가려움", "정사각형", "인기", "위험", "존재", "정부", "실험", "정도", "수수께끼", "예외", "노동", "치료", "노력", "처벌", "성취", "봄", "환경", "위치", "탐험", "환경", "근원", "대부분", "소수", "호기심", "일", "발음", "중간", "간격", "종교", "불평", "종류", "장애", "가치", "이익", "연결", "재산", "윤곽", "직업", "유사점", "엷은 안개", "이야기", "경우", "서두름", "의도", "투쟁", "방향", "위치", "요청", "요구", "번역", "파괴", "민주주의", "부족", "덩어리", "산성", "틈", "예", "끌어당김", "완성", "관계", "관계", "방어", "결합", "정정", "안락", "곡조", "원인", "죄", "한계", "한정", "세금", "걱정", "성가", "대조", "전통", "주제", "해결", "경향", "선거", "전기", "결점", "홍수", "자유", "목적", "책임", "합", "환경", "오염", "행동", "식욕", "유리", "불리", "수확", "폭력", "장식", "우화", "반대", "물리학", "연합", "위협", "실행", "감사", "기후", "오염", "손해", "헌신", "광고", "인구", "숫자", "효과", "가난", "부서", "공동체", "겁", "증명", "용기", "범위", "세부 사항", "수술", "교육", "조직", "실마리", "산뜻한", "수집", "책임", "의심", "운임", "여행", "신화", "기간", "임금", "자세", "증거", "향상", "공격", "맥박", "지시", "지휘자", "적용", "질", "계산", "방법", "인내", "운명", "출발", "개념", "평판", "불교", "농업", "구역", "기회", "운송 수단", "입장", "무질서", "허가", "목적지", "지나간 자국", "소비", "자취", "전설", "구조", "몫", "지름", "안전", "충돌", "번영", "정치", "범위", "분쟁", "응답", "진화", "혁명", "살인", "침입", "구성", "항해", "상황", "기능", "분석", "재활용", "복습", "보수", "거절", "예약", "응답", "퇴직", "반작용", "구제", "환불", "제한", "결합", "중심", "집중", "영향", "압력", "의기소침", "표현", "인상", "원리", "감정", "(미래의) 전망", "광경", "의심");
+const noun5conceptE = new Array("accent", "address", "adventure", "air", "anger", "art", "base", "baseball", "basketball", "bath", "battle", "beauty", "birth", "birthday", "breakfast", "business", "calendar", "case", "chance", "class", "cold", "color", "comedy", "condition", "crowd", "culture", "cycle", "danger", "date", "day", "death", "dialogue", "dinner", "east", "error", "evening", "exam", "example", "fact", "fever", "future", "gesture", "goal", "god", "group", "habit", "headache", "history", "hobby", "holiday", "hour", "idea", "job", "joy", "lesson", "light", "luck", "lunch", "mathematics", "memory", "mind", "month", "morning", "music", "name", "nation", "nature", "night", "noon", "north", "nothing", "number", "one", "part", "peace", "picnic", "pink", "point", "power", "present", "problem", "puzzle", "question", "right", "sale", "science", "score", "season", "side", "size", "soccer", "song", "sound", "speed", "story", "stress", "supper", "test", "that", "they", "thirst", "this", "time", "top", "tour", "tower", "triangle", "trip", "type", "voice", "war", "water", "way", "weather", "wedding", "week", "weekend", "weight", "west", "wind", "word", "world", "year", "sadness", "madness", "choice", "ache", "honesty", "wisdom", "volleyball", "darkness", "imagination", "laughter", "dawn", "weakness", "trouble", "honor", "price", "pain", "loneliness", "noise", "argument", "invitation", "sunlight", "sunrise", "sunset", "glory", "necessity", "half", "hatefulness", "pleasure", "advice", "meaning", "boredom", "math", "fear", "fortune", "convenience", "traffic", "language", "midnight", "distance", "failure", "introduction", "development", "emotion", "position", "protection", "pity", "grace", "economy", "dozen", "kindness", "damage", "meal", "hardship", "pride", "discovery", "delight", "arrival", "patience", "dialog", "silence", "difference", "passage", "reason", "society", "delivery", "wonder", "nickname", "pair", "symbol", "grandeur", "invention", "cough", "ability", "courage", "appearance", "thought", "appointment", "disappointment", "trick", "autumn", "yard", "engineering", "kingdom", "trade", "quarrel", "knowledge", "grade", "charm", "experience", "piece", "sight", "sightseeing", "sum", "summary", "record", "attention", "wealth", "harmony", "expense", "expenditure", "tale", "rectangle", "apology", "bit", "preparation", "magic", "celebration", "angle", "tendency", "force", "separation", "matter", "regulation", "envy", "the North Pole", "the South Pole", "satisfaction", "wildness", "period", "hiking", "breath", "information", "suggestion", "graduation", "moment", "confidence", "result", "opinion", "admiration", "education", "favor", "conversation", "employment", "unemployment", "region", "industry", "fright", "safety", "public", "treatment", "examination", "survival", "rest", "cent", "century", "centimeter", "centigrade", "research", "repetition", "recovery", "finale", "freedom", "speech", "action", "activity", "childhood", "flight", "strength", "length", "height", "saying", "friendship", "mixture", "payment", "contact", "rank", "self", "scene", "credit", "talent", "rule", "proposal", "privacy", "communication", "mission", "law", "alarm", "rate", "storm", "violet", "custom", "movement", "grammar", "injury", "evil", "wound", "amount", "ceremony", "disease", "warning", "horror", "fury", "temperature", "grief", "row", "itch", "square", "popularity", "risk", "existence", "government", "experiment", "degree", "riddle", "exception", "labor", "cure", "effort", "punishment", "achievement", "view", "atmosphere", "situation", "exploration", "environment", "source", "majority", "minority", "curiosity", "task", "pronunciation", "medium", "interval", "religion", "complaint", "sort", "handicap", "value", "profit", "connection", "property", "outline", "profession", "similarity", "mist", "narration", "occasion", "haste", "intention", "conflict", "direction", "site", "request", "requirement", "translation", "destruction", "democracy", "lack", "lump", "acid", "gap", "instance", "attraction", "completion", "relation", "relationship", "defense", "combination", "correction", "comfort", "tune", "cause", "crime", "limit", "limitation", "tax", "anxiety", "anthem", "contrast", "tradition", "subject", "solution", "trend", "election", "electricity", "fault", "flood", "liberty", "purpose", "charge", "addition", "surroundings", "contamination", "behavior", "appetite", "advantage", "disadvantage", "harvest", "violence", "decoration", "fable", "objection", "physics", "association", "threat", "performance", "appreciation", "climate", "pollution", "harm", "devotion", "advertisement", "population", "figure", "effect", "poverty", "department", "community", "cowardice", "proof", "bravery", "extent", "detail", "operation", "instruction", "organization", "clue", "neat", "collection", "responsibility", "doubt", "fare", "journey", "myth", "term", "wage", "posture", "evidence", "improvement", "attack", "pulse", "indication", "conductor", "application", "quality", "account", "method", "endurance", "fate", "departure", "concept", "reputation", "Buddhism", "agriculture", "district", "opportunity", "vehicle", "admission", "disorder", "permission", "destination", "track", "consumption", "trace", "legend", "structure", "share", "diameter", "security", "impact", "prosperity", "politics", "range", "dispute", "response", "evolution", "revolution", "murder", "invasion", "composition", "voyage", "circumstance", "function", "analysis", "recycling", "review", "reward", "rejection", "reservation", "reply", "retirement", "reaction", "relief", "refund", "restriction", "union", "center", "concentration", "influence", "pressure", "depression", "expression", "impression", "principle", "sentiment", "prospect", "spectacle", "suspicion");
 
 const verb1personK = new Array();
 const verb1personE = new Array();
@@ -337,8 +302,8 @@ const verb4placeE = new Array();
 const verb5conceptK = new Array();
 const verb5conceptE = new Array();
 
-const VERB_SENTENCE_FORM_1_K = new Array("행동하다", "조언하다", "동의하다", "도착하다", "묻다", "굽다", "시작하다", "믿다", "깨뜨리다", "타다", "보살피다", "바꾸다", "확인하다", "선택하다", "오르다", "오다", "요리하다", "복사하다", "건너다", "울다", "자르다", "춤추다", "결정하다", "죽다", "하다", "그리다", "꿈꾸다", "마시다");
-const VERB_SENTENCE_FORM_1_E = new Array("act", "advise", "agree", "arrive", "ask", "bake", "begin", "believe", "break", "burn", "care", "change", "check", "choose", "climb", "come", "cook", "copy", "cross", "cry", "cut", "dance", "decide", "die", "do", "draw", "dream", "drink");
+const VERB_SENTENCE_FORM_1_K = new Array("행동한다", "조언한다", "동의한다", "도착한다", "묻는다", "굽는다", "시작한다", "믿는다", "깨뜨린다", "탄다", "보살핀다", "바꾼다", "확인한다", "선택한다", "오른다", "온다", "요리한다", "복사한다", "건넌다", "운다", "자른다", "춤춘다", "결정한다", "죽는다", "한다", "그린다", "꿈꾼다", "마신다", "운전한다", "떨어진다", "먹는다", "끝난다", "들어간다", "운동간다", "실패한다", "떨어진다", "느낀다", "싸운다", "마친다", "고정한다", "난다", "집중한다", "잊는다", "형성한다", "튀긴다", "간다", "자란다", "추측한다", "걷는다", "돕는다", "친다", "잡는다", "희망한다", "서두른다", "참여한다", "계속한다", "찬다", "안다", "거짓말한다", "듣는다", "산다", "본다", "사랑한다", "움직인다", "연다", "통과한다", "지불한다", "논다", "민다", "읽는다", "돌아온다", "달린다", "노래한다", "앉는다", "잔다", "냄새맡는다", "미소짓는다", "말한다", "일어선다", "시작한다", "머무른다", "멈춘다", "수영한다", "말한다", "이야기한다", "여행한다", "노력한다", "돌린다", "방문한다", "기다린다", "깬다", "걷는다", "씻는다", "입는다", "이긴다", "바란다", "일한다", "걱정한다", "쓴다", "울린다", "가라앉는다", "먹인다", "쏜다", "이끈다", "긴다", "바닥을 쓴다", "운다", "떠난다", "구부린다", "잃는다", "감는다", "미끄러진다", "판다", "빛난다", "돌린다", "때린다", "깨운다", "낳는다", "찢는다", "얼린다", "훔친다", "분다", "던진다", "탄다", "오른다", "흔든다");
+const VERB_SENTENCE_FORM_1_E = new Array("act", "advise", "agree", "arrive", "ask", "bake", "begin", "believe", "break", "burn", "care", "change", "check", "choose", "climb", "come", "cook", "copy", "cross", "cry", "cut", "dance", "decide", "die", "do", "draw", "dream", "drink", "drive", "drop", "eat", "end", "enter", "exercise", "fail", "fall", "feel", "fight", "finish", "fix", "fly", "focus", "forget", "form", "fry", "go", "grow", "guess", "hang", "help", "hit", "hold", "hope", "hurry", "join", "keep", "kick", "know", "lie", "listen", "live", "look", "love", "move", "open", "pass", "pay", "play", "push", "read", "return", "run", "sing", "sit", "sleep", "smell", "smile", "speak", "stand", "start", "stay", "stop", "swim", "talk", "tell", "travel", "try", "turn", "visit", "wait", "wake", "walk", "wash", "wear", "win", "wish", "work", "worry", "write", "ring", "sink", "feed", "shoot", "lead", "creep", "sweep", "weep", "leave", "bend", "lose", "wind", "slide", "dig", "shine", "spin", "strike", "awake", "bear", "tear", "freeze", "steal", "blow", "throw", "ride", "rise", "shake");
 const VERB_SENTENCE_FORM_2_K = new Array();
 const VERB_SENTENCE_FORM_2_E = new Array();
 const VERB_SENTENCE_FORM_3_K = new Array();
@@ -349,88 +314,43 @@ const VERB_SENTENCE_FORM_5_K = new Array();
 const VERB_SENTENCE_FORM_5_E = new Array();
 
 
-const adjective1personK = new Array("모든","혼자","다른","어떤","나쁜","큰","검은","파란","용감한","갈색","바쁜","차분한","특정한","깨끗한","영리한","멋진","미쳐있는","궁금한","귀여운","죽은","더러운","모든","유명한","환상적인","빨리","지방","좋아하는","좋은","자유의","재미있는","거대한","기쁜","좋은","위대한","잘 생긴","행복한"," 어려운","무거운","솔직한","더운","배고픈","친절한","게으른","작은","화난","많은","많은","새로운","멋진","나이든","가난한","예쁜","빠른","조용한","준비된","빨간","부자의","슬픈","안전한","같은","짧은","수줍은","아픈","느린","작은","똑똑한","부드러운","일부","미안한","강한","키가 큰","추한","따뜻한","젖은","하얀","잘못된","노란색","젊은","두려운");
-const adjective1personE = new Array("all","alone","another","any","bad","big","black","blue","brave","brown","busy","calm","certain","clean","clever","cool","crazy","curious","cute","dead","dirty","every","famous","fantastic","fast","fat","favorite","fine","free","fun","giant","glad","good","great","handsome","happy","hard","heavy","honest","hot","hungry","kind","lazy","little","mad","many","much","new","nice","old","poor","pretty","quick","quiet","ready","red","rich","sad","safe","same","short","shy","sick","slow","small","smart","soft","some","sorry","strong","tall","ugly","warm","wet","white","wrong","yellow","young","afraid");
-const adjective2objectK = new Array("모든","다른","어떤","나쁜","기본적인","큰","검은","파란","갈색","특정한","싼","깨끗한","가까운","다른","어려운","더러운","건조한","쉬운","모든","유명한","환상적인","좋아하는","좋은","재미있는","좋은","위대한","녹색","회색","무거운","중요한","큰","작은","긴","많은","새로운","다음의","멋진","나이든","예쁜","빠른","조용한","준비된","빨간","슬픈","안전한","같은","짧은","수줍은","아픈","느린","작은","똑똑한","부드러운","일부","신맛이 나는","키가 큰","추한","따뜻한","젖은","하얀","잘못된","노란색","젊은");
-const adjective2objectE = new Array("all","another","any","bad","basic","big","black","blue","brown","certain","cheap","clean","close","different","difficult","dirty","dry","easy","every","famous","fantastic","favorite","fine","fun","good","great","green","grey","heavy","important","large","little","long","many","new","next","nice","old","pretty","quick","quiet","ready","red","sad","safe","same","short","shy","sick","slow","small","smart","soft","some","sour","tall","ugly","warm","wet","white","wrong","yellow","young");
-const adjective3animalK = new Array("모든","혼자","다른","어떤","나쁜","큰","검은","파란","용감한","갈색","바쁜","차분한","특정한","깨끗한","영리한","멋진","미쳐있는","궁금한","귀여운","죽은","더러운","모든","유명한","환상적인","빨리","지방","좋아하는","좋은","자유의","재미있는","거대한","기쁜","좋은","위대한","잘 생긴","행복한"," 어려운","무거운","솔직한","더운","배고픈","친절한","게으른","작은","화난","많은","많은","새로운","멋진","나이든","가난한","예쁜","빠른","조용한","준비된","빨간","부자의","슬픈","안전한","같은","짧은","수줍은","아픈","느린","작은","똑똑한","부드러운","일부","미안한","강한","키가 큰","추한","따뜻한","젖은","하얀","잘못된","노란색","젊은","두려운");
-const adjective3animalE = new Array("all","alone","another","any","bad","big","black","blue","brave","brown","busy","calm","certain","clean","clever","cool","crazy","curious","cute","dead","dirty","every","famous","fantastic","fast","fat","favorite","fine","free","fun","giant","glad","good","great","handsome","happy","hard","heavy","honest","hot","hungry","kind","lazy","little","mad","many","much","new","nice","old","poor","pretty","quick","quiet","ready","red","rich","sad","safe","same","short","shy","sick","slow","small","smart","soft","some","sorry","strong","tall","ugly","warm","wet","white","wrong","yellow","young","afraid");
-const adjective4placeK = new Array("모든","다른","어떤","나쁜","큰","검은","파란","갈색","특정한","깨끗한","가까운","어두운","더러운","건조한","모든","유명한","환상적인","먼","좋아하는","좋은","가득한","재미있는","좋은","위대한","큰","지난","중앙의","새로운","다음의","멋진","나이든","예쁜","조용한","빨간","부자의","안전한","같은","작은","일부","추한","따뜻한","젖은","하얀","잘못된","노란색");
-const adjective4placeE = new Array("all","another","any","bad","big","black","blue","brown","certain","clean","close","dark","dirty","dry","every","famous","fantastic","far","favorite","fine","full","fun","good","great","large","last","middle","new","next","nice","old","pretty","quiet","red","rich","safe","same","small","some","ugly","warm","wet","white","wrong","yellow");
-const adjective5conceptK = new Array("모든","어떤","나쁜","기본적인","큰","특정한","분명한","멋진","죽은","깊은","어려운","더러운","쉬운","유명한","환상적인","좋아하는","좋은","좋은","위대한","중요한","작은","새로운","멋진","같은","작은","일부","사실","잘못된");
-const adjective5conceptE = new Array("all","any","bad","basic","big","certain","clear","cool","dead","deep","difficult","dirty","easy","famous","fantastic","favorite","fine","good","great","important","little","new","nice","same","small","some","true","wrong");
-const adjectiveCountableK1 = new Array("조금","약간","많이","거의 없는");
-const adjectiveCountableE1 = new Array("some, any","some, any","a lot of, lots of, plenty of, many, much","a few, few, a little, little");
-const adjectiveCountableE2 = new Array("some", "any","a lot of","lots of","plenty of","many","much","a few","few","a little","little");
+const adjective1personK = new Array("모든", "혼자", "다른", "어떤", "나쁜", "큰", "검은", "파란", "용감한", "갈색", "바쁜", "차분한", "특정한", "깨끗한", "영리한", "멋진", "미쳐있는", "궁금한", "귀여운", "죽은", "더러운", "모든", "유명한", "환상적인", "빨리", "지방", "좋아하는", "좋은", "자유의", "재미있는", "거대한", "기쁜", "좋은", "위대한", "잘 생긴", "행복한", " 어려운", "무거운", "솔직한", "더운", "배고픈", "친절한", "게으른", "작은", "화난", "많은", "많은", "새로운", "멋진", "나이든", "가난한", "예쁜", "빠른", "조용한", "준비된", "빨간", "부자의", "슬픈", "안전한", "같은", "짧은", "수줍은", "아픈", "느린", "작은", "똑똑한", "부드러운", "일부", "미안한", "강한", "키가 큰", "추한", "따뜻한", "젖은", "하얀", "잘못된", "노란색", "젊은", "두려운");
+const adjective1personE = new Array("all", "alone", "another", "any", "bad", "big", "black", "blue", "brave", "brown", "busy", "calm", "certain", "clean", "clever", "cool", "crazy", "curious", "cute", "dead", "dirty", "every", "famous", "fantastic", "fast", "fat", "favorite", "fine", "free", "fun", "giant", "glad", "good", "great", "handsome", "happy", "hard", "heavy", "honest", "hot", "hungry", "kind", "lazy", "little", "mad", "many", "much", "new", "nice", "old", "poor", "pretty", "quick", "quiet", "ready", "red", "rich", "sad", "safe", "same", "short", "shy", "sick", "slow", "small", "smart", "soft", "some", "sorry", "strong", "tall", "ugly", "warm", "wet", "white", "wrong", "yellow", "young", "afraid");
+const adjective2objectK = new Array("모든", "다른", "어떤", "나쁜", "기본적인", "큰", "검은", "파란", "갈색", "특정한", "싼", "깨끗한", "가까운", "다른", "어려운", "더러운", "건조한", "쉬운", "모든", "유명한", "환상적인", "좋아하는", "좋은", "재미있는", "좋은", "위대한", "녹색", "회색", "무거운", "중요한", "큰", "작은", "긴", "많은", "새로운", "다음의", "멋진", "나이든", "예쁜", "빠른", "조용한", "준비된", "빨간", "슬픈", "안전한", "같은", "짧은", "수줍은", "아픈", "느린", "작은", "똑똑한", "부드러운", "일부", "신맛이 나는", "키가 큰", "추한", "따뜻한", "젖은", "하얀", "잘못된", "노란색", "젊은");
+const adjective2objectE = new Array("all", "another", "any", "bad", "basic", "big", "black", "blue", "brown", "certain", "cheap", "clean", "close", "different", "difficult", "dirty", "dry", "easy", "every", "famous", "fantastic", "favorite", "fine", "fun", "good", "great", "green", "grey", "heavy", "important", "large", "little", "long", "many", "new", "next", "nice", "old", "pretty", "quick", "quiet", "ready", "red", "sad", "safe", "same", "short", "shy", "sick", "slow", "small", "smart", "soft", "some", "sour", "tall", "ugly", "warm", "wet", "white", "wrong", "yellow", "young");
+const adjective3animalK = new Array("모든", "혼자", "다른", "어떤", "나쁜", "큰", "검은", "파란", "용감한", "갈색", "바쁜", "차분한", "특정한", "깨끗한", "영리한", "멋진", "미쳐있는", "궁금한", "귀여운", "죽은", "더러운", "모든", "유명한", "환상적인", "빨리", "지방", "좋아하는", "좋은", "자유의", "재미있는", "거대한", "기쁜", "좋은", "위대한", "잘 생긴", "행복한", " 어려운", "무거운", "솔직한", "더운", "배고픈", "친절한", "게으른", "작은", "화난", "많은", "많은", "새로운", "멋진", "나이든", "가난한", "예쁜", "빠른", "조용한", "준비된", "빨간", "부자의", "슬픈", "안전한", "같은", "짧은", "수줍은", "아픈", "느린", "작은", "똑똑한", "부드러운", "일부", "미안한", "강한", "키가 큰", "추한", "따뜻한", "젖은", "하얀", "잘못된", "노란색", "젊은", "두려운");
+const adjective3animalE = new Array("all", "alone", "another", "any", "bad", "big", "black", "blue", "brave", "brown", "busy", "calm", "certain", "clean", "clever", "cool", "crazy", "curious", "cute", "dead", "dirty", "every", "famous", "fantastic", "fast", "fat", "favorite", "fine", "free", "fun", "giant", "glad", "good", "great", "handsome", "happy", "hard", "heavy", "honest", "hot", "hungry", "kind", "lazy", "little", "mad", "many", "much", "new", "nice", "old", "poor", "pretty", "quick", "quiet", "ready", "red", "rich", "sad", "safe", "same", "short", "shy", "sick", "slow", "small", "smart", "soft", "some", "sorry", "strong", "tall", "ugly", "warm", "wet", "white", "wrong", "yellow", "young", "afraid");
+const adjective4placeK = new Array("모든", "다른", "어떤", "나쁜", "큰", "검은", "파란", "갈색", "특정한", "깨끗한", "가까운", "어두운", "더러운", "건조한", "모든", "유명한", "환상적인", "먼", "좋아하는", "좋은", "가득한", "재미있는", "좋은", "위대한", "큰", "지난", "중앙의", "새로운", "다음의", "멋진", "나이든", "예쁜", "조용한", "빨간", "부자의", "안전한", "같은", "작은", "일부", "추한", "따뜻한", "젖은", "하얀", "잘못된", "노란색");
+const adjective4placeE = new Array("all", "another", "any", "bad", "big", "black", "blue", "brown", "certain", "clean", "close", "dark", "dirty", "dry", "every", "famous", "fantastic", "far", "favorite", "fine", "full", "fun", "good", "great", "large", "last", "middle", "new", "next", "nice", "old", "pretty", "quiet", "red", "rich", "safe", "same", "small", "some", "ugly", "warm", "wet", "white", "wrong", "yellow");
+const adjective5conceptK = new Array("모든", "어떤", "나쁜", "기본적인", "큰", "특정한", "분명한", "멋진", "죽은", "깊은", "어려운", "더러운", "쉬운", "유명한", "환상적인", "좋아하는", "좋은", "좋은", "위대한", "중요한", "작은", "새로운", "멋진", "같은", "작은", "일부", "사실", "잘못된");
+const adjective5conceptE = new Array("all", "any", "bad", "basic", "big", "certain", "clear", "cool", "dead", "deep", "difficult", "dirty", "easy", "famous", "fantastic", "favorite", "fine", "good", "great", "important", "little", "new", "nice", "same", "small", "some", "true", "wrong");
+const adjectiveCountableK1 = new Array("조금", "약간", "많이", "거의 없는");
+const adjectiveCountableE1 = new Array("some, any", "some, any", "a lot of, lots of, plenty of, many, much", "a few, few, a little, little");
+const adjectiveCountableE2 = new Array("some", "any", "a lot of", "lots of", "plenty of", "many", "much", "a few", "few", "a little", "little");
 
 
-const function0103K = new Array("하나 + 자음","하나 + b","하나 + c","하나 + d","하나 + f","하나 + g","하나 + h","하나 + j","하나 + k","하나 + l","하나 + m","하나 + n","하나 + p","하나 + q","하나 + r","하나 + s","하나 + t","하나 + v","하나 + w","하나 + x","하나 + y","하나 + z","하나 + 모음","하나 + a","하나 + e","하나 + i","하나 + o","하나 + u");
-const function0103E = new Array("a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","a + ","an +","an +","an +","an +","an +","an +");
-const function0105K = new Array("물고기 한 마리 - 물고기들","양 한 마리 - 양들","사슴 한 마리 - 사슴들","남자 한 명 - 남자들","여자 한 명 - 여자들","발 하나 - 발들","이(빨) 하나 - 이(빨)들","거위 한 마리 - 거위들","쥐 한 마리 - 쥐들","황소 한 마리 - 황소들","어린이 한 명 - 어린이들","사람 한 명 - 사람들");
-const function0105E = new Array("a fish - fish","a sheep - sheep","a deer -deer","a man - men","a woman - women","a foot - feet","a tooth - teeth","a goose - geese","a mouse - mice","an ox - oxen","a child - children","a person - people");
-const function0107K = new Array("잔(cold drink)","잔(hot drink) ","조각/점","얇은 조각","그릇","병","덩어리","무게(파운드)");
-const function0107E = new Array("glass","cup","piece","slice","bowl","bottle","loaf","pound");
+const function0103K = new Array("하나 + 자음", "하나 + b", "하나 + c", "하나 + d", "하나 + f", "하나 + g", "하나 + h", "하나 + j", "하나 + k", "하나 + l", "하나 + m", "하나 + n", "하나 + p", "하나 + q", "하나 + r", "하나 + s", "하나 + t", "하나 + v", "하나 + w", "하나 + x", "하나 + y", "하나 + z", "하나 + 모음", "하나 + a", "하나 + e", "하나 + i", "하나 + o", "하나 + u");
+const function0103E = new Array("a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "a + ", "an +", "an +", "an +", "an +", "an +", "an +");
+const function0105K = new Array("물고기 한 마리 - 물고기들", "양 한 마리 - 양들", "사슴 한 마리 - 사슴들", "남자 한 명 - 남자들", "여자 한 명 - 여자들", "발 하나 - 발들", "이(빨) 하나 - 이(빨)들", "거위 한 마리 - 거위들", "쥐 한 마리 - 쥐들", "황소 한 마리 - 황소들", "어린이 한 명 - 어린이들", "사람 한 명 - 사람들");
+const function0105E = new Array("a fish - fish", "a sheep - sheep", "a deer -deer", "a man - men", "a woman - women", "a foot - feet", "a tooth - teeth", "a goose - geese", "a mouse - mice", "an ox - oxen", "a child - children", "a person - people");
+const function0107K = new Array("잔(cold drink)", "잔(hot drink) ", "조각/점", "얇은 조각", "그릇", "병", "덩어리", "무게(파운드)");
+const function0107E = new Array("glass", "cup", "piece", "slice", "bowl", "bottle", "loaf", "pound");
 
 const uncountableNounK = new Array('물', '쥬스', '우유', '커피', '티');
 
 const adjectiveFractionK = new Array("1/2", "1/4", "1/3", "2/3", "4 5/7");
-const adjectiveFractionE = new Array("one half, a half","one quarter, a quarter","one third","two thirds","four and five sevenths");
-const adjectiveCardinalOrdinalK = new Array("하나(의)","둘","셋","넷","다섯","여섯","일곱","여덟","아홉","열","첫 번째(의)","두 번째","세 번째","네 번째","다섯 번째","여섯 번째","일곱 번째","여덟 번째","아홉 번째","열 번째");
-const adjectiveCardinalOrdinalE = new Array("one","two","three","four","five","six","seven","eight","nine","ten","first","second","third","fourth","fifth","sixth","seventh","eighth","ninth","tenth");
-const adjectiveCardinalOrdinal = new Array("기수","기수","기수","기수","기수","기수","기수","기수","기수","기수","서수","서수","서수","서수","서수","서수","서수","서수","서수","서수");
+const adjectiveFractionE = new Array("one half, a half", "one quarter, a quarter", "one third", "two thirds", "four and five sevenths");
+const adjectiveCardinalOrdinalK = new Array("하나(의)", "둘", "셋", "넷", "다섯", "여섯", "일곱", "여덟", "아홉", "열", "첫 번째(의)", "두 번째", "세 번째", "네 번째", "다섯 번째", "여섯 번째", "일곱 번째", "여덟 번째", "아홉 번째", "열 번째");
+const adjectiveCardinalOrdinal2K = new Array("한", "두", "세", "네", "다섯", "여섯", "일곱", "여덟", "아홉", "열", "첫 번째(의)", "두 번째", "세 번째", "네 번째", "다섯 번째", "여섯 번째", "일곱 번째", "여덟 번째", "아홉 번째", "열 번째");
+const adjectiveCardinalOrdinalE = new Array("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth");
+const adjectiveCardinalOrdinal = new Array("기수", "기수", "기수", "기수", "기수", "기수", "기수", "기수", "기수", "기수", "서수", "서수", "서수", "서수", "서수", "서수", "서수", "서수", "서수", "서수");
 
-const adverbOfFrequencyK = new Array(
-  '항상',
-  '보통',
-  '종종',
-  '가끔',
-  '거의 ~않은',
-  '거의 ~않은',
-  '거의 ~않은',
-  '절대 ~않은'
-);
-const adverbOfFrequencyE = new Array(
-  'always',
-  'usually',
-  'often',
-  'sometimes',
-  'hardly, rarely, seldom',
-  'hardly, rarely, seldom',
-  'hardly, rarely, seldom',
-  'never'
-);
-const adverbTooEitherNeitherK = new Array(
-  '역시, 또한 (긍정문)',
-  '역시, 또한 (부정문)',
-  '역시, 또한 (not + either)'
-);
+const adverbOfFrequencyK = new Array('항상', '보통', '종종', '가끔', '거의 ~않은', '거의 ~않은', '거의 ~않은', '절대 ~않은');
+const adverbOfFrequencyE = new Array('always', 'usually', 'often', 'sometimes', 'hardly, rarely, seldom', 'hardly, rarely, seldom', 'hardly, rarely, seldom', 'never');
+const adverbTooEitherNeitherK = new Array('역시, 또한 (긍정문)', '역시, 또한 (부정문)', '역시, 또한 (not + either)');
 const adverbTooEitherNeitherE = new Array('too', 'either', 'neither');
-const sameInAdjectvieAndAdverbK = new Array(
-  '좋은',
-  '건강한, 잘',
-  '빠른, 빠르게',
-  '이른, 일찍',
-  '늦은, 늦게',
-  '마지막의, 마지막으로',
-  '오래된, 오래',
-  '바른, 바로, 곧장',
-  '높은, 높게',
-  '어려운, 딱딱한, 열심히',
-  '예쁜, 꽤'
-);
-const sameInAdjectvieAndAdverbE = new Array(
-  'good',
-  'well',
-  'fast',
-  'early',
-  'late',
-  'last',
-  'long',
-  'right',
-  'high',
-  'hard',
-  'pretty'
-);
+const sameInAdjectvieAndAdverbK = new Array('좋은', '건강한, 잘', '빠른, 빠르게', '이른, 일찍', '늦은, 늦게', '마지막의, 마지막으로', '오래된, 오래', '바른, 바로, 곧장', '높은, 높게', '어려운, 딱딱한, 열심히', '예쁜, 꽤');
+const sameInAdjectvieAndAdverbE = new Array('good', 'well', 'fast', 'early', 'late', 'last', 'long', 'right', 'high', 'hard', 'pretty');
 
 const adverbSimilarK = new Array("늦게", "가까이", "높게", "열심히", "짧은", "최근에", "거의", "매우", "거의 ~않은", "곧");
 const adverbSimilarE = new Array("late", "near", "high", "hard", "short", "lately", "nearly", "highly", "hardly", "shortly");
@@ -447,6 +367,7 @@ const PRONOUN_DEMONSTRATIVE_2K = new Array("소개, 전화할 때", "앞에 나�
 const PRONOUN_DEMONSTRATIVE_2E = new Array("this", "that / those ", "those (who) ", "this, these", "that, those", "this", "that");
 const IMPERSONAL_SUBJECT_K = new Array("비인칭주어 it ( 날짜 )", "비인칭주어 it ( 날씨 )", "비인칭주어 it ( 요일 )", "비인칭주어 it ( 거리 )", "비인칭주어 it ( 시간 )", "비인칭주어 it ( 계절 )", "비인칭주어 it ( 명암 )");
 const IMPERSONAL_SUBJECT_E = new Array("It is July 30th.", "It is sunny.", "It is Sunday.", "It is far.", "It is 7 o’clock.", "It is winter.", "It is dark.");
+const PRONOUN_PERSONAL_SUBJECTIVE_2K = new Array("내가", "네가", "그가", "그녀가", "그것이", "우리들이", "너희들이", "그들이", "그것들이");
 const PRONOUN_PERSONAL_SUBJECTIVE_K = new Array("나는, 내가", "너는, 네가", "그는, 그가", "그녀는, 그녀가", "그것은, 그것이", "우리들은, 우리들이", "너희들은, 너희들이", "그들은, 그들이", "그것들은, 그것들이");
 const PRONOUN_PERSONAL_SUBJECTIVE_E = new Array("I", "You", "He", "She", "It", "We", "You", "They", "They");
 const PRONOUN_PERSONAL_SUBJECTIVE_WITH_BE_K = new Array("나는, 내가 ~이다", "너는, 네가 ~이다", "그는, 그가 ~이다", "그녀는, 그녀가 ~이다", "그것은, 그것이 ~이다", "우리들은, 우리들이 ~이다", "너희들은, 너희들이 ~이다", "그들은, 그들이 ~이다", "그것들은, 그것들이 ~이다");
@@ -455,8 +376,8 @@ const PRONOUN_PERSONAL_POSSESSIVE_K = new Array();
 const PRONOUN_PERSONAL_POSSESSIVE_E = new Array();
 const PRONOUN_PERSONAL_POSSESSIVE_2K = new Array("나의", "너의", "그의", "그녀의", "그것의", "우리들의", "너희들의", "그들의, 그것들의");
 const PRONOUN_PERSONAL_POSSESSIVE_2E = new Array("my", "your", "his", "her", "its", "our", "your", "their");
-const PRONOUN_PERSONAL_POSSESSIVE_PRONOUN_K = new Array("나의 것, 내꺼", "너의, 니꺼", "그의 것", "그녀의 것", "그것의 것", "우리들의 것", "너희들의 것", "그들의 것");
-const PRONOUN_PERSONAL_POSSESSIVE_PRONOUN_E = new Array("mine", "yours", "his", "hers", "its", "ours", "yours", "theirs");
+const PRONOUN_PERSONAL_POSSESSIVE_PRONOUN_K = new Array("나의 것, 내꺼", "너의, 니꺼", "그의 것", "그녀의 것", "그것의 것", "우리들의 것", "너희들의 것", "그들의 것", "그것들의 것");
+const PRONOUN_PERSONAL_POSSESSIVE_PRONOUN_E = new Array("mine", "yours", "his", "hers", "its", "ours", "yours", "theirs", "theirs");
 const PRONOUN_PERSONAL_OBJECTIVE_K = new Array("나를, 나에게", "너를, 너에게", "그를, 그에게", "그녀를, 그녀에게", "그것을, 그것에게", "우리들을, 우리들에게", "너희들을, 너희들에게", "그들을, 그들에게");
 const PRONOUN_PERSONAL_OBJECTIVE_E = new Array("me", "you", "him", "her", "it", "us", "you", "them");
 const PRONOUN_PERSONAL_ALL_K = new Array();
@@ -531,15 +452,132 @@ const ARTICLE_THE_E = new Array("the", "the", "the", "the", "the", "the", "the",
 const NO_ARTICLE_K = new Array("① 식사 / 운동 / 학과(과목) 앞에", "② 고유한 이름 앞에", "(나라, 도시, 사람, 등)", "③ By 교통수단", "④ 소유격", "⑤ 건물 본래 목적", "⑥ 신분 / 관직");
 const NO_ARTICLE_E = new Array("No a/an/the (무관사)", "No a/an/the (무관사)", "No a/an/the (무관사)", "No a/an/the (무관사)", "No a/an/the (무관사)", "No a/an/the (무관사)", "No a/an/the (무관사)");
 
+const TENSE_K = new Array();
+const TENSE_PRESENT_K = new Array();
+const TENSE_PAST_K = new Array();
+const TENSE_PAST_2K = new Array();
+const SENTENCE_NEGATIVE_INTERROGATIVE_K = new Array();
+const TENSE_CONTINUOUS_K = new Array();
+const RULE_OF_ING_K = new Array();
+const VERB_NOT_CONTINUOUS_K = new Array();
+const TENSE_CONTINUOUS_2K = new Array();
+const TENSE_FUTURE_K = new Array();
+const TENSE_FUTURE_2K = new Array();
+const TENSE_PRESENT_PERFECT_K = new Array();
+const PRESENT_PERFECT_USAGE_K = new Array();
+const PRESENT_PERFECT_USAGE_2K = new Array();
+const PAST_VS_PRESENT_PERFECT_K = new Array();
+const PAST_PERFECT_AND_FUTURE_PERFECT_K = new Array();
+const PERFECT_CONTINUOUS_K = new Array();
 
 
 
 const AUXILIARY_CAN_K = new Array("행동할 수 있다", "조언할 수 있다", "동의할 수 있다", "도착할 수 있다", "물어볼 수 있다", "구울 수 있다", "시작할 수 있다", "믿을 수 있다", "깨뜨릴 수 있다", "탈 수 있다", "보살필 수 있다", "바꿀 수 있다", "확인할 수 있다", "선택할 수 있다", "오를 수 있다", "올 수 있다", "요리할 수 있다", "복사할 수 있다", "건널 수 있다", "울 수 있다", "자를 수 있다", "춤출 수 있다", "결정할 수 있다", "죽을 수 있다", "할 수 있다", "그릴 수 있다", "꿈꿀 수 있다", "마실 수 있다", "운전할 수 있다", "떨어뜨릴 수 있다", "먹을 수 있다", "끝날 수 있다", "들어갈 수 있다", "운동할 수 있다", "실패할 수 있다", "떨어질 수 있다", "느낄 수 있다", "싸울 수 있다", "마칠 수 있다", "고정할 수 있다", "날 수 있다", "집중할 수 있다", "잊을 수 있다", "형성할 수 있다", "튀길 수 있다", "갈 수 있다", "자랄 수 있다", "추측할 수 있다", "걸을 수 있다", "도울 수 있다", "칠 수 있다", "잡을 수 있다", "희망할 수 있다", "서두를 수 있다", "참여할 수 있다", "계속할 수 있다", "찰 수 있다", "알 수 있다", "거짓말 할 수 있다", "들을 수 있다", "살 수 있다", "볼 수 있다", "사랑할 수 있다", "움직일 수 있다", "열 수 있다", "통과할 수 있다", "지불할 수 있다", "놀 수 있다", "밀할 수 있다", "읽을할 수 있다", "돌아갈 수 있다", "달릴 수 있다", "노래할 수 있다", "앉을 수 있다", "잘 수 있다", "냄새날 수 있다", "미소지을 수 있다", "말할 수 있다", "일어설 수 있다", "시작할 수 있다", "머무를 수 있다", "멈출 수 있다", "수영할 수 있다", "말할 수 있다", "이야기할 수 있다", "여행할 수 있다", "노력할 수 있다", "돌릴 수 있다", "방문할 수 있다", "기다릴 수 있다", "깰 수 있다", "걸을 수 있다", "씻을 수 있다", "입을 수 있다", "이길 수 있다", "바랄 수 있다", "일할 수 있다", "걱정할 수 있다", "쓸 수 있다", "울릴 수 있다", "가라앉을 수 있다", "먹일 수 있다", "쏠 수 있다", "이끌 수 있다", "기다릴 수 있다", "바닥을 쓸 수 있다", "울 수 있다", "떠날 수 있다", "구부릴 수 있다", "잃을 수 있다", "감을 수 있다", "미끄러질 수 있다", "팔 수 있다", "빛날 수 있다", "돌 수 있다", "때릴 수 있다", "깨울 수 있다", "낳을 수 있다", "찢을 수 있다", "얼 수 있다", "훔칠 수 있다", "불 수 있다", "던질 수 있다", "탈 수 있다", "오를 수 있다", "흔들 수 있다");
 const AUXILIARY_MAY_K = new Array("행동할지도 모른다", "조언할지도 모른다", "동의할지도 모른다", "도착할지도 모른다", "물어볼 수 있다", "구울 수 있다", "시작할지도 모른다", "믿을 수 있다", "깨뜨릴 수 있다", "탈 수 있다", "보살필 수 있다", "바꿀 수 있다", "확인할지도 모른다", "선택할지도 모른다", "오를 수 있다", "올 수 있다", "요리할지도 모른다", "복사할지도 모른다", "건널 수 있다", "울 수 있다", "자를 수 있다", "춤출 수 있다", "결정할지도 모른다", "죽을 수 있다", "할지도 모른다", "그릴 수 있다", "꿈꿀 수 있다", "마실 수 있다", "운전할지도 모른다", "떨어뜨릴 수 있다", "먹을 수 있다", "끝날 수 있다", "들어갈 수 있다", "운동할지도 모른다", "실패할지도 모른다", "떨어질 수 있다", "느낄 수 있다", "싸울 수 있다", "마칠 수 있다", "고정할지도 모른다", "날 수 있다", "집중할지도 모른다", "잊을 수 있다", "형성할지도 모른다", "튀길 수 있다", "갈 수 있다", "자랄 수 있다", "추측할지도 모른다", "걸을 수 있다", "도울 수 있다", "칠 수 있다", "잡을 수 있다", "희망할지도 모른다", "서두를 수 있다", "참여할지도 모른다", "계속할지도 모른다", "찰 수 있다", "알 수 있다", "거짓말 할지도 모른다", "들을 수 있다", "살 수 있다", "볼 수 있다", "사랑할지도 모른다", "움직일 수 있다", "열 수 있다", "통과할지도 모른다", "지불할지도 모른다", "놀 수 있다", "밀할지도 모른다", "읽을할지도 모른다", "돌아갈 수 있다", "달릴 수 있다", "노래할지도 모른다", "앉을 수 있다", "잘 수 있다", "냄새날 수 있다", "미소지을 수 있다", "말할지도 모른다", "일어설 수 있다", "시작할지도 모른다", "머무를 수 있다", "멈출 수 있다", "수영할지도 모른다", "말할지도 모른다", "이야기할지도 모른다", "여행할지도 모른다", "노력할지도 모른다", "돌릴 수 있다", "방문할지도 모른다", "기다릴 수 있다", "깰 수 있다", "걸을 수 있다", "씻을 수 있다", "입을 수 있다", "이길 수 있다", "바랄 수 있다", "일할지도 모른다", "걱정할지도 모른다", "쓸 수 있다", "울릴 수 있다", "가라앉을 수 있다", "먹일 수 있다", "쏠 수 있다", "이끌 수 있다", "기다릴 수 있다", "바닥을 쓸 수 있다", "울 수 있다", "떠날 수 있다", "구부릴 수 있다", "잃을 수 있다", "감을 수 있다", "미끄러질 수 있다", "팔 수 있다", "빛날 수 있다", "돌 수 있다", "때릴 수 있다", "깨울 수 있다", "낳을 수 있다", "찢을 수 있다", "얼 수 있다", "훔칠 수 있다", "불 수 있다", "던질 수 있다", "탈 수 있다", "오를 수 있다", "흔들 수 있다");
 const AUXILIARY_WILL_K = new Array("행동할 것이다", "조언할 것이다", "동의할 것이다", "도착할 것이다", "물어볼 것이다", "구울 것이다", "시작할 것이다", "믿을 것이다", "깨뜨릴 것이다", "탈 것이다", "보살필 것이다", "바꿀 것이다", "확인할 것이다", "선택할 것이다", "오를 것이다", "올 것이다", "요리할 것이다", "복사할 것이다", "건널 것이다", "울 것이다", "자를 것이다", "춤출 것이다", "결정할 것이다", "죽을 것이다", "할 것이다", "그릴 것이다", "꿈꿀 것이다", "마실 것이다", "운전할 것이다", "떨어뜨릴 것이다", "먹을 것이다", "끝날 것이다", "들어갈 것이다", "운동할 것이다", "실패할 것이다", "떨어질 것이다", "느낄 것이다", "싸울 것이다", "마칠 것이다", "고정할 것이다", "날 것이다", "집중할 것이다", "잊을 것이다", "형성할 것이다", "튀길 것이다", "갈 것이다", "자랄 것이다", "추측할 것이다", "걸을 것이다", "도울 것이다", "칠 것이다", "잡을 것이다", "희망할 것이다", "서두를 것이다", "참여할 것이다", "계속할 것이다", "찰 것이다", "알 것이다", "거짓말 것이다", "들을 것이다", "살 것이다", "볼 것이다", "사랑할 것이다", "움직일 것이다", "열 것이다", "통과할 것이다", "지불할 것이다", "놀 것이다", "밀할 것이다", "읽을할 것이다", "돌아갈 것이다", "달릴 것이다", "노래할 것이다", "앉을 것이다", "잘 것이다", "냄새날 것이다", "미소지을 것이다", "말할 것이다", "일어설 것이다", "시작할 것이다", "머무를 것이다", "멈출 것이다", "수영할 것이다", "말할 것이다", "이야기할 것이다", "여행할 것이다", "노력할 것이다", "돌릴 것이다", "방문할 것이다", "기다릴 것이다", "깰 것이다", "걸을 것이다", "씻을 것이다", "입을 것이다", "이길 것이다", "바랄 것이다", "일할 것이다", "걱정할 것이다", "쓸 것이다", "울릴 것이다", "가라앉을 것이다", "먹일 것이다", "쏠 것이다", "이끌 것이다", "기다릴 것이다", "바닥을 것이다", "울 것이다", "떠날 것이다", "구부릴 것이다", "잃을 것이다", "감을 것이다", "미끄러질 것이다", "팔 것이다", "빛날 것이다", "돌 것이다", "때릴 것이다", "깨울 것이다", "낳을 것이다", "찢을 것이다", "얼 것이다", "훔칠 것이다", "불 것이다", "던질 것이다", "탈 것이다", "오를 것이다", "흔들 것이다");
+const AUXILIARY_MUST_K = new Array("행동해야 한다", "조언해야 한다", "동의해야 한다", "도착해야 한다", "물어야 한다", "굽다해야 한다", "시작해야 한다", "믿어야 한다", "깨뜨려야 한다", "태워야 한다", "보살펴야 한다", "바꿔야 한다", "확인해야 한다", "선택해야 한다", "올라야 한다", "와야 한다", "요리해야 한다", "복사해야 한다", "건너야 한다", "울어야 한다", "잘라야 한다", "춤춰야 한다", "결정해야 한다", "죽어야 한다", "해야 한다", "그려야 한다", "꿈꿔야 한다", "마셔야 한다", "운전해야 한다", "떨어져야 한다", "먹어야 한다", "끝나야 한다", "들어가야 한다", "운동해야 한다", "실패해야 한다", "떨어져야 한다", "느껴야 한다", "싸워야 한다", "마쳐야 한다", "고정해야 한다", "날아야 한다", "집중해야 한다", "잊어야 한다", "형성해야 한다", "튀겨야 한다", "가야 한다", "자라야 한다", "추측해야 한다", "걸어야 한다", "도와야 한다", "쳐야 한다", "잡아야 한다", "희망해야 한다", "서둘러야 한다", "참여해야 한다", "계속해야 한다", "차야 한다", "알아야 한다", "거짓말해야 한다", "들어야 한다", "살아야 한다", "봐야 한다", "사랑해야 한다", "움직여야 한다", "열어야 한다", "통과해야 한다", "지불해야 한다", "놀아야 한다", "밀어야 한다", "읽어야 한다", "돌아가야 한다", "달려야 한다", "노래해야 한다", "앉아야 한다", "자야 한다", "냄새맡아야 한다", "미소지어야 한다", "말해야 한다", "일어서야 한다", "시작해야 한다", "머물러야 한다", "멈춰야 한다", "수영해야 한다", "말해야 한다", "이야기해야 한다", "여행해야 한다", "노력해야 한다", "돌려야 한다", "방문해야 한다", "기다려야 한다", "깨야 한다", "걸어야 한다", "씻어야 한다", "입어야 한다", "이겨야 한다", "바라야 한다", "일해야 한다", "걱정해야 한다", "써야 한다", "울려야 한다", "가라앉아야 한다", "먹여야 한다", "쏘아야 한다", "이끌어야 한다", "기어야 한다", "쓸어야 한다", "울어야 한다", "떠나야 한다", "구부려야 한다", "잃어야 한다", "감아야 한다", "미끄러져야 한다", "파야 한다", "빛나야 한다", "돌려야 한다", "때려야 한다", "깨우쳐야 한다", "낳아야 한다", "찢어야 한다", "얼려야 한다", "훔쳐야 한다", "불어야 한다", "던져야 한다", "타야 한다", "올라야 한다", "흔들어야 한다");
+const AUXILIARY_HaveTo_K = new Array("행동해야 한다", "조언해야 한다", "동의해야 한다", "도착해야 한다", "물어야 한다", "굽다해야 한다", "시작해야 한다", "믿어야 한다", "깨뜨려야 한다", "태워야 한다", "보살펴야 한다", "바꿔야 한다", "확인해야 한다", "선택해야 한다", "올라야 한다", "와야 한다", "요리해야 한다", "복사해야 한다", "건너야 한다", "울어야 한다", "잘라야 한다", "춤춰야 한다", "결정해야 한다", "죽어야 한다", "해야 한다", "그려야 한다", "꿈꿔야 한다", "마셔야 한다", "운전해야 한다", "떨어져야 한다", "먹어야 한다", "끝나야 한다", "들어가야 한다", "운동해야 한다", "실패해야 한다", "떨어져야 한다", "느껴야 한다", "싸워야 한다", "마쳐야 한다", "고정해야 한다", "날아야 한다", "집중해야 한다", "잊어야 한다", "형성해야 한다", "튀겨야 한다", "가야 한다", "자라야 한다", "추측해야 한다", "걸어야 한다", "도와야 한다", "쳐야 한다", "잡아야 한다", "희망해야 한다", "서둘러야 한다", "참여해야 한다", "계속해야 한다", "차야 한다", "알아야 한다", "거짓말해야 한다", "들어야 한다", "살아야 한다", "봐야 한다", "사랑해야 한다", "움직여야 한다", "열어야 한다", "통과해야 한다", "지불해야 한다", "놀아야 한다", "밀어야 한다", "읽어야 한다", "돌아가야 한다", "달려야 한다", "노래해야 한다", "앉아야 한다", "자야 한다", "냄새맡아야 한다", "미소지어야 한다", "말해야 한다", "일어서야 한다", "시작해야 한다", "머물러야 한다", "멈춰야 한다", "수영해야 한다", "말해야 한다", "이야기해야 한다", "여행해야 한다", "노력해야 한다", "돌려야 한다", "방문해야 한다", "기다려야 한다", "깨야 한다", "걸어야 한다", "씻어야 한다", "입어야 한다", "이겨야 한다", "바라야 한다", "일해야 한다", "걱정해야 한다", "써야 한다", "울려야 한다", "가라앉아야 한다", "먹여야 한다", "쏘아야 한다", "이끌어야 한다", "기어야 한다", "쓸어야 한다", "울어야 한다", "떠나야 한다", "구부려야 한다", "잃어야 한다", "감아야 한다", "미끄러져야 한다", "파야 한다", "빛나야 한다", "돌려야 한다", "때려야 한다", "깨우쳐야 한다", "낳아야 한다", "찢어야 한다", "얼려야 한다", "훔쳐야 한다", "불어야 한다", "던져야 한다", "타야 한다", "올라야 한다", "흔들어야 한다");
+const AUXILIARY_SHOULD_K = new Array("행동해야 한다", "조언해야 한다", "동의해야 한다", "도착해야 한다", "물어야 한다", "굽다해야 한다", "시작해야 한다", "믿어야 한다", "깨뜨려야 한다", "태워야 한다", "보살펴야 한다", "바꿔야 한다", "확인해야 한다", "선택해야 한다", "올라야 한다", "와야 한다", "요리해야 한다", "복사해야 한다", "건너야 한다", "울어야 한다", "잘라야 한다", "춤춰야 한다", "결정해야 한다", "죽어야 한다", "해야 한다", "그려야 한다", "꿈꿔야 한다", "마셔야 한다", "운전해야 한다", "떨어져야 한다", "먹어야 한다", "끝나야 한다", "들어가야 한다", "운동해야 한다", "실패해야 한다", "떨어져야 한다", "느껴야 한다", "싸워야 한다", "마쳐야 한다", "고정해야 한다", "날아야 한다", "집중해야 한다", "잊어야 한다", "형성해야 한다", "튀겨야 한다", "가야 한다", "자라야 한다", "추측해야 한다", "걸어야 한다", "도와야 한다", "쳐야 한다", "잡아야 한다", "희망해야 한다", "서둘러야 한다", "참여해야 한다", "계속해야 한다", "차야 한다", "알아야 한다", "거짓말해야 한다", "들어야 한다", "살아야 한다", "봐야 한다", "사랑해야 한다", "움직여야 한다", "열어야 한다", "통과해야 한다", "지불해야 한다", "놀아야 한다", "밀어야 한다", "읽어야 한다", "돌아가야 한다", "달려야 한다", "노래해야 한다", "앉아야 한다", "자야 한다", "냄새맡아야 한다", "미소지어야 한다", "말해야 한다", "일어서야 한다", "시작해야 한다", "머물러야 한다", "멈춰야 한다", "수영해야 한다", "말해야 한다", "이야기해야 한다", "여행해야 한다", "노력해야 한다", "돌려야 한다", "방문해야 한다", "기다려야 한다", "깨야 한다", "걸어야 한다", "씻어야 한다", "입어야 한다", "이겨야 한다", "바라야 한다", "일해야 한다", "걱정해야 한다", "써야 한다", "울려야 한다", "가라앉아야 한다", "먹여야 한다", "쏘아야 한다", "이끌어야 한다", "기어야 한다", "쓸어야 한다", "울어야 한다", "떠나야 한다", "구부려야 한다", "잃어야 한다", "감아야 한다", "미끄러져야 한다", "파야 한다", "빛나야 한다", "돌려야 한다", "때려야 한다", "깨우쳐야 한다", "낳아야 한다", "찢어야 한다", "얼려야 한다", "훔쳐야 한다", "불어야 한다", "던져야 한다", "타야 한다", "올라야 한다", "흔들어야 한다");
+const AUXILIARY_OughtTo_K = new Array("행동해야 한다", "조언해야 한다", "동의해야 한다", "도착해야 한다", "물어야 한다", "굽다해야 한다", "시작해야 한다", "믿어야 한다", "깨뜨려야 한다", "태워야 한다", "보살펴야 한다", "바꿔야 한다", "확인해야 한다", "선택해야 한다", "올라야 한다", "와야 한다", "요리해야 한다", "복사해야 한다", "건너야 한다", "울어야 한다", "잘라야 한다", "춤춰야 한다", "결정해야 한다", "죽어야 한다", "해야 한다", "그려야 한다", "꿈꿔야 한다", "마셔야 한다", "운전해야 한다", "떨어져야 한다", "먹어야 한다", "끝나야 한다", "들어가야 한다", "운동해야 한다", "실패해야 한다", "떨어져야 한다", "느껴야 한다", "싸워야 한다", "마쳐야 한다", "고정해야 한다", "날아야 한다", "집중해야 한다", "잊어야 한다", "형성해야 한다", "튀겨야 한다", "가야 한다", "자라야 한다", "추측해야 한다", "걸어야 한다", "도와야 한다", "쳐야 한다", "잡아야 한다", "희망해야 한다", "서둘러야 한다", "참여해야 한다", "계속해야 한다", "차야 한다", "알아야 한다", "거짓말해야 한다", "들어야 한다", "살아야 한다", "봐야 한다", "사랑해야 한다", "움직여야 한다", "열어야 한다", "통과해야 한다", "지불해야 한다", "놀아야 한다", "밀어야 한다", "읽어야 한다", "돌아가야 한다", "달려야 한다", "노래해야 한다", "앉아야 한다", "자야 한다", "냄새맡아야 한다", "미소지어야 한다", "말해야 한다", "일어서야 한다", "시작해야 한다", "머물러야 한다", "멈춰야 한다", "수영해야 한다", "말해야 한다", "이야기해야 한다", "여행해야 한다", "노력해야 한다", "돌려야 한다", "방문해야 한다", "기다려야 한다", "깨야 한다", "걸어야 한다", "씻어야 한다", "입어야 한다", "이겨야 한다", "바라야 한다", "일해야 한다", "걱정해야 한다", "써야 한다", "울려야 한다", "가라앉아야 한다", "먹여야 한다", "쏘아야 한다", "이끌어야 한다", "기어야 한다", "쓸어야 한다", "울어야 한다", "떠나야 한다", "구부려야 한다", "잃어야 한다", "감아야 한다", "미끄러져야 한다", "파야 한다", "빛나야 한다", "돌려야 한다", "때려야 한다", "깨우쳐야 한다", "낳아야 한다", "찢어야 한다", "얼려야 한다", "훔쳐야 한다", "불어야 한다", "던져야 한다", "타야 한다", "올라야 한다", "흔들어야 한다");
+const AUXILIARY_HAD_BETTER_K = new Array();
+const AUXILIARY_WOULD_RATHER_K = new Array();
+const AUXILIARY_USED_TO_K = new Array();
+const AUXILIARY_HAVE_PP_K = new Array();
+const MAY_IDIOMATIC_EXPRESSION_K = new Array();
+const AUXILIARY_SUMMARY = new Array();
 
+const GERUND_K = new Array("행동하는 것", "조언하는 것", "동의하는 것", "도착하는 것", "묻는 것", "굽는 것", "시작하는 것", "믿는 것", "깨뜨리는 것", "타는 것", "보살피는 것", "바꾸는 것", "확인하는 것", "선택하는 것", "오르는 것", "오는 것", "요리하는 것", "복사하는 것", "건너는 것", "우는 것", "자르는 것", "춤추는 것", "결정하는 것", "죽는 것", "하는 것", "그리는 것", "꿈꾸는 것", "마시는 것");
+const GERUND_E = new Array("acting", "advising", "agreeing", "arriving", "asking", "baking", "beginning", "believing", "breaking", "burning", "caring", "changing", "checking", "choosing", "climbing", "coming", "cooking", "copying", "crossing", "crying", "cutting", "dancing", "deciding", "dying", "doing", "drawing", "dreaming", "drinking");
+const GERUND_TYPE_K = new Array("은 좋다", "을 사랑한다", "을 잘한다");
+const GERUND_TYPE_E = new Array("주어", "목적어", "전치사의 목적어");
+const GERUND_NEGATIVE_K = new Array("안 ", "절대 안 ");
+const GERUND_NEGATIVE_E = new Array("not ", "never ");
+const GERUND_SENSE_SUBJECT_K = new Array();
+const GERUND_SENSE_SUBJECT_SENTENCE_K = new Array(" 에 감사합니다");
+const GERUND_SENSE_SUBJECT_SENTENCE_E = new Array("Thank you for ");
+const GERUND_VS_PRESENT_PARTICIPLE_K = new Array("to만 쓰는 동사 ", "ing만 쓰는 동사", "", "둘 다 쓰는 동사 - 뜻 같음", "둘 다 쓰는 동사 - 뜻 다름");
+const VERB_WITH_K = new Array("to만 쓰는 동사 ", "ing만 쓰는 동사", "", "둘 다 쓰는 동사 - 뜻 같음", "둘 다 쓰는 동사 - 뜻 다름");
+const VERB_WITH_E = new Array("언제 답을 출래 ", "피마디인", "스키어 기쁘", "사랑동사", "기억동사");
+const VERB_WITH_TO_K = new Array("원한다", "소망한다", "희망한다", "기대한다", "필요하다", "요구한다", "결정한다", "동의한다", "계획한다", "약속한다", "선택한다", "거절한다");
+const VERB_WITH_TO_E = new Array("want", "wish", "hope", "expect", "need", "demand", "decide", "agree", "plan", "promise", "choose", "refuse");
+const VERB_WITH_ING_K = new Array("끝나다", "꺼리다", "부인하다", "즐기다", "멈추다", "유지하다", "피하다", "인정하다", "포기하다", "연습하다");
+const VERB_WITH_ING_E = new Array("finish", "mind", "deny", "enjoy", "stop", "keep", "avoid", "admit", "give up", "practice");
+const VERB_WITH_BOTH_K = new Array("좋아한다", "시작한다", "계속한다", "사랑한다", "싫어한다", "시작한다");
+const VERB_WITH_BOTH_E = new Array("like", "start ", "continue", "love ", "hate", "begin");
+const VERB_WITH_BOTH_2K = new Array("기억한다 ", "노력한다", "잊는다", " 멈춘다", "후회한다");
+const VERB_WITH_BOTH_2E = new Array("remember", "try", "forget", "stop", "regret");
+const VERB_WITH_BOTH_3K = new Array("할 것을 기억하다", "했던 것을 기억하다", "할 것을 잊다", "했던 것을 잊다", "하게 되어 유감이다", "했던 것을 후회하다", "하기 위해 멈추다", "하는 것을 멈추다", "노력하다", "시험 삼아 해보다");
+const VERB_WITH_BOTH_3E = new Array("remember to", "remember -ing", "forget to", "forget -ing ", "regret to", "regret -ing ", "stop to", "stop -ing ", "try to", "try -ing");
+const GERUND_IDIOMATIC_EXPRESSION_K = new Array("-하는 게 어때?", "하고싶다", "고대하다 ", "-하는 데 어려움을 겪다", "-하는 데 어려움을 겪다", "반대하다 ", "못하게 하다", "익숙하다", "-해도 소용없다", "-해도 소용없다", "-하지 않을 수 없다", "-하지 않을 수 없다", "-은 불가능하다", "-은 불가능하다", "계속해서 -하다");
+const GERUND_IDIOMATIC_EXPRESSION_E = new Array("How(What) about -ing", "feel like -ing", "look forward to -ing", "have a hard time -ing", "have trouble /difficulty -ing", "object to -ing", "prevent/keep/stop 목 from -ing", "be/get used to -ing", "it is no use –ing", "It is useless to V", "cannot help –ing", "cannot help but V", "There is no –ing", " It is impossible to V", "keep –ing =go on -ing");
+const GERUND_IDIOMATIC_EXPRESSION_2K = new Array("막 ~하려고 하다", "막 ~하려고 하다", "-하자마자", "-하느라 바쁘다", "시간/돈 쓰다", "-하러 가다", "할 가치가 있다", "~해줘서 고맙다");
+const GERUND_IDIOMATIC_EXPRESSION_2E = new Array("be at the point of –ing", "be about to V", "on -ing", "be busy -ing", "spend 시간/돈 (on) ing", "go -ing", "be worth -ing", "thank ~ for -ing");
+const GERUND_TENSE_K = new Array();
+const GERUND_PASSIVE_K = new Array();
 
+const PARTICIPLE_K = new Array();
+const PARTICIPLE_MODIFY_NOUN_K = new Array();
+const PARTICIPLE_AS_COMPLEMENT_K = new Array();
+const PARTICIPLE_EMOTION_K = new Array();
+const PARTICIPIAL_CONSTRUCTION_K = new Array();
+const PARTICIPIAL_CONSTRUCTION_MEANING_K = new Array("~할 때", "~하기 전에", "~한 후에", "~라면", "~때문에", "불구하고", "하면서", "하고 했다");
+const PARTICIPIAL_CONSTRUCTION_MEANING_E = new Array("when", "before", "after", "if", "because, since, as", "(al)though, even though, even if", "as, while", "and");
+const PARTICIPIAL_CONSTRUCTION_MEANING_2K = new Array("때", "라면", "때문에", "불구하고", "하면서", "하고 했다");
+const PARTICIPIAL_CONSTRUCTION_MEANING_2E = new Array("시간", "조건", "원인, 이유", "양보", "동시동작 ", "연속동작");
+const PARTICIPIAL_CONSTRUCTION_NEGATIVE_K = new Array();
+const PARTICIPLE_IDIOMATIC_EXPRESSION_K = new Array("일반적으로 말해서", "솔직히 말해서", "엄밀히 말해서", "대략적으로 말해서", "~와 비교해 보면", "만일 ~라면", "~을 고려하면", "~로 판단하건데", "~얘기가 나와서 말인데");
+const PARTICIPLE_IDIOMATIC_EXPRESSION_E = new Array("generally speaking", "frankly speaking", "strictly speaking", "roughly speaking", "compared with", "supposing (that)", "considering (that)", "judging from", "speaking(talking) of");
+const PARTICIPLE_WITH_WITH_K = new Array();
 
+const PASSIVE_K = new Array();
+const PASSIVE_SENTENCE_K = new Array();
+const PASSIVE_TENSE_K = new Array();
+const PASSIVE_NO_OBJECTIVE_K = new Array();
+const PASSIVE_IDIOMATIC_PREP_K = new Array("로서 알려져 있다","로 유명하다","에게 알려져 있다","로 가득 차 있다","로 덮여 있다","로 붐비다","에 흥미가 있다","에 대해 기뻐하다","에 만족하다","에 실망하다","에 진저리가 나다");
+const PASSIVE_IDIOMATIC_PREP_E = new Array("be known as ","be known for ","be known to ","be filled with ","be covered with ","be crowded with ","be interested in ","be pleased with/about ","be satisfied with ","be disappointed with/at/in ","be fed up with ");
+const PASSIVE_IDIOMATIC_PREP_2K = new Array("로 만들어지다","로 만들어지다","로 만들어지다","에 놀라다","에 대해 들뜨다","에 대해 걱정하다","와 관련되어있다","로 구성되어있다","에 기초하다");
+const PASSIVE_IDIOMATIC_PREP_2E = new Array("be made from ","be made (out) of ","be made into ","be surprised at/by ","be excited about ","be worried/concerned about ","be involved in ","be composed of ","be based on ");
+const PASSIVE_SENTENCE_PATTERN_K = new Array();
+const PASSIVE_SENTENCE_PATTERN_4TH_K = new Array();
+const PASSIVE_SENTENCE_PATTERN_5TH_K = new Array();
+const VERB_NOT_PASSIVE_K = new Array();
+const PASSIVE_VERB_PHRASE_K = new Array("을 따라잡다","을 수행하다","을 없애다","을 돌보다","을 돌보다","을 업신여기다","을 비웃다","(차로) 태워오다","을 참다","(차가) 을 치다","을 칭찬(험담)하다","을 이용하다","을 켜다(끄다)");
+const PASSIVE_VERB_PHRASE_E = new Array("catch up with ","carry out ","do away with ","look after ","take care of ","look down on ","laugh at ","pick up","put up with ","run over ","speak well(ill) of ","take advantage of ","turn on(off) ");
+const PASSIVE_THAT_CLAUSE_OBJECT_K = new Array();
+
+const INFINITIVE_K = new Array();
+const TO_INFINITIVE_VS_TO_PREPOSITION_K = new Array();
+const TO_INFINITIVE_AS_NOUN_K = new Array("행동하는 것", "조언하는 것", "동의하는 것", "도착하는 것", "묻는 것", "굽는 것", "시작하는 것", "믿는 것", "깨뜨리는 것", "타는 것", "보살피는 것", "바꾸는 것", "확인하는 것", "선택하는 것", "오르는 것", "오는 것", "요리하는 것", "복사하는 것", "건너는 것", "우는 것", "자르는 것", "춤추는 것", "결정하는 것", "죽는 것", "하는 것", "그리는 것", "꿈꾸는 것", "마시는 것");
+const TO_INFINITIVE_AS_NOUN_E = new Array("to act", "to advise", "to agree", "to arrive", "to ask", "to bake", "to begin", "to believe", "to break", "to burn", "to care", "to change", "to check", "to choose", "to climb", "to come", "to cook", "to copy", "to cross", "to cry", "to cut", "to dance", "to decide", "to die", "to do", "to draw", "to dream", "to drink");
+const TO_INFINITIVE_AS_NOUN_IT_TO_K = new Array();
+const TO_INFINITIVE_AS_NOUN_INTERROGATIVE_K = new Array("누구를 ~할지","무엇을 ~할지","어디서 ~할지","언제 ~할지","어떻게 ~할지","어느것을 ~할지");
+const TO_INFINITIVE_AS_NOUN_INTERROGATIVE_E = new Array("who(m) to부정사","what to부정사","where to부정사","when to부정사","how to부정사","which to부정사");
+const TO_INFINITIVE_AS_NOUN_INTERROGATIVE_2K = new Array("누구를 ","무엇을 ","어디서 ","언제 ","어떻게 ","어느 것을 ");
+const TO_INFINITIVE_AS_NOUN_INTERROGATIVE_2E = new Array("who(m) to","what to","where to","when to","how to","which to");
+const TO_INFINITIVE_AS_ADJECTIVE_K = new Array();
+const TO_INFINITIVE_AS_ADVERB_K = new Array("목적","감정 ","판단 ","결과","형용사 수식");
+const TO_INFINITIVE_AS_ADVERB_E = new Array("~하기 위해","~해서","~하는 걸 보니","~해서 ~하다","~하기에");
+const TO_INFINITIVE_AS_ADVERB_2K = new Array();
+const TO_INFINITIVE_AS_ADVERB_2E = new Array();
+const INFINITIVE_USAGE_K = new Array();
+const INFINITIVE_IDIOMATIC_EXPRESSION_K = new Array();
+const INFINITIVE_IDIOMATIC_EXPRESSION_TOO_TO_K = new Array();
+const INFINITIVE_IDIOMATIC_EXPRESSION_ENOUGH_TO_K = new Array();
+const INFINITIVE_NEGATIVE_SENSE_SUBJECT_TENSE_K = new Array();
+const INFINITIVE_VERB_WITH_TO_K = new Array();
+const INFINITIVE_COMPLEMENT_K = new Array();
+const INFINITIVE_COMPLEMENT_2K = new Array();
+const INFINITIVE_BE_TO_K = new Array("예정","의무","가능","운명","의도");
+const INFINITIVE_BE_TO_E = new Array("~할 예정이다","~해야 한다","~할 수 있다","~할 운명이다","~하려 하다");
+const INFINITIVE_BE_TO_2K = new Array("예정 (~할 예정이다)","의무 (~해야 한다)","가능 (~할 수 있다)","운명 (~할 운명이다)","의도 (~하려 하다)");
+const INFINITIVE_BE_TO_2E = new Array("will, be going to","should, have to","can, be able to","be destined to","intend to");
+const INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_K = new Array("말할 필요도 없이","~은 말할 것도 없이","~은 말할 것도 없이","말하자면","이상한 이야기지만","우선, 먼저","솔직히 말하면","확실히","간단히 말하면","설상가상으로","사실대로 말하면");
+const INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_E = new Array("needless to say","not to mention","not to speak of","so to speak","strange to say","to begin with","to be frank","to be sure","to make a long story short","to make matters worse","to tell the truth");
+
+const COMPARATIVE_K = new Array();
+const COMPARATIVE_POSITIVE_DEGREE_K = new Array();
+const COMPARATIVE_COMPARATIVE_DEGREE_K = new Array();
+const COMPARATIVE_SUPERATIVE_K = new Array();
 
 
 const example = new Array();
@@ -686,24 +724,23 @@ function function0103() {
 }
 //0103 명사-셀수 X 명사 세는 법
 function function0103more() {
-  let result =
-    getRandomTwoChar2(articleK, articleE) +
-    getRandomTwoChar(noun3animalK, noun3animalE);
-  valueK = valueK[valueNumber];
-  valueE = valueE[valueNumber];
-  document.getElementById('divRandom').innerText = valueK;
-  document.getElementById('divRandom2').innerText = valueE;
+  let valueNumber = Math.floor(Math.random() * function0103K.length);
+  let valueNumber2 = Math.floor(Math.random() * noun3animalK.length);
+  let kWord = "하나의 " + noun3animalE[valueNumber] + " (" + noun3animalK[valueNumber]+ ")";
+  let eWord = "a? an? 하나의 " + noun3animalK[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
 }
 //0104 명사-셀수 X 명사 세는 법
 let pluralK = new Array('들');
 let pluralE = new Array('s/es');
 
 function function0104() {
-  let result = getRandomTwoChar2(noun3animalK, noun3animalE) + '들';
-  valueK = valueK[valueNumber];
-  valueE = valueE[valueNumber];
-  document.getElementById('divRandom').innerText = valueK;
-  document.getElementById('divRandom2').innerText = valueE;
+  let valueNumber = Math.floor(Math.random() * noun3animalE.length);
+  let kWord = noun3animalK[valueNumber] + "들";
+  let eWord = noun3animalE[valueNumber] +"s? es?";
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
 }
 //0105 명사-셀수 X 명사 세는 법
 function function0105() {
@@ -725,29 +762,85 @@ function function0107() {
 
 //0108 명사-셀수 X 명사 세는 법
 function function0108() {
-  const firstArray = new Array(
-    '한 ',
-    '두 ',
-    '세 ',
-    '네 ',
-    '다섯 ',
-    '여섯 ',
-    '일곱 ',
-    '여덟 ',
-    '아홉 ',
-    '열 '
-  );
-
-  let result =
-    getRandomTwoChar(uncountableNounK) +
-    ' ' +
-    getRandomTwoChar(firstArray) +
-    getRandomTwoChar(function0107K);
-
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
+  let chooseNumbers = Math.floor(Math.random() * 9);
+  let chooseNumbers_1 = chooseNumbers - 1;
+  let chooseContainers_k = new Array("잔(cold drink)", "잔(hot drink) ", "조각/점", "얇은 조각", "그릇", "병", "덩어리", "파운드(무게)");
+  let chooseContainers_E = new Array("glass", "cup", "piece", "slice", "bowl", "bottle", "loaf", "pound");
+  let chooseContainers_2E = new Array("glasses", "cups", "pieces", "slices", "bowls", "bottles", "loaves", "pounds");
+  const uncountableNoun1K = new Array('물', '쥬스', '우유');
+  const uncountableNoun1E = new Array('water', 'juice', 'milk');
+  const uncountableNoun2K = new Array('커피', '티');
+  const uncountableNoun2E = new Array('coffee', 'tea');
+  const uncountableNoun3K = new Array('종이', '빵', '피자', '치즈', '가구', '정보', '조언');
+  const uncountableNoun3E = new Array('paper', 'bread', 'pizza', 'cheese', 'furniture', 'information', 'advice');
+  const uncountableNoun4K = new Array('빵', '치즈', '피자', '케이크', '고기');
+  const uncountableNoun4E = new Array('bread', 'cheese', 'pizza', 'cake', 'meat');
+  const uncountableNoun5K = new Array('쌀', '스프', '샐러드');
+  const uncountableNoun5E = new Array('rice', 'soup', 'salad');
+  const uncountableNoun6K = new Array('물', '쥬스', '우유');
+  const uncountableNoun6E = new Array('water', 'juice', 'milk');
+  const uncountableNoun7K = new Array('고기', '빵', '비누');
+  const uncountableNoun7E = new Array('meat', 'bread', 'soap');
+  const uncountableNoun8K = new Array('설탕', '고기', '밀가루');
+  const uncountableNoun8E = new Array('sugar', 'meat', 'flour');
+  switch (chooseNumbers) {
+    case 1:
+      let valueNumber1 = Math.floor(Math.random() * uncountableNoun1K.length);
+      kWord = uncountableNoun1K[valueNumber1] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_E[chooseNumbers_1] +  " of " + uncountableNoun1E[valueNumber1];
+      document.getElementById("divRandom").innerText = kWord;
+      document.getElementById("divRandom2").innerText = eWord;
+      break;
+    case 2:
+      let valueNumber2 = Math.floor(Math.random() * uncountableNoun2K.length);
+      kWord = uncountableNoun2K[valueNumber2] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] +  " of " + uncountableNoun2E[valueNumber2];
+      document.getElementById("divRandom").innerText = kWord;
+      document.getElementById("divRandom2").innerText = eWord;
+      break;
+    case 3:
+      let valueNumber3 = Math.floor(Math.random() * uncountableNoun3K.length);
+      kWord = uncountableNoun3K[valueNumber3] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] +  " of " + uncountableNoun3E[valueNumber3];
+      document.getElementById("divRandom").innerText = kWord;
+      document.getElementById("divRandom2").innerText = eWord;
+      break;
+    case 4:
+      let valueNumber4 = Math.floor(Math.random() * uncountableNoun4K.length);
+      kWord = uncountableNoun4K[valueNumber4] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] +  " of " + uncountableNoun4E[valueNumber4];
+      document.getElementById("divRandom").innerText = kWord;
+      document.getElementById("divRandom2").innerText = eWord;
+      break;
+    case 5:
+      let valueNumber5 = Math.floor(Math.random() * uncountableNoun5K.length);
+      kWord = uncountableNoun5K[valueNumber5] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] +  " of " + uncountableNoun5E[valueNumber5];
+      document.getElementById("divRandom").innerText = kWord;
+      document.getElementById("divRandom2").innerText = eWord;
+      break;
+    case 6:
+      let valueNumber6 = Math.floor(Math.random() * uncountableNoun6K.length);
+      kWord = uncountableNoun6K[valueNumber6] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] +  " of " + uncountableNoun6E[valueNumber6];
+      document.getElementById("divRandom").innerText = kWord;
+      document.getElementById("divRandom2").innerText = eWord;
+      break;
+    case 7:
+      let valueNumber7 = Math.floor(Math.random() * uncountableNoun7K.length);
+      kWord = uncountableNoun7K[valueNumber7] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] +  " of " + uncountableNoun7E[valueNumber7];
+      document.getElementById("divRandom").innerText = kWord;
+      document.getElementById("divRandom2").innerText = eWord;
+      break;
+    case 8:
+      let valueNumber8 = Math.floor(Math.random() * uncountableNoun8K.length);
+      kWord = uncountableNoun8K[valueNumber8] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] +  " of " + uncountableNoun8E[valueNumber8];
+      document.getElementById("divRandom").innerText = kWord;
+      document.getElementById("divRandom2").innerText = eWord;
+      break;
+  }}
 
 //0303 수량 형용사
 function function0303() {
@@ -1219,8 +1312,33 @@ function function0905() {
   document.getElementById('divRandom').innerText = kWord;
   document.getElementById('divRandom2').innerText = eWord;
 }
-
-
+//1002 TENSE_PRESENT
+function function1001() {
+  let valueNumber = Math.floor(Math.random() * VERB_SENTENCE_FORM_1_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + VERB_SENTENCE_FORM_1_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + VERB_SENTENCE_FORM_1_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1003 TENSE_PAST
+function function1002() {
+  let valueNumber = Math.floor(Math.random() * VERB_SENTENCE_FORM_1_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + VERB_SENTENCE_FORM_1_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + VERB_SENTENCE_FORM_1_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1010 AUXILIARY_WILL_K
+function function1010() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_WILL_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_WILL_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "will " + VERB_SENTENCE_FORM_1_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
 //1102 AUXILIARY_CAN_K
 function function1102() {
   let valueNumber = Math.floor(Math.random() * AUXILIARY_CAN_K.length);
@@ -1253,10 +1371,328 @@ function function1105() {
   let valueNumber = Math.floor(Math.random() * AUXILIARY_WILL_K.length);
   let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
   let kWord = pronounBoxK[valueNumber2] + AUXILIARY_WILL_K[valueNumber];
-  let eWord = pronounBoxBeE[valueNumber2] + "going to " + VERB_SENTENCE_FORM_1_E[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "going to " + VERB_SENTENCE_FORM_1_E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
+//1107 AUXILIARY_MUST_K
+function function1107() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_MUST_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_MUST_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "must " + VERB_SENTENCE_FORM_1_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1108 AUXILIARY_HaveTo_K
+function function1108() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_HaveTo_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_HaveTo_K[valueNumber];
+  let eWord = pronounBoxHaveE[valueNumber2][valueNumber2] + "have to " + VERB_SENTENCE_FORM_1_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1109 AUXILIARY_SHOULD_K
+function function1109() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_SHOULD_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_SHOULD_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "should " + VERB_SENTENCE_FORM_1_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1109_2 AUXILIARY_OughtTo_K
+function function1109v2() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_OughtTo_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_OughtTo_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "ought to " + VERB_SENTENCE_FORM_1_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+
+//1201 GERUND_K
+function function1201() {
+  let valueNumber = Math.floor(Math.random() * GERUND_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = GERUND_K[valueNumber];
+  let eWord = GERUND_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1202 GERUND_TYPE_K
+function function1202() {
+  let valueNumber = Math.floor(Math.random() * GERUND_TYPE_K.length);
+  let valueNumber2 = Math.floor(Math.random() * GERUND_K.length);
+  let kWord = GERUND_K[valueNumber2] + GERUND_TYPE_K[valueNumber];
+  let eWord = GERUND_TYPE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1203 GERUND_NEGATIVE_K
+function function1203() {
+  let valueNumber = Math.floor(Math.random() * GERUND_K.length);
+  let valueNumber2 = Math.floor(Math.random() * GERUND_NEGATIVE_K.length);
+  let kWord = GERUND_NEGATIVE_K[valueNumber2] + GERUND_K[valueNumber];
+  let eWord = GERUND_NEGATIVE_E[valueNumber2] + GERUND_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1204 GERUND_SENSE_SUBJECT_SENTENCE_K
+function function1204() {
+  let valueNumber = Math.floor(Math.random() * GERUND_K.length);
+  let valueNumber2 = Math.floor(Math.random() * GERUND_NEGATIVE_K.length);
+  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_2K[valueNumber2] + " " + GERUND_K[valueNumber];
+  let eWord = PRONOUN_PERSONAL_POSSESSIVE_2E[valueNumber2] + " " + GERUND_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1204 GERUND_SENSE_SUBJECT_K
+function function1204v2() {
+  let valueNumber = Math.floor(Math.random() * GERUND_K.length);
+  let valueNumber2 = Math.floor(Math.random() * GERUND_NEGATIVE_K.length);
+  let valueNumber3 = Math.floor(Math.random() * GERUND_SENSE_SUBJECT_SENTENCE_E.length);
+  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_2K[valueNumber2] + " " + GERUND_K[valueNumber] + GERUND_SENSE_SUBJECT_SENTENCE_K[valueNumber3];
+  let eWord = GERUND_SENSE_SUBJECT_SENTENCE_E[valueNumber3] + PRONOUN_PERSONAL_POSSESSIVE_2E[valueNumber2] + " " + GERUND_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+
+}
+//1205 GERUND_VS_PRESENT_PARTICIPLE_K
+//1206 VERB_WITH_K
+function function1206() {
+  let valueNumber = Math.floor(Math.random() * VERB_WITH_K.length);
+  let kWord = VERB_WITH_K[valueNumber];
+  let eWord = VERB_WITH_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1207 VERB_WITH_TO_K
+function function1207() {
+  let valueNumber = Math.floor(Math.random() * VERB_WITH_TO_K.length);
+  let kWord = VERB_WITH_TO_K[valueNumber];
+  let eWord = VERB_WITH_TO_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1208 VERB_WITH_ING_K
+function function1208() {
+  let valueNumber = Math.floor(Math.random() * VERB_WITH_ING_K.length);
+  let kWord = VERB_WITH_ING_K[valueNumber];
+  let eWord = VERB_WITH_ING_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1209 VERB_WITH_BOTH_K
+function function1209() {
+  let valueNumber = Math.floor(Math.random() * VERB_WITH_BOTH_K.length);
+  let kWord = VERB_WITH_BOTH_K[valueNumber];
+  let eWord = VERB_WITH_BOTH_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1210 VERB_WITH_BOTH_2K
+function function1210() {
+  let valueNumber = Math.floor(Math.random() * VERB_WITH_BOTH_2K.length);
+  let kWord = VERB_WITH_BOTH_2K[valueNumber];
+  let eWord = VERB_WITH_BOTH_2E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1210v2 VERB_WITH_BOTH_3K
+function function1210v2() {
+  let valueNumber = Math.floor(Math.random() * VERB_WITH_BOTH_3K.length);
+  let kWord = VERB_WITH_BOTH_3K[valueNumber];
+  let eWord = VERB_WITH_BOTH_3E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1211 GERUND_IDIOMATIC_EXPRESSION_K
+function function1211() {
+  let valueNumber = Math.floor(Math.random() * GERUND_IDIOMATIC_EXPRESSION_K.length);
+  let kWord = GERUND_IDIOMATIC_EXPRESSION_K[valueNumber];
+  let eWord = GERUND_IDIOMATIC_EXPRESSION_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1212 GERUND_IDIOMATIC_EXPRESSION_2K
+function function1212() {
+  let valueNumber = Math.floor(Math.random() * GERUND_IDIOMATIC_EXPRESSION_2K.length);
+  let kWord = GERUND_IDIOMATIC_EXPRESSION_2K[valueNumber];
+  let eWord = GERUND_IDIOMATIC_EXPRESSION_2E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1213 GERUND_SUMMARY_K
+
+//1301 PARTICIPLE_K
+//1302 PARTICIPLE_MODIFY_NOUN_K
+//1303 PARTICIPLE_AS_COMPLEMENT_K
+//1304 PARTICIPLE_EMOTION_K
+//1305 PARTICIPIAL_CONSTRUCTION_K
+//1306 PARTICIPIAL_CONSTRUCTION_MEANING_K
+function function1306() {
+  let valueNumber = Math.floor(Math.random() * PARTICIPIAL_CONSTRUCTION_MEANING_K.length);
+  let kWord = PARTICIPIAL_CONSTRUCTION_MEANING_K[valueNumber];
+  let eWord = PARTICIPIAL_CONSTRUCTION_MEANING_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+function function1306v2() {
+  let valueNumber = Math.floor(Math.random() * PARTICIPIAL_CONSTRUCTION_MEANING_2K.length);
+  let kWord = PARTICIPIAL_CONSTRUCTION_MEANING_2K[valueNumber];
+  let eWord = PARTICIPIAL_CONSTRUCTION_MEANING_2E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1307 PARTICIPIAL_CONSTRUCTION_NEGATIVE_K
+function function1307() {
+  let valueNumber = Math.floor(Math.random() * PARTICIPLE_K.length);
+  let valueNumber2 = Math.floor(Math.random() * GERUND_NEGATIVE_K.length);
+  let kWord = GERUND_NEGATIVE_K[valueNumber2] + PARTICIPLE_K[valueNumber];
+  let eWord = GERUND_NEGATIVE_E[valueNumber2] + PARTICIPLE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1308 PARTICIPLE_IDIOMATIC_EXPRESSION_K
+function function1308() {
+  let valueNumber = Math.floor(Math.random() * PARTICIPLE_K.length);
+  let kWord = PARTICIPLE_IDIOMATIC_EXPRESSION_K[valueNumber];
+  let eWord = PARTICIPLE_IDIOMATIC_EXPRESSION_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1309 PARTICIPLE_WITH_WITH_K
+
+//1401 PASSIVE_K
+//1402 PASSIVE_SENTENCE_K
+//1403 PASSIVE_TENSE_K
+//1404 PASSIVE_NO_OBJECTIVE_K
+//1405 PASSIVE_IDIOMATIC_PREP_K
+function function1405() {
+  let valueNumber = Math.floor(Math.random() * PASSIVE_IDIOMATIC_PREP_K.length);
+  let kWord = PASSIVE_IDIOMATIC_PREP_K[valueNumber];
+  let eWord = PASSIVE_IDIOMATIC_PREP_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1406 PASSIVE_IDIOMATIC_PREP_2K
+function function1406() {
+  let valueNumber = Math.floor(Math.random() * PASSIVE_IDIOMATIC_PREP_2K.length);
+  let kWord = PASSIVE_IDIOMATIC_PREP_2K[valueNumber];
+  let eWord = PASSIVE_IDIOMATIC_PREP_2E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1407 PASSIVE_SENTENCE_PATTERN_K
+//1408 PASSIVE_SENTENCE_PATTERN_4TH_K
+//1409 PASSIVE_SENTENCE_PATTERN_5TH_K
+//1410 VERB_NOT_PASSIVE_K
+//1411 PASSIVE_VERB_PHRASE_K
+function function1411() {
+  let valueNumber = Math.floor(Math.random() * PASSIVE_VERB_PHRASE_K.length);
+  let kWord = PASSIVE_VERB_PHRASE_K[valueNumber];
+  let eWord = PASSIVE_VERB_PHRASE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1412 PASSIVE_THAT_CLAUSE_OBJECT_K
+
+//1501 INFINITIVE_K
+function function1501() {
+  let valueNumber = Math.floor(Math.random() * VERB_WITH_TO_K.length);
+  let kWord = VERB_WITH_TO_K[valueNumber];
+  let eWord = VERB_WITH_TO_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1502 TO_INFINITIVE_VS_TO_PREPOSITION_K
+//1503 TO_INFINITIVE_AS_NOUN_K
+function function1503() {
+  let valueNumber = Math.floor(Math.random() * TO_INFINITIVE_AS_NOUN_K.length);
+  let kWord = TO_INFINITIVE_AS_NOUN_K[valueNumber];
+  let eWord = TO_INFINITIVE_AS_NOUN_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1504 TO_INFINITIVE_AS_NOUN_IT_TO_K
+//1505 TO_INFINITIVE_AS_NOUN_INTERROGATIVE_K
+function function1505() {
+  let valueNumber = Math.floor(Math.random() * TO_INFINITIVE_AS_NOUN_INTERROGATIVE_K.length);
+  let kWord = TO_INFINITIVE_AS_NOUN_INTERROGATIVE_K[valueNumber];
+  let eWord = TO_INFINITIVE_AS_NOUN_INTERROGATIVE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+function function1505v2() {
+  let valueNumber = Math.floor(Math.random() * TO_INFINITIVE_AS_NOUN_INTERROGATIVE_2K.length);
+  let valueNumber2 = Math.floor(Math.random() * VERB_SENTENCE_FORM_1_K.length);
+  let kWord = TO_INFINITIVE_AS_NOUN_INTERROGATIVE_2K[valueNumber] + VERB_SENTENCE_FORM_1_K[valueNumber2] + "할지";
+  let eWord = TO_INFINITIVE_AS_NOUN_INTERROGATIVE_2E[valueNumber] +" " + VERB_SENTENCE_FORM_1_E[valueNumber2];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1506 TO_INFINITIVE_AS_ADJECTIVE_K
+//1507 TO_INFINITIVE_AS_ADVERB_K
+function function1507() {
+  let valueNumber = Math.floor(Math.random() * TO_INFINITIVE_AS_ADVERB_K.length);
+  let kWord = TO_INFINITIVE_AS_ADVERB_K[valueNumber];
+  let eWord = TO_INFINITIVE_AS_ADVERB_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1508 TO_INFINITIVE_AS_ADVERB_2K
+function function1508() {
+  let valueNumber = Math.floor(Math.random() * adjective1personK.length);
+  let valueNumber2 = Math.floor(Math.random() * VERB_SENTENCE_FORM_1_K.length);
+  let kWord = VERB_SENTENCE_FORM_1_K[valueNumber2] +" "+ adjective1personK[valueNumber];
+  let eWord = adjective1personE[valueNumber] +" to " + VERB_SENTENCE_FORM_1_E[valueNumber2];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1509 INFINITIVE_USAGE_K
+//1510 INFINITIVE_IDIOMATIC_EXPRESSION_K
+//1511 INFINITIVE_IDIOMATIC_EXPRESSION_TOO_TO_K
+//1512 INFINITIVE_IDIOMATIC_EXPRESSION_ENOUGH_TO_K
+//1513 INFINITIVE_NEGATIVE_SENSE_SUBJECT_TENSE_K
+//1513v1 INFINITIVE_NEGATIVE_K
+//1513v2 INFINITIVE_SENSE_SUBJECT_K
+//1513v3 INFINITIVE_TENSE_K
+//1514 INFINITIVE_VERB_WITH_TO_K
+function function1514() {
+  let valueNumber = Math.floor(Math.random() * VERB_WITH_TO_K.length);
+  let kWord = VERB_WITH_TO_K[valueNumber];
+  let eWord = VERB_WITH_TO_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1515 INFINITIVE_COMPLEMENT_K
+//1516 INFINITIVE_COMPLEMENT_2K
+//1517 INFINITIVE_BE_TO_K
+function function1517() {
+  let valueNumber = Math.floor(Math.random() * INFINITIVE_BE_TO_K.length);
+  let kWord = INFINITIVE_BE_TO_K[valueNumber];
+  let eWord = INFINITIVE_BE_TO_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+function function1517v2() {
+  let valueNumber = Math.floor(Math.random() * INFINITIVE_BE_TO_2K.length);
+  let kWord = INFINITIVE_BE_TO_2K[valueNumber];
+  let eWord = INFINITIVE_BE_TO_2E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1518 INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_K
+function function1517() {
+  let valueNumber = Math.floor(Math.random() * INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_K.length);
+  let kWord = INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_K[valueNumber];
+  let eWord = INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+
 //인칭대명사-소유격-인칭대명사
 function pronoun8() {
   const firstArray = new Array(
@@ -1724,24 +2160,7 @@ function getRandomPast() {
   document.getElementById('divRandom2').innerText = ' ';
 }
 
-// 미래 시제
-function getRandomFuture() {
-  const secondArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
-  const thirdArray = new Array(
-    '사랑할거다 ',
-    '좋아할거다 ',
-    '즐길거다 ',
-    '시작할거다 ',
-    '멈출거다 '
-  );
-  let result =
-    getRandomTwoChar(pronounBox) +
-    getRandomTwoChar(secondArray) +
-    getRandomTwoChar(thirdArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
+
 
 // 진행 시제
 function getRandomContinuous() {
@@ -1841,26 +2260,7 @@ function getRandomFuturePerfect() {
   document.getElementById('divRandom2').innerText = ' ';
 }
 
-// can
-function getRandomCan() {
-  const secondArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
-  const thirdArray = new Array(
-    '걸을 수 있다 ',
-    '요리할 수 있다 ',
-    '공부할 수 있다 ',
-    '춤출 수 있다 ',
-    '읽을 수 있다 ',
-    '이길 수 있다 ',
-    '노래할 수 있다'
-  );
-  let result =
-    getRandomTwoChar(pronounBox) +
-    getRandomTwoChar(secondArray) +
-    getRandomTwoChar(thirdArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
+
 
 // may
 function getRandomMay() {

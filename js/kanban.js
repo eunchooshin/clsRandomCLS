@@ -367,9 +367,11 @@ const PRONOUN_DEMONSTRATIVE_2K = new Array("소개, 전화할 때", "앞에 나�
 const PRONOUN_DEMONSTRATIVE_2E = new Array("this", "that / those ", "those (who) ", "this, these", "that, those", "this", "that");
 const IMPERSONAL_SUBJECT_K = new Array("비인칭주어 it ( 날짜 )", "비인칭주어 it ( 날씨 )", "비인칭주어 it ( 요일 )", "비인칭주어 it ( 거리 )", "비인칭주어 it ( 시간 )", "비인칭주어 it ( 계절 )", "비인칭주어 it ( 명암 )");
 const IMPERSONAL_SUBJECT_E = new Array("It is July 30th.", "It is sunny.", "It is Sunday.", "It is far.", "It is 7 o’clock.", "It is winter.", "It is dark.");
+const PRONOUN_PERSONAL_SUBJECTIVE_3K = new Array("나", "너", "그", "그녀", "그것", "우리", "너희들", "그들", "그것들");
 const PRONOUN_PERSONAL_SUBJECTIVE_2K = new Array("내가", "네가", "그가", "그녀가", "그것이", "우리들이", "너희들이", "그들이", "그것들이");
 const PRONOUN_PERSONAL_SUBJECTIVE_K = new Array("나는, 내가", "너는, 네가", "그는, 그가", "그녀는, 그녀가", "그것은, 그것이", "우리들은, 우리들이", "너희들은, 너희들이", "그들은, 그들이", "그것들은, 그것들이");
 const PRONOUN_PERSONAL_SUBJECTIVE_E = new Array("I", "You", "He", "She", "It", "We", "You", "They", "They");
+const PRONOUN_PERSONAL_SUBJECTIVE_SMALL_E = new Array("I", "you", "he", "she", "it", "we", "you", "they", "they");
 const PRONOUN_PERSONAL_SUBJECTIVE_WITH_BE_K = new Array("나는, 내가 ~이다", "너는, 네가 ~이다", "그는, 그가 ~이다", "그녀는, 그녀가 ~이다", "그것은, 그것이 ~이다", "우리들은, 우리들이 ~이다", "너희들은, 너희들이 ~이다", "그들은, 그들이 ~이다", "그것들은, 그것들이 ~이다");
 const PRONOUN_PERSONAL_SUBJECTIVE_WITH_BE_E = new Array("I am", "You are", "He is", "She is", "It is", "We are", "You are", "They are", "They are");
 const PRONOUN_PERSONAL_POSSESSIVE_K = new Array();
@@ -379,7 +381,7 @@ const PRONOUN_PERSONAL_POSSESSIVE_2E = new Array("my", "your", "his", "her", "it
 const PRONOUN_PERSONAL_POSSESSIVE_PRONOUN_K = new Array("나의 것, 내꺼", "너의, 니꺼", "그의 것", "그녀의 것", "그것의 것", "우리들의 것", "너희들의 것", "그들의 것", "그것들의 것");
 const PRONOUN_PERSONAL_POSSESSIVE_PRONOUN_E = new Array("mine", "yours", "his", "hers", "its", "ours", "yours", "theirs", "theirs");
 const PRONOUN_PERSONAL_OBJECTIVE_K = new Array("나를, 나에게", "너를, 너에게", "그를, 그에게", "그녀를, 그녀에게", "그것을, 그것에게", "우리들을, 우리들에게", "너희들을, 너희들에게", "그들을, 그들에게");
-const PRONOUN_PERSONAL_OBJECTIVE_E = new Array("me", "you", "him", "her", "it", "us", "you", "them");
+const PRONOUN_PERSONAL_OBJECTIVE_E = new Array("me", "you", "him", "her", "it", "us", "you", "them" , "them");
 const PRONOUN_PERSONAL_ALL_K = new Array();
 const PRONOUN_PERSONAL_ALL_E = new Array();
 const PRONOUN_QUESTION_ANSWER_K = new Array("I 로 물어보면?", "You 로 물어보면?", "We 로 물어보면?", "He 는?", "She 는?", "It 는?", "They 는?");
@@ -575,8 +577,10 @@ const INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_K = new Array("말할 필요�
 const INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_E = new Array("needless to say","not to mention","not to speak of","so to speak","strange to say","to begin with","to be frank","to be sure","to make a long story short","to make matters worse","to tell the truth");
 
 const COMPARATIVE_K = new Array();
-const COMPARATIVE_POSITIVE_DEGREE_K = new Array();
-const COMPARATIVE_COMPARATIVE_DEGREE_K = new Array();
+const COMPARATIVE_ORIGINAL_K = new Array();
+const COMPARATIVE_COMPARATIVE_K = new Array();
+const COMPARATIVE_COMPARATIVE_RULE_K = new Array("① 보통은?","② e로 끝나면?","③ cvc는?","④ y앞에 자음이면?","⑤ y앞에 모음이면?","⑥ er/est말고 more/most?");
+const COMPARATIVE_COMPARATIVE_RULE_E = new Array("형부er/the 형부est","r/st","cer/cest","y-kill -ier/iest","그냥 er/est","대부분의 3음절, -풀 –어블 –리스 –어스 –이브 –잉 -ful -ble -less -ous –ive -ing 등으로 끝날 때");
 const COMPARATIVE_SUPERATIVE_K = new Array();
 
 
@@ -1689,6 +1693,24 @@ function function1517() {
   let valueNumber = Math.floor(Math.random() * INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_K.length);
   let kWord = INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_K[valueNumber];
   let eWord = INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1602 COMPARATIVE_ORIGINAL_K
+function function1602() {
+  let valueNumber = Math.floor(Math.random() * adjective1personK.length);
+  let valueNumber2 = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_3K.length);
+  let valueNumber3 = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_3K.length);
+  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_2K[valueNumber3] + " "+ PRONOUN_PERSONAL_SUBJECTIVE_3K[valueNumber2] + "만큼 "+ adjective1personK[valueNumber]+ "다";
+  let eWord = PRONOUN_PERSONAL_SUBJECTIVE_WITH_BE_E[valueNumber3] + " as "+ adjective1personE[valueNumber] + " as " + PRONOUN_PERSONAL_OBJECTIVE_E[valueNumber2];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1605 COMPARATIVE_COMPARATIVE_RULE_K
+function function1605() {
+  let valueNumber = Math.floor(Math.random() * COMPARATIVE_COMPARATIVE_RULE_K.length);
+  let kWord = COMPARATIVE_COMPARATIVE_RULE_K[valueNumber];
+  let eWord = COMPARATIVE_COMPARATIVE_RULE_E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }

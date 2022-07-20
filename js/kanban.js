@@ -381,7 +381,7 @@ const PRONOUN_PERSONAL_POSSESSIVE_2E = new Array("my", "your", "his", "her", "it
 const PRONOUN_PERSONAL_POSSESSIVE_PRONOUN_K = new Array("나의 것, 내꺼", "너의, 니꺼", "그의 것", "그녀의 것", "그것의 것", "우리들의 것", "너희들의 것", "그들의 것", "그것들의 것");
 const PRONOUN_PERSONAL_POSSESSIVE_PRONOUN_E = new Array("mine", "yours", "his", "hers", "its", "ours", "yours", "theirs", "theirs");
 const PRONOUN_PERSONAL_OBJECTIVE_K = new Array("나를, 나에게", "너를, 너에게", "그를, 그에게", "그녀를, 그녀에게", "그것을, 그것에게", "우리들을, 우리들에게", "너희들을, 너희들에게", "그들을, 그들에게");
-const PRONOUN_PERSONAL_OBJECTIVE_E = new Array("me", "you", "him", "her", "it", "us", "you", "them" , "them");
+const PRONOUN_PERSONAL_OBJECTIVE_E = new Array("me", "you", "him", "her", "it", "us", "you", "them", "them");
 const PRONOUN_PERSONAL_ALL_K = new Array();
 const PRONOUN_PERSONAL_ALL_E = new Array();
 const PRONOUN_QUESTION_ANSWER_K = new Array("I 로 물어보면?", "You 로 물어보면?", "We 로 물어보면?", "He 는?", "She 는?", "It 는?", "They 는?");
@@ -535,16 +535,16 @@ const PASSIVE_K = new Array();
 const PASSIVE_SENTENCE_K = new Array();
 const PASSIVE_TENSE_K = new Array();
 const PASSIVE_NO_OBJECTIVE_K = new Array();
-const PASSIVE_IDIOMATIC_PREP_K = new Array("로서 알려져 있다","로 유명하다","에게 알려져 있다","로 가득 차 있다","로 덮여 있다","로 붐비다","에 흥미가 있다","에 대해 기뻐하다","에 만족하다","에 실망하다","에 진저리가 나다");
-const PASSIVE_IDIOMATIC_PREP_E = new Array("be known as ","be known for ","be known to ","be filled with ","be covered with ","be crowded with ","be interested in ","be pleased with/about ","be satisfied with ","be disappointed with/at/in ","be fed up with ");
-const PASSIVE_IDIOMATIC_PREP_2K = new Array("로 만들어지다","로 만들어지다","로 만들어지다","에 놀라다","에 대해 들뜨다","에 대해 걱정하다","와 관련되어있다","로 구성되어있다","에 기초하다");
-const PASSIVE_IDIOMATIC_PREP_2E = new Array("be made from ","be made (out) of ","be made into ","be surprised at/by ","be excited about ","be worried/concerned about ","be involved in ","be composed of ","be based on ");
+const PASSIVE_IDIOMATIC_PREP_K = new Array("로서 알려져 있다", "로 유명하다", "에게 알려져 있다", "로 가득 차 있다", "로 덮여 있다", "로 붐비다", "에 흥미가 있다", "에 대해 기뻐하다", "에 만족하다", "에 실망하다", "에 진저리가 나다");
+const PASSIVE_IDIOMATIC_PREP_E = new Array("be known as ", "be known for ", "be known to ", "be filled with ", "be covered with ", "be crowded with ", "be interested in ", "be pleased with/about ", "be satisfied with ", "be disappointed with/at/in ", "be fed up with ");
+const PASSIVE_IDIOMATIC_PREP_2K = new Array("로 만들어지다", "로 만들어지다", "로 만들어지다", "에 놀라다", "에 대해 들뜨다", "에 대해 걱정하다", "와 관련되어있다", "로 구성되어있다", "에 기초하다");
+const PASSIVE_IDIOMATIC_PREP_2E = new Array("be made from ", "be made (out) of ", "be made into ", "be surprised at/by ", "be excited about ", "be worried/concerned about ", "be involved in ", "be composed of ", "be based on ");
 const PASSIVE_SENTENCE_PATTERN_K = new Array();
 const PASSIVE_SENTENCE_PATTERN_4TH_K = new Array();
 const PASSIVE_SENTENCE_PATTERN_5TH_K = new Array();
 const VERB_NOT_PASSIVE_K = new Array();
-const PASSIVE_VERB_PHRASE_K = new Array("을 따라잡다","을 수행하다","을 없애다","을 돌보다","을 돌보다","을 업신여기다","을 비웃다","(차로) 태워오다","을 참다","(차가) 을 치다","을 칭찬(험담)하다","을 이용하다","을 켜다(끄다)");
-const PASSIVE_VERB_PHRASE_E = new Array("catch up with ","carry out ","do away with ","look after ","take care of ","look down on ","laugh at ","pick up","put up with ","run over ","speak well(ill) of ","take advantage of ","turn on(off) ");
+const PASSIVE_VERB_PHRASE_K = new Array("을 따라잡다", "을 수행하다", "을 없애다", "을 돌보다", "을 돌보다", "을 업신여기다", "을 비웃다", "(차로) 태워오다", "을 참다", "(차가) 을 치다", "을 칭찬(험담)하다", "을 이용하다", "을 켜다(끄다)");
+const PASSIVE_VERB_PHRASE_E = new Array("catch up with ", "carry out ", "do away with ", "look after ", "take care of ", "look down on ", "laugh at ", "pick up", "put up with ", "run over ", "speak well(ill) of ", "take advantage of ", "turn on(off) ");
 const PASSIVE_THAT_CLAUSE_OBJECT_K = new Array();
 
 const INFINITIVE_K = new Array();
@@ -552,13 +552,13 @@ const TO_INFINITIVE_VS_TO_PREPOSITION_K = new Array();
 const TO_INFINITIVE_AS_NOUN_K = new Array("행동하는 것", "조언하는 것", "동의하는 것", "도착하는 것", "묻는 것", "굽는 것", "시작하는 것", "믿는 것", "깨뜨리는 것", "타는 것", "보살피는 것", "바꾸는 것", "확인하는 것", "선택하는 것", "오르는 것", "오는 것", "요리하는 것", "복사하는 것", "건너는 것", "우는 것", "자르는 것", "춤추는 것", "결정하는 것", "죽는 것", "하는 것", "그리는 것", "꿈꾸는 것", "마시는 것");
 const TO_INFINITIVE_AS_NOUN_E = new Array("to act", "to advise", "to agree", "to arrive", "to ask", "to bake", "to begin", "to believe", "to break", "to burn", "to care", "to change", "to check", "to choose", "to climb", "to come", "to cook", "to copy", "to cross", "to cry", "to cut", "to dance", "to decide", "to die", "to do", "to draw", "to dream", "to drink");
 const TO_INFINITIVE_AS_NOUN_IT_TO_K = new Array();
-const TO_INFINITIVE_AS_NOUN_INTERROGATIVE_K = new Array("누구를 ~할지","무엇을 ~할지","어디서 ~할지","언제 ~할지","어떻게 ~할지","어느것을 ~할지");
-const TO_INFINITIVE_AS_NOUN_INTERROGATIVE_E = new Array("who(m) to부정사","what to부정사","where to부정사","when to부정사","how to부정사","which to부정사");
-const TO_INFINITIVE_AS_NOUN_INTERROGATIVE_2K = new Array("누구를 ","무엇을 ","어디서 ","언제 ","어떻게 ","어느 것을 ");
-const TO_INFINITIVE_AS_NOUN_INTERROGATIVE_2E = new Array("who(m) to","what to","where to","when to","how to","which to");
+const TO_INFINITIVE_AS_NOUN_INTERROGATIVE_K = new Array("누구를 ~할지", "무엇을 ~할지", "어디서 ~할지", "언제 ~할지", "어떻게 ~할지", "어느것을 ~할지");
+const TO_INFINITIVE_AS_NOUN_INTERROGATIVE_E = new Array("who(m) to부정사", "what to부정사", "where to부정사", "when to부정사", "how to부정사", "which to부정사");
+const TO_INFINITIVE_AS_NOUN_INTERROGATIVE_2K = new Array("누구를 ", "무엇을 ", "어디서 ", "언제 ", "어떻게 ", "어느 것을 ");
+const TO_INFINITIVE_AS_NOUN_INTERROGATIVE_2E = new Array("who(m) to", "what to", "where to", "when to", "how to", "which to");
 const TO_INFINITIVE_AS_ADJECTIVE_K = new Array();
-const TO_INFINITIVE_AS_ADVERB_K = new Array("목적","감정 ","판단 ","결과","형용사 수식");
-const TO_INFINITIVE_AS_ADVERB_E = new Array("~하기 위해","~해서","~하는 걸 보니","~해서 ~하다","~하기에");
+const TO_INFINITIVE_AS_ADVERB_K = new Array("목적", "감정 ", "판단 ", "결과", "형용사 수식");
+const TO_INFINITIVE_AS_ADVERB_E = new Array("~하기 위해", "~해서", "~하는 걸 보니", "~해서 ~하다", "~하기에");
 const TO_INFINITIVE_AS_ADVERB_2K = new Array();
 const TO_INFINITIVE_AS_ADVERB_2E = new Array();
 const INFINITIVE_USAGE_K = new Array();
@@ -569,19 +569,21 @@ const INFINITIVE_NEGATIVE_SENSE_SUBJECT_TENSE_K = new Array();
 const INFINITIVE_VERB_WITH_TO_K = new Array();
 const INFINITIVE_COMPLEMENT_K = new Array();
 const INFINITIVE_COMPLEMENT_2K = new Array();
-const INFINITIVE_BE_TO_K = new Array("예정","의무","가능","운명","의도");
-const INFINITIVE_BE_TO_E = new Array("~할 예정이다","~해야 한다","~할 수 있다","~할 운명이다","~하려 하다");
-const INFINITIVE_BE_TO_2K = new Array("예정 (~할 예정이다)","의무 (~해야 한다)","가능 (~할 수 있다)","운명 (~할 운명이다)","의도 (~하려 하다)");
-const INFINITIVE_BE_TO_2E = new Array("will, be going to","should, have to","can, be able to","be destined to","intend to");
-const INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_K = new Array("말할 필요도 없이","~은 말할 것도 없이","~은 말할 것도 없이","말하자면","이상한 이야기지만","우선, 먼저","솔직히 말하면","확실히","간단히 말하면","설상가상으로","사실대로 말하면");
-const INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_E = new Array("needless to say","not to mention","not to speak of","so to speak","strange to say","to begin with","to be frank","to be sure","to make a long story short","to make matters worse","to tell the truth");
+const INFINITIVE_BE_TO_K = new Array("예정", "의무", "가능", "운명", "의도");
+const INFINITIVE_BE_TO_E = new Array("~할 예정이다", "~해야 한다", "~할 수 있다", "~할 운명이다", "~하려 하다");
+const INFINITIVE_BE_TO_2K = new Array("예정 (~할 예정이다)", "의무 (~해야 한다)", "가능 (~할 수 있다)", "운명 (~할 운명이다)", "의도 (~하려 하다)");
+const INFINITIVE_BE_TO_2E = new Array("will, be going to", "should, have to", "can, be able to", "be destined to", "intend to");
+const INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_K = new Array("말할 필요도 없이", "~은 말할 것도 없이", "~은 말할 것도 없이", "말하자면", "이상한 이야기지만", "우선, 먼저", "솔직히 말하면", "확실히", "간단히 말하면", "설상가상으로", "사실대로 말하면");
+const INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_E = new Array("needless to say", "not to mention", "not to speak of", "so to speak", "strange to say", "to begin with", "to be frank", "to be sure", "to make a long story short", "to make matters worse", "to tell the truth");
 
 const COMPARATIVE_K = new Array();
 const COMPARATIVE_ORIGINAL_K = new Array();
 const COMPARATIVE_COMPARATIVE_K = new Array();
-const COMPARATIVE_COMPARATIVE_RULE_K = new Array("① 보통은?","② e로 끝나면?","③ cvc는?","④ y앞에 자음이면?","⑤ y앞에 모음이면?","⑥ er/est말고 more/most?");
-const COMPARATIVE_COMPARATIVE_RULE_E = new Array("형부er/the 형부est","r/st","cer/cest","y-kill -ier/iest","그냥 er/est","대부분의 3음절, -풀 –어블 –리스 –어스 –이브 –잉 -ful -ble -less -ous –ive -ing 등으로 끝날 때");
+const COMPARATIVE_COMPARATIVE_RULE_K = new Array("① 보통은?", "② e로 끝나면?", "③ cvc는?", "④ y앞에 자음이면?", "⑤ y앞에 모음이면?", "⑥ er/est말고 more/most?");
+const COMPARATIVE_COMPARATIVE_RULE_E = new Array("형부er/the 형부est", "r/st", "cer/cest", "y-kill -ier/iest", "그냥 er/est", "대부분의 3음절, -풀 –어블 –리스 –어스 –이브 –잉 -ful -ble -less -ous –ive -ing 등으로 끝날 때");
 const COMPARATIVE_SUPERATIVE_K = new Array();
+const COMPARATIVE_COMPARATIVE_TO_NOT_THAN_K = new Array();
+const COMPARATIVE_COMPARATIVE_TO_NOT_THAN_E = new Array();
 
 
 const example = new Array();
@@ -730,7 +732,7 @@ function function0103() {
 function function0103more() {
   let valueNumber = Math.floor(Math.random() * function0103K.length);
   let valueNumber2 = Math.floor(Math.random() * noun3animalK.length);
-  let kWord = "하나의 " + noun3animalE[valueNumber] + " (" + noun3animalK[valueNumber]+ ")";
+  let kWord = "하나의 " + noun3animalE[valueNumber] + " (" + noun3animalK[valueNumber] + ")";
   let eWord = "a? an? 하나의 " + noun3animalK[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
@@ -742,7 +744,7 @@ let pluralE = new Array('s/es');
 function function0104() {
   let valueNumber = Math.floor(Math.random() * noun3animalE.length);
   let kWord = noun3animalK[valueNumber] + "들";
-  let eWord = noun3animalE[valueNumber] +"s? es?";
+  let eWord = noun3animalE[valueNumber] + "s? es?";
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
@@ -790,61 +792,62 @@ function function0108() {
   switch (chooseNumbers) {
     case 1:
       let valueNumber1 = Math.floor(Math.random() * uncountableNoun1K.length);
-      kWord = uncountableNoun1K[valueNumber1] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
-      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_E[chooseNumbers_1] +  " of " + uncountableNoun1E[valueNumber1];
+      kWord = uncountableNoun1K[valueNumber1] + " " + adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1];
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_E[chooseNumbers_1] + " of " + uncountableNoun1E[valueNumber1];
       document.getElementById("divRandom").innerText = kWord;
       document.getElementById("divRandom2").innerText = eWord;
       break;
     case 2:
       let valueNumber2 = Math.floor(Math.random() * uncountableNoun2K.length);
-      kWord = uncountableNoun2K[valueNumber2] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
-      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] +  " of " + uncountableNoun2E[valueNumber2];
+      kWord = uncountableNoun2K[valueNumber2] + " " + adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1];
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] + " of " + uncountableNoun2E[valueNumber2];
       document.getElementById("divRandom").innerText = kWord;
       document.getElementById("divRandom2").innerText = eWord;
       break;
     case 3:
       let valueNumber3 = Math.floor(Math.random() * uncountableNoun3K.length);
-      kWord = uncountableNoun3K[valueNumber3] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
-      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] +  " of " + uncountableNoun3E[valueNumber3];
+      kWord = uncountableNoun3K[valueNumber3] + " " + adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1];
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] + " of " + uncountableNoun3E[valueNumber3];
       document.getElementById("divRandom").innerText = kWord;
       document.getElementById("divRandom2").innerText = eWord;
       break;
     case 4:
       let valueNumber4 = Math.floor(Math.random() * uncountableNoun4K.length);
-      kWord = uncountableNoun4K[valueNumber4] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
-      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] +  " of " + uncountableNoun4E[valueNumber4];
+      kWord = uncountableNoun4K[valueNumber4] + " " + adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1];
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] + " of " + uncountableNoun4E[valueNumber4];
       document.getElementById("divRandom").innerText = kWord;
       document.getElementById("divRandom2").innerText = eWord;
       break;
     case 5:
       let valueNumber5 = Math.floor(Math.random() * uncountableNoun5K.length);
-      kWord = uncountableNoun5K[valueNumber5] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
-      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] +  " of " + uncountableNoun5E[valueNumber5];
+      kWord = uncountableNoun5K[valueNumber5] + " " + adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1];
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] + " of " + uncountableNoun5E[valueNumber5];
       document.getElementById("divRandom").innerText = kWord;
       document.getElementById("divRandom2").innerText = eWord;
       break;
     case 6:
       let valueNumber6 = Math.floor(Math.random() * uncountableNoun6K.length);
-      kWord = uncountableNoun6K[valueNumber6] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
-      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] +  " of " + uncountableNoun6E[valueNumber6];
+      kWord = uncountableNoun6K[valueNumber6] + " " + adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1];
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] + " of " + uncountableNoun6E[valueNumber6];
       document.getElementById("divRandom").innerText = kWord;
       document.getElementById("divRandom2").innerText = eWord;
       break;
     case 7:
       let valueNumber7 = Math.floor(Math.random() * uncountableNoun7K.length);
-      kWord = uncountableNoun7K[valueNumber7] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
-      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] +  " of " + uncountableNoun7E[valueNumber7];
+      kWord = uncountableNoun7K[valueNumber7] + " " + adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1];
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] + " of " + uncountableNoun7E[valueNumber7];
       document.getElementById("divRandom").innerText = kWord;
       document.getElementById("divRandom2").innerText = eWord;
       break;
     case 8:
       let valueNumber8 = Math.floor(Math.random() * uncountableNoun8K.length);
-      kWord = uncountableNoun8K[valueNumber8] + " " +  adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1] ;
-      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] +  " of " + uncountableNoun8E[valueNumber8];
+      kWord = uncountableNoun8K[valueNumber8] + " " + adjectiveCardinalOrdinal2K[chooseNumbers_1] + " " + chooseContainers_k[chooseNumbers_1];
+      eWord = adjectiveCardinalOrdinalE[chooseNumbers_1] + " " + chooseContainers_2E[chooseNumbers_1] + " of " + uncountableNoun8E[valueNumber8];
       document.getElementById("divRandom").innerText = kWord;
       document.getElementById("divRandom2").innerText = eWord;
       break;
-  }}
+  }
+}
 
 //0303 수량 형용사
 function function0303() {
@@ -1633,7 +1636,7 @@ function function1505v2() {
   let valueNumber = Math.floor(Math.random() * TO_INFINITIVE_AS_NOUN_INTERROGATIVE_2K.length);
   let valueNumber2 = Math.floor(Math.random() * VERB_SENTENCE_FORM_1_K.length);
   let kWord = TO_INFINITIVE_AS_NOUN_INTERROGATIVE_2K[valueNumber] + VERB_SENTENCE_FORM_1_K[valueNumber2] + "할지";
-  let eWord = TO_INFINITIVE_AS_NOUN_INTERROGATIVE_2E[valueNumber] +" " + VERB_SENTENCE_FORM_1_E[valueNumber2];
+  let eWord = TO_INFINITIVE_AS_NOUN_INTERROGATIVE_2E[valueNumber] + " " + VERB_SENTENCE_FORM_1_E[valueNumber2];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
@@ -1650,8 +1653,8 @@ function function1507() {
 function function1508() {
   let valueNumber = Math.floor(Math.random() * adjective1personK.length);
   let valueNumber2 = Math.floor(Math.random() * VERB_SENTENCE_FORM_1_K.length);
-  let kWord = VERB_SENTENCE_FORM_1_K[valueNumber2] +" "+ adjective1personK[valueNumber];
-  let eWord = adjective1personE[valueNumber] +" to " + VERB_SENTENCE_FORM_1_E[valueNumber2];
+  let kWord = VERB_SENTENCE_FORM_1_K[valueNumber2] + " " + adjective1personK[valueNumber];
+  let eWord = adjective1personE[valueNumber] + " to " + VERB_SENTENCE_FORM_1_E[valueNumber2];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
@@ -1701,8 +1704,8 @@ function function1602() {
   let valueNumber = Math.floor(Math.random() * adjective1personK.length);
   let valueNumber2 = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_3K.length);
   let valueNumber3 = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_3K.length);
-  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_2K[valueNumber3] + " "+ PRONOUN_PERSONAL_SUBJECTIVE_3K[valueNumber2] + "만큼 "+ adjective1personK[valueNumber]+ "다";
-  let eWord = PRONOUN_PERSONAL_SUBJECTIVE_WITH_BE_E[valueNumber3] + " as "+ adjective1personE[valueNumber] + " as " + PRONOUN_PERSONAL_OBJECTIVE_E[valueNumber2];
+  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_2K[valueNumber3] + " " + PRONOUN_PERSONAL_SUBJECTIVE_3K[valueNumber2] + "만큼 " + adjective1personK[valueNumber] + "다";
+  let eWord = PRONOUN_PERSONAL_SUBJECTIVE_WITH_BE_E[valueNumber3] + " as " + adjective1personE[valueNumber] + " as " + PRONOUN_PERSONAL_OBJECTIVE_E[valueNumber2];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }

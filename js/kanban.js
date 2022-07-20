@@ -579,11 +579,122 @@ const INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_E = new Array("needless to say
 const COMPARATIVE_K = new Array();
 const COMPARATIVE_ORIGINAL_K = new Array();
 const COMPARATIVE_COMPARATIVE_K = new Array();
+const COMPARATIVE_SUPERATIVE_K = new Array();
 const COMPARATIVE_COMPARATIVE_RULE_K = new Array("① 보통은?", "② e로 끝나면?", "③ cvc는?", "④ y앞에 자음이면?", "⑤ y앞에 모음이면?", "⑥ er/est말고 more/most?");
 const COMPARATIVE_COMPARATIVE_RULE_E = new Array("형부er/the 형부est", "r/st", "cer/cest", "y-kill -ier/iest", "그냥 er/est", "대부분의 3음절, -풀 –어블 –리스 –어스 –이브 –잉 -ful -ble -less -ous –ive -ing 등으로 끝날 때");
-const COMPARATIVE_SUPERATIVE_K = new Array();
-const COMPARATIVE_COMPARATIVE_TO_NOT_THAN_K = new Array();
-const COMPARATIVE_COMPARATIVE_TO_NOT_THAN_E = new Array();
+const COMPARATIVE_COMPARATIVE_IRREGULAR_K = new Array("-better-best", "-better-best", "-worse-worst", "-worse-worst", "-more-most", "-more-most", "-less-least");
+const COMPARATIVE_COMPARATIVE_IRREGULAR_E = new Array("good", "well", "bad(ly)", "ill", "many", "much", "little");
+const COMPARATIVE_COMPARATIVE_IRREGULAR_2K = new Array("good-__________-best", "well-__________-best", "bad(ly)-__________-worst", "ill-__________-worst", "many-__________-most", "much-__________-most", "little-__________-least");
+const COMPARATIVE_COMPARATIVE_IRREGULAR_2E = new Array("better", "better", "worse", "worse", "more", "more", "less");
+const COMPARATIVE_COMPARATIVE_IRREGULAR_3K = new Array("good-better-", "well-better-", "bad(ly)-worse-", "ill-worse-", "many-more-", "much-more-", "little-less-");
+const COMPARATIVE_COMPARATIVE_IRREGULAR_3E = new Array("best", "best", "worst", "worst", "most", "most", "least");
+const COMPARATIVE_COMPARATIVE_IRREGULAR_4K = new Array("낡은", "손위", "거리", "정도", "시간", "순서");
+const COMPARATIVE_COMPARATIVE_IRREGULAR_4E = new Array("old-older-oldest", "old-elder-eldest", "far-farther-farthest", "far-further-furthest", "late-later-latest", "late-latter-last");
+const COMPARATIVE_IDIOMATIC_EXPRESSION_K = new Array("~하면 할수록, 더욱 ~한", "점점 더 ~한", "점점 더 ~한", "점점 더 ~한");
+const COMPARATIVE_IDIOMATIC_EXPRESSION_E = new Array("The 비교급 S+V, the 비교급 S+V", "get 비교급 and 비교급", "비교급 and 비교급", "more and more 원급");
+const COMPARATIVE_COMPARATIVE_TO_NOT_THAN_K = new Array("~보다 나은", "~보다 열등한", "~보다 앞선", "~보다 어린", "~보다 손위인");
+const COMPARATIVE_COMPARATIVE_TO_NOT_THAN_E = new Array("superior to ", "inferior to ", "prior to ", "junior to ", "senior to ");
+
+const RELATIVES_K = new Array();
+const RELATIVE_PRONOUN_USAGE_K = new Array();
+const RELATIVE_PRONOUN_WHO_WHICH_THAT_K = new Array();
+const RELATIVE_PRONOUN_THAT_K = new Array();
+const RELATIVE_PRONOUN_WHAT_K = new Array();
+const RELATIVE_PRONOUN_OMIT_K = new Array();
+const DEFINING_RELATIVE_CLAUSE_K = new Array();
+const RELATIVE_PRONOUN_WITH_PREP_K = new Array();
+const RELATIVE_ADVERB_K = new Array();
+const DEFINING_RELATIVE_CLAUSE_2K = new Array();
+const RELATIVE_ADVERB_ANTECEDENT_K = new Array();
+const COMPOUND_RELATIVE_PRONOUN_K = new Array();
+const COMPOUND_RELATIVE_PRONOUN_2K = new Array();
+const COMPOUND_RELATIVE_ADVERB_K = new Array();
+const COMPOUND_RELATIVES_K = new Array();
+
+const SUBJUNCTIVE_K = new Array();
+const SUBJUNCTIVE_PAST_K = new Array();
+const SUBJUNCTIVE_PAST_PERFECT_K = new Array();
+const SUBJUNCTIVE_I_WISH_K = new Array("좋을텐데", "~라면 좋을텐데", "~했다면 좋을텐데");
+const SUBJUNCTIVE_I_WISH_E = new Array("I wish ", "I wish S 과거", "I wish S 과거 완료");
+const SUBJUNCTIVE_AS_IF_K = new Array("마치 ~인 것처럼", "마치 ~였던 것처럼");
+const SUBJUNCTIVE_AS_IF_E = new Array("as if S 과거", "as if S 과거 완료");
+const SUBJUNCTIVE_MIXED_K = new Array("- (과거) ~했더라면, (현재) ~할 텐데");
+const SUBJUNCTIVE_MIXED_E = new Array("If S had p.p., S 우슈쿠마 동사원형");
+const SUBJUNCTIVE_PRESENT_K = new Array("만약 ~라면, ~한다", "만약 ~라면, ~할 수 있다", "만약 ~라면, ~할 지도 모른다");
+const SUBJUNCTIVE_PRESENT_E = new Array("If S 현재, S will 동사원형", "If S 현재, S can 동사원형", "If S 현재, S may 동사원형");
+const SUBJUNCTIVE_FUTURE_K = new Array("만약 ~라면, ~할 것이다");
+const SUBJUNCTIVE_FUTURE_E = new Array("If S should 동사원형, S V");
+const SUBJUNCTIVE_OTHERS_K = new Array("if 생략", "A가 없다면", "A가 없었다면", "~할 때이다");
+const SUBJUNCTIVE_OTHERS_E = new Array("의문문 순서로 = were, should, had를 맨 앞", "without A = but for A = were it not for A = if it were not for A", "without A = but for A = had it not been for A = if it had not been for A", "It’s time that S 과거 / 슈 동사원형 ");
+
+const INTERROGATIVE_K = new Array("누구", "무엇(뭐)", "어디", "언제", "왜", "어떻게");
+const INTERROGATIVE_E = new Array("Who", "What", "Where ", "When", "Why ", "How");
+const INTERROGATIVE_USAGE_K = new Array("be/조동사로 시작", "Wh-로 시작");
+const INTERROGATIVE_USAGE_E = new Array("Yes/No로 대답한다", "Yes/No로 대답하지 않는다");
+const INTERROGATIVE_PRONOUN_K = new Array("사람/신분 물어볼 때", "사물/직업 물어볼 때", "선택하는 질문 할 때", "무슨? 어느?");
+const INTERROGATIVE_PRONOUN_E = new Array("who", "what", "which", "what/which 명사");
+const INTERROGATIVE_ADVERB_K = new Array("장소를 물어볼 때", "날짜/시간 물어볼 때", "이유를 물어볼 때", "~하는 게 어때?");
+const INTERROGATIVE_ADVERB_E = new Array("where", "when", "why", "Why don’t you 동사원형?");
+const INTERROGATIVE_HOW_K = new Array("어떤? 어떻게? 얼마나?", "몇 살?", "얼마나 많이? (몇개)", "얼마나 많이? (가격)", "얼마나 자주?", "얼마나 멀리? (거리)", "얼마나 오래?", "얼마나 긴? (기간/길이)", "얼마나 큰지?", "얼마나 키가큰지?");
+const INTERROGATIVE_HOW_E = new Array("How", "How old ?", "How many ?", "How much ?", "How often ?", "How far ? ", "How long ?", "How long ?", "How big ?", "How tall ?");
+const INTERROGATIVE_ALTERNATIVE_NEGATIVE_K = new Array();
+const TAG_QUESTION_K = new Array("그렇지? 그렇지 않니?", "명령문, 그렇지?", "청유문(Let's~), 그렇지?", "I am ~, 그렇지?");
+const TAG_QUESTION_E = new Array(", (조)동사 + 대명사?", ", will you?", ", shall we?", ", aren’t I?");
+const INDIRECT_QUESTION_K = new Array("의문사O 간접의문문", "의문사X 간접의문문");
+const INDIRECT_QUESTION_E = new Array("의문사 S V", "if/whether S V");
+const INTERROGATIVE_WHAT_HOW_K = new Array("직업", "첫 만남", "날씨", "날씨", "성격", "외모", "외모", "요일", "날짜", "안부");
+const INTERROGATIVE_WHAT_HOW_E = new Array("What do you do? ", "How do you do?", "How’s the weather?", "What’s the weather like?", "What’s he like?", "What does he look like?", "How does he look?", "What day is it today?", "What date is it today?", "How is he? How are you?");
+
+const AGREEMENT_K = new Array();
+const AGREEMENT_E = new Array();
+const AGREEMENT_ON_NUMBER_K = new Array("① every/each/thing/body/one", "② 학문 ics, 국가 단체 질병 s로 끝", "③ 거금무시(거리 금액 무게 시간) 명사", "④ A and B가 한 가지 사물", "⑤ 동명사구/부정사구 주어", "⑥ The number of 복명 단동 ~의 수", "① 쌍을 이루는 명사 – scissors, glasses", "② The 형용사 = 형용사 people = ~한 사람들", "③ a number of 복명 복동 – 많은");
+const AGREEMENT_ON_NUMBER_E = new Array("단수 주어 ", "단수 주어 ", "단수 주어 ", "단수 주어 ", "단수 주어 ", "단수 주어 ", "복수 주어", "복수 주어", "복수 주어");
+const AGREEMENT_ON_NUMBER_2K = new Array("부분 of 단명 - 단동?복동?", "부분 of 복명 - 단동?복동?", "most all some half percent 분수 of 단명  - 단동?복동?", "most all some half percent 분수 of 복명  - 단동?복동?", "all (the) 단명  ", "all (the) 복명 ", "all (the) 복명 복동");
+const AGREEMENT_ON_NUMBER_2E = new Array("단동", "복동", "단동", "복동", "단동", "복동", "단수 주어");
+const AGREEMENT_ON_NUMBER_3E = new Array("A B 둘 중 하나", "A B 둘 다 아닌", "A가 아니라 B", "A뿐만 아니라 B도", "A뿐만 아니라 B도");
+const AGREEMENT_ON_NUMBER_3K = new Array("either A or B", "neither A nor B", "not A but B", "not only A but (also) B", "B as well as A");
+const AGREEMENT_TENSE_K = new Array("주절이 현재 > 종속절의 시제는?", "주절이 과거 > 종속절의 시제는? ", "진리, 격언, 과학적 사실, 현재 상태, 습관", "과거 사건, 역사적 사실");
+const AGREEMENT_TENSE_E = new Array("종속절 아무 시제 가능", "과거/과거진행/과거완료만 가능", "항상 현재 시제", "항상 과거");
+
+const SPEECH_K = new Array("말을 전달하는 방법 2가지");
+const SPEECH_E = new Array("직접 화법, 간접 화법");
+const SPEECH_QUOTED_REPORTED_K = new Array("say 를 간접화법으로", "say to 를 간접화법으로", "② 쉼표따옴표 ( , “ ” )", "③ 시제, 인칭대명사, 지시어, 부사(구) 일치");
+const SPEECH_QUOTED_REPORTED_E = new Array("say", "tell", "( that ) S V", "③ 시제, 인칭대명사, 지시어, 부사(구) 일치");
+const SPEECH_ADVERB_PHRASE_K = new Array("ago ", "this ", "these ", "here ", "today ", "now ", "next ", "tomorrow ", "yesterday ", "last week", "last month", "last year");
+const SPEECH_ADVERB_PHRASE_E = new Array("before", "that", "those", "there", "that day", "then, at that time", "the following", "the next day, the following day ", "the day before, the previous day", "the previous week", "the previous month", "the previous year");
+const SPEECH_INTERROGATIVE_K = new Array("의문문의 say (to) 간접 화법으로", "의문사 X 의문문의 쉼따 (,“ ”) 간접 화법으로", "의문사 O 의문문의 쉼따 (,“ ”) 간접 화법으로", "③ 시제, 인칭대명사, 지시어, 부사(구) 일치");
+const SPEECH_INTERROGATIVE_E = new Array("ask", "if/whether S V", "의문사 SV", "시인지부 일치");
+const SPEECH_IMPERATIVE_K = new Array("명령문의 명령하는 의미의 say (to) 간접화법으로", "명령문의 부탁하는 의미의 say (to) 간접화법으로", "명령문의 충고하는 의미의 say (to) 간접화법으로", "명령문의 쉼따 (,“ ”) 간접화법으로", "③ 시제, 인칭대명사, 지시어, 부사(구) 일치");
+const SPEECH_IMPERATIVE_E = new Array("ask / beg / request", "advise", "(not) to 부정사", "시인지부 일치");
+const SPEECH_MINDMAP_K = new Array();
+
+const SPECIAL_SYNTAX_K = new Array();
+const SPECIAL_SYNTAX_EMPHASIS_K = new Array();
+const SPECIAL_SYNTAX_IT_THAT_K = new Array();
+const SPECIAL_SYNTAX_INVERSION_K = new Array();
+const SPECIAL_SYNTAX_SO_NEITHER_K = new Array();
+const SPECIAL_SYNTAX_OMIT_K = new Array();
+const SPECIAL_SYNTAX_INANIMATES_SUBJECT_K = new Array();
+
+const SENTENCE_BASIC_K = new Array();
+const SENTENCE_BASIC_2K = new Array();
+const SENTENCE_EXTENDED_K = new Array();
+const SENTENCE_TYPE_K = new Array();
+const EXCLAMATORY_K = new Array();
+const EXCLAMATORY_SOLUTION_K = new Array();
+const SENTENCE_IMPERATIVE_K = new Array();
+const SENTENCE_SUGGESTION_K = new Array();
+
+const SENTENCE_ELEMENTS_K = new Array();
+const SENTENCE_PATTERN_K = new Array();
+const SENTENCE_PATTERN_2K = new Array();
+const SENTENCE_THERE_BE_K = new Array();
+const SENTENCE_PATTERN_1_2_3_K = new Array();
+const SENTENCE_PATTERN_4_K = new Array();
+const SENTENCE_PATTERN_5_K = new Array();
+const SENTENCE_PATTERN_5_2K = new Array();
+const SENTENCE_PATTERN_5_3K = new Array();
+
 
 
 const example = new Array();
@@ -1717,6 +1828,135 @@ function function1605() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
+//1606 COMPARATIVE_COMPARATIVE_IRREGULAR_K 1~3
+function function1606() {
+  let valueNumber = Math.floor(Math.random() * COMPARATIVE_COMPARATIVE_IRREGULAR_K.length);
+  let kWord = COMPARATIVE_COMPARATIVE_IRREGULAR_K[valueNumber];
+  let eWord = COMPARATIVE_COMPARATIVE_IRREGULAR_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+function function1606v2() {
+  let valueNumber = Math.floor(Math.random() * COMPARATIVE_COMPARATIVE_IRREGULAR_2K.length);
+  let kWord = COMPARATIVE_COMPARATIVE_IRREGULAR_2K[valueNumber];
+  let eWord = COMPARATIVE_COMPARATIVE_IRREGULAR_2E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+function function1606v3() {
+  let valueNumber = Math.floor(Math.random() * COMPARATIVE_COMPARATIVE_IRREGULAR_3K.length);
+  let kWord = COMPARATIVE_COMPARATIVE_IRREGULAR_3K[valueNumber];
+  let eWord = COMPARATIVE_COMPARATIVE_IRREGULAR_3E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+function function1606v4() {
+  let valueNumber = Math.floor(Math.random() * COMPARATIVE_COMPARATIVE_IRREGULAR_4K.length);
+  let kWord = COMPARATIVE_COMPARATIVE_IRREGULAR_4K[valueNumber];
+  let eWord = COMPARATIVE_COMPARATIVE_IRREGULAR_4E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+function function1607() {
+  let valueNumber = Math.floor(Math.random() * COMPARATIVE_IDIOMATIC_EXPRESSION_K.length);
+  let kWord = COMPARATIVE_IDIOMATIC_EXPRESSION_K[valueNumber];
+  let eWord = COMPARATIVE_IDIOMATIC_EXPRESSION_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+function function1609() {
+  let valueNumber = Math.floor(Math.random() * COMPARATIVE_COMPARATIVE_TO_NOT_THAN_K.length);
+  let kWord = COMPARATIVE_COMPARATIVE_TO_NOT_THAN_K[valueNumber];
+  let eWord = COMPARATIVE_COMPARATIVE_TO_NOT_THAN_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+
+
+RELATIVES_K
+RELATIVE_PRONOUN_USAGE_K
+RELATIVE_PRONOUN_WHO_WHICH_THAT_K
+RELATIVE_PRONOUN_THAT_K
+RELATIVE_PRONOUN_WHAT_K
+RELATIVE_PRONOUN_OMIT_K
+DEFINING_RELATIVE_CLAUSE_K
+RELATIVE_PRONOUN_WITH_PREP_K
+RELATIVE_ADVERB_K
+DEFINING_RELATIVE_CLAUSE_2K
+RELATIVE_ADVERB_ANTECEDENT_K
+COMPOUND_RELATIVE_PRONOUN_K
+COMPOUND_RELATIVE_PRONOUN_2K
+COMPOUND_RELATIVE_ADVERB_K
+COMPOUND_RELATIVES_K
+
+function function1801() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_K.length);
+  let kWord = SUBJUNCTIVE_K[valueNumber];
+  let eWord = SUBJUNCTIVE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+
+SUBJUNCTIVE_PAST_K
+SUBJUNCTIVE_PAST_PERFECT_K
+SUBJUNCTIVE_I_WISH_K
+SUBJUNCTIVE_AS_IF_K
+SUBJUNCTIVE_MIXED_K
+SUBJUNCTIVE_PRESENT_K
+SUBJUNCTIVE_FUTURE_K
+SUBJUNCTIVE_OTHERS_K
+
+INTERROGATIVE_K
+INTERROGATIVE_USAGE_K
+INTERROGATIVE_PRONOUN_K
+INTERROGATIVE_ADVERB_K
+INTERROGATIVE_HOW_K
+INTERROGATIVE_ALTERNATIVE_NEGATIVE_K
+TAG_QUESTION_K
+INDIRECT_QUESTION_K
+INTERROGATIVE_WHAT_HOW_K
+
+AGREEMENT_K
+AGREEMENT_ON_NUMBER_K
+AGREEMENT_ON_NUMBER_2K
+AGREEMENT_TENSE_K
+AGREEMENT_MINDMAP_K
+
+SPEECH_K
+SPEECH_QUOTED_REPORTED_K
+SPEECH_ADVERB_PHRASE_K
+SPEECH_INTERROGATIVE_K
+SPEECH_IMPERATIVE_K
+SPEECH_MINDMAP_K
+
+SPECIAL_SYNTAX_K
+SPECIAL_SYNTAX_EMPHASIS_K
+SPECIAL_SYNTAX_IT_THAT_K
+SPECIAL_SYNTAX_INVERSION_K
+SPECIAL_SYNTAX_SO_NEITHER_K
+SPECIAL_SYNTAX_OMIT_K
+SPECIAL_SYNTAX_INANIMATES_SUBJECT_K
+
+SENTENCE_BASIC_K
+SENTENCE_BASIC_2K
+SENTENCE_EXTENDED_K
+SENTENCE_TYPE_K
+EXCLAMATORY_K
+EXCLAMATORY_SOLUTION_K
+SENTENCE_IMPERATIVE_K
+SENTENCE_SUGGESTION_K
+
+SENTENCE_ELEMENTS_K
+SENTENCE_PATTERN_K
+SENTENCE_PATTERN_2K
+SENTENCE_THERE_BE_K
+SENTENCE_PATTERN_1_2_3_K
+SENTENCE_PATTERN_4_K
+SENTENCE_PATTERN_5_K
+SENTENCE_PATTERN_5_2K
+SENTENCE_PATTERN_5_3K
+
+
 
 //인칭대명사-소유격-인칭대명사
 function pronoun8() {

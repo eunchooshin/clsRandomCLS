@@ -669,10 +669,14 @@ const SPEECH_IMPERATIVE_E = new Array("ask / beg / request", "advise", "(not) to
 const SPEECH_MINDMAP_K = new Array();
 
 const SPECIAL_SYNTAX_K = new Array();
-const SPECIAL_SYNTAX_EMPHASIS_K = new Array();
-const SPECIAL_SYNTAX_IT_THAT_K = new Array();
-const SPECIAL_SYNTAX_INVERSION_K = new Array();
-const SPECIAL_SYNTAX_SO_NEITHER_K = new Array();
+const SPECIAL_SYNTAX_EMPHASIS_K = new Array("동사 강조","명사 강조","부정어 강조","의문사 강조","비교급 강조");
+const SPECIAL_SYNTAX_EMPHASIS_E = new Array("두더지 + 동사원형","the very 명사","not ~ at all, not ~ in the least","의문사 뒤에 on earth, in the world","even far still much, a lot (이머스마야 = 이파스마야)");
+const SPECIAL_SYNTAX_IT_THAT_K = new Array("동사 빼고 다 강조","명사 부사 강조","그건 바로 ~ 야!","it that의 의문사 강조");
+const SPECIAL_SYNTAX_IT_THAT_E = new Array("It ~ that","It ~ that","It ~ that","의문사 is/was it that");
+const SPECIAL_SYNTAX_INVERSION_K = new Array("방향/장소 부사(구)","There/Here","There/Here S가 대명사면 ","부정어(구) ");
+const SPECIAL_SYNTAX_INVERSION_E = new Array("부사(구) V S","There/Here V S","There/Here S V","부정어(구) 조동사 S V ");
+const SPECIAL_SYNTAX_SO_NEITHER_K = new Array("~도 그렇다 ","~도 안 그렇다");
+const SPECIAL_SYNTAX_SO_NEITHER_E = new Array("So V S","Neither V S ");
 const SPECIAL_SYNTAX_OMIT_K = new Array();
 const SPECIAL_SYNTAX_INANIMATES_SUBJECT_K = new Array();
 

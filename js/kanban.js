@@ -1893,13 +1893,7 @@ function function1609() {
 }
 
 
-function function1801() {
-  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_K.length);
-  let kWord = SUBJUNCTIVE_K[valueNumber];
-  let eWord = SUBJUNCTIVE_E[valueNumber];
-  document.getElementById("divRandom").innerText = kWord;
-  document.getElementById("divRandom2").innerText = eWord;
-}
+
 
 
 RELATIVES_K
@@ -1918,105 +1912,287 @@ COMPOUND_RELATIVE_PRONOUN_2K
 COMPOUND_RELATIVE_ADVERB_K
 COMPOUND_RELATIVES_K
 
-SUBJUNCTIVE_K         
-SUBJUNCTIVE_PAST_K        
-SUBJUNCTIVE_PAST_PERFECT_K        
-SUBJUNCTIVE_I_WISH_K        
-SUBJUNCTIVE_I_WISH_E        
-SUBJUNCTIVE_AS_IF_K         
-SUBJUNCTIVE_AS_IF_E         
-SUBJUNCTIVE_MIXED_K         
-SUBJUNCTIVE_MIXED_E         
-SUBJUNCTIVE_PRESENT_K       
-SUBJUNCTIVE_PRESENT_E       
-SUBJUNCTIVE_FUTURE_K        
-SUBJUNCTIVE_OTHERS_E        
+SUBJUNCTIVE_K
+function function1801() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_K.length);
+  let kWord = SUBJUNCTIVE_K[valueNumber];
+  let eWord = SUBJUNCTIVE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1802 SUBJUNCTIVE_PAST_K
+function function1802() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_PAST_K.length);
+  let kWord = SUBJUNCTIVE_PAST_K[valueNumber];
+  let eWord = SUBJUNCTIVE_PAST_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1803 SUBJUNCTIVE_PAST_PERFECT_K
+function function1803() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_PAST_PERFECT_K.length);
+  let kWord = SUBJUNCTIVE_PAST_PERFECT_K[valueNumber];
+  let eWord = SUBJUNCTIVE_PAST_PERFECT_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1804 SUBJUNCTIVE_I_WISH_K
+function function1804() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_I_WISH_K.length);
+  let kWord = SUBJUNCTIVE_I_WISH_K[valueNumber];
+  let eWord = SUBJUNCTIVE_I_WISH_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1805 SUBJUNCTIVE_AS_IF_K
+function function1804() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_AS_IF_K.length);
+  let kWord = SUBJUNCTIVE_AS_IF_K[valueNumber];
+  let eWord = SUBJUNCTIVE_AS_IF_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1806 SUBJUNCTIVE_MIXED_K
+function function1806() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_MIXED_K.length);
+  let kWord = SUBJUNCTIVE_MIXED_K[valueNumber];
+  let eWord = SUBJUNCTIVE_MIXED_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1807 SUBJUNCTIVE_MIXED_K
+function function1807() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_PRESENT_K.length);
+  let kWord = SUBJUNCTIVE_PRESENT_K[valueNumber];
+  let eWord = SUBJUNCTIVE_PRESENT_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1808 SUBJUNCTIVE_FUTURE_K
+function function1808() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_FUTURE_K.length);
+  let kWord = SUBJUNCTIVE_FUTURE_K[valueNumber];
+  let eWord = SUBJUNCTIVE_FUTURE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1809 SUBJUNCTIVE_OTHERS_K
+function function1809() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_OTHERS_K.length);
+  let kWord = SUBJUNCTIVE_OTHERS_K[valueNumber];
+  let eWord = SUBJUNCTIVE_OTHERS_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
 
-INTERROGATIVE_K           
-INTERROGATIVE_E           
-INTERROGATIVE_USAGE_K     
-INTERROGATIVE_USAGE_E     
-INTERROGATIVE_PRONOUN_K   
-INTERROGATIVE_PRONOUN_E   
-INTERROGATIVE_ADVERB_K    
-INTERROGATIVE_ADVERB_E    
-INTERROGATIVE_HOW_K       
-INTERROGATIVE_HOW_E       
-INTERROGATIVE_ALTERNATIVE_NEGATIVE_K            
-TAG_QUESTION_K            
-TAG_QUESTION_E            
-INDIRECT_QUESTION_K       
-INTERROGATIVE_WHAT_HOW_K  
-INTERROGATIVE_WHAT_HOW_E  
+//1901 INTERROGATIVE_K
+function function1901() {
+  let valueNumber = Math.floor(Math.random() * INTERROGATIVE_K.length);
+  let kWord = INTERROGATIVE_K[valueNumber];
+  let eWord = INTERROGATIVE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1902 INTERROGATIVE_USAGE_K
+function function1902() {
+  let valueNumber = Math.floor(Math.random() * INTERROGATIVE_USAGE_K.length);
+  let kWord = INTERROGATIVE_USAGE_K[valueNumber];
+  let eWord = INTERROGATIVE_USAGE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1903 INTERROGATIVE_PRONOUN_K
+function function1903() {
+  let valueNumber = Math.floor(Math.random() * INTERROGATIVE_PRONOUN_K.length);
+  let kWord = INTERROGATIVE_PRONOUN_K[valueNumber];
+  let eWord = INTERROGATIVE_PRONOUN_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1904 INTERROGATIVE_ADVERB_K
+function function1904() {
+  let valueNumber = Math.floor(Math.random() * INTERROGATIVE_ADVERB_K.length);
+  let kWord = INTERROGATIVE_ADVERB_K[valueNumber];
+  let eWord = INTERROGATIVE_ADVERB_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1905 INTERROGATIVE_HOW_K
+function function1905() {
+  let valueNumber = Math.floor(Math.random() * INTERROGATIVE_HOW_K.length);
+  let kWord = INTERROGATIVE_HOW_K[valueNumber];
+  let eWord = INTERROGATIVE_HOW_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1906 INTERROGATIVE_ALTERNATIVE_NEGATIVE_K
+function function1906() {
+  let valueNumber = Math.floor(Math.random() * INTERROGATIVE_ALTERNATIVE_NEGATIVE_K.length);
+  let kWord = INTERROGATIVE_ALTERNATIVE_NEGATIVE_K[valueNumber];
+  let eWord = INTERROGATIVE_ALTERNATIVE_NEGATIVE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1907 TAG_QUESTION_K
+function function1907() {
+  let valueNumber = Math.floor(Math.random() * TAG_QUESTION_K.length);
+  let kWord = TAG_QUESTION_K[valueNumber];
+  let eWord = TAG_QUESTION_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1908 INDIRECT_QUESTION_K
+function function1908() {
+  let valueNumber = Math.floor(Math.random() * INDIRECT_QUESTION_K.length);
+  let kWord = INDIRECT_QUESTION_K[valueNumber];
+  let eWord = INDIRECT_QUESTION_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1909 INTERROGATIVE_WHAT_HOW_K
+function function1909() {
+  let valueNumber = Math.floor(Math.random() * INTERROGATIVE_WHAT_HOW_K.length);
+  let kWord = INTERROGATIVE_WHAT_HOW_K[valueNumber];
+  let eWord = INTERROGATIVE_WHAT_HOW_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
 
-AGREEMENT_K       
-AGREEMENT_E       
-AGREEMENT_ON_NUMBER_K   
-AGREEMENT_ON_NUMBER_E   
-AGREEMENT_ON_NUMBER_2K  
-AGREEMENT_ON_NUMBER_2E  
-AGREEMENT_ON_NUMBER_3E  
-AGREEMENT_ON_NUMBER_3K  
-AGREEMENT_TENSE_K       
-AGREEMENT_TENSE_E       
+//2001 INTERROGATIVE_WHAT_HOW_K
+function function2001() {
+  let valueNumber = Math.floor(Math.random() * AGREEMENT_K.length);
+  let kWord = AGREEMENT_K[valueNumber];
+  let eWord = AGREEMENT_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//2002 AGREEMENT_ON_NUMBER_K
+function function2002() {
+  let valueNumber = Math.floor(Math.random() * AGREEMENT_ON_NUMBER_K.length);
+  let kWord = AGREEMENT_ON_NUMBER_K[valueNumber];
+  let eWord = AGREEMENT_ON_NUMBER_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//2003 AGREEMENT_ON_NUMBER_K
+function function2003() {
+  let valueNumber = Math.floor(Math.random() * AGREEMENT_ON_NUMBER_2K.length);
+  let kWord = AGREEMENT_ON_NUMBER_2K[valueNumber];
+  let eWord = AGREEMENT_ON_NUMBER_2E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//2004 AGREEMENT_ON_NUMBER_3E
+function function2004() {
+  let valueNumber = Math.floor(Math.random() * AGREEMENT_ON_NUMBER_3E.length);
+  let kWord = AGREEMENT_ON_NUMBER_3K[valueNumber];
+  let eWord = AGREEMENT_ON_NUMBER_3E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//2005 AGREEMENT_TENSE_K
+function function2005() {
+  let valueNumber = Math.floor(Math.random() * AGREEMENT_TENSE_K.length);
+  let kWord = AGREEMENT_TENSE_K[valueNumber];
+  let eWord = AGREEMENT_TENSE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//2101 SPEECH_K
+function function2101() {
+  let valueNumber = Math.floor(Math.random() * SPEECH_K.length);
+  let kWord = SPEECH_K[valueNumber];
+  let eWord = SPEECH_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//2102 SPEECH_QUOTED_REPORTED_K
+function function2102() {
+  let valueNumber = Math.floor(Math.random() * SPEECH_QUOTED_REPORTED_K.length);
+  let kWord = SPEECH_QUOTED_REPORTED_K[valueNumber];
+  let eWord = SPEECH_QUOTED_REPORTED_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//2103 SPEECH_ADVERB_PHRASE_K
+function function2103() {
+  let valueNumber = Math.floor(Math.random() * SPEECH_ADVERB_PHRASE_K.length);
+  let kWord = SPEECH_ADVERB_PHRASE_K[valueNumber];
+  let eWord = SPEECH_ADVERB_PHRASE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//2104 SPEECH_INTERROGATIVE_K
+function function2104() {
+  let valueNumber = Math.floor(Math.random() * SPEECH_INTERROGATIVE_K.length);
+  let kWord = SPEECH_INTERROGATIVE_K[valueNumber];
+  let eWord = SPEECH_INTERROGATIVE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//2105 SPEECH_IMPERATIVE_K
+function function2105() {
+  let valueNumber = Math.floor(Math.random() * SPEECH_IMPERATIVE_K.length);
+  let kWord = SPEECH_IMPERATIVE_K[valueNumber];
+  let eWord = SPEECH_IMPERATIVE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
 
-SPEECH_K                  
-SPEECH_E                  
-SPEECH_QUOTED_REPORTED_E  
-SPEECH_ADVERB_PHRASE_K    
-SPEECH_ADVERB_PHRASE_E    
-SPEECH_INTERROGATIVE_K    
-SPEECH_INTERROGATIVE_E    
-SPEECH_IMPERATIVE_K       
-SPEECH_IMPERATIVE_E       
-SPEECH_MINDMAP_K                  
+//2201 SPECIAL_SYNTAX_K
+function function2105() {
+  let valueNumber = Math.floor(Math.random() * SPECIAL_SYNTAX_K.length);
+  let kWord = SPECIAL_SYNTAX_K[valueNumber];
+  let eWord = SPECIAL_SYNTAX_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+SPECIAL_SYNTAX_K
+SPECIAL_SYNTAX_EMPHASIS_K
+SPECIAL_SYNTAX_EMPHASIS_E
+SPECIAL_SYNTAX_IT_THAT_K
+SPECIAL_SYNTAX_IT_THAT_E
+SPECIAL_SYNTAX_INVERSION_K
+SPECIAL_SYNTAX_INVERSION_E
+SPECIAL_SYNTAX_SO_NEITHER_K
+SPECIAL_SYNTAX_SO_NEITHER_E
+SPECIAL_SYNTAX_OMIT_K
+SPECIAL_SYNTAX_INANIMATES_SUBJECT_K
 
-SPECIAL_SYNTAX_K 
-SPECIAL_SYNTAX_EMPHASIS_K 
-SPECIAL_SYNTAX_EMPHASIS_E 
-SPECIAL_SYNTAX_IT_THAT_K 
-SPECIAL_SYNTAX_IT_THAT_E 
-SPECIAL_SYNTAX_INVERSION_K 
-SPECIAL_SYNTAX_INVERSION_E 
-SPECIAL_SYNTAX_SO_NEITHER_K 
-SPECIAL_SYNTAX_SO_NEITHER_E 
-SPECIAL_SYNTAX_OMIT_K 
-SPECIAL_SYNTAX_INANIMATES_SUBJECT_K 
+SENTENCE_BASIC_K
+SENTENCE_BASIC_E
+SENTENCE_BASIC_2K
+SENTENCE_BASIC_2E
+SENTENCE_EXTENDED_K
+SENTENCE_EXTENDED_E
+SENTENCE_TYPE_K
+SENTENCE_TYPE_E
+EXCLAMATORY_K
+EXCLAMATORY_SOLUTION_K
+EXCLAMATORY_SOLUTION_E
+SENTENCE_IMPERATIVE_K
+SENTENCE_IMPERATIVE_E
+SENTENCE_SUGGESTION_K
+SENTENCE_SUGGESTION_E
+SENTENCE_SUGGESTION_2K
+SENTENCE_SUGGESTION_2E
 
-SENTENCE_BASIC_K          
-SENTENCE_BASIC_E          
-SENTENCE_BASIC_2K         
-SENTENCE_BASIC_2E         
-SENTENCE_EXTENDED_K        
-SENTENCE_EXTENDED_E        
-SENTENCE_TYPE_K            
-SENTENCE_TYPE_E            
-EXCLAMATORY_K           
-EXCLAMATORY_SOLUTION_K          
-EXCLAMATORY_SOLUTION_E          
-SENTENCE_IMPERATIVE_K           
-SENTENCE_IMPERATIVE_E           
-SENTENCE_SUGGESTION_K           
-SENTENCE_SUGGESTION_E           
-SENTENCE_SUGGESTION_2K          
-SENTENCE_SUGGESTION_2E          
-
-SENTENCE_ELEMENTS_K 
-SENTENCE_ELEMENTS_E 
-SENTENCE_PATTERN_K  
-SENTENCE_PATTERN_E  
-SENTENCE_PATTERN_2K 
-SENTENCE_THERE_BE_K 
-SENTENCE_THERE_BE_E 
-SENTENCE_PATTERN_15_K 
-SENTENCE_PATTERN_15_E 
-SENTENCE_PATTERN_1_K 
-SENTENCE_PATTERN_2_K 
-SENTENCE_PATTERN_3_K 
-SENTENCE_PATTERN_4_K 
-SENTENCE_PATTERN_5_K 
-SENTENCE_PATTERN_5_2K 
-SENTENCE_PATTERN_5_3K 
+SENTENCE_ELEMENTS_K
+SENTENCE_ELEMENTS_E
+SENTENCE_PATTERN_K
+SENTENCE_PATTERN_E
+SENTENCE_PATTERN_2K
+SENTENCE_THERE_BE_K
+SENTENCE_THERE_BE_E
+SENTENCE_PATTERN_15_K
+SENTENCE_PATTERN_15_E
+SENTENCE_PATTERN_1_K
+SENTENCE_PATTERN_2_K
+SENTENCE_PATTERN_3_K
+SENTENCE_PATTERN_4_K
+SENTENCE_PATTERN_5_K
+SENTENCE_PATTERN_5_2K
+SENTENCE_PATTERN_5_3K
 
 
 

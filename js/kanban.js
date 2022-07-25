@@ -1939,11 +1939,31 @@ COMPOUND_RELATIVE_PRONOUN_2K
 COMPOUND_RELATIVE_ADVERB_K
 COMPOUND_RELATIVES_K
 
-SUBJUNCTIVE_K         
-SUBJUNCTIVE_PAST_K        
-SUBJUNCTIVE_PAST_PERFECT_K        
-        
-//function1804 SUBJUNCTIVE_I_WISH
+SUBJUNCTIVE_K
+function function1801() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_K.length);
+  let kWord = SUBJUNCTIVE_K[valueNumber];
+  let eWord = SUBJUNCTIVE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1802 SUBJUNCTIVE_PAST_K
+function function1802() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_PAST_K.length);
+  let kWord = SUBJUNCTIVE_PAST_K[valueNumber];
+  let eWord = SUBJUNCTIVE_PAST_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1803 SUBJUNCTIVE_PAST_PERFECT_K
+function function1803() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_PAST_PERFECT_K.length);
+  let kWord = SUBJUNCTIVE_PAST_PERFECT_K[valueNumber];
+  let eWord = SUBJUNCTIVE_PAST_PERFECT_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1804 SUBJUNCTIVE_I_WISH_K
 function function1804() {
   let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_I_WISH_K.length);
   let kWord = SUBJUNCTIVE_I_WISH_K[valueNumber];
@@ -1951,7 +1971,7 @@ function function1804() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//function1805 SUBJUNCTIVE_AS_IF_K
+//1805 SUBJUNCTIVE_AS_IF_K
 function function1805() {
   let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_AS_IF_K.length);
   let kWord = SUBJUNCTIVE_AS_IF_K[valueNumber];
@@ -1959,15 +1979,15 @@ function function1805() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//function1806 SUBJUNCTIVE_MIXED_K
+//1806 SUBJUNCTIVE_MIXED_K
 function function1806() {
   let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_MIXED_K.length);
   let kWord = SUBJUNCTIVE_MIXED_K[valueNumber];
   let eWord = SUBJUNCTIVE_MIXED_E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
-}      
-//function1807 SUBJUNCTIVE_PRESENT_K       
+}
+//1807 SUBJUNCTIVE_MIXED_K
 function function1807() {
   let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_PRESENT_K.length);
   let kWord = SUBJUNCTIVE_PRESENT_K[valueNumber];
@@ -2033,8 +2053,15 @@ function function1905() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-INTERROGATIVE_ALTERNATIVE_NEGATIVE_K            
-//function1907 TAG_QUESTION_K
+//1906 INTERROGATIVE_ALTERNATIVE_NEGATIVE_K
+function function1906() {
+  let valueNumber = Math.floor(Math.random() * INTERROGATIVE_ALTERNATIVE_NEGATIVE_K.length);
+  let kWord = INTERROGATIVE_ALTERNATIVE_NEGATIVE_K[valueNumber];
+  let eWord = INTERROGATIVE_ALTERNATIVE_NEGATIVE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1907 TAG_QUESTION_K
 function function1907() {
   let valueNumber = Math.floor(Math.random() * TAG_QUESTION_K.length);
   let kWord = TAG_QUESTION_K[valueNumber];
@@ -2042,16 +2069,15 @@ function function1907() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-    
-//function1908 INDIRECT_QUESTION_K
+//1908 INDIRECT_QUESTION_K
 function function1908() {
   let valueNumber = Math.floor(Math.random() * INDIRECT_QUESTION_K.length);
   let kWord = INDIRECT_QUESTION_K[valueNumber];
   let eWord = INDIRECT_QUESTION_E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
-}   
-//function1909 INTERROGATIVE_WHAT_HOW_K
+}
+//1909 INTERROGATIVE_WHAT_HOW_K
 function function1909() {
   let valueNumber = Math.floor(Math.random() * INTERROGATIVE_WHAT_HOW_K.length);
   let kWord = INTERROGATIVE_WHAT_HOW_K[valueNumber];
@@ -2060,17 +2086,23 @@ function function1909() {
   document.getElementById("divRandom2").innerText = eWord;
 }
 
-AGREEMENT_K       
-AGREEMENT_E       
-//function2002 AGREEMENT_ON_NUMBER_K
+//2001 INTERROGATIVE_WHAT_HOW_K
+function function2001() {
+  let valueNumber = Math.floor(Math.random() * AGREEMENT_K.length);
+  let kWord = AGREEMENT_K[valueNumber];
+  let eWord = AGREEMENT_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//2002 AGREEMENT_ON_NUMBER_K
 function function2002() {
   let valueNumber = Math.floor(Math.random() * AGREEMENT_ON_NUMBER_K.length);
   let kWord = AGREEMENT_ON_NUMBER_K[valueNumber];
   let eWord = AGREEMENT_ON_NUMBER_E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
-}  
-//function2003 AGREEMENT_ON_NUMBER_2K
+}
+//2003 AGREEMENT_ON_NUMBER_K
 function function2003() {
   let valueNumber = Math.floor(Math.random() * AGREEMENT_ON_NUMBER_2K.length);
   let kWord = AGREEMENT_ON_NUMBER_2K[valueNumber];
@@ -2078,8 +2110,6 @@ function function2003() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-  
-  
 //function2003v2 AGREEMENT_ON_NUMBER_3E
 function function2003v2() {
   let valueNumber = Math.floor(Math.random() * AGREEMENT_ON_NUMBER_3E.length);
@@ -2090,6 +2120,14 @@ function function2003v2() {
 }
 //function2004 AGREEMENT_TENSE_K
 function function2004() {
+  let valueNumber = Math.floor(Math.random() * AGREEMENT_ON_NUMBER_3E.length);
+  let kWord = AGREEMENT_ON_NUMBER_3K[valueNumber];
+  let eWord = AGREEMENT_ON_NUMBER_3E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//2005 AGREEMENT_TENSE_K
+function function2005() {
   let valueNumber = Math.floor(Math.random() * AGREEMENT_TENSE_K.length);
   let kWord = AGREEMENT_TENSE_K[valueNumber];
   let eWord = AGREEMENT_TENSE_E[valueNumber];
@@ -2103,26 +2141,33 @@ function function2101() {
   let eWord = SPEECH_E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
-}             
-SPEECH_QUOTED_REPORTED_E  
-//function2102 SPEECH_ADVERB_PHRASE_K
+}
+//2102 SPEECH_QUOTED_REPORTED_K
 function function2102() {
+  let valueNumber = Math.floor(Math.random() * SPEECH_QUOTED_REPORTED_K.length);
+  let kWord = SPEECH_QUOTED_REPORTED_K[valueNumber];
+  let eWord = SPEECH_QUOTED_REPORTED_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//2103 SPEECH_ADVERB_PHRASE_K
+function function2103() {
   let valueNumber = Math.floor(Math.random() * SPEECH_ADVERB_PHRASE_K.length);
   let kWord = SPEECH_ADVERB_PHRASE_K[valueNumber];
   let eWord = SPEECH_ADVERB_PHRASE_E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//function2103 SPEECH_INTERROGATIVE_K
-function function2103() {
+//2104 SPEECH_INTERROGATIVE_K
+function function2104() {
   let valueNumber = Math.floor(Math.random() * SPEECH_INTERROGATIVE_K.length);
   let kWord = SPEECH_INTERROGATIVE_K[valueNumber];
   let eWord = SPEECH_INTERROGATIVE_E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//function2104 SPEECH_IMPERATIVE_K
-function function2104() {
+//2105 SPEECH_IMPERATIVE_K
+function function2105() {
   let valueNumber = Math.floor(Math.random() * SPEECH_IMPERATIVE_K.length);
   let kWord = SPEECH_IMPERATIVE_K[valueNumber];
   let eWord = SPEECH_IMPERATIVE_E[valueNumber];

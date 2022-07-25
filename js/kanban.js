@@ -266,7 +266,7 @@ function changeFontSize4() {
 }
 
 // 아래쪽 CLS Speaking Random
-
+// TODO const 대문자로 변경
 const consonantVal = 'bcdfghjklmnpqrstvwxyz';
 const vowelVal = 'aeiou';
 const constantUpperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -302,6 +302,7 @@ const verb4placeE = new Array();
 const verb5conceptK = new Array();
 const verb5conceptE = new Array();
 
+//TODO 동사 자료 넣기
 const VERB_SENTENCE_FORM_1_K = new Array("행동한다", "조언한다", "동의한다", "도착한다", "묻는다", "굽는다", "시작한다", "믿는다", "깨뜨린다", "탄다", "보살핀다", "바꾼다", "확인한다", "선택한다", "오른다", "온다", "요리한다", "복사한다", "건넌다", "운다", "자른다", "춤춘다", "결정한다", "죽는다", "한다", "그린다", "꿈꾼다", "마신다", "운전한다", "떨어진다", "먹는다", "끝난다", "들어간다", "운동간다", "실패한다", "떨어진다", "느낀다", "싸운다", "마친다", "고정한다", "난다", "집중한다", "잊는다", "형성한다", "튀긴다", "간다", "자란다", "추측한다", "걷는다", "돕는다", "친다", "잡는다", "희망한다", "서두른다", "참여한다", "계속한다", "찬다", "안다", "거짓말한다", "듣는다", "산다", "본다", "사랑한다", "움직인다", "연다", "통과한다", "지불한다", "논다", "민다", "읽는다", "돌아온다", "달린다", "노래한다", "앉는다", "잔다", "냄새맡는다", "미소짓는다", "말한다", "일어선다", "시작한다", "머무른다", "멈춘다", "수영한다", "말한다", "이야기한다", "여행한다", "노력한다", "돌린다", "방문한다", "기다린다", "깬다", "걷는다", "씻는다", "입는다", "이긴다", "바란다", "일한다", "걱정한다", "쓴다", "울린다", "가라앉는다", "먹인다", "쏜다", "이끈다", "긴다", "바닥을 쓴다", "운다", "떠난다", "구부린다", "잃는다", "감는다", "미끄러진다", "판다", "빛난다", "돌린다", "때린다", "깨운다", "낳는다", "찢는다", "얼린다", "훔친다", "분다", "던진다", "탄다", "오른다", "흔든다");
 const VERB_SENTENCE_FORM_1_E = new Array("act", "advise", "agree", "arrive", "ask", "bake", "begin", "believe", "break", "burn", "care", "change", "check", "choose", "climb", "come", "cook", "copy", "cross", "cry", "cut", "dance", "decide", "die", "do", "draw", "dream", "drink", "drive", "drop", "eat", "end", "enter", "exercise", "fail", "fall", "feel", "fight", "finish", "fix", "fly", "focus", "forget", "form", "fry", "go", "grow", "guess", "hang", "help", "hit", "hold", "hope", "hurry", "join", "keep", "kick", "know", "lie", "listen", "live", "look", "love", "move", "open", "pass", "pay", "play", "push", "read", "return", "run", "sing", "sit", "sleep", "smell", "smile", "speak", "stand", "start", "stay", "stop", "swim", "talk", "tell", "travel", "try", "turn", "visit", "wait", "wake", "walk", "wash", "wear", "win", "wish", "work", "worry", "write", "ring", "sink", "feed", "shoot", "lead", "creep", "sweep", "weep", "leave", "bend", "lose", "wind", "slide", "dig", "shine", "spin", "strike", "awake", "bear", "tear", "freeze", "steal", "blow", "throw", "ride", "rise", "shake");
 const VERB_SENTENCE_FORM_2_K = new Array();
@@ -327,6 +328,7 @@ const adjective5conceptE = new Array("all", "any", "bad", "basic", "big", "certa
 const adjectiveCountableK1 = new Array("조금", "약간", "많이", "거의 없는");
 const adjectiveCountableE1 = new Array("some, any", "some, any", "a lot of, lots of, plenty of, many, much", "a few, few, a little, little");
 const adjectiveCountableE2 = new Array("some", "any", "a lot of", "lots of", "plenty of", "many", "much", "a few", "few", "a little", "little");
+const adjectiveCountableK2 = new Array("조금, 약간", "조금, 약간", "많이", "많이", "많이", "많이", "많이", "조금, 약간", "거의 없는", "조금, 약간", "거의 없는");
 
 
 const function0103K = new Array("하나 + 자음", "하나 + b", "하나 + c", "하나 + d", "하나 + f", "하나 + g", "하나 + h", "하나 + j", "하나 + k", "하나 + l", "하나 + m", "하나 + n", "하나 + p", "하나 + q", "하나 + r", "하나 + s", "하나 + t", "하나 + v", "하나 + w", "하나 + x", "하나 + y", "하나 + z", "하나 + 모음", "하나 + a", "하나 + e", "하나 + i", "하나 + o", "하나 + u");
@@ -844,6 +846,7 @@ function articles() {
   document.getElementById('divRandom2').innerText = valueE;
 }
 //0102 명사-셀수 X 명사 세는 법
+// TODO 하나 여러개 넣기
 function function0102() {
   let result = getRandomTwoChar2(noun2objectK, noun2objectE);
   valueK = valueK[valueNumber];
@@ -860,6 +863,7 @@ function function0103() {
   document.getElementById('divRandom2').innerText = valueE;
 }
 //0103 명사-셀수 X 명사 세는 법
+//TODO a/an 판단 if문으로 구분
 function function0103more() {
   let valueNumber = Math.floor(Math.random() * function0103K.length);
   let valueNumber2 = Math.floor(Math.random() * noun3animalK.length);
@@ -869,9 +873,7 @@ function function0103more() {
   document.getElementById("divRandom2").innerText = eWord;
 }
 //0104 명사-셀수 X 명사 세는 법
-let pluralK = new Array('들');
-let pluralE = new Array('s/es');
-
+//TODO s/es 판단 if문으로 구분
 function function0104() {
   let valueNumber = Math.floor(Math.random() * noun3animalE.length);
   let kWord = noun3animalK[valueNumber] + "들";
@@ -990,7 +992,7 @@ function function0303() {
 }
 function function0303v2() {
   let valueNumber = Math.floor(Math.random() * adjectiveCountableE2.length);
-  let kWord = adjectiveCountableK1[valueNumber];
+  let kWord = adjectiveCountableK2[valueNumber];
   let eWord = adjectiveCountableE2[valueNumber];
   document.getElementById("divRandom").innerText = eWord;
   document.getElementById('divRandom2').innerText = kWord;
@@ -1007,22 +1009,19 @@ function function0304() {
 }
 //0305 수사(숫자) 표현법
 function function0305() {
-  let result = getRandomTwoChar2();
-  valueK = adjectiveCardinalOrdinalK[valueNumber];
-  valueE = adjectiveCardinalOrdinalE[valueNumber];
-  document.getElementById('divRandom').innerText = valueK;
-  document.getElementById('divRandom2').innerText = valueE;
+  let valueNumber = Math.floor(Math.random() * adjectiveCardinalOrdinalK.length);
+  let kWord = adjectiveCardinalOrdinalK[valueNumber];
+  let eWord = adjectiveCardinalOrdinalE[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
 }
 //0305 수사(숫자) 표현법
 function function0305v2() {
-  let result = getRandomTwoChar2(
-    adjectiveCardinalOrdinalK,
-    adjectiveCardinalOrdinalE
-  );
-  valueK = valueK[valueNumber];
-  valueE = valueE[valueNumber];
-  document.getElementById('divRandom').innerText = valueK;
-  document.getElementById('divRandom2').innerText = valueE;
+  let valueNumber = Math.floor(Math.random() * adjectiveCardinalOrdinalK.length);
+  let kWord = adjectiveCardinalOrdinalK[valueNumber];
+  let eWord = adjectiveCardinalOrdinal[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
 }
 //0306 분수 읽기
 function function0306() {
@@ -1041,10 +1040,11 @@ function function0307() {
   document.getElementById('divRandom2').innerText = valueE;
 }
 //0402 부사
+// TODO Data Cleaning 필요 ex) = "깨끗한 + 하게 = 깨끗하게"
 function function0402() {
   let result = getRandomTwoChar2(adjective4placeK, adjective4placeE);
   let valueNumber = Math.floor(Math.random() * adjective4placeK.length);
-  let kWord = adjective4placeK[valueNumber] + " + '~하게'";
+  let kWord = adjective4placeK[valueNumber] + " + ~하게";
   let eWord = adjective4placeE[valueNumber] + ' + ly';
   document.getElementById('divRandom').innerText = kWord;
   document.getElementById('divRandom2').innerText = eWord;
@@ -1125,16 +1125,17 @@ function function0503() {
 //0504 IMPERSONAL_SUBJECT_K
 function function0504() {
   let valueNumber = Math.floor(Math.random() * IMPERSONAL_SUBJECT_K.length);
-  let kWord = IMPERSONAL_SUBJECT_K[valueNumber];
-  let eWord = IMPERSONAL_SUBJECT_E[valueNumber];
+  let kWord = IMPERSONAL_SUBJECT_E[valueNumber];
+  let eWord = IMPERSONAL_SUBJECT_K[valueNumber];
   document.getElementById('divRandom').innerText = kWord;
   document.getElementById('divRandom2').innerText = eWord;
 }
-//0505 IMPERSONAL_SUBJECT_K
+//0505 PRONOUN_PERSONAL_SUBJECTIVE_K
+// TODO 나는 이랑 내가 랑 따로도 ㅇㅇ 
 function function0505() {
-  let valueNumber = Math.floor(Math.random() * IMPERSONAL_SUBJECT_K.length);
-  let kWord = IMPERSONAL_SUBJECT_K[valueNumber];
-  let eWord = IMPERSONAL_SUBJECT_E[valueNumber];
+  let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_K.length);
+  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_K[valueNumber];
+  let eWord = PRONOUN_PERSONAL_SUBJECTIVE_E[valueNumber];
   document.getElementById('divRandom').innerText = kWord;
   document.getElementById('divRandom2').innerText = eWord;
 }
@@ -1148,9 +1149,10 @@ function function0506() {
 }
 //0507 PRONOUN_PERSONAL_POSSESSIVE_K
 function function0507() {
-  let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_POSSESSIVE_K.length);
-  let kWord = PRONOUN_PERSONAL_POSSESSIVE_K[valueNumber];
-  let eWord = PRONOUN_PERSONAL_POSSESSIVE_E[valueNumber];
+  let valueNumber = Math.floor(Math.random() * noun1personK.length);
+  let valueNumber2 = Math.floor(Math.random() * noun2objectK.length);
+  let kWord = noun1personK[valueNumber] + "의 " +  noun2objectK[valueNumber2];
+  let eWord = noun1personE[valueNumber] + "'s " + noun2objectE[valueNumber2];
   document.getElementById('divRandom').innerText = kWord;
   document.getElementById('divRandom2').innerText = eWord;
 }
@@ -1163,6 +1165,7 @@ function function0508() {
   document.getElementById('divRandom2').innerText = eWord;
 }
 //0509 PRONOUN_PERSONAL_POSSESSIVE_PRONOUN_K
+// TODO 컴마 따로 분리작업 
 function function0509() {
   let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_POSSESSIVE_PRONOUN_K.length);
   let kWord = PRONOUN_PERSONAL_POSSESSIVE_PRONOUN_K[valueNumber];
@@ -1171,6 +1174,7 @@ function function0509() {
   document.getElementById('divRandom2').innerText = eWord;
 }
 //0510 PRONOUN_PERSONAL_OBJECTIVE_K
+// TODO 컴마 따로 분리작업 
 function function0510() {
   let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_OBJECTIVE_K.length);
   let kWord = PRONOUN_PERSONAL_OBJECTIVE_K[valueNumber];
@@ -1179,6 +1183,7 @@ function function0510() {
   document.getElementById('divRandom2').innerText = eWord;
 }
 //0511 PRONOUN_PERSONAL_ALL_K
+// TODO 컴마 따로 분리작업 
 function function0511() {
   let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_ALL_K.length);
   let kWord = PRONOUN_PERSONAL_ALL_K[valueNumber];
@@ -1251,6 +1256,7 @@ function function0519() {
   document.getElementById('divRandom2').innerText = eWord;
 }
 //0520 PRONOUN_INDEFINITE_5K
+// TODO 카드확인 
 function function0520() {
   let valueNumber = Math.floor(Math.random() * PRONOUN_INDEFINITE_5K.length);
   let kWord = PRONOUN_INDEFINITE_5K[valueNumber];
@@ -1323,10 +1329,13 @@ function function0606() {
   document.getElementById('divRandom2').innerText = eWord;
 }
 //0607 conjunctionRelative
+// TODO Case 나눠서 loves 와 love 둘 중 하나로 해야함
 function function0607() {
   let valueNumber = Math.floor(Math.random() * conjunctionRelativeK.length);
-  let kWord = conjunctionRelativeK[valueNumber] + "가 니콜을 사랑한다";
-  let eWord = conjunctionRelativeE[valueNumber] + " loves Nicole";
+  // let kWord = conjunctionRelativeK[valueNumber] + "가 니콜을 사랑한다";
+  // let eWord = conjunctionRelativeE[valueNumber] + " loves Nicole";
+  let kWord = conjunctionRelativeK[valueNumber];
+  let eWord = conjunctionRelativeE[valueNumber];
   document.getElementById('divRandom').innerText = kWord;
   document.getElementById('divRandom2').innerText = eWord;
 }
@@ -1346,7 +1355,16 @@ function function0609() {
   document.getElementById('divRandom').innerText = kWord;
   document.getElementById('divRandom2').innerText = eWord;
 }
+//0701 TODO 감탄사 해야함
+function function0701() {
+  let valueNumber = Math.floor(Math.random() * conjunctiveAdverb2K.length);
+  let kWord = conjunctiveAdverb2K[valueNumber];
+  let eWord = conjunctiveAdverb2E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
 //0802 PREPOSITION_TIME
+// TODO 구체적으로 풀 수 있음
 function function0802() {
   let valueNumber = Math.floor(Math.random() * PREPOSITION_TIME_K.length);
   let kWord = PREPOSITION_TIME_K[valueNumber];
@@ -1363,6 +1381,7 @@ function function0803() {
   document.getElementById('divRandom2').innerText = eWord;
 }
 //0804 PREPOSITION_PLACE
+// TODO 구체적으로 풀 수 있음
 function function0804() {
   let valueNumber = Math.floor(Math.random() * PREPOSITION_PLACE_K.length);
   let kWord = PREPOSITION_PLACE_K[valueNumber];
@@ -1395,6 +1414,7 @@ function function0807() {
   document.getElementById('divRandom2').innerText = eWord;
 }
 //0808 PREPOSITION_ETC
+// TODO 구체적으로 풀 수 있음
 function function0808() {
   let valueNumber = Math.floor(Math.random() * PREPOSITION_ETC_K.length);
   let kWord = PREPOSITION_ETC_K[valueNumber];
@@ -1450,7 +1470,8 @@ function function0905() {
   document.getElementById('divRandom').innerText = kWord;
   document.getElementById('divRandom2').innerText = eWord;
 }
-//1002 TENSE_PRESENT
+//1001 TENSE_CONCEPT
+// TODO 나는 춤춘다 춤췄다 춤출것이다 춤춰왔다  --- 현재 과거 미래 현재완료
 function function1001() {
   let valueNumber = Math.floor(Math.random() * VERB_SENTENCE_FORM_1_K.length);
   let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
@@ -1459,12 +1480,21 @@ function function1001() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//1003 TENSE_PAST
+//1002 TENSE_PRESENT
+// TODO Case로 3인칭 단수형
 function function1002() {
   let valueNumber = Math.floor(Math.random() * VERB_SENTENCE_FORM_1_K.length);
   let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
   let kWord = pronounBoxK[valueNumber2] + VERB_SENTENCE_FORM_1_K[valueNumber];
   let eWord = pronounBoxE[valueNumber2] + VERB_SENTENCE_FORM_1_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//1003 TENSE_PAST
+function function1003() {
+  let valueNumber = Math.floor(Math.random() * TENSE_PAST_K.length);
+  let kWord = TENSE_PAST_K[valueNumber];
+  let eWord = TENSE_PAST_E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
@@ -1893,15 +1923,6 @@ function function1609() {
 }
 
 
-function function1801() {
-  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_K.length);
-  let kWord = SUBJUNCTIVE_K[valueNumber];
-  let eWord = SUBJUNCTIVE_E[valueNumber];
-  document.getElementById("divRandom").innerText = kWord;
-  document.getElementById("divRandom2").innerText = eWord;
-}
-
-
 RELATIVES_K
 RELATIVE_PRONOUN_USAGE_K
 RELATIVE_PRONOUN_WHO_WHICH_THAT_K
@@ -1921,93 +1942,322 @@ COMPOUND_RELATIVES_K
 SUBJUNCTIVE_K         
 SUBJUNCTIVE_PAST_K        
 SUBJUNCTIVE_PAST_PERFECT_K        
-SUBJUNCTIVE_I_WISH_K        
-SUBJUNCTIVE_I_WISH_E        
-SUBJUNCTIVE_AS_IF_K         
-SUBJUNCTIVE_AS_IF_E         
-SUBJUNCTIVE_MIXED_K         
-SUBJUNCTIVE_MIXED_E         
-SUBJUNCTIVE_PRESENT_K       
-SUBJUNCTIVE_PRESENT_E       
-SUBJUNCTIVE_FUTURE_K        
-SUBJUNCTIVE_OTHERS_E        
+        
+//function1804 SUBJUNCTIVE_I_WISH
+function function1804() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_I_WISH_K.length);
+  let kWord = SUBJUNCTIVE_I_WISH_K[valueNumber];
+  let eWord = SUBJUNCTIVE_I_WISH_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1805 SUBJUNCTIVE_AS_IF_K
+function function1805() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_AS_IF_K.length);
+  let kWord = SUBJUNCTIVE_AS_IF_K[valueNumber];
+  let eWord = SUBJUNCTIVE_AS_IF_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1806 SUBJUNCTIVE_MIXED_K
+function function1806() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_MIXED_K.length);
+  let kWord = SUBJUNCTIVE_MIXED_K[valueNumber];
+  let eWord = SUBJUNCTIVE_MIXED_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}      
+//function1807 SUBJUNCTIVE_PRESENT_K       
+function function1807() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_PRESENT_K.length);
+  let kWord = SUBJUNCTIVE_PRESENT_K[valueNumber];
+  let eWord = SUBJUNCTIVE_PRESENT_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}  
+  
+//function1808 SUBJUNCTIVE_FUTURE_K       
+function function1808() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_FUTURE_K.length);
+  let kWord = SUBJUNCTIVE_FUTURE_K[valueNumber];
+  let eWord = SUBJUNCTIVE_FUTURE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}  
+//function1810 SUBJUNCTIVE_OTHERS_K
+function function1810() {
+  let valueNumber = Math.floor(Math.random() * SUBJUNCTIVE_OTHERS_K.length);
+  let kWord = SUBJUNCTIVE_OTHERS_K[valueNumber];
+  let eWord = SUBJUNCTIVE_OTHERS_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}  
 
-INTERROGATIVE_K           
-INTERROGATIVE_E           
-INTERROGATIVE_USAGE_K     
-INTERROGATIVE_USAGE_E     
-INTERROGATIVE_PRONOUN_K   
-INTERROGATIVE_PRONOUN_E   
-INTERROGATIVE_ADVERB_K    
-INTERROGATIVE_ADVERB_E    
-INTERROGATIVE_HOW_K       
-INTERROGATIVE_HOW_E       
+//function1901 INTERROGATIVE_K
+function function1901() {
+  let valueNumber = Math.floor(Math.random() * INTERROGATIVE_K.length);
+  let kWord = INTERROGATIVE_K[valueNumber];
+  let eWord = INTERROGATIVE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}          
+//function1902 INTERROGATIVE_USAGE_K
+function function1902() {
+  let valueNumber = Math.floor(Math.random() * INTERROGATIVE_USAGE_K.length);
+  let kWord = INTERROGATIVE_USAGE_K[valueNumber];
+  let eWord = INTERROGATIVE_USAGE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+} 
+//function1903 INTERROGATIVE_PRONOUN_K
+function function1903() {
+  let valueNumber = Math.floor(Math.random() * INTERROGATIVE_PRONOUN_K.length);
+  let kWord = INTERROGATIVE_PRONOUN_K[valueNumber];
+  let eWord = INTERROGATIVE_PRONOUN_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1904 INTERROGATIVE_ADVERB_K
+function function1904() {
+  let valueNumber = Math.floor(Math.random() * INTERROGATIVE_ADVERB_K.length);
+  let kWord = INTERROGATIVE_ADVERB_K[valueNumber];
+  let eWord = INTERROGATIVE_ADVERB_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1905 INTERROGATIVE_HOW_K
+function function1905() {
+  let valueNumber = Math.floor(Math.random() * INTERROGATIVE_HOW_K.length);
+  let kWord = INTERROGATIVE_HOW_K[valueNumber];
+  let eWord = INTERROGATIVE_HOW_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
 INTERROGATIVE_ALTERNATIVE_NEGATIVE_K            
-TAG_QUESTION_K            
-TAG_QUESTION_E            
-INDIRECT_QUESTION_K       
-INTERROGATIVE_WHAT_HOW_K  
-INTERROGATIVE_WHAT_HOW_E  
+//function1907 TAG_QUESTION_K
+function function1907() {
+  let valueNumber = Math.floor(Math.random() * TAG_QUESTION_K.length);
+  let kWord = TAG_QUESTION_K[valueNumber];
+  let eWord = TAG_QUESTION_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+    
+//function1908 INDIRECT_QUESTION_K
+function function1908() {
+  let valueNumber = Math.floor(Math.random() * INDIRECT_QUESTION_K.length);
+  let kWord = INDIRECT_QUESTION_K[valueNumber];
+  let eWord = INDIRECT_QUESTION_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}   
+//function1909 INTERROGATIVE_WHAT_HOW_K
+function function1909() {
+  let valueNumber = Math.floor(Math.random() * INTERROGATIVE_WHAT_HOW_K.length);
+  let kWord = INTERROGATIVE_WHAT_HOW_K[valueNumber];
+  let eWord = INTERROGATIVE_WHAT_HOW_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
 
 AGREEMENT_K       
 AGREEMENT_E       
-AGREEMENT_ON_NUMBER_K   
-AGREEMENT_ON_NUMBER_E   
-AGREEMENT_ON_NUMBER_2K  
-AGREEMENT_ON_NUMBER_2E  
-AGREEMENT_ON_NUMBER_3E  
-AGREEMENT_ON_NUMBER_3K  
-AGREEMENT_TENSE_K       
-AGREEMENT_TENSE_E       
-
-SPEECH_K                  
-SPEECH_E                  
+//function2002 AGREEMENT_ON_NUMBER_K
+function function2002() {
+  let valueNumber = Math.floor(Math.random() * AGREEMENT_ON_NUMBER_K.length);
+  let kWord = AGREEMENT_ON_NUMBER_K[valueNumber];
+  let eWord = AGREEMENT_ON_NUMBER_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}  
+//function2003 AGREEMENT_ON_NUMBER_2K
+function function2003() {
+  let valueNumber = Math.floor(Math.random() * AGREEMENT_ON_NUMBER_2K.length);
+  let kWord = AGREEMENT_ON_NUMBER_2K[valueNumber];
+  let eWord = AGREEMENT_ON_NUMBER_2E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+  
+  
+//function2003v2 AGREEMENT_ON_NUMBER_3E
+function function2003v2() {
+  let valueNumber = Math.floor(Math.random() * AGREEMENT_ON_NUMBER_3E.length);
+  let kWord = AGREEMENT_ON_NUMBER_3E[valueNumber];
+  let eWord = AGREEMENT_ON_NUMBER_3K[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function2004 AGREEMENT_TENSE_K
+function function2004() {
+  let valueNumber = Math.floor(Math.random() * AGREEMENT_TENSE_K.length);
+  let kWord = AGREEMENT_TENSE_K[valueNumber];
+  let eWord = AGREEMENT_TENSE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function2101 SPEECH_K
+function function2101() {
+  let valueNumber = Math.floor(Math.random() * SPEECH_K.length);
+  let kWord = SPEECH_K[valueNumber];
+  let eWord = SPEECH_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}             
 SPEECH_QUOTED_REPORTED_E  
-SPEECH_ADVERB_PHRASE_K    
-SPEECH_ADVERB_PHRASE_E    
-SPEECH_INTERROGATIVE_K    
-SPEECH_INTERROGATIVE_E    
-SPEECH_IMPERATIVE_K       
-SPEECH_IMPERATIVE_E       
-SPEECH_MINDMAP_K                  
+//function2102 SPEECH_ADVERB_PHRASE_K
+function function2102() {
+  let valueNumber = Math.floor(Math.random() * SPEECH_ADVERB_PHRASE_K.length);
+  let kWord = SPEECH_ADVERB_PHRASE_K[valueNumber];
+  let eWord = SPEECH_ADVERB_PHRASE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function2103 SPEECH_INTERROGATIVE_K
+function function2103() {
+  let valueNumber = Math.floor(Math.random() * SPEECH_INTERROGATIVE_K.length);
+  let kWord = SPEECH_INTERROGATIVE_K[valueNumber];
+  let eWord = SPEECH_INTERROGATIVE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function2104 SPEECH_IMPERATIVE_K
+function function2104() {
+  let valueNumber = Math.floor(Math.random() * SPEECH_IMPERATIVE_K.length);
+  let kWord = SPEECH_IMPERATIVE_K[valueNumber];
+  let eWord = SPEECH_IMPERATIVE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
 
 SPECIAL_SYNTAX_K 
-SPECIAL_SYNTAX_EMPHASIS_K 
-SPECIAL_SYNTAX_EMPHASIS_E 
-SPECIAL_SYNTAX_IT_THAT_K 
-SPECIAL_SYNTAX_IT_THAT_E 
-SPECIAL_SYNTAX_INVERSION_K 
-SPECIAL_SYNTAX_INVERSION_E 
-SPECIAL_SYNTAX_SO_NEITHER_K 
-SPECIAL_SYNTAX_SO_NEITHER_E 
+//function2202 SPECIAL_SYNTAX_EMPHASIS_K
+function function2202() {
+  let valueNumber = Math.floor(Math.random() * SPECIAL_SYNTAX_EMPHASIS_K.length);
+  let kWord = SPECIAL_SYNTAX_EMPHASIS_K[valueNumber];
+  let eWord = SPECIAL_SYNTAX_EMPHASIS_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function2203 SPECIAL_SYNTAX_IT_THAT_K
+function function2203() {
+  let valueNumber = Math.floor(Math.random() * SPECIAL_SYNTAX_IT_THAT_K.length);
+  let kWord = SPECIAL_SYNTAX_IT_THAT_K[valueNumber];
+  let eWord = SPECIAL_SYNTAX_IT_THAT_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function2204 SPECIAL_SYNTAX_INVERSION_K
+function function2204() {
+  let valueNumber = Math.floor(Math.random() * SPECIAL_SYNTAX_INVERSION_K.length);
+  let kWord = SPECIAL_SYNTAX_INVERSION_K[valueNumber];
+  let eWord = SPECIAL_SYNTAX_INVERSION_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function2205 SPECIAL_SYNTAX_SO_NEITHER_K
+function function2205() {
+  let valueNumber = Math.floor(Math.random() * SPECIAL_SYNTAX_SO_NEITHER_K.length);
+  let kWord = SPECIAL_SYNTAX_SO_NEITHER_K[valueNumber];
+  let eWord = SPECIAL_SYNTAX_SO_NEITHER_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
 SPECIAL_SYNTAX_OMIT_K 
 SPECIAL_SYNTAX_INANIMATES_SUBJECT_K 
 
-SENTENCE_BASIC_K          
-SENTENCE_BASIC_E          
-SENTENCE_BASIC_2K         
-SENTENCE_BASIC_2E         
-SENTENCE_EXTENDED_K        
-SENTENCE_EXTENDED_E        
-SENTENCE_TYPE_K            
-SENTENCE_TYPE_E            
-EXCLAMATORY_K           
-EXCLAMATORY_SOLUTION_K          
-EXCLAMATORY_SOLUTION_E          
-SENTENCE_IMPERATIVE_K           
-SENTENCE_IMPERATIVE_E           
-SENTENCE_SUGGESTION_K           
-SENTENCE_SUGGESTION_E           
-SENTENCE_SUGGESTION_2K          
-SENTENCE_SUGGESTION_2E          
+//function2301 SENTENCE_BASIC_K
+function function2301() {
+  let valueNumber = Math.floor(Math.random() * SENTENCE_BASIC_K.length);
+  let kWord = SENTENCE_BASIC_K[valueNumber];
+  let eWord = SENTENCE_BASIC_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}     
+//function2302 SENTENCE_BASIC_2K
+function function2302() {
+  let valueNumber = Math.floor(Math.random() * SENTENCE_BASIC_2K.length);
+  let kWord = SENTENCE_BASIC_2K[valueNumber];
+  let eWord = SENTENCE_BASIC_2E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}     
+//function2303 SENTENCE_EXTENDED_K
+function function2303() {
+  let valueNumber = Math.floor(Math.random() * SENTENCE_EXTENDED_K.length);
+  let kWord = SENTENCE_EXTENDED_K[valueNumber];
+  let eWord = SENTENCE_EXTENDED_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}      
+//function2401 SENTENCE_TYPE_K
+function function2401() {
+  let valueNumber = Math.floor(Math.random() * SENTENCE_TYPE_K.length);
+  let kWord = SENTENCE_TYPE_K[valueNumber];
+  let eWord = SENTENCE_TYPE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}      
 
-SENTENCE_ELEMENTS_K 
-SENTENCE_ELEMENTS_E 
-SENTENCE_PATTERN_K  
-SENTENCE_PATTERN_E  
+EXCLAMATORY_K           
+
+//function2403 EXCLAMATORY_SOLUTION_K
+function function2403() {
+  let valueNumber = Math.floor(Math.random() * EXCLAMATORY_SOLUTION_K.length);
+  let kWord = EXCLAMATORY_SOLUTION_K[valueNumber];
+  let eWord = EXCLAMATORY_SOLUTION_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}          
+//function2404 SENTENCE_IMPERATIVE_K
+function function2404() {
+  let valueNumber = Math.floor(Math.random() * SENTENCE_IMPERATIVE_K.length);
+  let kWord = SENTENCE_IMPERATIVE_K[valueNumber];
+  let eWord = SENTENCE_IMPERATIVE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}     
+//function2405 SENTENCE_SUGGESTION_K
+function function2405() {
+  let valueNumber = Math.floor(Math.random() * SENTENCE_SUGGESTION_K.length);
+  let kWord = SENTENCE_SUGGESTION_K[valueNumber];
+  let eWord = SENTENCE_SUGGESTION_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}     
+//function2405v2 SENTENCE_SUGGESTION_2K
+function function2405v2() {
+  let valueNumber = Math.floor(Math.random() * SENTENCE_SUGGESTION_2K.length);
+  let kWord = SENTENCE_SUGGESTION_2K[valueNumber];
+  let eWord = SENTENCE_SUGGESTION_2E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}     
+//function2501 SENTENCE_ELEMENTS_K
+function function2501() {
+  let valueNumber = Math.floor(Math.random() * SENTENCE_ELEMENTS_K.length);
+  let kWord = SENTENCE_ELEMENTS_K[valueNumber];
+  let eWord = SENTENCE_ELEMENTS_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}     
+//function2601 SENTENCE_PATTERN_K
+function function2601() {
+  let valueNumber = Math.floor(Math.random() * SENTENCE_PATTERN_K.length);
+  let kWord = SENTENCE_PATTERN_K[valueNumber];
+  let eWord = SENTENCE_PATTERN_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}     
 SENTENCE_PATTERN_2K 
-SENTENCE_THERE_BE_K 
-SENTENCE_THERE_BE_E 
+//function2603 SENTENCE_THERE_BE_K
+function function2603() {
+  let valueNumber = Math.floor(Math.random() * SENTENCE_THERE_BE_K.length);
+  let kWord = SENTENCE_THERE_BE_K[valueNumber];
+  let eWord = SENTENCE_THERE_BE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}     
 SENTENCE_PATTERN_15_K 
 SENTENCE_PATTERN_15_E 
 SENTENCE_PATTERN_1_K 

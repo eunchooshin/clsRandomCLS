@@ -185,12 +185,12 @@
         <div class="column is-3-desktop is-12-tablet">
           <div class="tile is-parent">
             <article class="tile is-child ">
-              <div class="field">
+              <!-- <div class="field">
                 <input id="switchRoundedLast" type="checkbox" name="switchRoundedLast"
                   class="switch is-rounded is-danger" hidden>
                 <label for="switchRoundedLast" class="toggleSwitch">
                   <span class="toggleButton"></span>
-              </div>
+              </div> -->
               <div class="content" id="navButtons">
 
                 <div class="tabs is-boxed is-centered main-menu" id="nav">
@@ -234,8 +234,8 @@
                       <div class="dropdown-containe">
                         <button class="dropdown-btn button is-light is-warning" onclick="pronoun5()">1 명사</button>
                         <div class="dropdown-container">
-                          <!-- <button class="button" onclick="pronoun5()">0 명사전체</button> -->
-                          <!-- <button class="button" onclick="">1 명사-2/5가지 분류</button> -->
+                          <button class="button" onclick="pronoun5()" Disabled>0 명사전체</button>
+                          <button class="button" onclick="" Disabled>1 명사-2/5가지 분류</button> 
                           <button class="button" onclick="function0102(); putCardNumber('0102')">2 명사-셀 수 OX 명사</button>
                           <button class="button" onclick="function0103(); putCardNumber('0103')">3 명사-단수 a/an</button>
                           <button class="button" onclick="function0103more(); putCardNumber('0103')">3 명사-단수 a/an-응용</button>
@@ -243,23 +243,23 @@
                           <button class="button" onclick="function0105(); putCardNumber('0105')">5 명사-복수-불규칙</button>
                           <button class="button" onclick="function0107(); putCardNumber('0107')">7 명사-셀수 X 명사 세는 법</button>
                           <button class="button" onclick="function0108(); putCardNumber('0108')">8 명사-셀수 X 명사 세는 법 2</button>
-                          <!-- <button class="button" onclick="">+ 명사-세는 법 전체</button> -->
-                          <!-- <button class="button" onclick="">9 명사-자리</button> -->
+                          <button class="button" onclick="" Disabled>+ 명사-세는 법 전체</button>
+                          <button class="button" onclick="" Disabled>9 명사-자리</button>
                         </div>
                         <button class="dropdown-btn button is-light is-warning" onclick="pronoun5()">2 동사</button>
                         <div class="dropdown-container">
-                          <!-- <button class="button" onclick="">0 동사전체</button> -->
-                          <button class="button" onclick="pronoun5()">1 동사-be/일반구분</button>
+                          <button class="button" onclick="" Disabled>0 동사전체</button>
+                          <button class="button" onclick="pronoun5()" Disabled>1 동사-be/일반구분</button>
                           <button class="button" onclick="getRandomDouble0()">2 동사-be동사-현재형</button>
-                          <button class="button" onclick="pronoun5()">3 동사-be동사-부정문</button>
-                          <button class="button" onclick="pronoun5()">4 동사-be동사-의문문</button>
+                          <button class="button" onclick="pronoun5()" Disabled>3 동사-be동사-부정문</button>
+                          <button class="button" onclick="pronoun5()" Disabled>4 동사-be동사-의문문</button>
                           <button class="button" onclick="getRandomDouble1()">5 동사-일반동사-현재형</button>
-                          <button class="button" onclick="pronoun5()">6 동사-일반동사-부정문</button>
-                          <button class="button" onclick="pronoun5()">7 동사-일반동사-의문문</button>
+                          <button class="button" onclick="pronoun5()" Disabled>6 동사-일반동사-부정문</button>
+                          <button class="button" onclick="pronoun5()" Disabled>7 동사-일반동사-의문문</button>
                         </div>
                         <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">3 형용사</button>
                         <div class="dropdown-container">
-                          <!-- <button class="button" onclick="">0 형용사전체</button> -->
+                          <button class="button" onclick="" Disabled>0 형용사전체</button>
                           <button class="button" onclick="function0303(); putCardNumber('0303')">3 형용사-수량 형용사</button>
                           <button class="button" onclick="function0303v2(); putCardNumber('0303')">3 형용사-수량 형용사
                             V2</button>
@@ -269,12 +269,12 @@
                           <button class="button" onclick="function0305v2(); putCardNumber('0305')">5 형용사-수사(숫자) 표현법 기수?
                             서수?</button>
                           <button class="button" onclick="function0306(); putCardNumber('0306')">6 형용사-분수 읽기</button>
-                          <!-- <button class="button" onclick="">6 형용사-어순</button> -->
+                          <button class="button" onclick="" Disabled>6 형용사-어순</button>
                         </div>
                         <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">4 부사</button>
                         <div class="dropdown-container">
-                          <!-- <button class="button" onclick="">0 부사전체</button> -->
-                          <!-- <button class="button" onclick="">1 부사-의미</button> -->
+                          <button class="button" onclick="" Disabled>0 부사전체</button>
+                          <button class="button" onclick="" Disabled>1 부사-의미</button>
                           <button class="button" onclick="function0402(); putCardNumber('0402')">2 부사-형태</button>
                           <button class="button" onclick="function0403(); putCardNumber('0403')">3 부사-빈도 부사</button>
                           <button class="button" onclick="function0404(); putCardNumber('0404')">4
@@ -290,7 +290,7 @@
                         </div>
                         <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">5 대명사</button>
                         <div class="dropdown-container">
-                          <!-- <button class="button" onclick="">0 대명사전체</button> -->
+                          <button class="button" onclick="" Disabled>0 대명사전체</button>
                           <button class="button" onclick="function0502(); putCardNumber('0502')">2 대명사-지시대명사1</button>
                           <button class="button" onclick="function0503(); putCardNumber('0503')">3 대명사-지시대명사2</button>
                           <button class="button" onclick="function0504(); putCardNumber('0504')">4 대명사-비인칭주어it</button>
@@ -300,7 +300,7 @@
                           <button class="button" onclick="function0508(); putCardNumber('0508')">8 대명사-인칭대명사-소유격-인칭대명사</button>
                           <button class="button" onclick="function0509(); putCardNumber('0509')">9 대명사-인칭대명사-소유대명사</button>
                           <button class="button" onclick="function0510(); putCardNumber('0510')">10 대명사-인칭대명사-목적격</button>
-                          <button class="button" onclick="function0511(); putCardNumber('0511')">11 대명사-인칭대명사-전체</button>
+                          <button class="button" onclick="function0511(); putCardNumber('0511')" Disabled>11 대명사-인칭대명사-전체</button>
                           <button class="button" onclick="function0512(); putCardNumber('0512')">12 대명사-인칭대명사-주어잡기</button>
                           <button class="button" onclick="function0513(); putCardNumber('0513')">13 대명사-재귀대명사-형태</button>
                           <button class="button" onclick="function0514(); putCardNumber('0514')">14 대명사-재귀대명사-용법</button>
@@ -316,9 +316,9 @@
                         </div>
                         <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">6 접속사</button>
                         <div class="dropdown-container">
-                          <!-- <button class="button" onclick="">0 접속사전체</button> -->
+                          <button class="button" onclick="">0 접속사전체</button>
                           <button class="button" onclick="function0602(); putCardNumber('0602')">2 접속사-등위 접속사</button>
-                          <!-- <button class="button" onclick="">3 접속사-종속 접속사</button> -->
+                          <button class="button" onclick="" Disabled>3 접속사-종속 접속사</button>
                           <button class="button" onclick="function0604(); putCardNumber('0604')">4 접속사-종속 접속사-명사절-that if whether</button>
                           <button class="button" onclick="function0605(); putCardNumber('0605')">5 접속사-종속 접속사-부사절-시간</button>
                           <button class="button" onclick="function0606(); putCardNumber('0606')">6 접속사-종속 접속사-부사절-이유,조건,양보,목적,결과</button>
@@ -328,11 +328,11 @@
                         </div>
                         <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">7 감탄사</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="pronoun5()">0 감탄사전체</button>
+                          <button class="button" onclick="pronoun5()" Disabled>0 감탄사전체</button>
                         </div>
                         <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">8 전치사</button>
                         <div class="dropdown-container">
-                          <!-- <button class="button" onclick="">0 전치사전체</button> -->
+                          <button class="button" onclick="" Disabled>0 전치사전체</button>
                           <button class="button" onclick="function0802(); putCardNumber('0802')">2 전치사-시간 전치사 in on at</button>
                           <button class="button" onclick="function0803(); putCardNumber('0803')">3 전치사-시간 전치사 2</button>
                           <button class="button" onclick="function0804(); putCardNumber('0804')">4 전치사-장소 전치사 in on at</button>
@@ -343,10 +343,10 @@
                         </div>
                         <button class="dropdown-btn button is-warning is-light" onclick="articles()">9 관사</button>
                         <div class="dropdown-container">
-                          <!-- <button class="button" onclick="">0 관사전체</button> -->
+                          <button class="button" onclick="" Disabled>0 관사전체</button>
                           <button class="button" onclick="function0901(); putCardNumber('0901')">1 관사</button>
                           <button class="button" onclick="function0902(); putCardNumber('0902')">2 관사-부정관사 a/an</button>
-                          <button class="button" onclick="function0903(); putCardNumber('0903')">3 관사-the 수 개념</button>
+                          <button class="button" onclick="function0903(); putCardNumber('0903')" Disabled>3 관사-the 수 개념</button>
                           <button class="button" onclick="function0904(); putCardNumber('0904')">4 관사-꼭 the</button>
                           <button class="button" onclick="function0905(); putCardNumber('0905')">5 관사-No a/an/the(무관사)</button>
                         </div>
@@ -358,9 +358,9 @@
                       <div class="dropdown-containe">
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">10 시제</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function1000(); putCardNumber('1000')">0 시제전체</button>
-                          <button class="button" onclick="function1001(); putCardNumber('1001')">1 시제-개념</button>
-                          <button class="button" onclick="function1002(); putCardNumber('1002')">2 시제-현재</button>
+                          <button class="button" onclick="function1000(); putCardNumber('1000')" Disabled>0 시제전체</button>
+                          <button class="button" onclick="function1001(); putCardNumber('1001')" Disabled>1 시제-개념</button>
+                          <button class="button" onclick="function1002(); putCardNumber('1002')" Disabled>2 시제-현재</button>
                           <button class="button" onclick="getRandomPast(); putCardNumber('1003')">3 시제-과거</button>
                           <button class="button" onclick="function1004(); putCardNumber('1004')">4 시제-과거</button>
                           <button class="button" onclick="function1005(); putCardNumber('1005')">5 시제-과거-부정문/의문문</button>
@@ -381,7 +381,7 @@
                         </div>
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">11 조동사</button>
                         <div class="dropdown-container">
-                          <!-- <button class="button" onclick="function1100(); putCardNumber('1101')">0 조동사전체</button> -->
+                          <button class="button" onclick="function1100(); putCardNumber('1101')"  Disabled>0 조동사전체</button>
                           <button class="button" onclick="function1101(); putCardNumber('1101')">1 조동사</button>
                           <button class="button" onclick="function1102(); putCardNumber('1102')">2 조동사 can</button>
                           <button class="button" onclick="function1103(); putCardNumber('1103')">3 조동사 may</button>
@@ -404,7 +404,7 @@
                         </div>
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">12 동명사</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function1200(); putCardNumber('1200')">0 동명사전체</button>
+                          <button class="button" onclick="function1200(); putCardNumber('1200')" Disabled>0 동명사전체</button>
                           <button class="button" onclick="function1201(); putCardNumber('1201')">1 동명사</button>
                           <button class="button" onclick="function1202(); putCardNumber('1202')">2 동명사-역할</button>
                           <button class="button" onclick="function1203(); putCardNumber('1203')">3 동명사-부정</button>
@@ -425,7 +425,7 @@
                         </div>
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">13 분사</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function1300(); putCardNumber('1300')">0 분사전체</button>
+                          <button class="button" onclick="function1300(); putCardNumber('1300')" Disabled>0 분사전체</button>
                           <button class="button" onclick="function1301(); putCardNumber('1301')">1 분사-현재 분사-ing</button>
                           <button class="button" onclick="function1301(); putCardNumber('1301')">1 분사-과거 분사-p.p.</button>
                           <button class="button" onclick="function1301(); putCardNumber('1301')">1 분사-문장</button>
@@ -442,7 +442,7 @@
                         </div>
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">14 수동태</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function1400(); putCardNumber('1400')">0 수동태전체</button>
+                          <button class="button" onclick="function1400(); putCardNumber('1400')" Disabled>0 수동태전체</button>
                           <button class="button" onclick="function1401(); putCardNumber('1401')">1 수동태</button>
                           <button class="button" onclick="function1402(); putCardNumber('1402')">2 수동태-문장 종류에 따라</button>
                           <button class="button" onclick="function1403(); putCardNumber('1403')">3 수동태-시제</button>
@@ -460,7 +460,7 @@
                         </div>
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">15 부정사</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function1500(); putCardNumber('1500')">0 부정사전체</button>
+                          <button class="button" onclick="function1500(); putCardNumber('1500')" Disabled>0 부정사전체</button>
                           <button class="button" onclick="function1501(); putCardNumber('1501')">1 부정사</button>
                           <button class="button" onclick="function1502(); putCardNumber('1502')">2 부정사-to부정사 vs to전치사</button>
                           <button class="button" onclick="function1503(); putCardNumber('1503')">3 부정사-명사적 용법</button>
@@ -483,7 +483,7 @@
                         </div>
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">16 비교구문</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function1600(); putCardNumber('1600')">0 비교구문전체</button>
+                          <button class="button" onclick="function1600(); putCardNumber('1600')" Disabled>0 비교구문전체</button>
                           <button class="button" onclick="function1601(); putCardNumber('1601')">1 비교구문</button>
                           <button class="button" onclick="function1602(); putCardNumber('1602')">2 비교구문-원급</button>
                           <button class="button" onclick="function1603(); putCardNumber('1603')">3 비교구문-비교급 & 강조</button>
@@ -499,7 +499,7 @@
                         </div>
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">17 관계사</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function1700(); putCardNumber('1700')">0 관계사전체</button>
+                          <button class="button" onclick="function1700(); putCardNumber('1700')" Disabled>0 관계사전체</button>
                           <button class="button" onclick="function1701(); putCardNumber('1701')">1 관계사</button>
                           <button class="button" onclick="function1701(); putCardNumber('1701')">1 관계사-관계대명사-주격1</button>
                           <button class="button" onclick="function1701(); putCardNumber('1701')">1 관계사-관계대명사-주격2</button>
@@ -523,7 +523,7 @@
                         </div>
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">18 가정법</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function1800(); putCardNumber('1800')">0 가정법전체</button>
+                          <button class="button" onclick="function1800(); putCardNumber('1800')" Disabled>0 가정법전체</button>
                           <button class="button" onclick="function1801(); putCardNumber('1801')">1 가정법</button>
                           <button class="button" onclick="function1802(); putCardNumber('1802')">2 가정법-과거</button>
                           <button class="button" onclick="function1803(); putCardNumber('1803')">3 가정법-과거 완료</button>
@@ -537,7 +537,7 @@
                         </div>
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">19 의문사&의문문</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function1900(); putCardNumber('1900')">0 의문사&의문문전체</button>
+                          <button class="button" onclick="function1900(); putCardNumber('1900')" Disabled>0 의문사&의문문전체</button>
                           <button class="button" onclick="function1901(); putCardNumber('1901')">1 의문사</button>
                           <button class="button" onclick="function1902(); putCardNumber('1902')">2 의문사&의문문-의문사OX의문문</button>
                           <button class="button" onclick="function1903(); putCardNumber('1903')">3 의문사&의문문-의문대명사 who what which</button>
@@ -550,7 +550,7 @@
                         </div>
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">20 일치</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function2000(); putCardNumber('2000')">0 일치전체</button>
+                          <button class="button" onclick="function2000(); putCardNumber('2000')" Disabled>0 일치전체</button>
                           <button class="button" onclick="function2001(); putCardNumber('2001')">1 일치</button>
                           <button class="button" onclick="function2002(); putCardNumber('2002')">2 일치-수 일치1</button>
                           <button class="button" onclick="function2003(); putCardNumber('2003')">3 일치-수 일치2</button>
@@ -558,7 +558,7 @@
                         </div>
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">21 화법</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function2100(); putCardNumber('2100')">0 화법전체</button>
+                          <button class="button" onclick="function2100(); putCardNumber('2100')" Disabled>0 화법전체</button>
                           <button class="button" onclick="function2101(); putCardNumber('2101')">1 화법</button>
                           <button class="button" onclick="function2102(); putCardNumber('2102')">2 화법전환-평서문</button>
                           <button class="button" onclick="function2103(); putCardNumber('2103')">3 화법전환-지시어/부사(구)</button>
@@ -567,7 +567,7 @@
                         </div>
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">22 특수구문</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function2200(); putCardNumber('2200')">0 특수구문전체</button>
+                          <button class="button" onclick="function2200(); putCardNumber('2200')" Disabled>0 특수구문전체</button>
                           <button class="button" onclick="function2201(); putCardNumber('2201')">1 특수구문</button>
                           <button class="button" onclick="function2202(); putCardNumber('2202')">2 특수구문-강조</button>
                           <button class="button" onclick="function2203(); putCardNumber('2203')">3 특수구문-it that강조</button>
@@ -583,14 +583,14 @@
                       <div class="dropdown-containe">
                         <button class="dropdown-btn button is-danger is-light" onclick="pronoun5()">23 문장</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function2300(); putCardNumber('2300')">0 문장전체</button>
+                          <button class="button" onclick="function2300(); putCardNumber('2300')" Disabled>0 문장전체</button>
                           <button class="button" onclick="function2301(); putCardNumber('2301')">1 문장-기본문1</button>
                           <button class="button" onclick="function2302(); putCardNumber('2302')">2 문장-기본문2</button>
                           <button class="button" onclick="function2303(); putCardNumber('2303')">3 문장-확장문</button>
                         </div>
                         <button class="dropdown-btn button is-danger is-light" onclick="pronoun5()">24 문장의 종류</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function2400(); putCardNumber('2400')">0 문장전체</button>
+                          <button class="button" onclick="function2400(); putCardNumber('2400')" Disabled>0 문장전체</button>
                           <button class="button" onclick="function2401(); putCardNumber('2401')">1 문장의 종류</button>
                           <button class="button" onclick="function2402(); putCardNumber('2402')">2 문장-감탄문</button>
                           <button class="button" onclick="function2403(); putCardNumber('2403')">3 문장-감탄문 문제 풀이</button>
@@ -599,11 +599,11 @@
                         </div>
                         <button class="dropdown-btn button is-danger is-light" onclick="pronoun5()">25 문장의 구성요소</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function2500(); putCardNumber('2500')">0 문장전체</button>
+                          <button class="button" onclick="function2500(); putCardNumber('2500')" Disabled>0 문장전체</button>
                         </div>
                         <button class="dropdown-btn button is-danger is-light" onclick="pronoun5()">26 문장의 5형식</button>
                         <div class="dropdown-container">
-                          <button class="button" onclick="function2600(); putCardNumber('2600')">0 문장전체</button>
+                          <button class="button" onclick="function2600(); putCardNumber('2600')" Disabled>0 문장전체</button>
                           <button class="button" onclick="function2601(); putCardNumber('2601')">1 문장-문장의 5형식</button>
                           <button class="button" onclick="function2602(); putCardNumber('2602')">2 문장-문장의 5형식2</button>
                           <button class="button" onclick="function2603(); putCardNumber('2603')">3 문장-There be구문</button>

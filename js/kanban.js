@@ -313,6 +313,10 @@ const VERB_SENTENCE_FORM_4_K = new Array();
 const VERB_SENTENCE_FORM_4_E = new Array();
 const VERB_SENTENCE_FORM_5_K = new Array();
 const VERB_SENTENCE_FORM_5_E = new Array();
+const VERB_CONCEPT_K = new Array();
+const VERB_CONCEPT_E = new Array();
+const VERB_DISTINGUISHMENT_K = new Array("Be동사의 부정문은?","Be동사의 의문문은?","일반동사의 부정문은?","일반동사의 의문문은?");
+const VERB_DISTINGUISHMENT_E = new Array("Be 뒤에 not","Be를 맨 앞","두더지 뒤에 not 동사원형","두더지를 맨 앞 동사원형");
 
 
 const adjective1personK = new Array("모든", "혼자", "다른", "어떤", "나쁜", "큰", "검은", "파란", "용감한", "갈색", "바쁜", "차분한", "특정한", "깨끗한", "영리한", "멋진", "미쳐있는", "궁금한", "귀여운", "죽은", "더러운", "모든", "유명한", "환상적인", "빨리", "지방", "좋아하는", "좋은", "자유의", "재미있는", "거대한", "기쁜", "좋은", "위대한", "잘 생긴", "행복한", " 어려운", "무거운", "솔직한", "더운", "배고픈", "친절한", "게으른", "작은", "화난", "많은", "많은", "새로운", "멋진", "나이든", "가난한", "예쁜", "빠른", "조용한", "준비된", "빨간", "부자의", "슬픈", "안전한", "같은", "짧은", "수줍은", "아픈", "느린", "작은", "똑똑한", "부드러운", "일부", "미안한", "강한", "키가 큰", "추한", "따뜻한", "젖은", "하얀", "잘못된", "노란색", "젊은", "두려운");
@@ -459,20 +463,33 @@ const NO_ARTICLE_E = new Array("No a/an/the (무관사)", "No a/an/the (무관�
 const TENSE_K = new Array();
 const TENSE_PRESENT_K = new Array();
 const TENSE_PAST_K = new Array();
-const TENSE_PAST_2K = new Array();
-const SENTENCE_NEGATIVE_INTERROGATIVE_K = new Array();
+const TENSE_PAST_2K = new Array("ed 붙이는 규칙 1 보통은 ","ed 붙이는 규칙 2 e로 끝나면 ","ed 붙이는 규칙 3 y앞에 자음이면","ed 붙이는 규칙 4 y앞에 모음이면","ed 붙이는 규칙 5 cvc는 ","ed 붙이는 규칙 6 불규칙은 ","ed 발음하는 규칙 1 보통은 ","ed 발음하는 규칙 2 p f s k sh ch는 ","ed 발음하는 규칙 3 t d 는 ");
+const TENSE_PAST_2E = new Array("ed","d","y kill - ied","그냥 ed","ced","외운다","/d/","/t/","/id/");
+const SENTENCE_NEGATIVE_INTERROGATIVE_K = new Array("Be동사의 부정문은?","Be동사의 의문문은?","일반동사의 부정문은?","일반동사의 의문문은?");
+const SENTENCE_NEGATIVE_INTERROGATIVE_E = new Array("Be 뒤에 not","Be를 맨 앞","두더지 뒤에 not 동사원형","두더지를 맨 앞 동사원형");
 const TENSE_CONTINUOUS_K = new Array();
-const RULE_OF_ING_K = new Array();
+const RULE_OF_ING_K = new Array("ing붙이는 규칙 ① 보통  ","ing붙이는 규칙 ② e로 끝나면","ing붙이는 규칙 ③ ie로 끝나면","ing붙이는 규칙 ④ cvc로 끝나면","ing붙이는 규칙 ④ cvc인데 w, x, y, z 로 끝나면","ing붙이는 규칙 ⑤ 1음절 강세","ing붙이는 규칙 ⑥ 2음절 강세");
+const RULE_OF_ING_E = new Array("ing","e 빼고 ing","ie > y ing","cvc는 cing","그냥 ing"," ing"," c ing");
 const VERB_NOT_CONTINUOUS_K = new Array();
 const TENSE_CONTINUOUS_2K = new Array();
 const TENSE_FUTURE_K = new Array();
 const TENSE_FUTURE_2K = new Array();
-const TENSE_PRESENT_PERFECT_K = new Array();
+const TENSE_PRESENT_PERFECT_K = new Array("행동해왔다","더해왔다","조언해왔다","동의해왔다","대답해왔다","도착해왔다","물어왔다","구워왔다","이어왔다","되어왔다","시작해왔다","믿어왔다","물어왔다","막아왔다","빌려왔다","깨뜨려왔다","가져왔다","닦아왔다","만들어왔다","타왔다","사왔다","전화해왔다","보살펴왔다","휴대해왔다","잡아왔다","점검해왔다","확인해왔다","선택해왔다","올라왔다","모아왔다","되어왔다","축하해왔다","제어해왔다","요리해왔다","복사해왔다","덮어왔다","건너왔다","울어왔다","잘라왔다","춤춰왔다","결정해왔다","설계해왔다","죽어왔다","논의해왔다","나눠왔다","해왔다","그려왔다","꿈꿔왔다","마셔왔다","운전해왔다","떨어져왔다","먹어왔다","끝나왔다","즐겨왔다","입장해왔다","훈련해왔다","실패해왔다","떨어져왔다","느껴왔다","싸워왔다","채워왔다","찾아왔다","마쳐왔다","고쳐왔다","고정해왔다","날아왔다","집중해왔다","잊어왔다","형성해왔다","튀겨왔다","받아왔다","전해왔다","가왔다","성장해왔다","~ 라고 생각해왔다","안내해왔다","걸어왔다","싫어해왔다","가져왔다","도와왔다","쳐왔다","버텨왔다","잡아왔다","희망해왔다","사냥해왔다","빨리 ~해왔다","소개해왔다","초대해왔다","참여해왔다","유지해왔다","차왔다","죽여왔다","알아왔다","배워왔다","거짓말해왔다","좋아해왔다","들어왔다","살아왔다","보아왔다","사랑해왔다","만들어왔다","결혼해왔다","만나왔다","놓쳐왔다","움직여왔다","필요해왔다","열어왔다","그려왔다","통과해왔다","지불해왔다","선택해왔다","계획해왔다","놀아왔다","인쇄해왔다","밀어왔다","넣어왔다","읽어왔다","기억해왔다","복귀해왔다","달려왔다","절약해왔다","말해왔다","보아왔다","팔아왔다","보내왔다","놀라게 해왔다","보여줘왔다","노래해왔다","앉아왔다","자왔다","냄새를 맡아왔다","웃어왔다","말해왔다","세워왔다","시작해왔다","머물러왔다","멈춰왔다","공부해왔다","수영해왔다","걸려왔다","말해왔다","가르쳐왔다","말해왔다","말해왔다","생각해왔다","만져왔다","훈련해왔다","여행해왔다","노력해왔다","돌려왔다","이해해왔다","이용해왔다","방문해왔다","기다려왔다","깨왔다","걸어왔다","원해왔다","씻어왔다","관람해왔다","입어왔다","환영해왔다","우승해왔다","바라왔다","일해왔다","걱정해왔다","쓰여왔다","울려왔다","가라앉아왔다","뿌려왔다","먹여왔다","쏘아왔다","이끌어왔다","기어왔다","쓸어왔다","울어왔다","떠나왔다","구부려왔다","빌려왔다","잃어왔다","소비해왔다","의미해왔다","찾아왔다","묶어왔다","감아왔다","두어왔다","들어왔다","미끄러져왔다","파왔다","빛나왔다","돌아왔다","때려왔다","때려왔다","깨왔다","낳아왔다","찢어왔다","감춰왔다","얼어왔다","훔쳐왔다","불어왔다","던져왔다","일어나왔다","타왔다","올라왔다","흔들어왔다");
+const TENSE_PRESENT_PERFECT_E = new Array("acted","added","adviseed","agreeed","answered","arrived","asked","baked","been","become","begun","believed","bitten","blocked","borrowed","broken","brought","brushed","built","burned","bought","called","cared","carried","caught","changed","checked","chosen","climbed","collected","come","congratulated","controled","cooked","copied","covered","crossed","cried","cut","danced","decided","designed","died","discussed","divided","done","drawn","dreamed","drunk","driven","dropped","eaten","ended","enjoyed","entered","exercised","failed","fallen","felt","fought","filled","found","finished","fixed","fixed","flown","focused","forgotten","formed","fried","gotten","given","fone","grown","guessed","guided","hung","hated","had","helped","hit","held","held","hoped","hunted","hurried","introduced","invited","joined","kept","kicked","killed","known","learned","lied","liked","listened","lived","looked","loved","made","married","met","missed","moved","needed","opened","painted","passed","paid","picked","planned","played","printed","pushed","put","read","remembered","returned","run","saved","said","seen","sold","sent","shocked","showed","sung","sat","slept","smelled","smiled","spoken","standen","started","stayed","stopped","studied","swum","taken","talked","taught","told","thanked","tought","touched","trained","traveled","tried","turned","understood","used","visited","waited","woken","walked","wanted","washed","watched","worn","welcomed","won","wished","worked","worried","written","rung","sunk","sowed","fed","shot","led","crept","swept","wept","left","bent","lent","lost","spent","meant","sought","bound","wound","laid","heard","slid","dug","shone","spun","struck","beaten","awoken","born","torn","hidden","frozen","stolen","blown","thrown","arisen","ridden","risen","shaken");
 const PRESENT_PERFECT_USAGE_K = new Array();
 const PRESENT_PERFECT_USAGE_2K = new Array();
-const PAST_VS_PRESENT_PERFECT_K = new Array();
-const PAST_PERFECT_AND_FUTURE_PERFECT_K = new Array();
-const PERFECT_CONTINUOUS_K = new Array();
+const PAST_VS_PRESENT_PERFECT_K = new Array("yesterday","when","last","ago","ever","never","before","just","already","yet","for","since","how long","lost","gone");
+const PAST_VS_PRESENT_PERFECT_E = new Array("과거","과거","과거","과거","현재완료-경험","현재완료-경험","현재완료-경험","현재완료-완료","현재완료-완료","현재완료-완료","현재완료-계속","현재완료-계속","현재완료-계속","현재완료-결과","현재완료-결과");
+const TENSE_PAST_PERFECT_K = new Array("행동해왔었다","더해왔었다","조언해왔었다","동의해왔었다","대답해왔었다","도착해왔었다","물어왔었다","구워왔었다","이어왔었다","되어왔었다","시작해왔었다","믿어왔었다","물어왔었다","막아왔었다","빌려왔었다","깨뜨려왔었다","가져왔었다","닦아왔었다","만들어왔었다","타왔었다","사왔었다","전화해왔었다","보살펴왔었다","휴대해왔었다","잡아왔었다","점검해왔었다","확인해왔었다","선택해왔었다","올라왔었다","모아왔었다","되어왔었다","축하해왔었다","제어해왔었다","요리해왔었다","복사해왔었다","덮어왔었다","건너왔었다","울어왔었다","잘라왔었다","춤춰왔었다","결정해왔었다","설계해왔었다","죽어왔었다","논의해왔었다","나눠왔었다","해왔었다","그려왔었다","꿈꿔왔었다","마셔왔었다","운전해왔었다","떨어져왔었다","먹어왔었다","끝나왔었다","즐겨왔었다","입장해왔었다","훈련해왔었다","실패해왔었다","떨어져왔었다","느껴왔었다","싸워왔었다","채워왔었다","찾아왔었다","마쳐왔었다","고쳐왔었다","고정해왔었다","날아왔었다","집중해왔었다","잊어왔었다","형성해왔었다","튀겨왔었다","받아왔었다","전해왔었다","가왔었다","성장해왔었다","~라고 생각해왔었다","안내해왔었다","걸어왔었다","싫어해왔었다","가져왔었다","도와왔었다","쳐왔었다","버텨왔었다","잡아왔었다","희망해왔었다","사냥해왔었다","빨리~해왔었다","소개해왔었다","초대해왔었다","참여해왔었다","유지해왔었다","차왔었다","죽여왔었다","알아왔었다","배워왔었다","거짓말해왔었다","좋아해왔었다","들어왔었다","살아왔었다","보아왔었다","사랑해왔었다","만들어왔었다","결혼해왔었다","만나왔었다","놓쳐왔었다","움직여왔었다","필요해왔었다","열어왔었다","그려왔었다","통과해왔었다","지불해왔었다","선택왔었다","계획해왔었다","놀아왔었다","인쇄해왔었다","밀어왔었다","넣어왔었다","읽어왔었다","기억해왔었다","복귀해왔었다","달려왔었다","절약해왔었다","말해왔었다","보아왔었다","팔아왔었다","보내왔었다","놀라게 해왔었다","보여줘왔었다","노래해왔었다","앉아왔었다","자왔었다","냄새를 맡아왔었다","웃어왔었다","말해왔었다","세워왔었다","시작해왔었다","머물러왔었다","멈춰왔었다","공부해왔었다","수영해왔었다","걸려왔었다","말해왔었다","가르쳐왔었다","말해왔었다","말해왔었다","생각해왔었다","만져왔었다","훈련해왔었다","여행해왔었다","노력해왔었다","돌려왔었다","이해해왔었다","이용해왔었다","방문해왔었다","기다려왔었다","깨왔었다","걸어왔었다","원해왔었다","씻어왔었다","관람왔었다","입어왔었다","환영해왔었다","우승해왔었다","바라왔었다","일해왔었다","걱정해왔었다","쓰여왔었다","울려왔었다","가라앉아왔었다","뿌려왔었다","먹여왔었다","쏘아왔었다","이끌어왔었다","기어왔었다","쓸어왔었다","울어왔었다","떠나왔었다","구부려왔었다","빌려왔었다","잃어왔었다","소비해왔었다","의미해왔었다","찾아왔었다","묶어왔었다","감아왔었다","두어왔었다","들어왔었다","미끄러져왔었다","파왔었다","빛나왔었다","돌아왔었다","때려왔었다","때려왔었다","깨왔었다","낳아왔었다","찢어왔었다","감춰왔었다","얼어왔었다","훔쳐왔었다","불어왔었다","던져왔었다","일어나왔었다","타왔었다","올라왔었다","흔들어왔었다");
+const TENSE_PAST_PERFECT_E = new Array();
+const TENSE_FUTURE_PERFECT_K = new Array("행동해 갈 거다","더해 갈 거다","조언해 갈 거다","동의해 갈 거다","대답해 갈 거다","도착해 갈 거다","물어갈 거다","구워갈 거다","이어갈 거다","되어갈 거다","시작해 갈 거다","믿어갈 거다","물어갈 거다","막아갈 거다","빌려갈 거다","깨뜨려갈 거다","가져갈 거다","닦아갈 거다","만들어갈 거다","타갈 거다","사갈 거다","전화해 갈 거다","보살펴 갈 거다","휴대해 갈 거다","잡아갈 거다","점검해 갈 거다","확인해 갈 거다","선택해 갈 거다","올라갈 거다","모아갈 거다","되어갈 거다","축하해 갈 거다","제어해 갈 거다","요리해 갈 거다","복사해 갈 거다","덮어갈 거다","건너갈 거다","울어갈 거다","잘라갈 거다","춤춰갈 거다","결정해 갈 거다","설계해 갈 거다","죽어갈 거다","논의해 갈 거다","나눠갈 거다","해 갈 거다","그려갈 거다","꿈꿔갈 거다","마셔갈 거다","운전해 갈 거다","떨어져 갈 거다","먹어갈 거다","끝나갈 거다","즐겨갈 거다","입장해 갈 거다","훈련해 갈 거다","실패해 갈 거다","떨어져갈 거다","느껴갈 거다","싸워갈 거다","채워갈 거다","찾아갈 거다","마쳐갈 거다","고쳐갈 거다","고정해 갈 거다","날아갈 거다","집중해 갈 거다","잊어갈 거다","형성해 갈 거다","튀겨갈 거다","받아갈 거다","전해갈 거다","갈 거다","성장해 갈 거다","~라고 생각해 갈 거다","안내해 갈 거다","걸어갈 거다","싫어해 갈 거다","가져갈거다","도와갈 거다","쳐갈 거다","버텨갈 거다","잡아갈 거다","희망해 갈 거다","사냥해 갈 거다","빨리 ~해 갈 거다","소개해 갈 거다","초대해 갈 거다","참여해 갈 거다","유지해 갈 거다","차갈 거다","죽여갈 거다","알아갈 거다","배워갈 거다","거짓말해 갈 거다","좋아해 갈 거다","들어와갈 거다","살아갈 거다","보아갈 거다","사랑해 갈 거다","만들어갈 거다","결혼해 갈 거다","만나갈 거다","놓쳐갈 거다","움직여갈 거다","필요해 갈 거다","열어갈 거다","그려갈 거다","통과해 갈 거다","지불해 갈 거다","선택해 갈 거다","계획해 갈 거다","놀아갈 거다","인쇄해 갈 거다","밀어갈 거다","넣어갈 거다","읽어갈 거다","기억해 갈 거다","복귀해 갈 거다","달려갈 거다","절약해 갈 거다","말해 갈 거다","보아갈 거다","팔아갈 거다","보내갈 거다","놀라게 해 갈 거다","보여줘 갈 거다","노래해 갈 거다","앉아갈 거다","자 갈 거다","냄새를 맡아갈 거다","웃어 갈 거다","말해 갈 거다","세워 갈 거다","시작해 갈 거다","머물러 갈 거다","멈춰갈 거다","공부해 갈 거다","수영해 갈 거다","걸려갈 거다","말해 갈 거다","가르쳐갈 거다","말해 갈 거다","말해 갈 거다","생각해 갈 거다","만져갈 거다","훈련해 갈 거다","여행해 갈 거다","노력해 갈 거다","돌려갈 거다","이해해 갈 거다","이용해 갈 거다","방문해 갈 거다","기다려갈 거다","깨갈 거다","걸어갈 거다","원해 갈 거다","씻어갈 거다","관람해 갈 거다","입어갈 거다","환영해 갈 거다","우승해 갈 거다","바라갈 거다","일해 갈 거다","걱정해 갈 거다","쓰여갈 거다","울려갈 거다","가라앉아 갈 거다","뿌려갈 거다","먹여갈 거다","쏘아갈 거다","이끌어갈 거다","기어갈 거다","쓸어갈 거다","울어갈 거다","떠나갈 거다","구부려갈 거다","빌려갈 거다","잃어갈 거다","소비해 갈 거다","의미해 갈 거다","찾아갈 거다","묶어갈 거다","감아갈 거다","두어갈 거다","들어갈 거다","미끄러져갈 거다","파갈 거다","빛나갈 거다","돌아갈 거다","때려갈 거다","때려갈 거다","깨갈 거다","낳아갈 거다","찢어갈 거다","감춰갈 거다","얼어갈 거다","훔쳐갈 거다","불어갈 거다","던져갈 거다","일어나갈 거다","타갈 거다","올라갈 거다","흔들어갈 거다");
+const TENSE_FUTURE_PERFECT_E = new Array();
+const TENSE_PAST_PERFECT_AND_FUTURE_PERFECT_K = new Array();
+const TENSE_PAST_PERFECT_AND_FUTURE_PERFECT_E = new Array();
+const PERFECT_CONTINUOUS_K = new Array("행동해오는 중이다","더해오는 중이다","조언해오는 중이다","동의해오는 중이다","대답해오는 중이다","도착해오는 중이다","물어오는 중이다","구워오는 중이다","이어오는 중이다","되어가 중이다","시작해오는 중이다","믿어오는 중이다","물어오는 중이다","막아오는 중이다","빌려오는 중이다","깨뜨려오는 중이다","가져오는 중이다","닦아오는 중이다","만들어오는 중이다","타오는 중이다","사오는 중이다","전화해오는 중이다","보살펴오는 중이다","휴대해오는 중이다","잡아오는 중이다","점검해오는 중이다","확인해오는 중이다","선택해오는 중이다","올라오는 중이다","모아오는 중이다","되어오는 중이다","축하해오는 중이다","제어해오는 중이다","요리해오는 중이다","복사해오는 중이다","덮어오는 중이다","건너오는 중이다","올라오는 중이다","잘라오는 중이다","춤춰오는 중이다","결정해오는 중이다","설계해오는 중이다","죽어오는 중이다","논의해오는 중이다","나눠오는 중이다","해오는 중이다","그려오는 중이다","꿈꿔오는 중이다","마셔오는 중이다","운전해오는 중이다","떨어져오는 중이다","먹어오는 중이다","끝내오는 중이다","즐겨오는 중이다","입장해오는 중이다","훈련해오는 중이다","실패해오는 중이다","떨어져오는 중이다","느껴오는 중이다","싸워오는 중이다","채워오는 중이다","찾아오는 중이다","마쳐오는 중이다","고쳐오는 중이다","고정해오는 중이다","날아오는 중이다","집중해오는 중이다","잊어오는 중이다","형성해오는 중이다","튀겨오는 중이다","받아오는 중이다","전해오는 중이다","가오는 중이다","성장해오는 중이다","~라고 생각해오는 중이다","안내해오는 중이다","걸어오는 중이다","싫어해오는 중이다","가져오는 중이다","도와오는 중이다","쳐오는 중이다","버텨오는 중이다","잡아오는 중이다","희망해오는 중이다","사냥 해오는 중이다","빨리 ~해오는 중이다","소개해오는 중이다","초대해오는 중이다","참여해오는 중이다","유지해오는 중이다","차오는 중이다","죽여오는 중이다","알아오는 중이다","배워오는 중이다","거짓말해오는 중이다","좋아해오는 중이다","들어오는 중이다","살아오는 중이다","보아오는 중이다","사랑해오는 중이다","만들어오는 중이다","결혼해오는 중이다","만나오는 중이다","놓쳐오는 중이다","움직여오는 중이다","필요해오는 중이다","열어오는 중이다","그려오는 중이다","통과해오는 중이다","지불해오는 중이다","선택해오는 중이다","계획해오는 중이다","놀아오는 중이다","인쇄해오는 중이다","밀어오는 중이다","넣어오는 중이다","읽어오는 중이다","기억해오는 중이다","복귀해오는 중이다","달려오는 중이다","절약해오는 중이다","말해오는 중이다","보아오는 중이다","팔아오는 중이다","보내오는 중이다","놀라게 해오는 중이다","보여줘오는 중이다","노래해오는 중이다","앉오는 중이다","자오는 중이다","냄새를 맡아오는 중이다","웃어오는 중이다","말해오는 중이다","세워오는 중이다","시작해오는 중이다","머물러오는 중이다","멈춰오는 중이다","공부해오는 중이다","수영해오는 중이다","걸려오는 중이다","말해오는 중이다","가르쳐오는 중이다","말해오는 중이다","말해오는 중이다","생각해오는 중이다","만져오는 중이다","훈련해오는 중이다","여행해오는 중이다","노력해오는 중이다","돌려오는 중이다","이해해오는 중이다","이용해오는 중이다","방문해오는 중이다","기다려오는 중이다","깨오는 중이다","걸어오는 중이다","원해오는 중이다","씻어오는 중이다","관람해오는 중이다","입어오는 중이다","환영해오는 중이다","우승해오는 중이다","바라오는 중이다","일해오는 중이다","걱정해오는 중이다","쓰여오는 중이다","울려오는 중이다","가라앉아오는 중이다","뿌려오는 중이다","먹여오는 중이다","쏘아오는 중이다","이끌어오는 중이다","기어오는 중이다","쓸어오는 중이다","울어오는 중이다","떠나오는 중이다","구부려오는 중이다","빌려오는 중이다","잃어오는 중이다","소비해오는 중이다","의미해오는 중이다","찾아오는 중이다","묶어오는 중이다","감아오는 중이다","두어오는 중이다","들어오는 중이다","미끄러져오는 중이다","파오는 중이다","빛나오는 중이다","돌아오는 중이다","때려오는 중이다","때려오는 중이다","깨오는 중이다","낳아오는 중이다","찢어오는 중이다","감춰오는 중이다","얼어오는 중이다","훔쳐오는 중이다","불어오는 중이다","던져오는 중이다","일어나오는 중이다","타오는 중이다","올라오는 중이다","흔들어오는 중이다");
+const PERFECT_CONTINUOUS_E = new Array("acting","adding","advising","agreeing","answering","arriving","asking","baking","being","becoming","beginning","believing","biting","blocking","borrowing","breaking","bringing","brushing","building","burning","buying","calling","caring","carrying","catching","changing","checking","choosing","climbing","collecting","coming","congratulating","controlling","cooking","copying","covering","crossing","crying","cutting","dancing","deciding","designing","dying","discussing","dividing","doing","drawing","dreaming","drinking","driving","dropping","eating","ending","enjoying","entering","exercising","failing","falling","feeling","fighting","filling","finding","finishing","fixing","fixing","flying","focusing","forgetting","forming","frying","getting","giving","going","growing","guessing","guiding","hanging","hating","having","helping","hitting","holding","holding","hoping","hunting","hurrying","introducing","inviting","joining","keeping","kicking","killing","knowing","learning","lying","liking","listening","living","looking","loving","making","marrying","meeting","missing","moving","needing","opening","painting","passing","paying","picking","planning","playing","printing","pusing","putting","reading","remembering","returning","running","saving","saying","seeing","selling","sending","shocking","showing","singing","sitting","sleeping","smelling","smiling","speaking","standing","starting","staying","stopping","studying","swimming","taking","talking","teaching","telling","thanking","thinking","touching","training","traveling","trying","turning","understanding","using","visiting","waiting","waking","walking","wanting","washing","watching","wearing","welcoming","winning","wishing","working","worrying","writing","ringing","singing","sowing","feeding","shooting","leading","creeping","sweeping","weeping","leaving","bending","lending","losing","spending","meaning","seeking","binding","winding","laying","hearing","sliding","digging","shining","spinning","striking","beating","awaking","bearing","tearing","hiding","freezing","stealing","blowing","throwing","arising","riding","rising","shaking");
+const PERFECT_PAST_CONTINUOUS_K = new Array("행동해오는 중이었다","더해오는 중이었다","조언해오는 중이었다","동의해오는 중이었다","대답해오는 중이었다","도착해오는 중이었다","물어오는 중이었다","구워오는 중이었다","이어오는 중이었다","되어오는 중이었다","시작해오는 중이었다","믿어오는 중이었다","물어오는 중이었다","막아오는 중이었다","빌려오는 중이었다","깨뜨려오는 중이었다","가져오는 중이었다","닦아오는 중이었다","만들어오는 중이었다","타오는 중이었다","사오는 중이었다","전화해오는 중이었다","보살펴오는 중이었다","휴대해오는 중이었다","잡아오는 중이었다","점검해오는 중이었다","확인해오는 중이었다","선택해오는 중이었다","올라오는 중이었다","모아오는 중이었다","되어오는 중이었다","축하해오는 중이었다","제어해오는 중이었다","요리해오는 중이었다","복사해오는 중이었다","덮어오는 중이었다","건너오는 중이었다","올라오는 중이었다","잘라오는 중이었다","춤춰오는 중이었다","결정해오는 중이었다","설계해오는 중이었다","죽어오는 중이었다","논의해오는 중이었다","나눠오는 중이었다","해오는 중이었다","그려오는 중이었다","꿈꿔오는 중이었다","마셔오는 중이었다","운전해오는 중이었다","떨어져오는 중이었다","먹어오는 중이었다","끝내오는 중이었다","즐겨오는 중이었다","입장해오는 중이었다","훈련해오는 중이었다","실패해오는 중이었다","떨어져오는 중이었다","느껴오는 중이었다","싸워오는 중이었다","채워오는 중이었다","찾아오는 중이었다","마쳐오는 중이었다","고쳐오는 중이었다","고정해오는 중이었다","날아오는 중이었다","집중해오는 중이었다","잊어오는 중이었다","형성해오는 중이었다","튀겨오는 중이었다","받아오는 중이었다","전해오는 중이었다","가오는 중이었다","성장해오는 중이었다","~라고 생각해오는 중이었다","안내해오는 중이었다","걸어오는 중이었다","싫어해오는 중이었다","가져오는 중이었다","도와오는 중이었다","쳐오는 중이었다","버텨오는 중이었다","잡아오는 중이었다","희망해오는 중이었다","사냥해오는 중이었다","빨리 ~해오는 중이었다","소개해오는 중이었다","초대해오는 중이었다","참여해오는 중이었다","유지해오는 중이었다","차오는 중이었다","죽여오는 중이었다","알아오는 중이었다","배워오는 중이었다","거짓말해오는 중이었다","좋아해오는 중이었다","들어오는 중이었다","살아오는 중이었다","보아오는 중이었다","사랑해오는 중이었다","만들어오는 중이었다","결혼해오는 중이었다","만나오는 중이었다","놓쳐오는 중이었다","움직여오는 중이었다","필요해오는 중이었다","열어오는 중이었다","그려오는 중이었다","통과해오는 중이었다","지불해오는 중이었다","선택해오는 중이었다","계획해오는 중이었다","놀아오는 중이었다","인쇄해오는 중이었다","밀어오는 중이었다","넣어오는 중이었다","읽아오는 중이었다","기억해오는 중이었다","복귀해오는 중이었다","달려오는 중이었다","절약해오는 중이었다","말해오는 중이었다","보아오는 중이었다","팔아오는 중이었다","보내오는 중이었다","놀라게 해오는 중이었다","보여오는 중이었다","노래해오는 중이었다","앉아오는 중이었다","자오는 중이었다","냄새를 맡아오는 중이었다","웃오는 중이었다","말해오는 중이었다","세워오는 중이었다","시작해오는 중이었다","머물러오는 중이었다","멈춰오는 중이었다","공부해오는 중이었다","수영해오는 중이었다","걸려오는 중이었다","말해오는 중이었다","가르쳐오는 중이었다","말해오는 중이었다","말해오는 중이었다","생각해오는 중이었다","만져오는 중이었다","훈련해오는 중이었다","여행해오는 중이었다","노력해오는 중이었다","돌려오는 중이었다","이해해오는 중이었다","이용해오는 중이었다","방문해오는 중이었다","기다려오는 중이었다","깨오는 중이었다","걸어오는 중이었다","원해오는 중이었다","씻어오는 중이었다","관람해오는 중이었다","입어오는 중이었다","환영해오는 중이었다","우승해오는 중이었다","바라오는 중이었다","일해오는 중이었다","걱정해오는 중이었다","쓰여오는 중이었다","울려오는 중이었다","가라앉아오는 중이었다","뿌려오는 중이었다","먹여오는 중이었다","쏘아오는 중이었다","이끌어오는 중이었다","기어오는 중이었다","쓸어오는 중이었다","울어오는 중이었다","떠나오는 중이었다","구부려오는 중이었다","빌려오는 중이었다","잃어해오는 중이었다","소비해오는 중이었다","의미해오는 중이었다","찾오는 중이었다","묶오는 중이었다","감아오는 중이었다","두어오는 중이었다","들어오는 중이었다","미끄러져오는 중이었다","파오는 중이었다","빛나오는 중이었다","돌아오는 중이었다","때려오는 중이었다","때려오는 중이었다","깨오는 중이었다","낳아오는 중이었다","찢어오는 중이었다","감춰오는 중이었다","얼어오는 중이었다","훔쳐오는 중이었다","불어오는 중이었다","던져오는 중이었다","일어나오는 중이었다","타오는 중이었다","올라오는 중이었다","흔들어오는 중이었다");
+const PERFECT_PAST_CONTINUOUS_E = new Array();
 
 
 
@@ -497,11 +514,11 @@ const GERUND_TYPE_E = new Array("주어", "목적어", "전치사의 목적어")
 const GERUND_NEGATIVE_K = new Array("안 ", "절대 안 ");
 const GERUND_NEGATIVE_E = new Array("not ", "never ");
 const GERUND_SENSE_SUBJECT_K = new Array();
-const GERUND_SENSE_SUBJECT_SENTENCE_K = new Array(" 에 감사합니다");
+const GERUND_SENSE_SUBJECT_SENTENCE_K = new Array("에 감사합니다");
 const GERUND_SENSE_SUBJECT_SENTENCE_E = new Array("Thank you for ");
 const GERUND_VS_PRESENT_PARTICIPLE_K = new Array("to만 쓰는 동사 ", "ing만 쓰는 동사", "", "둘 다 쓰는 동사 - 뜻 같음", "둘 다 쓰는 동사 - 뜻 다름");
-const VERB_WITH_K = new Array("to만 쓰는 동사 ", "ing만 쓰는 동사", "", "둘 다 쓰는 동사 - 뜻 같음", "둘 다 쓰는 동사 - 뜻 다름");
-const VERB_WITH_E = new Array("언제 답을 출래 ", "피마디인", "스키어 기쁘", "사랑동사", "기억동사");
+const VERB_WITH_K = new Array("to만 쓰는 동사 ", "ing만 쓰는 동사", "둘 다 쓰는 동사 - 뜻 같음", "둘 다 쓰는 동사 - 뜻 다름");
+const VERB_WITH_E = new Array("언제 답을 출래 ", "피마디인 스키어 기쁘", "사랑동사", "기억동사");
 const VERB_WITH_TO_K = new Array("원한다", "소망한다", "희망한다", "기대한다", "필요하다", "요구한다", "결정한다", "동의한다", "계획한다", "약속한다", "선택한다", "거절한다");
 const VERB_WITH_TO_E = new Array("want", "wish", "hope", "expect", "need", "demand", "decide", "agree", "plan", "promise", "choose", "refuse");
 const VERB_WITH_ING_K = new Array("끝나다", "꺼리다", "부인하다", "즐기다", "멈추다", "유지하다", "피하다", "인정하다", "포기하다", "연습하다");
@@ -584,11 +601,11 @@ const COMPARATIVE_COMPARATIVE_K = new Array();
 const COMPARATIVE_SUPERATIVE_K = new Array();
 const COMPARATIVE_COMPARATIVE_RULE_K = new Array("① 보통은?", "② e로 끝나면?", "③ cvc는?", "④ y앞에 자음이면?", "⑤ y앞에 모음이면?", "⑥ er/est말고 more/most?");
 const COMPARATIVE_COMPARATIVE_RULE_E = new Array("형부er/the 형부est", "r/st", "cer/cest", "y-kill -ier/iest", "그냥 er/est", "대부분의 3음절, -풀 –어블 –리스 –어스 –이브 –잉 -ful -ble -less -ous –ive -ing 등으로 끝날 때");
-const COMPARATIVE_COMPARATIVE_IRREGULAR_K = new Array("-better-best", "-better-best", "-worse-worst", "-worse-worst", "-more-most", "-more-most", "-less-least");
+const COMPARATIVE_COMPARATIVE_IRREGULAR_K = new Array("__________-better-best", "__________-better-best", "__________-worse-worst", "__________-worse-worst", "__________-more-most", "__________-more-most", "__________-less-least");
 const COMPARATIVE_COMPARATIVE_IRREGULAR_E = new Array("good", "well", "bad(ly)", "ill", "many", "much", "little");
 const COMPARATIVE_COMPARATIVE_IRREGULAR_2K = new Array("good-__________-best", "well-__________-best", "bad(ly)-__________-worst", "ill-__________-worst", "many-__________-most", "much-__________-most", "little-__________-least");
 const COMPARATIVE_COMPARATIVE_IRREGULAR_2E = new Array("better", "better", "worse", "worse", "more", "more", "less");
-const COMPARATIVE_COMPARATIVE_IRREGULAR_3K = new Array("good-better-", "well-better-", "bad(ly)-worse-", "ill-worse-", "many-more-", "much-more-", "little-less-");
+const COMPARATIVE_COMPARATIVE_IRREGULAR_3K = new Array("good-better-__________", "well-better-__________", "bad(ly)-worse-__________", "ill-worse-__________", "many-more-__________", "much-more-__________", "little-less-__________");
 const COMPARATIVE_COMPARATIVE_IRREGULAR_3E = new Array("best", "best", "worst", "worst", "most", "most", "least");
 const COMPARATIVE_COMPARATIVE_IRREGULAR_4K = new Array("낡은", "손위", "거리", "정도", "시간", "순서");
 const COMPARATIVE_COMPARATIVE_IRREGULAR_4E = new Array("old-older-oldest", "old-elder-eldest", "far-farther-farthest", "far-further-furthest", "late-later-latest", "late-latter-last");
@@ -848,19 +865,19 @@ function articles() {
 //0102 명사-셀수 X 명사 세는 법
 // TODO 하나 여러개 넣기
 function function0102() {
-  let result = getRandomTwoChar2(noun2objectK, noun2objectE);
-  valueK = valueK[valueNumber];
-  valueE = valueE[valueNumber];
-  document.getElementById('divRandom').innerText = valueK;
-  document.getElementById('divRandom2').innerText = valueE;
+  let valueNumber = Math.floor(Math.random() * noun2objectK.length);
+  let kWord = noun2objectK[valueNumber];
+  let eWord = noun2objectE[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
 }
 //0103 명사-셀수 X 명사 세는 법
 function function0103() {
-  let result = getRandomTwoChar2(function0103K, function0103E);
-  valueK = valueK[valueNumber];
-  valueE = valueE[valueNumber];
-  document.getElementById('divRandom').innerText = valueK;
-  document.getElementById('divRandom2').innerText = valueE;
+  let valueNumber = Math.floor(Math.random() * function0103K.length);
+  let kWord = function0103K[valueNumber];
+  let eWord = function0103E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
 }
 //0103 명사-셀수 X 명사 세는 법
 //TODO a/an 판단 if문으로 구분
@@ -883,20 +900,20 @@ function function0104() {
 }
 //0105 명사-셀수 X 명사 세는 법
 function function0105() {
-  let result = getRandomTwoChar2(function0105K, function0105E);
-  valueK = valueK[valueNumber];
-  valueE = valueE[valueNumber];
-  document.getElementById('divRandom').innerText = valueK;
-  document.getElementById('divRandom2').innerText = valueE;
+  let valueNumber = Math.floor(Math.random() * function0105K.length);
+  let kWord = function0105K[valueNumber];
+  let eWord = function0105E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
 }
 
 //0107 명사-셀수 X 명사 세는 법
 function function0107() {
-  let result = getRandomTwoChar2(function0107K, function0107E);
-  valueK = valueK[valueNumber];
-  valueE = valueE[valueNumber];
-  document.getElementById('divRandom').innerText = valueK;
-  document.getElementById('divRandom2').innerText = valueE;
+  let valueNumber = Math.floor(Math.random() * function0103K.length);
+  let kWord = function0107K[valueNumber];
+  let eWord = function0107E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
 }
 
 //0108 명사-셀수 X 명사 세는 법
@@ -1025,11 +1042,11 @@ function function0305v2() {
 }
 //0306 분수 읽기
 function function0306() {
-  let result = getRandomTwoChar2(adjectiveFractionK, adjectiveFractionE);
-  valueK = valueK[valueNumber];
-  valueE = valueE[valueNumber];
-  document.getElementById('divRandom').innerText = valueK;
-  document.getElementById('divRandom2').innerText = valueE;
+  let valueNumber = Math.floor(Math.random() * adjectiveFractionK.length);
+  let kWord = adjectiveFractionK[valueNumber];
+  let eWord = adjectiveFractionE[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
 }
 //0307 형용사-어순
 function function0307() {
@@ -1490,7 +1507,7 @@ function function1002() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//1003 TENSE_PAST
+//function1003 TENSE_PAST
 function function1003() {
   let valueNumber = Math.floor(Math.random() * TENSE_PAST_K.length);
   let kWord = TENSE_PAST_K[valueNumber];
@@ -1498,7 +1515,31 @@ function function1003() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//1010 AUXILIARY_WILL_K
+//function1004 TENSE_PAST_2K
+function function1004() {
+  let valueNumber = Math.floor(Math.random() * TENSE_PAST_2K.length);
+  let kWord = TENSE_PAST_2K[valueNumber];
+  let eWord = TENSE_PAST_2E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1005 SENTENCE_NEGATIVE_INTERROGATIVE_K
+function function1005() {
+  let valueNumber = Math.floor(Math.random() * SENTENCE_NEGATIVE_INTERROGATIVE_K.length);
+  let kWord = SENTENCE_NEGATIVE_INTERROGATIVE_K[valueNumber];
+  let eWord = SENTENCE_NEGATIVE_INTERROGATIVE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1007 TENSE_RULE_ING_K
+function function1007() {
+  let valueNumber = Math.floor(Math.random() * RULE_OF_ING_K.length);
+  let kWord = RULE_OF_ING_K[valueNumber];
+  let eWord = RULE_OF_ING_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1010 AUXILIARY_WILL_K
 function function1010() {
   let valueNumber = Math.floor(Math.random() * AUXILIARY_WILL_K.length);
   let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
@@ -1507,6 +1548,70 @@ function function1010() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
+//function1013 TENSE_PRESENT_PERFECT_K
+function function1013() {
+  let valueNumber = Math.floor(Math.random() * TENSE_PRESENT_PERFECT_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + TENSE_PRESENT_PERFECT_K[valueNumber];
+  let eWord = pronounBoxHaveE[valueNumber2] + TENSE_PRESENT_PERFECT_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1016 TENSE_RULE_ING_K
+function function1016() {
+  let valueNumber = Math.floor(Math.random() * PAST_VS_PRESENT_PERFECT_K.length);
+  let kWord = PAST_VS_PRESENT_PERFECT_K[valueNumber];
+  let eWord = PAST_VS_PRESENT_PERFECT_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1017 TENSE_PAST_PERFECT_K
+function function1017() {
+  let valueNumber = Math.floor(Math.random() * TENSE_PAST_PERFECT_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + TENSE_PAST_PERFECT_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "had " + TENSE_PRESENT_PERFECT_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1017v2 TENSE_FUTURE_PERFECT_K
+function function1017v2() {
+  let valueNumber = Math.floor(Math.random() * TENSE_FUTURE_PERFECT_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + TENSE_FUTURE_PERFECT_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "will have " + TENSE_PRESENT_PERFECT_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1018 PERFECT_CONTINUOUS_K
+function function1018() {
+  let valueNumber = Math.floor(Math.random() * PERFECT_CONTINUOUS_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + PERFECT_CONTINUOUS_K[valueNumber];
+  let eWord = pronounBoxHaveE[valueNumber2] + "been " + PERFECT_CONTINUOUS_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1018 PERFECT_PAST_CONTINUOUS_K
+function function1018v2() {
+  let valueNumber = Math.floor(Math.random() * PERFECT_PAST_CONTINUOUS_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + PERFECT_PAST_CONTINUOUS_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "had been " + PERFECT_CONTINUOUS_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+TENSE_K
+TENSE_PRESENT_K
+TENSE_PAST_K
+TENSE_CONTINUOUS_K
+VERB_NOT_CONTINUOUS_K
+TENSE_CONTINUOUS_2K
+TENSE_FUTURE_K
+TENSE_FUTURE_2K
+PRESENT_PERFECT_USAGE_K
+PRESENT_PERFECT_USAGE_2K
+
 //1102 AUXILIARY_CAN_K
 function function1102() {
   let valueNumber = Math.floor(Math.random() * AUXILIARY_CAN_K.length);
@@ -1539,7 +1644,7 @@ function function1105() {
   let valueNumber = Math.floor(Math.random() * AUXILIARY_WILL_K.length);
   let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
   let kWord = pronounBoxK[valueNumber2] + AUXILIARY_WILL_K[valueNumber];
-  let eWord = pronounBoxE[valueNumber2] + "going to " + VERB_SENTENCE_FORM_1_E[valueNumber];
+  let eWord = pronounBoxBeE[valueNumber2] + "going to " + VERB_SENTENCE_FORM_1_E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
@@ -1557,7 +1662,7 @@ function function1108() {
   let valueNumber = Math.floor(Math.random() * AUXILIARY_HaveTo_K.length);
   let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
   let kWord = pronounBoxK[valueNumber2] + AUXILIARY_HaveTo_K[valueNumber];
-  let eWord = pronounBoxHaveE[valueNumber2][valueNumber2] + "have to " + VERB_SENTENCE_FORM_1_E[valueNumber];
+  let eWord = pronounBoxHaveE[valueNumber2] + "to " + VERB_SENTENCE_FORM_1_E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
@@ -1640,7 +1745,7 @@ function function1206() {
 function function1207() {
   let valueNumber = Math.floor(Math.random() * VERB_WITH_TO_K.length);
   let kWord = VERB_WITH_TO_K[valueNumber];
-  let eWord = VERB_WITH_TO_E[valueNumber];
+  let eWord = VERB_WITH_TO_E[valueNumber] + " (to 동사원형) ";
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
@@ -1648,7 +1753,7 @@ function function1207() {
 function function1208() {
   let valueNumber = Math.floor(Math.random() * VERB_WITH_ING_K.length);
   let kWord = VERB_WITH_ING_K[valueNumber];
-  let eWord = VERB_WITH_ING_E[valueNumber];
+  let eWord = VERB_WITH_ING_E[valueNumber] + " (동사원형-ing)";
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
@@ -1852,8 +1957,8 @@ function function1517v2() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//1518 INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_K
-function function1517() {
+//function1518 INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_K
+function function1518() {
   let valueNumber = Math.floor(Math.random() * INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_K.length);
   let kWord = INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_K[valueNumber];
   let eWord = INFINITIVE_INDEPENDENT_IDIOMATIC_EXPRESSION_E[valueNumber];

@@ -16,7 +16,6 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
     document.getElementById('AudioCardBox').style.display = "none";
 }else {  
   document.getElementById('divRandom3').style.display = "none";
-
   }
 
 
@@ -138,6 +137,8 @@ $(document).ready(function () {
     $('#divRandom').toggle();
   });
   $('#switchRoundedDanger').click(function () {
+
+    $('#targetPtag').toggle();
     $('#divRandom2').toggle();
   });
   $('#switchRoundedWarning').click(function () {

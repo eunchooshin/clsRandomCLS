@@ -9,6 +9,8 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
     for(var i =0; i<buttons.length; i++){
       buttons[i].className += ' is-large';
     }
+    var inputBox = document.getElementById("inputCardNumber");
+    inputBox.className += ' is-large';
     
 
     //Grammar Card를 닫고 Grammar Card라고 적는다
@@ -137,7 +139,6 @@ $(document).ready(function () {
     $('#divRandom').toggle();
   });
   $('#switchRoundedDanger').click(function () {
-
     $('#targetPtag').toggle();
     $('#divRandom2').toggle();
   });

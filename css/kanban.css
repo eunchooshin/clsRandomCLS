@@ -82,6 +82,11 @@ footer {
   left: calc(100% - 1.4rem);
   background: #fff;
 }
+#switchRoundedInfo:checked~.toggleSwitch .toggleButton {
+  left: calc(100% - 1.4rem);
+  background: hsl(171, 100%, 41%);
+}
+
 
 .toggleSwitch,
 .toggleButton {

@@ -147,15 +147,17 @@ $(document).ready(function () {
 // img 넣기
 
 
+function getPageNumber(pageNumber) {
+  let z = '<audio controls><source src="../src/' + pageNumber + '.m4a" type="audio/mp3"></audio>';
+  document.getElementById('audioSetting').innerHTML = z;
+  let y = '<img src="../images/grammar_image/glPage/glPage' + pageNumber + '.png' + '" alt="GrammarPage">';
+  document.getElementById('glAudioCard').innerHTML = y;
+};
 function getCardNumber() {
   let cardNumber = document.getElementById('inputCardNumber').value;
-  let z =
-    '<audio controls><source src="../src/' +
-    cardNumber +
-    '.m4a" type="audio/mp3"></audio>';
+  let z = '<audio controls><source src="../src/' + cardNumber + '.m4a" type="audio/mp3"></audio>';
   document.getElementById('audioSetting').innerHTML = z;
-  let y =
-    '<img src="../images/grammar_image/glCard/glCard' + cardNumber + '.jpg' + '" alt="GrammarCard">';
+  let y = '<img src="../images/grammar_image/glCard/glCard' + cardNumber + '.jpg' + '" alt="GrammarCard">';
   document.getElementById('glAudioCard').innerHTML = y;
   // let myPicture = '<img width="720" height="1000" src="../images/grammar_image/glCard/glCard' + cardNumber + '.jpg' + '" alt="GrammarCard">';
   // document.getElementById('myPicture').innerHTML = x;
@@ -167,8 +169,13 @@ input.addEventListener('keyup', function (e) {
     let cardNumber = document.getElementById('inputCardNumber').value;
     let z = '<audio controls><source src="../src/' + cardNumber + '.m4a" type="audio/mp3"></audio>';
     document.getElementById('audioSetting').innerHTML = z;
-    let y = '<img src="../images/grammar_image/glCard/glCard' + cardNumber + '.jpg' + '" alt="GrammarCard">';
-    document.getElementById('glAudioCard').innerHTML = y;
+    if (cardNumber.length == 3){
+      let y = '<img src="../images/grammar_image/glPage/glPage' + cardNumber + '.png' + '" alt="GrammarPage">';
+      document.getElementById('glAudioCard').innerHTML = y;
+    } else {
+      let y = '<img src="../images/grammar_image/glCard/glCard' + cardNumber + '.jpg' + '" alt="GrammarCard">';
+      document.getElementById('glAudioCard').innerHTML = y;
+    }
     document.getElementById('inputCardNumber').value = '';
   }
 });
@@ -280,12 +287,17 @@ const pronounBoxHaveE = new Array('I have ', 'You have ', 'He has ', 'She has ',
 const prepositionK = new Array();
 const prepositionE = new Array();
 
+const ONE_SHOT_CONCEPT_K = new Array("명사","동사","형용사","부사","대명사","접속사","감탄사","전치사","관사","시제","조동사","동명사","분사","수동태","부정사","비교급","관계사","가정법","의문사","일치","화법");
+const ONE_SHOT_CONCEPT_E = new Array("이름","움직임/상태를 나타내는 말","[명사수식] 모양/성질 같은 특징","[명사 빼고 다 수식] 성질 > 부가적; 동사, 형용사, 다른 부사, 문장 전체)","명사 대신","(말과 말을) 이어주는 말; 단어-단어, 구-구, 절-절, 문장-문장","감탄하는 말","앞에서 치사하게 힌트 주는 말; 힌트 - 시간 장소 위치 >> 어디서 찾나? 인터넷","명사 짝궁","시간, 때를 알려주는 말 / 12시제","동사를 돕는 말","동사를 명사로","동사를 형용사로 ","당할 때 쓰는 말","동사를 명형부로","비교할 때 쓰는 표현","[형용사절] 관계대명사 (접속사+대명사), 관계부사 (접속사+부사) (전치사 + 관계대명사)","~라면","물어볼 때 쓰는 말 - 5W1H","주동(SV)일치, 수, 시제 일치","말을 전달하는 방법");
+const ONE_SHOT_CONCEPT_2E = new Array("Nicole, sky, desk 등등","eat, sleep, am 등등","pretty, beautiful, hungry 등등","very, beautifully 등등","he, she, it 등등","and, but, or, so, because 등등","Wow! 등등","in on at 등등","a an the","Verb ","can, will + Verb","Verb + -ing","Verb + -ing/p.p (ing 현재분사/p.p.과거분사)","be p.p. (by 목적격)","to Verb","형부er than, more 형부 + than, the –형부est, the most 형부","who whose which that 등","If","Who What Where When Why How","","직접화법, 간접화법");
+
+
 const noun1personK = new Array("성인", "천사", "이모", "아기", "상사", "소년", "형제", "선장", "아이", "직원", "부부", "사촌", "고객", "아빠", "딸", "치과의사", "의사", "기술자", "가족", "아버지", "바보", "친구", "신사", "소녀", "할아버지", "사람", "영웅", "인간", "남편", "나는", "아이", "왕", "여성", "어머니", "간호사", "부모", "사람들", "경찰", "왕자", "여왕", "그녀", "여동생", "아들", "학생", "10대의", "삼촌", "우리", "아내", "여성", "여러분", "농부", "외국인", "여걸", "소방관", "충고하는 사람", "10대 소년", "여행자", "동료", "학급친구", "한 방 사람", "인간", "육군 대장", "거지", "승객", "시민", "어릿광대", "상인", "거짓말쟁이", "임자", "적", "지배자", "도둑", "방문자", "여행자", "단짝", "교수", "고용주", "피고용인", "음악가", "배우", "여배우", "하인", "지도자", "해녀", "계산원", "뱃사람", "사냥꾼", "경영자", "변호사", "시장", "고객", "이발사", "남자", "여성", "운동선수", "지원자", "악마", "요정", "반대자", "청중", "탐험가", "백만장자", "기어오르는 사람", "동무", "주인", "이야기하는 사람", "상인", "지휘자", "시민", "일반인", "목수", "교대자", "선조", "범죄자", "사람들", "비서", "유권자", "우두머리", "조카", "조카딸", "시인", "강도", "겁쟁이", "교사", "디저트", "노예", "해군", "벌목꾼", "불교도", "소비자", "저자", "의사", "정치가", "천재", "살인자", "작곡가", "해군대장", "황제", "공주");
 const noun1personE = new Array("adult", "angel", "aunt", "baby", "boss", "boy", "brother", "captain", "child", "clerk", "couple", "cousin", "customer", "dad", "daughter", "dentist", "doctor", "engineer", "family", "father", "fool", "friend", "gentleman", "girl", "grandfather", "guy", "hero", "human", "husband", "I", "kid", "king", "lady", "mother", "nurse", "parent", "people", "police", "prince", "queen", "she", "sister", "son", "student", "teen", "uncle", "we", "wife", "woman", "you", "farmer", "foreigner", "heroine", "fireman", "adviser", "teenager", "tourist", "mate", "classmate", "roommate", "mankind", "general", "beggar", "passenger", "citizen", "clown", "trader", "liar", "owner", "enemy", "ruler", "thief", "visitor", "traveler", "pal", "professor", "employer", "employee", "musician", "actor", "actress", "servant", "leader", "diver", "cashier", "sailor", "hunter", "manager", "lawyer", "mayor", "client", "barber", "male", "female", "athlete", "volunteer", "devil", "fairy", "opponent", "audience", "explorer", "millionaire", "climber", "fellow", "host", "narrator", "merchant", "director", "civil", "civilian", "carpenter", "relay", "ancestor", "criminal", "folk", "secretary", "voter", "chief", "nephew", "niece", "poet", "robbery", "coward", "instructor", "dessert", "slave", "navy", "logger", "Buddhist", "consumer", "author", "physician", "politician", "genius", "murderer", "composer", "admiral", "emperor", "princess");
 const noun2objectK = new Array("사고", "오후", "나이", "항공사", "비행기", "사과", "팔", "등", "공", "풍선", "바구니", "박쥐", "화장실", "건전지", "콩", "침대", "침실", "쇠고기", "종", "자전거", "영수증", "혈액", "게시판", "배", "몸", "폭탄", "뼈", "책", "부츠", "병", "바닥", "그릇", "뇌", "브레이크", "가지", "브랜드", "빵", "다리", "거품", "단추", "(동물)우리", "사탕", "모자", "자동차", "당근", "수레", "현금", "성", "체인점", "의자", "원", "교실", "동영상", "시계", "천", "구름", "동전", "쿠키", "구석", "비용", "면 목화", "관", "커튼", "책상", "일기", "접시", "인형", "문", "귀", "지구", "달걀", "엔진", "지우개", "눈", "얼굴", "부채", "농장", "파일", "손가락", "화재", "국기", "꽃", "안개", "음식", "발", "축구", "과일", "유령", "선물", "유리", "장갑", "접착제", "금", "포도", "풀", "머리카락", "손", "모자", "머리", "심장", "열", "헬기", "숙제", "꿀", "얼음", "그것", "청바지", "열쇠", "칼", "잎", "다리", "편지", "선", "입술", "우편", "남자", "지도", "고기", "우유", "거울", "돈", "달", "산", "입", "영화관", "목", "신문", "코", "메모", "석유", "바지", "종이", "배", "사진", "주머니", "감자", "상", "경주", "비", "무지개", "반지", "바위", "지붕", "소금", "모래", "가위", "선박", "신발", "피부", "치마", "눈", "양말", "숟가락", "돌", "딸기", "지하철", "설탕", "태양", "탁자", "꼬리", "테이프", "전화", "교과서", "것", "치아", "장난감", "나무", "우산", "채소", "수박", "창문", "목재", "비누", "총", "쓰레기", "옷", "의복", "지갑", "양배추", "지갑", "팔꿈치", "무기", "초", "발가락", "손수건", "요리기구", "쓰레기", "무덤", "사전", "쟁반", "소나기", "껍질", "발목", "맥주", "베개", "약", "철도", "바지", "식물", "완두콩", "견과", "땅콩", "목구멍", "철", "손톱", "뺨", "밧줄", "위", "연", "담장", "마늘", "강철", "기둥", "우편엽서", "눈물", "막대기", "분수", "서랍", "소설", "상록수", "생산품", "짐", "저널", "뒤꿈치", "여권", "자동차", "입방체", "지느러미", "여과기", "꾸러미", "꾸러미", "잡지", "막대기", "자물쇠", "구멍", "후추", "손잡이", "파도", "식품", "수레바퀴", "오이", "손목", "꽃병", "식초", "씨", "발톱", "곡물", "묘", "약", "버섯", "갈고리", "연료", "내용물", "(여행의) 수하물", "땀", "건설", "동화", "복숭아", "잔디", "혀", "꽃", "창조물", "깃털", "풍자만화", "둥지", "식료품류", "칠판", "벽돌", "항아리", "제분기", "풍차", "젓가락", "소지품", "면허", "돼지고기", "(특정 작업을 위해 고안된) 장치", "눈썹", "단지", "온도계", "소매", "뿌리", "추첨", "실", "바늘", "컨테이너", "발자국", "상품", "눈금", "온실", "보물", "굴뚝", "성냥", "활", "뿔", "주먹", "폐", "막대", "사다리", "모서리", "농작물", "주름", "시집", "시", "위성", "물질", "꾸러미", "표면", "무거운 짐", "연장", "근육", "신경", "얼굴의 생김새", "불꽃", "반도", "주전자", "꼬리표", "양상추", "탄알", "통나무", "삽", "자석", "물살", "도끼", "콩", "곡식", "매", "대륙", "엄지손가락", "끈", "화살", "손바닥", "수도꼭지", "덫", "세포", "세탁", "기계", "빵 한 덩어리", "자원", "액체", "독감");
 const noun2objectE = new Array("accident", "afternoon", "age", "airline", "airplane", "apple", "arm", "back", "ball", "balloon", "basket", "bat", "bathroom", "battery", "bean", "bed", "bedroom", "beef", "bell", "bicycle", "bill", "blood", "board", "boat", "body", "bomb", "bone", "book", "boot", "bottle", "bottom", "bowl", "brain", "brake", "branch", "brand", "bread", "bridge", "bubble", "button", "cage", "candy", "cap", "car", "carrot", "cart", "cash", "castle", "chain", "chair", "circle", "classroom", "clip", "clock", "cloth", "cloud", "coin", "cookie", "corner", "cost", "cotton", "crown", "curtain", "desk", "diary", "dish", "doll", "door", "ear", "earth", "egg", "engine", "eraser", "eye", "face", "fan", "farm", "file", "finger", "fire", "flag", "flower", "fog", "food", "foot", "football", "fruit", "ghost", "gift", "glass", "glove", "glue", "gold", "grape", "grass", "hair", "hand", "hat", "head", "heart", "heat", "helicopter", "homework", "honey", "ice", "it", "jeans", "key", "knife", "leaf", "leg", "letter", "line", "lip", "mail", "man", "map", "meat", "milk", "mirror", "money", "moon", "mountain", "mouth", "movie", "neck", "newspaper", "nose", "note", "oil", "pants", "paper", "pear", "picture", "pocket", "potato", "prize", "race", "rain", "rainbow", "ring", "rock", "roof", "salt", "sand", "scissors", "ship", "shoe", "skin", "skirt", "snow", "sock", "spoon", "stone", "strawberry", "subway", "sugar", "sun", "table", "tail", "tape", "telephone", "textbook", "thing", "tooth", "toy", "tree", "umbrella", "vegetable", "watermelon", "window", "wood", "soap", "gun", "trash", "clothes", "clothing", "wallet", "cabbage", "purse", "elbow", "weapon", "candle", "toe", "handkerchief", "cooker", "garbage", "grave", "dictionary", "tray", "shower", "shell", "ankle", "beer", "pillow", "medicine", "railroad", "trousers", "plant", "pea", "nut", "peanut", "throat", "iron", "nail", "cheek", "rope", "stomach", "kite", "fence", "garlic", "steel", "post", "postcard", "tear", "pole", "fountain", "drawer", "novel", "evergreen", "product", "load", "journal", "heel", "passport", "automobile", "cube", "fin", "filter", "pack", "package", "magazine", "bar", "lock", "hole", "pepper", "handle", "wave", "diet", "wheel", "cucumber", "wrist", "vase", "vinegar", "seed", "claw", "grain", "tomb", "drug", "mushroom", "hook", "fuel", "content", "baggage", "sweat", "construction", "fairy tale", "peach", "lawn", "tongue", "bloom", "creature", "feather", "cartoon", "nest", "grocery", "blackboard", "brick", "jar", "mill", "windmill", "chopstick", "belonging", "license", "pork", "device", "eyebrow", "pot", "thermometer", "sleeve", "root", "lot", "thread", "needle", "container", "footprint", "merchandise", "scale", "greenhouse", "treasure", "chimney", "match", "bow", "horn", "fist", "lung", "rod", "ladder", "edge", "crop", "wrinkle", "poetry", "poem", "satellite", "material", "parcel", "surface", "burden", "tool", "muscle", "nerve", "feature", "flame", "peninsula", "kettle", "label", "lettuce", "bullet", "log", "spade", "magnet", "current", "ax", "soy", "cereal", "falcon", "continent", "thumb", "string", "arrow", "palm", "faucet", "trap", "cell", "laundry", "instrument", "loaf", "resource", "fluid", "influenza");
-const noun3animalK = new Array("동물", "개미", "곰", "벌", "새", "벌레", "고양이", "소", "개", "돌고래", "오리", "코끼리", "물고기", "여우", "개구리", "기린", "말", "사자", "원숭이", "쥐", "돼지", "강아지", "토끼", "호랑이", "얼룩말", "어린 양", "사슴", "상어", "매", "양", "올빼미", "거북이", "게", "비둘기", "참새", "달팽이", "당나귀", "염소", "새끼 새", "황소", "거위", "표범", "수탉", "칠면조", "암탉", "곤충", "두꺼비");
-const noun3animalE = new Array("animal", "ant", "bear", "bee", "bird", "bug", "cat", "cow", "dog", "dolphin", "duck", "elephant", "fish", "fox", "frog", "giraffe", "horse", "lion", "monkey", "mouse", "pig", "puppy", "rabbit", "tiger", "zebra", "lamb", "deer", "shark", "hawk", "sheep", "owl", "turtle", "crab", "pigeon", "sparrow", "snail", "donkey", "goat", "chick", "bull", "goose", "leopard", "cock", "turkey", "hen", "insect", "toad");
+const noun3animalK = new Array("개미", "곰", "벌", "새", "벌레", "고양이", "소", "개", "돌고래", "오리", "코끼리", "물고기", "여우", "개구리", "기린", "말", "사자", "원숭이", "쥐", "돼지", "강아지", "토끼", "호랑이", "얼룩말", "어린 양", "사슴", "상어", "매", "양", "올빼미", "거북이", "게", "비둘기", "참새", "달팽이", "당나귀", "염소", "새끼 새", "황소", "거위", "표범", "수탉", "칠면조", "암탉", "곤충", "두꺼비");
+const noun3animalE = new Array("ant", "bear", "bee", "bird", "bug", "cat", "cow", "dog", "dolphin", "duck", "elephant", "fish", "fox", "frog", "giraffe", "horse", "lion", "monkey", "mouse", "pig", "puppy", "rabbit", "tiger", "zebra", "lamb", "deer", "shark", "hawk", "sheep", "owl", "turtle", "crab", "pigeon", "sparrow", "snail", "donkey", "goat", "chick", "bull", "goose", "leopard", "cock", "turkey", "hen", "insect", "toad");
 const noun4placeK = new Array("아카데미", "공항", "지역", "은행", "해변", "교회", "영화관", "도시", "동아리", "대학", "회사", "콘서트", "대회", "나라", "시골", "출구", "공장", "분야", "바닥", "숲", "앞", "정원", "문", "땅", "천국", "언덕", "집; 가정의", "병원", "집", "부엌", "호수", "땅", "도서관", "거실", "박물관", "바다", "사무소", "궁전", "공원", "연필", "장소", "식당", "화장실", "강", "도로", "방", "학교", "바다", "상점", "하늘", "남", "공간", "가게", "거리", "마을", "벽", "동물원", "계단", "입구", "유치원", "지옥", "물웅덩이", "운동장", "항구", "마을", "연못", "굴", "골짜기", "해안", "작은 길", "극장", "횡단보도", "시청", "중심가", "도시의 주택가", "바닷가", "오두막집", "그늘", "법정", "화성", "우체국", "형무소", "항구", "빵집", "지하실", "사찰", "태평양", "대서양", "과수원", "교도소", "지대", "경사면", "체육관", "길", "국경", "행성", "도랑", "진료소", "차고", "장소", "시내", "우주");
 const noun4placeE = new Array("academy", "airport", "area", "bank", "beach", "church", "cinema", "city", "club", "college", "company", "concert", "contest", "country", "countryside", "exit", "factory", "field", "floor", "forest", "front", "garden", "gate", "ground", "heaven", "hill", "home", "hospital", "house", "kitchen", "lake", "land", "library", "living room", "museum", "ocean", "office", "palace", "park", "pencil", "place", "restaurant", "restroom", "river", "road", "room", "school", "sea", "shop", "sky", "south", "space", "store", "street", "town", "wall", "zoo", "stair", "entrance", "kindergarten", "hell", "pool", "playground", "harbor", "village", "pond", "cave", "valley", "coast", "path", "theater", "crosswalk", "city hall", "downtown", "uptown", "shore", "hut", "shade", "court", "Mars", "post office", "prison", "port", "bakery", "basement", "temple", "Pacific", "Atlantic", "orchard", "jail", "zone", "slope", "gym", "route", "frontier", "planet", "ditch", "clinic", "garage", "location", "stream", "universe");
 const noun5conceptK = new Array("억양", "주소", "모험", "공기", "분노", "예술", "기반", "야구", "농구", "목욕", "전투", "아름다움", "탄생", "생일", "아침 식사", "기업", "달력", "경우", "기회", "수업", "감기", "색", "코미디", "조건", "군중", "문화", "주기", "위험", "데이트", "날", "죽음", "대화", "저녁식사", "동쪽", "오차", "저녁", "시험", "예", "사실", "열", "미래", "몸짓", "목표", "신", "그룹", "습관", "두통", "역사", "취미", "휴일", "시간", "생각", "직무", "기쁨", "교훈", "빛", "운", "점심", "수학", "기억", "마음", "개월", "아침", "음악", "이름", "국가", "자연", "밤", "정오", "북", "아무것도 없음", "수", "하나", "부분", "평화", "소풍", "분홍색", "요점", "힘", "현재", "문제", "퍼즐", "질문", "권리", "판매", "과학", "점수", "계절", "측면", "크기", "축구", "노래", "소리", "속도", "이야기", "스트레스", "만찬", "시험", "저것", "그들", "갈증", "이것", "시간", "위쪽의", "관광", "탑", "삼각형", "여행", "유형", "목소리", "전쟁", "물", "방법", "날씨", "결혼", "주", "주말", "체중", "서부", "바람", "단어", "세계", "연도", "슬픔", "정신이상", "선택", "아픔", "정직", "현명함", "배구", "암흑", "상상력", "웃음", "새벽", "나약함", "골칫거리", "명예", "값", "아픔", "고독", "소음", "논쟁", "초대", "햇빛", "해돋이", "일몰", "영광", "필요", "반", "미움", "기쁨", "충고", "의미", "지루함", "수학", "두려움", "운", "편의", "교통", "언어", "한밤중", "거리", "실패", "도입", "개발", "감정", "위치", "보호", "불쌍히 여김", "우아함", "경제", "12개", "친절", "손해", "식사", "고난", "자랑", "발견", "기쁨", "도착", "인내", "대화", "침묵", "차이", "통행", "이유", "사회", "배달", "경이", "별명", "한 쌍", "상징", "웅장", "발명", "기침", "능력", "용기", "외관", "생각하기", "지정", "실망", "속임수", "가을", "1야드", "공학", "왕국", "거래", "싸움", "지식", "등급", "매력", "경험", "조각", "시력", "관광", "합계", "요약", "기록", "주의", "부", "조화", "비용", "지출", "이야기", "직사각형", "사과", "작은 조각", "준비", "요술", "축하", "각도", "경향", "힘", "분리", "물질", "규칙", "시기", "북극", "남극", "만족", "야생", "기간", "도보여행", "숨", "정보", "제안", "졸업", "순간", "자신감", "결과", "의견", "감탄", "교육", "호의", "대화", "고용", "실업", "지역", "산업", "공포", "안전", "대중(사회)", "치료", "시험", "살아남음", "휴식", "1센트", "1세기", "센티미터", "섭씨", "연구", "되풀이", "회복", "끝", "자유", "연설", "행동", "활동", "어린 시절", "비행", "힘", "길이", "높이", "말", "우정", "혼합", "지불", "접촉", "계급", "자기", "장면", "신용", "재주", "규칙", "신청", "사생활", "커뮤니케이션", "임무", "법률", "놀람", "비율", "폭풍", "보랏빛", "관습", "운동", "문법", "상해", "나쁜", "상처", "양", "의식", "병", "경고", "공포", "격노", "온도", "슬픔", "열", "가려움", "정사각형", "인기", "위험", "존재", "정부", "실험", "정도", "수수께끼", "예외", "노동", "치료", "노력", "처벌", "성취", "봄", "환경", "위치", "탐험", "환경", "근원", "대부분", "소수", "호기심", "일", "발음", "중간", "간격", "종교", "불평", "종류", "장애", "가치", "이익", "연결", "재산", "윤곽", "직업", "유사점", "엷은 안개", "이야기", "경우", "서두름", "의도", "투쟁", "방향", "위치", "요청", "요구", "번역", "파괴", "민주주의", "부족", "덩어리", "산성", "틈", "예", "끌어당김", "완성", "관계", "관계", "방어", "결합", "정정", "안락", "곡조", "원인", "죄", "한계", "한정", "세금", "걱정", "성가", "대조", "전통", "주제", "해결", "경향", "선거", "전기", "결점", "홍수", "자유", "목적", "책임", "합", "환경", "오염", "행동", "식욕", "유리", "불리", "수확", "폭력", "장식", "우화", "반대", "물리학", "연합", "위협", "실행", "감사", "기후", "오염", "손해", "헌신", "광고", "인구", "숫자", "효과", "가난", "부서", "공동체", "겁", "증명", "용기", "범위", "세부 사항", "수술", "교육", "조직", "실마리", "산뜻한", "수집", "책임", "의심", "운임", "여행", "신화", "기간", "임금", "자세", "증거", "향상", "공격", "맥박", "지시", "지휘자", "적용", "질", "계산", "방법", "인내", "운명", "출발", "개념", "평판", "불교", "농업", "구역", "기회", "운송 수단", "입장", "무질서", "허가", "목적지", "지나간 자국", "소비", "자취", "전설", "구조", "몫", "지름", "안전", "충돌", "번영", "정치", "범위", "분쟁", "응답", "진화", "혁명", "살인", "침입", "구성", "항해", "상황", "기능", "분석", "재활용", "복습", "보수", "거절", "예약", "응답", "퇴직", "반작용", "구제", "환불", "제한", "결합", "중심", "집중", "영향", "압력", "의기소침", "표현", "인상", "원리", "감정", "(미래의) 전망", "광경", "의심");
@@ -303,6 +315,15 @@ const verb5conceptK = new Array();
 const verb5conceptE = new Array();
 
 //TODO 동사 자료 넣기
+const VERB_ALL_K = new Array("행동한다","더한다","조언한다","동의한다","대답한다","도착한다","묻는다","굽는다","이다","된다","시작한다","믿는다","문다","막는다","빌린다","깨뜨린다","가져온다","닦는다","만든다","탄다","산다","전화한다","보살핀다","나른다","잡는다","점검한다","확인한다","선택한다","오른다","모은다","된다","축하한다","제어한다","요리한다","복사한다","덮는다","건넌다","오른다","자른다","춤춘다","결정한다","설계한다","죽는다","논의한다","나눈다","한다","그린다","꿈꾼다","마신다","운전한다","떨어진다","먹는다","끝낸다","즐긴다","입장한다","운동한다","실패한다","떨어진다","느낀다","싸운다","채운다","찾는다","마친다","고친다","고정한다","난다","집중한다","잊는다","형성한다","튀긴다","받는다","준다","간다","성장한다","추측한다","안내한다","건다","싫어한다","가진다","돕는다","친다","버틴다","잡는다","희망한다","사냥한다","서두른다","소개한다","초대한다","참여한다","유지한다","찬다","죽인다","안다","배운다","거짓말한다","좋아한다","듣는다","산다","본다","사랑한다","만든다","결혼한다","만난다","놓친다","움직인다","필요로 한다","연다","그린다","통과한다","지불한다","선택한다","계획한다","논다","인쇄한다","민다","놓는다","읽는다","기억한다","복귀한다","달린다","구한다","말한다","본다","판다","보낸다","놀라게 한다","보여준다","노래한다","앉는다","잔다","냄새를 맡는다","웃는다","말한다","일어선다","시작한다","머무른다","멈춘다","공부한다","수영한다","걸린다","말한다","가르친다","말한다","감사하다","생각한다","만진다","훈련한다","여행한다","노력한다","돌린다","이해한다","이용한다","방문한다","기다린다","깬다","걷는다","원한다","씻는다","본다","입는다","환영한다","우승한다","바란다","일한다","걱정한다","쓴다","울린다","가라앉는다","뿌린다","먹인다","쏜다","이끈다","긴다","쓴다","운다","떠난다","구부린다","빌린다","잃는다","소비한다","의미한다","찾는다","묶는다","감는다","둔다","듣는다","미끄러진다","판다","빛난다","돈다","때린다","때린다","깨운다","낳는다","찢는다","감춘다","언다","훔친다","부른다","던진다","일어난다","탄다","오른다","흔든다");
+const VERB_ALL_E = new Array("act","add","advise","agree","answer","arrive","ask","bake","be","become","begin","believe","bite","block","borrow","break","bring","brush","build","burn","buy","call","care","carry","catch","change","check","choose","climb","collect","come","congratulate","control","cook","copy","cover","cross","cry","cut","dance","decide","design","die","discuss","divide","do","draw","dream","drink","drive","drop","eat","end","enjoy","enter","exercise","fail","fall","feel","fight","fill","find","finish","fix","fix","fly","focus","forget","form","fry","get","give","go","grow","guess","guide","hang","hate","have","help","hit","hold","hold","hope","hunt","hurry","introduce","invite","join","keep","kick","kill","know","learn","lie","like","listen","live","look","love","make","marry","meet","miss","move","need","open","paint","pass","pay","pick","plan","play","print","push","put","read","remember","return","run","save","say","see","sell","send","shock","show","sing","sit","sleep","smell","smile","speak","stand","start","stay","stop","study","swim","take","talk","teach","tell","thank","think","touch","train","travel","try","turn","understand","use","visit","wait","wake","walk","want","wash","watch","wear","welcome","win","wish","work","worry","write","ring","sink","sow","feed","shoot","lead","creep","sweep","weep","leave","bend","lend","lose","spend","mean","seek","bind","wind","lay","hear","slide","dig","shine","spin","strike","beat","awake","bear","tear","hide","freeze","steal","blow","throw","arise","ride","rise","shake");
+const VERB_ALL_PAST_K = new Array();
+const VERB_ALL_PAST_E = new Array("acted","added","advise","agreeed","answered","arrave","askd","baked","was, were","became","began","believed","bit","blocked","borrowed","broke","brought","brushed","built","burned","bought","called","cared","carried","caught","changed","checked","chose","climbed","collected","came","congratulated","controled","cooked","copied","covered","crossed","cried","cut","danced","decided","designed","died","discussed","divided","did","drew","dreamed","drank","drove","dropped","ate","ended","enjoyed","entered","exercised","failed","fell","felt","fought","filled","found","finished","fixed","fixed","flew","focused","forgot","formed","fried","got","gave","went","grew","guessed","guided","hung","hated","had","helped","hit","held","held","hoped","hunted","hurried","introduced","invited","joined","kept","kicked","killed","knew","learned","lied","liked","listened","lived","looked","loved","made","married","met","missed","moved","needed","opened","painted","passed","paid","picked","planned","played","printed","pushed","put","read","remembered","returned","ran","saved","said","saw","sold","sent","shocked","showed","sang","sat","slept","smelled","smiled","spoke","standen","started","stayed","stopped","studied","swam","took","talked","taught","told","thanked","tought","touched","trained","traveled","tried","turned","understood","used","visited","waited","woke","walked","wanted","washed","watched","wore","welcomed","won","wished","worked","worried","wrote","rang","sank","sowed","fed","shot","led","crept","swept","wept","left","bent","lent","lost","spent","meant","sought","bound","wound","laid","heard","slid","dug","shone","spun","struck","beat","awoke","bore","tore","hid","froze","stole","blew","threw","arose","rode","rose","shook");
+const VERB_ALL_PAST_PARTICIPLE_K = new Array();
+const VERB_ALL_PAST_PARTICIPLE_E = new Array("acted","added","adviseed","agreeed","answered","arrived","asked","baked","been","become","begun","believed","bitten","blocked","borrowed","broken","brought","brushed","built","burned","bought","called","cared","carried","caught","changed","checked","chosen","climbed","collected","come","congratulated","controled","cooked","copied","covered","crossed","cried","cut","danced","decided","designed","died","discussed","divided","done","drawn","dreamed","drunk","driven","dropped","eaten","ended","enjoyed","entered","exercised","failed","fallen","felt","fought","filled","found","finished","fixed","fixed","flown","focused","forgotten","formed","fried","gotten","given","fone","grown","guessed","guided","hung","hated","had","helped","hit","held","held","hoped","hunted","hurried","introduced","invited","joined","kept","kicked","killed","known","learned","lied","liked","listened","lived","looked","loved","made","married","met","missed","moved","needed","opened","painted","passed","paid","picked","planned","played","printed","pushed","put","read","remembered","returned","run","saved","said","seen","sold","sent","shocked","showed","sung","sat","slept","smelled","smiled","spoken","standen","started","stayed","stopped","studied","swum","taken","talked","taught","told","thanked","tought","touched","trained","traveled","tried","turned","understood","used","visited","waited","woken","walked","wanted","washed","watched","worn","welcomed","won","wished","worked","worried","written","rung","sunk","sowed","fed","shot","led","crept","swept","wept","left","bent","lent","lost","spent","meant","sought","bound","wound","laid","heard","slid","dug","shone","spun","struck","beaten","awoken","born","torn","hidden","frozen","stolen","blown","thrown","arisen","ridden","risen","shaken");
+const VERB_ALL_PRESENT_PARTICIPLE_K = new Array();
+const VERB_ALL_PRESENT_PARTICIPLE_E = new Array("acting","adding","advising","agreeing","answering","arriving","asking","baking","being","becoming","beginning","believing","biting","blocking","borrowing","breaking","bringing","brushing","building","burning","buying","calling","caring","carrying","catching","changing","checking","choosing","climbing","collecting","coming","congratulating","controlling","cooking","copying","covering","crossing","crying","cutting","dancing","deciding","designing","dying","discussing","dividing","doing","drawing","dreaming","drinking","driving","dropping","eating","ending","enjoying","entering","exercising","failing","falling","feeling","fighting","filling","finding","finishing","fixing","fixing","flying","focusing","forgetting","forming","frying","getting","giving","going","growing","guessing","guiding","hanging","hating","having","helping","hitting","holding","holding","hoping","hunting","hurrying","introducing","inviting","joining","keeping","kicking","killing","knowing","learning","lying","liking","listening","living","looking","loving","making","marrying","meeting","missing","moving","needing","opening","painting","passing","paying","picking","planning","playing","printing","pusing","putting","reading","remembering","returning","running","saving","saying","seeing","selling","sending","shocking","showing","singing","sitting","sleeping","smelling","smiling","speaking","standing","starting","staying","stopping","studying","swimming","taking","talking","teaching","telling","thanking","thinking","touching","training","traveling","trying","turning","understanding","using","visiting","waiting","waking","walking","wanting","washing","watching","wearing","welcoming","winning","wishing","working","worrying","writing","ringing","singing","sowing","feeding","shooting","leading","creeping","sweeping","weeping","leaving","bending","lending","losing","spending","meaning","seeking","binding","winding","laying","hearing","sliding","digging","shining","spinning","striking","beating","awaking","bearing","tearing","hiding","freezing","stealing","blowing","throwing","arising","riding","rising","shaking");
+
 const VERB_SENTENCE_FORM_1_K = new Array("행동한다", "조언한다", "동의한다", "도착한다", "묻는다", "굽는다", "시작한다", "믿는다", "깨뜨린다", "탄다", "보살핀다", "바꾼다", "확인한다", "선택한다", "오른다", "온다", "요리한다", "복사한다", "건넌다", "운다", "자른다", "춤춘다", "결정한다", "죽는다", "한다", "그린다", "꿈꾼다", "마신다", "운전한다", "떨어진다", "먹는다", "끝난다", "들어간다", "운동간다", "실패한다", "떨어진다", "느낀다", "싸운다", "마친다", "고정한다", "난다", "집중한다", "잊는다", "형성한다", "튀긴다", "간다", "자란다", "추측한다", "걷는다", "돕는다", "친다", "잡는다", "희망한다", "서두른다", "참여한다", "계속한다", "찬다", "안다", "거짓말한다", "듣는다", "산다", "본다", "사랑한다", "움직인다", "연다", "통과한다", "지불한다", "논다", "민다", "읽는다", "돌아온다", "달린다", "노래한다", "앉는다", "잔다", "냄새맡는다", "미소짓는다", "말한다", "일어선다", "시작한다", "머무른다", "멈춘다", "수영한다", "말한다", "이야기한다", "여행한다", "노력한다", "돌린다", "방문한다", "기다린다", "깬다", "걷는다", "씻는다", "입는다", "이긴다", "바란다", "일한다", "걱정한다", "쓴다", "울린다", "가라앉는다", "먹인다", "쏜다", "이끈다", "긴다", "바닥을 쓴다", "운다", "떠난다", "구부린다", "잃는다", "감는다", "미끄러진다", "판다", "빛난다", "돌린다", "때린다", "깨운다", "낳는다", "찢는다", "얼린다", "훔친다", "분다", "던진다", "탄다", "오른다", "흔든다");
 const VERB_SENTENCE_FORM_1_E = new Array("act", "advise", "agree", "arrive", "ask", "bake", "begin", "believe", "break", "burn", "care", "change", "check", "choose", "climb", "come", "cook", "copy", "cross", "cry", "cut", "dance", "decide", "die", "do", "draw", "dream", "drink", "drive", "drop", "eat", "end", "enter", "exercise", "fail", "fall", "feel", "fight", "finish", "fix", "fly", "focus", "forget", "form", "fry", "go", "grow", "guess", "hang", "help", "hit", "hold", "hope", "hurry", "join", "keep", "kick", "know", "lie", "listen", "live", "look", "love", "move", "open", "pass", "pay", "play", "push", "read", "return", "run", "sing", "sit", "sleep", "smell", "smile", "speak", "stand", "start", "stay", "stop", "swim", "talk", "tell", "travel", "try", "turn", "visit", "wait", "wake", "walk", "wash", "wear", "win", "wish", "work", "worry", "write", "ring", "sink", "feed", "shoot", "lead", "creep", "sweep", "weep", "leave", "bend", "lose", "wind", "slide", "dig", "shine", "spin", "strike", "awake", "bear", "tear", "freeze", "steal", "blow", "throw", "ride", "rise", "shake");
 const VERB_SENTENCE_FORM_2_K = new Array();
@@ -375,11 +396,21 @@ const IMPERSONAL_SUBJECT_K = new Array("비인칭주어 it ( 날짜 )", "비인�
 const IMPERSONAL_SUBJECT_E = new Array("It is July 30th.", "It is sunny.", "It is Sunday.", "It is far.", "It is 7 o’clock.", "It is winter.", "It is dark.");
 const PRONOUN_PERSONAL_SUBJECTIVE_3K = new Array("나", "너", "그", "그녀", "그것", "우리", "너희들", "그들", "그것들");
 const PRONOUN_PERSONAL_SUBJECTIVE_2K = new Array("내가", "네가", "그가", "그녀가", "그것이", "우리들이", "너희들이", "그들이", "그것들이");
-const PRONOUN_PERSONAL_SUBJECTIVE_K = new Array("나는, 내가", "너는, 네가", "그는, 그가", "그녀는, 그녀가", "그것은, 그것이", "우리들은, 우리들이", "너희들은, 너희들이", "그들은, 그들이", "그것들은, 그것들이");
+const PRONOUN_PERSONAL_SUBJECTIVE_K = new Array("나는","너는","그는","그녀는","그것은","우리들은","너희들은","그들은","그것들은");
 const PRONOUN_PERSONAL_SUBJECTIVE_E = new Array("I", "You", "He", "She", "It", "We", "You", "They", "They");
+const PRONOUN_PERSONAL_SUBJECTIVE_ALL_K = new Array("나는"," 내가","너는"," 네가","그는"," 그가","그녀는"," 그녀가","그것은"," 그것이","우리들은"," 우리들이","너희들은"," 너희들이","그들은"," 그들이","그것들은"," 그것들이");
+const PRONOUN_PERSONAL_SUBJECTIVE_ALL_E = new Array("I","I","You","You","He","He","She","She","It","It","We","We","You","You","They","They","They","They");
+const PRONOUN_PERSONAL_SUBJECTIVE_DO_NEGATIVE_ALL_E = new Array("I don't","I don't","You don't","You don't","He doesn't","He doesn't","She doesn't","She doesn't","It doesn't","It doesn't","We don't","We don't","You don't","You don't","They don't","They don't","They don't","They don't");
+const PRONOUN_PERSONAL_SUBJECTIVE_DO_QUESTION_ALL_E = new Array("Do I","Do I","Do you","Do you","Does he","Does he","Does she","Does she","Does it","Does it","Do we","Do we","Do you","Do you","Do they","Do they","Do they","Do they");
+const PRONOUN_PERSONAL_SUBJECTIVE_ALL_TOGETHER_E = new Array("I","I","You","You","He","He","She","She","It","It","We","We","You","You","They","They","They","They");
+const PRONOUN_PERSONAL_SUBJECTIVE_ALL_TOGETHER_K = new Array("나는, 내가", "너는, 네가", "그는, 그가", "그녀는, 그녀가", "그것은, 그것이", "우리들은, 우리들이", "너희들은, 너희들이", "그들은, 그들이", "그것들은, 그것들이");
 const PRONOUN_PERSONAL_SUBJECTIVE_SMALL_E = new Array("I", "you", "he", "she", "it", "we", "you", "they", "they");
+const PRONOUN_PERSONAL_SUBJECTIVE_SMALL_DOUBLE_E = new Array("I", "I", "you", "you", "he", "he", "she", "she", "it", "it", "we", "we", "you", "you", "they", "they", "they", "they");
 const PRONOUN_PERSONAL_SUBJECTIVE_WITH_BE_K = new Array("나는, 내가 ~이다", "너는, 네가 ~이다", "그는, 그가 ~이다", "그녀는, 그녀가 ~이다", "그것은, 그것이 ~이다", "우리들은, 우리들이 ~이다", "너희들은, 너희들이 ~이다", "그들은, 그들이 ~이다", "그것들은, 그것들이 ~이다");
 const PRONOUN_PERSONAL_SUBJECTIVE_WITH_BE_E = new Array("I am", "You are", "He is", "She is", "It is", "We are", "You are", "They are", "They are");
+const BE_VERB_E = new Array("Am","Are","Is","Is","Is","Are","Are","Are","Are");
+const BE_VERB_DOUBLE_E = new Array("Am","Am","Are","Are","Is","Is","Is","Is","Is","Is","Are","Are","Are","Are","Are","Are","Are","Are");
+const BE_VERB_SMALL_DOUBLE_E = new Array("am","am","are","are","is","is","is","is","is","is","are","are","are","are","are","are","are","are");
 const PRONOUN_PERSONAL_POSSESSIVE_K = new Array();
 const PRONOUN_PERSONAL_POSSESSIVE_E = new Array();
 const PRONOUN_PERSONAL_POSSESSIVE_2K = new Array("나의", "너의", "그의", "그녀의", "그것의", "우리들의", "너희들의", "그들의, 그것들의");
@@ -417,6 +448,8 @@ const PRONOUN_COMPLETE_PARTIAL_NEGATION_E = new Array("no, none, nothing, nobody
 const PRONOUN_INTERROGATIVE_K = new Array("누구", "무엇", "어느 것");
 const PRONOUN_INTERROGATIVE_E = new Array("Who", "What", "Which");
 
+const CONJUNCTION_CONCEPT_K = new Array("접속사?","등위접속사?","종속접속사?","상관접속사?");
+const CONJUNCTION_CONCEPT_E = new Array("말과 말을 이어주는 말","대등하게 이어주는 말","종같이 속하는 접속사","상관있는 접속사");
 const conjunctionCoordinateK = new Array("그리고, 그래서", "앞뒤 내용이 대등할 때", "그러나, 하지만", "앞뒤 내용이 반대될 때", "혹은, 또는", "둘 이상 중에서 선택할 때", "그래서, 그 결과", "앞-원인, 뒤-결과");
 const conjunctionCoordinateE = new Array("and", "and", "but", "but", "or", "or", "so", "so");
 const conjunctionSubordinateNounK = new Array("~하는 것", "~인지 아닌지");
@@ -432,6 +465,9 @@ const conjunctiveAdverb1E = new Array("however", "on the contrary", "on the othe
 const conjunctiveAdverb2K = new Array("그러므로", "결국", "그 결과", "결과적으로", "사실", "특히", "다시 말해서", "그런데", "대신에");
 const conjunctiveAdverb2E = new Array("so, therefore, hence", "finally", "consequently", "as a result", "in fact, as a matter of fact", "above all", "in other words", "by the way", "instead");
 
+
+const PREPOSITION_CONCEPT_K = new Array("전치사");
+const PREPOSITION_CONCEPT_E = new Array("(명사) 앞에서 치사하게 힌트주는 말 - 시간, 장소, 위치");
 const PREPOSITION_TIME_K = new Array("– 긴 시간/하루의 때에", "in the morning", "- 세기 연도 계절 월에", "– 요일 날짜 특정한 날에", "– 정확한 때에", "- 구체적 시간, 특정한 시점에");
 const PREPOSITION_TIME_E = new Array("in", "in", "in", "on ", "at", "at");
 const PREPOSITION_TIME_ETC_K = new Array("경에, 무렵에", "전에", "후에", "동안에", "(구체적 숫자)", "동안에 ", "(특정기간)", "~까지(계속)", "~까지(완료)", "부터 ", "이후로");
@@ -461,7 +497,13 @@ const NO_ARTICLE_K = new Array("① 식사 / 운동 / 학과(과목) 앞에", "�
 const NO_ARTICLE_E = new Array("No a/an/the (무관사)", "No a/an/the (무관사)", "No a/an/the (무관사)", "No a/an/the (무관사)", "No a/an/the (무관사)", "No a/an/the (무관사)", "No a/an/the (무관사)");
 
 const TENSE_K = new Array();
-const TENSE_PRESENT_K = new Array();
+const TENSE_CONCEPT_K = new Array("시제");
+const TENSE_CONCEPT_E = new Array("시간 때를 알려주는 말, 12시제");
+const TENSE_12_K = new Array("나는 춤춘다","나는 춤췄다","나는 춤 출 것이다","나는 춤추고 있다","나는 춤추고 있었다","나는 춤추고 있을 것이다","나는 춤춰왔다","나는 춤춰왔었다","나는 춤춰 갈 것이다","나는 춤췄고 지금도 춤추고 있다","나는 춤췄었고 그 때도 춤추고 있었다","나는 춤추고 있고 그 때도 춤추고 있을 것이다");
+const TENSE_12_E = new Array("현재 시제","과거 시제","미래 시제","현재 진행 시제","과거 진행 시제","미래 진행 시제","현재 완료 시제","과거 완료 시제","미래 완료 시제","현재 완료 진행 시제","과거 완료 진행 시제","미래 완료 진행 시제");
+const TENSE_12_2K = new Array("나는 춤춘다","나는 춤췄다","나는 춤 출 것이다","나는 춤추고 있다","나는 춤추고 있었다","나는 춤추고 있을 것이다","나는 춤춰왔다","나는 춤춰왔었다","나는 춤춰 갈 것이다","나는 춤췄고 지금도 춤추고 있다","나는 춤췄었고 그 때도 춤추고 있었다","나는 춤추고 있고 그 때도 춤추고 있을 것이다");
+const TENSE_12_2E = new Array("I dance.","I danced.","I will dance.","I am dancing.","I was dancing.","I will be dancing.","I have danced.","I had danced.","I will have danced.","I have been dancing.","I had been dancing.","I will have been dancing.");
+const TENSE_PRESENT_K = VERB_ALL_K;
 const TENSE_PAST_K = new Array();
 const TENSE_PAST_2K = new Array("ed 붙이는 규칙 1 보통은 ","ed 붙이는 규칙 2 e로 끝나면 ","ed 붙이는 규칙 3 y앞에 자음이면","ed 붙이는 규칙 4 y앞에 모음이면","ed 붙이는 규칙 5 cvc는 ","ed 붙이는 규칙 6 불규칙은 ","ed 발음하는 규칙 1 보통은 ","ed 발음하는 규칙 2 p f s k sh ch는 ","ed 발음하는 규칙 3 t d 는 ");
 const TENSE_PAST_2E = new Array("ed","d","y kill - ied","그냥 ed","ced","외운다","/d/","/t/","/id/");
@@ -482,7 +524,7 @@ const PAST_VS_PRESENT_PERFECT_K = new Array("yesterday","when","last","ago","eve
 const PAST_VS_PRESENT_PERFECT_E = new Array("과거","과거","과거","과거","현재완료-경험","현재완료-경험","현재완료-경험","현재완료-완료","현재완료-완료","현재완료-완료","현재완료-계속","현재완료-계속","현재완료-계속","현재완료-결과","현재완료-결과");
 const TENSE_PAST_PERFECT_K = new Array("행동해왔었다","더해왔었다","조언해왔었다","동의해왔었다","대답해왔었다","도착해왔었다","물어왔었다","구워왔었다","이어왔었다","되어왔었다","시작해왔었다","믿어왔었다","물어왔었다","막아왔었다","빌려왔었다","깨뜨려왔었다","가져왔었다","닦아왔었다","만들어왔었다","타왔었다","사왔었다","전화해왔었다","보살펴왔었다","휴대해왔었다","잡아왔었다","점검해왔었다","확인해왔었다","선택해왔었다","올라왔었다","모아왔었다","되어왔었다","축하해왔었다","제어해왔었다","요리해왔었다","복사해왔었다","덮어왔었다","건너왔었다","울어왔었다","잘라왔었다","춤춰왔었다","결정해왔었다","설계해왔었다","죽어왔었다","논의해왔었다","나눠왔었다","해왔었다","그려왔었다","꿈꿔왔었다","마셔왔었다","운전해왔었다","떨어져왔었다","먹어왔었다","끝나왔었다","즐겨왔었다","입장해왔었다","훈련해왔었다","실패해왔었다","떨어져왔었다","느껴왔었다","싸워왔었다","채워왔었다","찾아왔었다","마쳐왔었다","고쳐왔었다","고정해왔었다","날아왔었다","집중해왔었다","잊어왔었다","형성해왔었다","튀겨왔었다","받아왔었다","전해왔었다","가왔었다","성장해왔었다","~라고 생각해왔었다","안내해왔었다","걸어왔었다","싫어해왔었다","가져왔었다","도와왔었다","쳐왔었다","버텨왔었다","잡아왔었다","희망해왔었다","사냥해왔었다","빨리~해왔었다","소개해왔었다","초대해왔었다","참여해왔었다","유지해왔었다","차왔었다","죽여왔었다","알아왔었다","배워왔었다","거짓말해왔었다","좋아해왔었다","들어왔었다","살아왔었다","보아왔었다","사랑해왔었다","만들어왔었다","결혼해왔었다","만나왔었다","놓쳐왔었다","움직여왔었다","필요해왔었다","열어왔었다","그려왔었다","통과해왔었다","지불해왔었다","선택왔었다","계획해왔었다","놀아왔었다","인쇄해왔었다","밀어왔었다","넣어왔었다","읽어왔었다","기억해왔었다","복귀해왔었다","달려왔었다","절약해왔었다","말해왔었다","보아왔었다","팔아왔었다","보내왔었다","놀라게 해왔었다","보여줘왔었다","노래해왔었다","앉아왔었다","자왔었다","냄새를 맡아왔었다","웃어왔었다","말해왔었다","세워왔었다","시작해왔었다","머물러왔었다","멈춰왔었다","공부해왔었다","수영해왔었다","걸려왔었다","말해왔었다","가르쳐왔었다","말해왔었다","말해왔었다","생각해왔었다","만져왔었다","훈련해왔었다","여행해왔었다","노력해왔었다","돌려왔었다","이해해왔었다","이용해왔었다","방문해왔었다","기다려왔었다","깨왔었다","걸어왔었다","원해왔었다","씻어왔었다","관람왔었다","입어왔었다","환영해왔었다","우승해왔었다","바라왔었다","일해왔었다","걱정해왔었다","쓰여왔었다","울려왔었다","가라앉아왔었다","뿌려왔었다","먹여왔었다","쏘아왔었다","이끌어왔었다","기어왔었다","쓸어왔었다","울어왔었다","떠나왔었다","구부려왔었다","빌려왔었다","잃어왔었다","소비해왔었다","의미해왔었다","찾아왔었다","묶어왔었다","감아왔었다","두어왔었다","들어왔었다","미끄러져왔었다","파왔었다","빛나왔었다","돌아왔었다","때려왔었다","때려왔었다","깨왔었다","낳아왔었다","찢어왔었다","감춰왔었다","얼어왔었다","훔쳐왔었다","불어왔었다","던져왔었다","일어나왔었다","타왔었다","올라왔었다","흔들어왔었다");
 const TENSE_PAST_PERFECT_E = new Array();
-const TENSE_FUTURE_PERFECT_K = new Array("행동해 갈 거다","더해 갈 거다","조언해 갈 거다","동의해 갈 거다","대답해 갈 거다","도착해 갈 거다","물어갈 거다","구워갈 거다","이어갈 거다","되어갈 거다","시작해 갈 거다","믿어갈 거다","물어갈 거다","막아갈 거다","빌려갈 거다","깨뜨려갈 거다","가져갈 거다","닦아갈 거다","만들어갈 거다","타갈 거다","사갈 거다","전화해 갈 거다","보살펴 갈 거다","휴대해 갈 거다","잡아갈 거다","점검해 갈 거다","확인해 갈 거다","선택해 갈 거다","올라갈 거다","모아갈 거다","되어갈 거다","축하해 갈 거다","제어해 갈 거다","요리해 갈 거다","복사해 갈 거다","덮어갈 거다","건너갈 거다","울어갈 거다","잘라갈 거다","춤춰갈 거다","결정해 갈 거다","설계해 갈 거다","죽어갈 거다","논의해 갈 거다","나눠갈 거다","해 갈 거다","그려갈 거다","꿈꿔갈 거다","마셔갈 거다","운전해 갈 거다","떨어져 갈 거다","먹어갈 거다","끝나갈 거다","즐겨갈 거다","입장해 갈 거다","훈련해 갈 거다","실패해 갈 거다","떨어져갈 거다","느껴갈 거다","싸워갈 거다","채워갈 거다","찾아갈 거다","마쳐갈 거다","고쳐갈 거다","고정해 갈 거다","날아갈 거다","집중해 갈 거다","잊어갈 거다","형성해 갈 거다","튀겨갈 거다","받아갈 거다","전해갈 거다","갈 거다","성장해 갈 거다","~라고 생각해 갈 거다","안내해 갈 거다","걸어갈 거다","싫어해 갈 거다","가져갈거다","도와갈 거다","쳐갈 거다","버텨갈 거다","잡아갈 거다","희망해 갈 거다","사냥해 갈 거다","빨리 ~해 갈 거다","소개해 갈 거다","초대해 갈 거다","참여해 갈 거다","유지해 갈 거다","차갈 거다","죽여갈 거다","알아갈 거다","배워갈 거다","거짓말해 갈 거다","좋아해 갈 거다","들어와갈 거다","살아갈 거다","보아갈 거다","사랑해 갈 거다","만들어갈 거다","결혼해 갈 거다","만나갈 거다","놓쳐갈 거다","움직여갈 거다","필요해 갈 거다","열어갈 거다","그려갈 거다","통과해 갈 거다","지불해 갈 거다","선택해 갈 거다","계획해 갈 거다","놀아갈 거다","인쇄해 갈 거다","밀어갈 거다","넣어갈 거다","읽어갈 거다","기억해 갈 거다","복귀해 갈 거다","달려갈 거다","절약해 갈 거다","말해 갈 거다","보아갈 거다","팔아갈 거다","보내갈 거다","놀라게 해 갈 거다","보여줘 갈 거다","노래해 갈 거다","앉아갈 거다","자 갈 거다","냄새를 맡아갈 거다","웃어 갈 거다","말해 갈 거다","세워 갈 거다","시작해 갈 거다","머물러 갈 거다","멈춰갈 거다","공부해 갈 거다","수영해 갈 거다","걸려갈 거다","말해 갈 거다","가르쳐갈 거다","말해 갈 거다","말해 갈 거다","생각해 갈 거다","만져갈 거다","훈련해 갈 거다","여행해 갈 거다","노력해 갈 거다","돌려갈 거다","이해해 갈 거다","이용해 갈 거다","방문해 갈 거다","기다려갈 거다","깨갈 거다","걸어갈 거다","원해 갈 거다","씻어갈 거다","관람해 갈 거다","입어갈 거다","환영해 갈 거다","우승해 갈 거다","바라갈 거다","일해 갈 거다","걱정해 갈 거다","쓰여갈 거다","울려갈 거다","가라앉아 갈 거다","뿌려갈 거다","먹여갈 거다","쏘아갈 거다","이끌어갈 거다","기어갈 거다","쓸어갈 거다","울어갈 거다","떠나갈 거다","구부려갈 거다","빌려갈 거다","잃어갈 거다","소비해 갈 거다","의미해 갈 거다","찾아갈 거다","묶어갈 거다","감아갈 거다","두어갈 거다","들어갈 거다","미끄러져갈 거다","파갈 거다","빛나갈 거다","돌아갈 거다","때려갈 거다","때려갈 거다","깨갈 거다","낳아갈 거다","찢어갈 거다","감춰갈 거다","얼어갈 거다","훔쳐갈 거다","불어갈 거다","던져갈 거다","일어나갈 거다","타갈 거다","올라갈 거다","흔들어갈 거다");
+const TENSE_FUTURE_PERFECT_K = new Array("행동해 갈 거다","더해 갈 거다","조언해 갈 거다","동의해 갈 거다","대답해 갈 거다","도착해 갈 거다","물어갈 거다","구워갈 거다","이어갈 거다","되어갈 거다","시작해 갈 거다","믿어갈 거다","물어갈 거다","막아갈 거다","빌려갈 거다","깨뜨려갈 거다","가져갈 거다","닦아갈 거다","만들어갈 거다","타갈 거다","사갈 거다","전화해 갈 거다","보살펴 갈 거다","휴대해 갈 거다","잡아갈 거다","점검해 갈 거다","확인해 갈 거다","선택해 갈 거다","올라갈 거다","모아갈 거다","되어갈 거다","축하해 갈 거다","제어해 갈 거다","요리해 갈 거다","복사해 갈 거다","덮어갈 거다","건너갈 거다","울어갈 거다","잘라갈 거다","춤춰갈 거다","결정해 갈 거다","설계해 갈 거다","죽어갈 거다","논의해 갈 거다","나눠갈 거다","해 갈 거다","그려갈 거다","꿈꿔갈 거다","마셔갈 거다","운전해 갈 거다","떨어져 갈 거다","먹어갈 거다","끝나갈 거다","즐겨갈 거다","입장해 갈 거다","훈련해 갈 거다","실패해 갈 거다","떨어져갈 거다","느껴갈 거다","싸워갈 거다","채워갈 거다","찾아갈 거다","마쳐갈 거다","고쳐갈 거다","고정해 갈 거다","날아갈 거다","집중해 갈 거다","잊어갈 거다","형성해 갈 거다","튀겨갈 거다","받아갈 거다","전해갈 거다","갈 거다","성장해 갈 거다","~라고 생각해 갈 거다","안내해 갈 거다","걸어갈 거다","싫어해 갈 거다","가져갈거다","도와갈 거다","쳐갈 거다","버텨갈 거다","잡아갈 거다","희망해 갈 거다","사냥해 갈 거다","빨리 ~해 갈 거다","소개해 갈 거다","초대해 갈 거다","참여해 갈 거다","유지해 갈 거다","차갈 거다","죽여갈 거다","알아갈 거다","배워갈 거다","거짓말해 갈 거다","좋아해 갈 거다","들어와갈 거다","살아갈 거다","보아갈 거다","사랑해 갈 거다","만들어갈 거다","결혼해 갈 거다","만나갈 거다","놓쳐갈 거다","움직여갈 거다","필요해 갈 거다","열어갈 거다","그려갈 거다","통과해 갈 거다","지불해 갈 거다","선택해 갈 거다","계획해 갈 거다","놀아갈 거다","인쇄해 갈 거다","밀어갈 거다","넣어갈 거다","읽어갈 거다","기억해 갈 거다","복귀해 갈 거다","달려갈 거다","절약해 갈 거다","말해 갈 거다","보아갈 거다","팔아갈 거다","보내갈 거다","놀라게 해 갈 거다","보여줘 갈 거다","노래해 갈 거다","앉아갈 거다","자 갈 거다","냄새를 맡아갈 거다","웃어 갈 거다","말해 갈 거다","세워 갈 거다","시작해 갈 거다","머물러 갈 거다","멈춰갈 거다","공부해 갈 거다","수영해 갈 거다","걸려갈 거다","말해 갈 거다","가르쳐갈 거다","말해 갈 거다","말해 갈 거다","생각해 갈 거다","만져갈 거다","훈련해 갈 거다","여행해 갈 거다","노력해 갈 거다","돌려갈 거다","이해해 갈 거다","이용해 갈 거다","방문해 갈 거다","기다려갈 거다","깨갈 거다","걸어갈 거다","원해 갈 거다","씻어갈 거다","관람해 갈 거다","입어갈 거다","환영해 갈 거다","우승해 갈 거다","바라갈 거다","일해 갈 거다","걱정해 갈 거다","쓰여갈 거다","울려갈 거다","가라앉아 갈 거다","뿌려갈 거다","먹여갈 거다","쏘아갈 거다","이끌어갈 거다","기어갈 거다","쓸어갈 거다","울어갈 거다","떠나갈 거다","구부려갈 거다","빌려갈 거다","잃어갈 거다","소비해 갈 거다","의미해 갈 거다","찾아갈 거다","묶어갈 거다","감아갈 거다","두어갈 거다","들어갈 거다","미끄러져갈 거다","파갈 거다","빛나갈 거다","돌아갈 거다","때려갈 거다","때려갈 거다","깨갈 거다","낳아갈 거다","찢어갈 거다","감춰갈 거다","얼어갈 거다","훔쳐갈 거다","불어갈 거다","던져갈 거다","일어나갈 거다","타갈 거다","올라갈 거다");
 const TENSE_FUTURE_PERFECT_E = new Array();
 const TENSE_PAST_PERFECT_AND_FUTURE_PERFECT_K = new Array();
 const TENSE_PAST_PERFECT_AND_FUTURE_PERFECT_E = new Array();
@@ -496,16 +538,23 @@ const PERFECT_PAST_CONTINUOUS_E = new Array();
 const AUXILIARY_CAN_K = new Array("행동할 수 있다", "조언할 수 있다", "동의할 수 있다", "도착할 수 있다", "물어볼 수 있다", "구울 수 있다", "시작할 수 있다", "믿을 수 있다", "깨뜨릴 수 있다", "탈 수 있다", "보살필 수 있다", "바꿀 수 있다", "확인할 수 있다", "선택할 수 있다", "오를 수 있다", "올 수 있다", "요리할 수 있다", "복사할 수 있다", "건널 수 있다", "울 수 있다", "자를 수 있다", "춤출 수 있다", "결정할 수 있다", "죽을 수 있다", "할 수 있다", "그릴 수 있다", "꿈꿀 수 있다", "마실 수 있다", "운전할 수 있다", "떨어뜨릴 수 있다", "먹을 수 있다", "끝날 수 있다", "들어갈 수 있다", "운동할 수 있다", "실패할 수 있다", "떨어질 수 있다", "느낄 수 있다", "싸울 수 있다", "마칠 수 있다", "고정할 수 있다", "날 수 있다", "집중할 수 있다", "잊을 수 있다", "형성할 수 있다", "튀길 수 있다", "갈 수 있다", "자랄 수 있다", "추측할 수 있다", "걸을 수 있다", "도울 수 있다", "칠 수 있다", "잡을 수 있다", "희망할 수 있다", "서두를 수 있다", "참여할 수 있다", "계속할 수 있다", "찰 수 있다", "알 수 있다", "거짓말 할 수 있다", "들을 수 있다", "살 수 있다", "볼 수 있다", "사랑할 수 있다", "움직일 수 있다", "열 수 있다", "통과할 수 있다", "지불할 수 있다", "놀 수 있다", "밀할 수 있다", "읽을할 수 있다", "돌아갈 수 있다", "달릴 수 있다", "노래할 수 있다", "앉을 수 있다", "잘 수 있다", "냄새날 수 있다", "미소지을 수 있다", "말할 수 있다", "일어설 수 있다", "시작할 수 있다", "머무를 수 있다", "멈출 수 있다", "수영할 수 있다", "말할 수 있다", "이야기할 수 있다", "여행할 수 있다", "노력할 수 있다", "돌릴 수 있다", "방문할 수 있다", "기다릴 수 있다", "깰 수 있다", "걸을 수 있다", "씻을 수 있다", "입을 수 있다", "이길 수 있다", "바랄 수 있다", "일할 수 있다", "걱정할 수 있다", "쓸 수 있다", "울릴 수 있다", "가라앉을 수 있다", "먹일 수 있다", "쏠 수 있다", "이끌 수 있다", "기다릴 수 있다", "바닥을 쓸 수 있다", "울 수 있다", "떠날 수 있다", "구부릴 수 있다", "잃을 수 있다", "감을 수 있다", "미끄러질 수 있다", "팔 수 있다", "빛날 수 있다", "돌 수 있다", "때릴 수 있다", "깨울 수 있다", "낳을 수 있다", "찢을 수 있다", "얼 수 있다", "훔칠 수 있다", "불 수 있다", "던질 수 있다", "탈 수 있다", "오를 수 있다", "흔들 수 있다");
 const AUXILIARY_MAY_K = new Array("행동할지도 모른다", "조언할지도 모른다", "동의할지도 모른다", "도착할지도 모른다", "물어볼 수 있다", "구울 수 있다", "시작할지도 모른다", "믿을 수 있다", "깨뜨릴 수 있다", "탈 수 있다", "보살필 수 있다", "바꿀 수 있다", "확인할지도 모른다", "선택할지도 모른다", "오를 수 있다", "올 수 있다", "요리할지도 모른다", "복사할지도 모른다", "건널 수 있다", "울 수 있다", "자를 수 있다", "춤출 수 있다", "결정할지도 모른다", "죽을 수 있다", "할지도 모른다", "그릴 수 있다", "꿈꿀 수 있다", "마실 수 있다", "운전할지도 모른다", "떨어뜨릴 수 있다", "먹을 수 있다", "끝날 수 있다", "들어갈 수 있다", "운동할지도 모른다", "실패할지도 모른다", "떨어질 수 있다", "느낄 수 있다", "싸울 수 있다", "마칠 수 있다", "고정할지도 모른다", "날 수 있다", "집중할지도 모른다", "잊을 수 있다", "형성할지도 모른다", "튀길 수 있다", "갈 수 있다", "자랄 수 있다", "추측할지도 모른다", "걸을 수 있다", "도울 수 있다", "칠 수 있다", "잡을 수 있다", "희망할지도 모른다", "서두를 수 있다", "참여할지도 모른다", "계속할지도 모른다", "찰 수 있다", "알 수 있다", "거짓말 할지도 모른다", "들을 수 있다", "살 수 있다", "볼 수 있다", "사랑할지도 모른다", "움직일 수 있다", "열 수 있다", "통과할지도 모른다", "지불할지도 모른다", "놀 수 있다", "밀할지도 모른다", "읽을할지도 모른다", "돌아갈 수 있다", "달릴 수 있다", "노래할지도 모른다", "앉을 수 있다", "잘 수 있다", "냄새날 수 있다", "미소지을 수 있다", "말할지도 모른다", "일어설 수 있다", "시작할지도 모른다", "머무를 수 있다", "멈출 수 있다", "수영할지도 모른다", "말할지도 모른다", "이야기할지도 모른다", "여행할지도 모른다", "노력할지도 모른다", "돌릴 수 있다", "방문할지도 모른다", "기다릴 수 있다", "깰 수 있다", "걸을 수 있다", "씻을 수 있다", "입을 수 있다", "이길 수 있다", "바랄 수 있다", "일할지도 모른다", "걱정할지도 모른다", "쓸 수 있다", "울릴 수 있다", "가라앉을 수 있다", "먹일 수 있다", "쏠 수 있다", "이끌 수 있다", "기다릴 수 있다", "바닥을 쓸 수 있다", "울 수 있다", "떠날 수 있다", "구부릴 수 있다", "잃을 수 있다", "감을 수 있다", "미끄러질 수 있다", "팔 수 있다", "빛날 수 있다", "돌 수 있다", "때릴 수 있다", "깨울 수 있다", "낳을 수 있다", "찢을 수 있다", "얼 수 있다", "훔칠 수 있다", "불 수 있다", "던질 수 있다", "탈 수 있다", "오를 수 있다", "흔들 수 있다");
 const AUXILIARY_WILL_K = new Array("행동할 것이다", "조언할 것이다", "동의할 것이다", "도착할 것이다", "물어볼 것이다", "구울 것이다", "시작할 것이다", "믿을 것이다", "깨뜨릴 것이다", "탈 것이다", "보살필 것이다", "바꿀 것이다", "확인할 것이다", "선택할 것이다", "오를 것이다", "올 것이다", "요리할 것이다", "복사할 것이다", "건널 것이다", "울 것이다", "자를 것이다", "춤출 것이다", "결정할 것이다", "죽을 것이다", "할 것이다", "그릴 것이다", "꿈꿀 것이다", "마실 것이다", "운전할 것이다", "떨어뜨릴 것이다", "먹을 것이다", "끝날 것이다", "들어갈 것이다", "운동할 것이다", "실패할 것이다", "떨어질 것이다", "느낄 것이다", "싸울 것이다", "마칠 것이다", "고정할 것이다", "날 것이다", "집중할 것이다", "잊을 것이다", "형성할 것이다", "튀길 것이다", "갈 것이다", "자랄 것이다", "추측할 것이다", "걸을 것이다", "도울 것이다", "칠 것이다", "잡을 것이다", "희망할 것이다", "서두를 것이다", "참여할 것이다", "계속할 것이다", "찰 것이다", "알 것이다", "거짓말 것이다", "들을 것이다", "살 것이다", "볼 것이다", "사랑할 것이다", "움직일 것이다", "열 것이다", "통과할 것이다", "지불할 것이다", "놀 것이다", "밀할 것이다", "읽을할 것이다", "돌아갈 것이다", "달릴 것이다", "노래할 것이다", "앉을 것이다", "잘 것이다", "냄새날 것이다", "미소지을 것이다", "말할 것이다", "일어설 것이다", "시작할 것이다", "머무를 것이다", "멈출 것이다", "수영할 것이다", "말할 것이다", "이야기할 것이다", "여행할 것이다", "노력할 것이다", "돌릴 것이다", "방문할 것이다", "기다릴 것이다", "깰 것이다", "걸을 것이다", "씻을 것이다", "입을 것이다", "이길 것이다", "바랄 것이다", "일할 것이다", "걱정할 것이다", "쓸 것이다", "울릴 것이다", "가라앉을 것이다", "먹일 것이다", "쏠 것이다", "이끌 것이다", "기다릴 것이다", "바닥을 것이다", "울 것이다", "떠날 것이다", "구부릴 것이다", "잃을 것이다", "감을 것이다", "미끄러질 것이다", "팔 것이다", "빛날 것이다", "돌 것이다", "때릴 것이다", "깨울 것이다", "낳을 것이다", "찢을 것이다", "얼 것이다", "훔칠 것이다", "불 것이다", "던질 것이다", "탈 것이다", "오를 것이다", "흔들 것이다");
+const AUXILIARY_BeGoingTo_K = AUXILIARY_WILL_K
+const AUXILIARY_WOULD_K = new Array("행동하곤 했다","더하곤 했다","조언하곤 했다","동의하곤 했다","대답하곤 했다","도착하곤 했다","묻곤 했다","굽곤 했다","이곤 했다","되곤 했다","시작하곤 했다","믿곤 했다","물곤 했다","막곤 했다","빌리곤 했다","깨뜨리곤 했다","가져오곤 했다","닦곤 했다","만들곤 했다","타곤 했다","사오곤 했다","전화하곤 했다","보살피곤 했다","휴대하곤 했다","잡곤 했다","점검하곤 했다","확인하곤 했다","선택하곤 했다","오르곤 했다","모으곤 했다","되곤 했다","축하하곤 했다","제어하곤 했다","요리하곤 했다","복사하곤 했다","덮곤 했다","건너곤 했다","오르곤 했다","자르곤 했다","춤추곤 했다","결정하곤 했다","설계하곤 했다","죽곤 했다","논의하곤 했다","나누곤 했다","하곤 했다","그리곤 했다","꿈꾸곤 했다","마시곤 했다","운전하곤 했다","떨어지곤 했다","먹곤 했다","끝내곤 했다","즐기곤 했다","입장하곤 했다","훈련하곤 했다","실패하곤 했다","떨어지곤 했다","느끼곤 했다","싸우곤 했다","채우곤 했다","찾곤 했다","마치곤 했다","고치곤 했다","고정하곤 했다","날곤 했다","집중하곤 했다","잊곤 했다","형성해오곤 했다","튀기곤 했다","받곤 했다","전하곤 했다","가곤 했다","성장하곤 했다","~라고 생각하곤 했다","안내하곤 했다","걸곤 했다","싫어하곤 했다","가지곤 했다","돕곤 했다","치곤 했다","버티곤 했다","잡곤 했다","희망하곤 했다","사냥하곤 했다","빨리 ~하곤 했다","소개하곤 했다","초대하곤 했다","참여하곤 했다","유지하곤 했다","차곤 했다","죽이곤 했다","알곤 했다","배우곤 했다","거짓말하곤 했다","좋아하곤 했다","듣곤 했다","살곤 했다","보곤 했다","사랑하곤 했다","만들곤 했다","결혼하곤 했다","만나곤 했다","놓곤 했다","움직이곤 했다","필요하곤 했다","열곤 했다","그리곤 했다","통과하곤 했다","지불하곤 했다","선택하곤 했다","계획하곤 했다","놀곤 했다","인쇄하곤 했다","밀곤 했다","넣곤 했다","읽곤 했다","기억하곤 했다","복귀하곤 했다","달리곤 했다","절약하곤 했다","말하곤 했다","보곤 했다","팔곤 했다","보내곤 했다","놀라게하곤 했다","보여주곤 했다","노래하곤 했다","앉곤 했다","자곤 했다","냄새를 맡곤 했다","웃곤 했다","말하곤 했다","세우곤 했다","시작하곤 했다","머무르곤 했다","멈추곤 했다","공부하곤 했다","수영하곤 했다","걸려오곤 했다","말하곤 했다","가르치곤 했다","말하곤 했다","말하곤 했다","생각하곤 했다","만지곤 했다","훈련하곤 했다","여행하곤 했다","노력하곤 했다","돌리곤 했다","이해하곤 했다","이용하곤 했다","방문하곤 했다","기다리곤 했다","깨곤 했다","걷곤 했다","원하곤 했다","씻곤 했다","관람하곤 했다","입곤 했다","환영하곤 했다","우승하곤 했다","바라곤 했다","일하곤 했다","걱정하곤 했다","쓰이곤 했다","울려오곤 했다","가라앉곤 했다","뿌리곤 했다","먹이곤 했다","쏘아오곤 했다","이끌곤 했다","기곤 했다","쓸곤 했다","울곤 했다","떠나오곤 했다","구부리곤 했다","빌리곤 했다","잃곤 했다","소비하곤 했다","의미하곤 했다","찾곤 했다","묶곤 했다","감곤 했다","두곤 했다","듣곤 했다","미끄러지곤 했다","파곤 했다","빛나곤 했다","돌곤 했다","때리곤 했다","때리곤 했다","깨우곤 했다","낳곤 했다","찢곤 했다","감추곤 했다","얼곤 했다","훔치곤 했다","불곤 했다","던져오곤 했다","일어나곤 했다","타오곤 했다","오르곤 했다","흔들곤 했다");
+const AUXILIARY_WOULD_LIKE_TO_K = new Array("행동하고 싶다","더하고 싶다","조언하고 싶다","동의하고 싶다","대답하고 싶다","도착하고 싶다","묻고 싶다","굽고 싶다","이고 싶다","되고 싶다","시작하고 싶다","믿고 싶다","물고 싶다","막고 싶다","빌리고 싶다","깨뜨리고 싶다","가져오고 싶다","닦고 싶다","만들고 싶다","타고 싶다","사고 싶다","전화하고 싶다","보살피고 싶다","휴대하고 싶다","잡고 싶다","점검하고 싶다","확인하고 싶다","선택하고 싶다","오르고 싶다","모으고 싶다","되고 싶다","축하하고 싶다","제어하고 싶다","요리하고 싶다","복사하고 싶다","덮고 싶다","건너고 싶다","오르고 싶다","자르고 싶다","춤추고 싶다","결정하고 싶다","설계하고 싶다","죽고 싶다","논의하고 싶다","나누고 싶다","하고 싶다","그리고 싶다","꿈꾸고 싶다","마시고 싶다","운전하고 싶다","떨어지고 싶다","먹고 싶다","끝내고 싶다","즐기고 싶다","입장하고 싶다","훈련하고 싶다","실패하고 싶다","떨어지고 싶다","느끼고 싶다","싸우고 싶다","채우고 싶다","찾고 싶다","미치고 싶다","고치고 싶다","고정하고 싶다","날고 싶다","집중하고 싶다","잊고 싶다","형성하고 싶다","튀기고 싶다","받고 싶다","전하고 싶다","가고 싶다","성장하고 싶다","~라고 생각하고 싶다","안내하고 싶다","걸고 싶다","싫어하고 싶다","가지고 싶다","돕고 싶다","치고 싶다","버티고 싶다","잡고 싶다","희망하고 싶다","사냥하고 싶다","빨리 ~하고 싶다","소개하고 싶다","초대하고 싶다","참여하고 싶다","유지하고 싶다","치고 싶다","죽이고 싶다","알고 싶다","배우고 싶다","거짓말하고 싶다","좋아하고 싶다","듣고 싶다","살고 싶다","보고 싶다","사랑하고 싶다","만들고 싶다","결혼하고 싶다","만나고 싶다","놓고 싶다","움직이고 싶다","필요하고 싶다","열고 싶다","그리고 싶다","통과하고 싶다","지불하고 싶다","선택하고 싶다","계획하고 싶다","놀고 싶다","인쇄하고 싶다","밀고 싶다","넣고 싶다","읽고 싶다","기억하고 싶다","복귀하고 싶다","달리고 싶다","절약하고 싶다","말하고 싶다","보고 싶다","팔고 싶다","보내고 싶다","놀라게하고 싶다","보여주고 싶다","노래하고 싶다","앉고 싶다","자고 싶다","냄새를 맡고 싶다","웃고 싶다","말하고 싶다","세우고 싶다","시작하고 싶다","머무르고 싶다","멈추고 싶다","공부하고 싶다","수영하고 싶다","걸리고 싶다","말하고 싶다","가르치고 싶다","말하고 싶다","말하고 싶다","생각하고 싶다","만지고 싶다","훈련하고 싶다","여행하고 싶다","노력하고 싶다","돌리고 싶다","이해하고 싶다","이용하고 싶다","방문하고 싶다","기다리고 싶다","깨고 싶다","걷고 싶다","원하고 싶다","씻고 싶다","관람하고 싶다","입고 싶다","환영하고 싶다","우승하고 싶다","바라고 싶다","일하고 싶다","걱정하고 싶다","쓰이고 싶다","울려오고 싶다","가라앉고 싶다","뿌리고 싶다","먹이고 싶다","쏘고 싶다","이끌고 싶다","기고 싶다","쓸고 싶다","울고 싶다","떠나오고 싶다","구부리고 싶다","빌리고 싶다","잃고 싶다","소비하고 싶다","의미하고 싶다","찾고 싶다","묶고 싶다","감고 싶다","두고 싶다","듣고 싶다","미끄러지고 싶다","파고 싶다","빛나고 싶다","돌고 싶다","때리고 싶다","때리고 싶다","깨우고 싶다","낳고 싶다","찢고 싶다","감추고 싶다","얼고 싶다","훔치고 싶다","불고 싶다","던지고 싶다","일어나고 싶다","타고 싶다","오르고 싶다","흔들고 싶다");
 const AUXILIARY_MUST_K = new Array("행동해야 한다", "조언해야 한다", "동의해야 한다", "도착해야 한다", "물어야 한다", "굽다해야 한다", "시작해야 한다", "믿어야 한다", "깨뜨려야 한다", "태워야 한다", "보살펴야 한다", "바꿔야 한다", "확인해야 한다", "선택해야 한다", "올라야 한다", "와야 한다", "요리해야 한다", "복사해야 한다", "건너야 한다", "울어야 한다", "잘라야 한다", "춤춰야 한다", "결정해야 한다", "죽어야 한다", "해야 한다", "그려야 한다", "꿈꿔야 한다", "마셔야 한다", "운전해야 한다", "떨어져야 한다", "먹어야 한다", "끝나야 한다", "들어가야 한다", "운동해야 한다", "실패해야 한다", "떨어져야 한다", "느껴야 한다", "싸워야 한다", "마쳐야 한다", "고정해야 한다", "날아야 한다", "집중해야 한다", "잊어야 한다", "형성해야 한다", "튀겨야 한다", "가야 한다", "자라야 한다", "추측해야 한다", "걸어야 한다", "도와야 한다", "쳐야 한다", "잡아야 한다", "희망해야 한다", "서둘러야 한다", "참여해야 한다", "계속해야 한다", "차야 한다", "알아야 한다", "거짓말해야 한다", "들어야 한다", "살아야 한다", "봐야 한다", "사랑해야 한다", "움직여야 한다", "열어야 한다", "통과해야 한다", "지불해야 한다", "놀아야 한다", "밀어야 한다", "읽어야 한다", "돌아가야 한다", "달려야 한다", "노래해야 한다", "앉아야 한다", "자야 한다", "냄새맡아야 한다", "미소지어야 한다", "말해야 한다", "일어서야 한다", "시작해야 한다", "머물러야 한다", "멈춰야 한다", "수영해야 한다", "말해야 한다", "이야기해야 한다", "여행해야 한다", "노력해야 한다", "돌려야 한다", "방문해야 한다", "기다려야 한다", "깨야 한다", "걸어야 한다", "씻어야 한다", "입어야 한다", "이겨야 한다", "바라야 한다", "일해야 한다", "걱정해야 한다", "써야 한다", "울려야 한다", "가라앉아야 한다", "먹여야 한다", "쏘아야 한다", "이끌어야 한다", "기어야 한다", "쓸어야 한다", "울어야 한다", "떠나야 한다", "구부려야 한다", "잃어야 한다", "감아야 한다", "미끄러져야 한다", "파야 한다", "빛나야 한다", "돌려야 한다", "때려야 한다", "깨우쳐야 한다", "낳아야 한다", "찢어야 한다", "얼려야 한다", "훔쳐야 한다", "불어야 한다", "던져야 한다", "타야 한다", "올라야 한다", "흔들어야 한다");
 const AUXILIARY_HaveTo_K = new Array("행동해야 한다", "조언해야 한다", "동의해야 한다", "도착해야 한다", "물어야 한다", "굽다해야 한다", "시작해야 한다", "믿어야 한다", "깨뜨려야 한다", "태워야 한다", "보살펴야 한다", "바꿔야 한다", "확인해야 한다", "선택해야 한다", "올라야 한다", "와야 한다", "요리해야 한다", "복사해야 한다", "건너야 한다", "울어야 한다", "잘라야 한다", "춤춰야 한다", "결정해야 한다", "죽어야 한다", "해야 한다", "그려야 한다", "꿈꿔야 한다", "마셔야 한다", "운전해야 한다", "떨어져야 한다", "먹어야 한다", "끝나야 한다", "들어가야 한다", "운동해야 한다", "실패해야 한다", "떨어져야 한다", "느껴야 한다", "싸워야 한다", "마쳐야 한다", "고정해야 한다", "날아야 한다", "집중해야 한다", "잊어야 한다", "형성해야 한다", "튀겨야 한다", "가야 한다", "자라야 한다", "추측해야 한다", "걸어야 한다", "도와야 한다", "쳐야 한다", "잡아야 한다", "희망해야 한다", "서둘러야 한다", "참여해야 한다", "계속해야 한다", "차야 한다", "알아야 한다", "거짓말해야 한다", "들어야 한다", "살아야 한다", "봐야 한다", "사랑해야 한다", "움직여야 한다", "열어야 한다", "통과해야 한다", "지불해야 한다", "놀아야 한다", "밀어야 한다", "읽어야 한다", "돌아가야 한다", "달려야 한다", "노래해야 한다", "앉아야 한다", "자야 한다", "냄새맡아야 한다", "미소지어야 한다", "말해야 한다", "일어서야 한다", "시작해야 한다", "머물러야 한다", "멈춰야 한다", "수영해야 한다", "말해야 한다", "이야기해야 한다", "여행해야 한다", "노력해야 한다", "돌려야 한다", "방문해야 한다", "기다려야 한다", "깨야 한다", "걸어야 한다", "씻어야 한다", "입어야 한다", "이겨야 한다", "바라야 한다", "일해야 한다", "걱정해야 한다", "써야 한다", "울려야 한다", "가라앉아야 한다", "먹여야 한다", "쏘아야 한다", "이끌어야 한다", "기어야 한다", "쓸어야 한다", "울어야 한다", "떠나야 한다", "구부려야 한다", "잃어야 한다", "감아야 한다", "미끄러져야 한다", "파야 한다", "빛나야 한다", "돌려야 한다", "때려야 한다", "깨우쳐야 한다", "낳아야 한다", "찢어야 한다", "얼려야 한다", "훔쳐야 한다", "불어야 한다", "던져야 한다", "타야 한다", "올라야 한다", "흔들어야 한다");
 const AUXILIARY_SHOULD_K = new Array("행동해야 한다", "조언해야 한다", "동의해야 한다", "도착해야 한다", "물어야 한다", "굽다해야 한다", "시작해야 한다", "믿어야 한다", "깨뜨려야 한다", "태워야 한다", "보살펴야 한다", "바꿔야 한다", "확인해야 한다", "선택해야 한다", "올라야 한다", "와야 한다", "요리해야 한다", "복사해야 한다", "건너야 한다", "울어야 한다", "잘라야 한다", "춤춰야 한다", "결정해야 한다", "죽어야 한다", "해야 한다", "그려야 한다", "꿈꿔야 한다", "마셔야 한다", "운전해야 한다", "떨어져야 한다", "먹어야 한다", "끝나야 한다", "들어가야 한다", "운동해야 한다", "실패해야 한다", "떨어져야 한다", "느껴야 한다", "싸워야 한다", "마쳐야 한다", "고정해야 한다", "날아야 한다", "집중해야 한다", "잊어야 한다", "형성해야 한다", "튀겨야 한다", "가야 한다", "자라야 한다", "추측해야 한다", "걸어야 한다", "도와야 한다", "쳐야 한다", "잡아야 한다", "희망해야 한다", "서둘러야 한다", "참여해야 한다", "계속해야 한다", "차야 한다", "알아야 한다", "거짓말해야 한다", "들어야 한다", "살아야 한다", "봐야 한다", "사랑해야 한다", "움직여야 한다", "열어야 한다", "통과해야 한다", "지불해야 한다", "놀아야 한다", "밀어야 한다", "읽어야 한다", "돌아가야 한다", "달려야 한다", "노래해야 한다", "앉아야 한다", "자야 한다", "냄새맡아야 한다", "미소지어야 한다", "말해야 한다", "일어서야 한다", "시작해야 한다", "머물러야 한다", "멈춰야 한다", "수영해야 한다", "말해야 한다", "이야기해야 한다", "여행해야 한다", "노력해야 한다", "돌려야 한다", "방문해야 한다", "기다려야 한다", "깨야 한다", "걸어야 한다", "씻어야 한다", "입어야 한다", "이겨야 한다", "바라야 한다", "일해야 한다", "걱정해야 한다", "써야 한다", "울려야 한다", "가라앉아야 한다", "먹여야 한다", "쏘아야 한다", "이끌어야 한다", "기어야 한다", "쓸어야 한다", "울어야 한다", "떠나야 한다", "구부려야 한다", "잃어야 한다", "감아야 한다", "미끄러져야 한다", "파야 한다", "빛나야 한다", "돌려야 한다", "때려야 한다", "깨우쳐야 한다", "낳아야 한다", "찢어야 한다", "얼려야 한다", "훔쳐야 한다", "불어야 한다", "던져야 한다", "타야 한다", "올라야 한다", "흔들어야 한다");
 const AUXILIARY_OughtTo_K = new Array("행동해야 한다", "조언해야 한다", "동의해야 한다", "도착해야 한다", "물어야 한다", "굽다해야 한다", "시작해야 한다", "믿어야 한다", "깨뜨려야 한다", "태워야 한다", "보살펴야 한다", "바꿔야 한다", "확인해야 한다", "선택해야 한다", "올라야 한다", "와야 한다", "요리해야 한다", "복사해야 한다", "건너야 한다", "울어야 한다", "잘라야 한다", "춤춰야 한다", "결정해야 한다", "죽어야 한다", "해야 한다", "그려야 한다", "꿈꿔야 한다", "마셔야 한다", "운전해야 한다", "떨어져야 한다", "먹어야 한다", "끝나야 한다", "들어가야 한다", "운동해야 한다", "실패해야 한다", "떨어져야 한다", "느껴야 한다", "싸워야 한다", "마쳐야 한다", "고정해야 한다", "날아야 한다", "집중해야 한다", "잊어야 한다", "형성해야 한다", "튀겨야 한다", "가야 한다", "자라야 한다", "추측해야 한다", "걸어야 한다", "도와야 한다", "쳐야 한다", "잡아야 한다", "희망해야 한다", "서둘러야 한다", "참여해야 한다", "계속해야 한다", "차야 한다", "알아야 한다", "거짓말해야 한다", "들어야 한다", "살아야 한다", "봐야 한다", "사랑해야 한다", "움직여야 한다", "열어야 한다", "통과해야 한다", "지불해야 한다", "놀아야 한다", "밀어야 한다", "읽어야 한다", "돌아가야 한다", "달려야 한다", "노래해야 한다", "앉아야 한다", "자야 한다", "냄새맡아야 한다", "미소지어야 한다", "말해야 한다", "일어서야 한다", "시작해야 한다", "머물러야 한다", "멈춰야 한다", "수영해야 한다", "말해야 한다", "이야기해야 한다", "여행해야 한다", "노력해야 한다", "돌려야 한다", "방문해야 한다", "기다려야 한다", "깨야 한다", "걸어야 한다", "씻어야 한다", "입어야 한다", "이겨야 한다", "바라야 한다", "일해야 한다", "걱정해야 한다", "써야 한다", "울려야 한다", "가라앉아야 한다", "먹여야 한다", "쏘아야 한다", "이끌어야 한다", "기어야 한다", "쓸어야 한다", "울어야 한다", "떠나야 한다", "구부려야 한다", "잃어야 한다", "감아야 한다", "미끄러져야 한다", "파야 한다", "빛나야 한다", "돌려야 한다", "때려야 한다", "깨우쳐야 한다", "낳아야 한다", "찢어야 한다", "얼려야 한다", "훔쳐야 한다", "불어야 한다", "던져야 한다", "타야 한다", "올라야 한다", "흔들어야 한다");
-const AUXILIARY_HAD_BETTER_K = new Array();
-const AUXILIARY_WOULD_RATHER_K = new Array();
-const AUXILIARY_USED_TO_K = new Array();
-const AUXILIARY_HAVE_PP_K = new Array();
+const AUXILIARY_HAD_BETTER_K = new Array("행동하는 게 낫다","더하는 게 낫다","조언하는 게 낫다","동의하는 게 낫다","대답하는 게 낫다","도착하는 게 낫다","묻는 게 낫다","굽는 게 낫다","~인 게 낫다","되는 게 낫다","시작하는 게 낫다","믿는 게 낫다","무는 게 낫다","막는 게 낫다","빌리는 게 낫다","깨뜨리는 게 낫다","가져오는 게 낫다","닦는 게 낫다","만드는 게 낫다","타는 게 낫다","사는 게 낫다","전화하는 게 낫다","보살피는 게 낫다","휴대하는 게 낫다","잡는 게 낫다","점검하는 게 낫다","확인하는 게 낫다","선택하는 게 낫다","오르는 게 낫다","모으는 게 낫다","되는 게 낫다","축하하는 게 낫다","제어하는 게 낫다","요리하는 게 낫다","복사하는 게 낫다","덮는 게 낫다","건너는 게 낫다","오르는 게 낫다","자르는 게 낫다","춤추는 게 낫다","결정하는 게 낫다","설계하는 게 낫다","죽는 게 낫다","논의하는 게 낫다","나누는 게 낫다","하는 게 낫다","그리는 게 낫다","꿈꾸는 게 낫다","마시는 게 낫다","운전하는 게 낫다","떨어지는 게 낫다","먹는 게 낫다","끝내는 게 낫다","즐기는 게 낫다","입장하는 게 낫다","훈련하는 게 낫다","실패하는 게 낫다","떨어지는 게 낫다","느끼는 게 낫다","싸우는 게 낫다","채우는 게 낫다","찾는 게 낫다","미치는 게 낫다","고치는 게 낫다","고정하는 게 낫다","나는 게 낫다","집중하는 게 낫다","잊는 게 낫다","형성하는 게 낫다","튀기는 게 낫다","받는 게 낫다","전하는 게 낫다","가는 게 낫다","성장하는 게 낫다","~라고 생각하는 게 낫다","안내하는 게 낫다","거는 게 낫다","싫어하는 게 낫다","가지는 게 낫다","돕는 게 낫다","치는 게 낫다","버티는 게 낫다","잡는 게 낫다","희망하는 게 낫다","사냥하는 게 낫다","빨리 ~하는 게 낫다","소개하는 게 낫다","초대하는 게 낫다","참여하는 게 낫다","유지하는 게 낫다","치는 게 낫다","죽이는 게 낫다","아는 게 낫다","배우는 게 낫다","거짓말하는 게 낫다","좋아하는 게 낫다","듣는 게 낫다","사는 게 낫다","보는 게 낫다","사랑하는 게 낫다","만드는 게 낫다","결혼하는 게 낫다","만나는 게 낫다","놓는 게 낫다","움직이는 게 낫다","필요하는 게 낫다","여는 게 낫다","그리는 게 낫다","통과하는 게 낫다","지불하는 게 낫다","선택하는 게 낫다","계획하는 게 낫다","노는 게 낫다","인쇄하는 게 낫다","미는 게 낫다","하는 게 낫다","읽는 게 낫다","기억하는 게 낫다","복귀하는 게 낫다","달리는 게 낫다","절약하는 게 낫다","말하는 게 낫다","보는 게 낫다","파는 게 낫다","보내는 게 낫다","놀라는 게 낫다","보여주는 게 낫다","노래하는 게 낫다","앉는 게 낫다","자는 게 낫다","냄새맡는 게 낫다","웃는 게 낫다","말하는 게 낫다","세우는 게 낫다","시작는 게 낫다","머무르는 게 낫다","멈추는 게 낫다","공부하는 게 낫다","수영하는 게 낫다","걸리는 게 낫다","말하는 게 낫다","가르치는 게 낫다","말하는 게 낫다","말하는 게 낫다","생각하는 게 낫다","만지는 게 낫다","훈련하는 게 낫다","여행하는 게 낫다","노력하는 게 낫다","돌리는 게 낫다","이해하는 게 낫다","이용하는 게 낫다","방문하는 게 낫다","기다리는 게 낫다","깨는 게 낫다","걷는 게 낫다","원하는 게 낫다","씻는 게 낫다","관람하는 게 낫다","입는 게 낫다","환영하는 게 낫다","우승하는 게 낫다","바라는 게 낫다","일하는 게 낫다","걱정하는 게 낫다","쓰이는 게 낫다","울려오는 게 낫다","가라앉는 게 낫다","뿌리는 게 낫다","먹이는 게 낫다","쏘는 게 낫다","이끄는 게 낫다","기는 게 낫다","쓰는 게 낫다","우는 게 낫다","떠나는 게 낫다","구부리는 게 낫다","빌리는 게 낫다","잃는 게 낫다","소비하는 게 낫다","의미하는 게 낫다","찾는 게 낫다","묶는 게 낫다","감는 게 낫다","두는 게 낫다","듣는 게 낫다","미끄러지는 게 낫다","파는 게 낫다","빛나는 게 낫다","도는 게 낫다","때리는 게 낫다","때리는 게 낫다","깨우는 게 낫다","낳는 게 낫다","찢는 게 낫다","감추는 게 낫다","어는 게 낫다","훔치는 게 낫다","부는 게 낫다","던지는 게 낫다","일어나는 게 낫다","타는 게 낫다","오르는 게 낫다","흔드는 게 낫다");
+const AUXILIARY_WOULD_RATHER_K = new Array("차라리 행동하는 게 낫다","차라리 더하는 게 낫다","차라리 조언하는 게 낫다","차라리 동의하는 게 낫다","차라리 대답하는 게 낫다","차라리 도착하는 게 낫다","차라리 묻는 게 낫다","차라리 굽는 게 낫다","차라리 ~인 게 낫다","차라리 되는 게 낫다","차라리 시작하는 게 낫다","차라리 믿는 게 낫다","차라리 무는 게 낫다","차라리 막는 게 낫다","차라리 빌리는 게 낫다","차라리 깨뜨리는 게 낫다","차라리 가져오는 게 낫다","차라리 닦는 게 낫다","차라리 만드는 게 낫다","차라리 타는 게 낫다","차라리 사는 게 낫다","차라리 전화하는 게 낫다","차라리 보살피는 게 낫다","차라리 휴대하는 게 낫다","차라리 잡는 게 낫다","차라리 점검하는 게 낫다","차라리 확인하는 게 낫다","차라리 선택하는 게 낫다","차라리 오르는 게 낫다","차라리 모으는 게 낫다","차라리 되는 게 낫다","차라리 축하하는 게 낫다","차라리 제어하는 게 낫다","차라리 요리하는 게 낫다","차라리 복사하는 게 낫다","차라리 덮는 게 낫다","차라리 건너는 게 낫다","차라리 오르는 게 낫다","차라리 자르는 게 낫다","차라리 춤추는 게 낫다","차라리 결정하는 게 낫다","차라리 설계하는 게 낫다","차라리 죽는 게 낫다","차라리 논의하는 게 낫다","차라리 나누는 게 낫다","차라리 하는 게 낫다","차라리 그리는 게 낫다","차라리 꿈꾸는 게 낫다","차라리 마시는 게 낫다","차라리 운전하는 게 낫다","차라리 떨어지는 게 낫다","차라리 먹는 게 낫다","차라리 끝내는 게 낫다","차라리 즐기는 게 낫다","차라리 입장하는 게 낫다","차라리 훈련하는 게 낫다","차라리 실패하는 게 낫다","차라리 떨어지는 게 낫다","차라리 느끼는 게 낫다","차라리 싸우는 게 낫다","차라리 채우는 게 낫다","차라리 찾는 게 낫다","차라리 미치는 게 낫다","차라리 고치는 게 낫다","차라리 고정하는 게 낫다","차라리 나는 게 낫다","차라리 집중하는 게 낫다","차라리 잊는 게 낫다","차라리 형성하는 게 낫다","차라리 튀기는 게 낫다","차라리 받는 게 낫다","차라리 전하는 게 낫다","차라리 가는 게 낫다","차라리 성장하는 게 낫다","차라리 ~라고 생각하는 게 낫다","차라리 안내하는 게 낫다","차라리 거는 게 낫다","차라리 싫어하는 게 낫다","차라리 가지는 게 낫다","차라리 돕는 게 낫다","차라리 치는 게 낫다","차라리 버티는 게 낫다","차라리 잡는 게 낫다","차라리 희망하는 게 낫다","차라리 사냥하는 게 낫다","차라리 빨리 ~하는 게 낫다","차라리 소개하는 게 낫다","차라리 초대하는 게 낫다","차라리 참여하는 게 낫다","차라리 유지하는 게 낫다","차라리 치는 게 낫다","차라리 죽이는 게 낫다","차라리 아는 게 낫다","차라리 배우는 게 낫다","차라리 거짓말하는 게 낫다","차라리 좋아하는 게 낫다","차라리 듣는 게 낫다","차라리 사는 게 낫다","차라리 보는 게 낫다","차라리 사랑하는 게 낫다","차라리 만드는 게 낫다","차라리 결혼하는 게 낫다","차라리 만나는 게 낫다","차라리 놓는 게 낫다","차라리 움직이는 게 낫다","차라리 필요하는 게 낫다","차라리 여는 게 낫다","차라리 그리는 게 낫다","차라리 통과하는 게 낫다","차라리 지불하는 게 낫다","차라리 선택하는 게 낫다","차라리 계획하는 게 낫다","차라리 노는 게 낫다","차라리 인쇄하는 게 낫다","차라리 미는 게 낫다","차라리 하는 게 낫다","차라리 읽는 게 낫다","차라리 기억하는 게 낫다","차라리 복귀하는 게 낫다","차라리 달리는 게 낫다","차라리 절약하는 게 낫다","차라리 말하는 게 낫다","차라리 보는 게 낫다","차라리 파는 게 낫다","차라리 보내는 게 낫다","차라리 놀라는 게 낫다","차라리 보여주는 게 낫다","차라리 노래하는 게 낫다","차라리 앉는 게 낫다","차라리 자는 게 낫다","차라리 냄새맡는 게 낫다","차라리 웃는 게 낫다","차라리 말하는 게 낫다","차라리 세우는 게 낫다","차라리 시작는 게 낫다","차라리 머무르는 게 낫다","차라리 멈추는 게 낫다","차라리 공부하는 게 낫다","차라리 수영하는 게 낫다","차라리 걸리는 게 낫다","차라리 말하는 게 낫다","차라리 가르치는 게 낫다","차라리 말하는 게 낫다","차라리 말하는 게 낫다","차라리 생각하는 게 낫다","차라리 만지는 게 낫다","차라리 훈련하는 게 낫다","차라리 여행하는 게 낫다","차라리 노력하는 게 낫다","차라리 돌리는 게 낫다","차라리 이해하는 게 낫다","차라리 이용하는 게 낫다","차라리 방문하는 게 낫다","차라리 기다리는 게 낫다","차라리 깨는 게 낫다","차라리 걷는 게 낫다","차라리 원하는 게 낫다","차라리 씻는 게 낫다","차라리 관람하는 게 낫다","차라리 입는 게 낫다","차라리 환영하는 게 낫다","차라리 우승하는 게 낫다","차라리 바라는 게 낫다","차라리 일하는 게 낫다","차라리 걱정하는 게 낫다","차라리 쓰이는 게 낫다","차라리 울려오는 게 낫다","차라리 가라앉는 게 낫다","차라리 뿌리는 게 낫다","차라리 먹이는 게 낫다","차라리 쏘는 게 낫다","차라리 이끄는 게 낫다","차라리 기는 게 낫다","차라리 쓰는 게 낫다","차라리 우는 게 낫다","차라리 떠나는 게 낫다","차라리 구부리는 게 낫다","차라리 빌리는 게 낫다","차라리 잃는 게 낫다","차라리 소비하는 게 낫다","차라리 의미하는 게 낫다","차라리 찾는 게 낫다","차라리 묶는 게 낫다","차라리 감는 게 낫다","차라리 두는 게 낫다","차라리 듣는 게 낫다","차라리 미끄러지는 게 낫다","차라리 파는 게 낫다","차라리 빛나는 게 낫다","차라리 도는 게 낫다","차라리 때리는 게 낫다","차라리 때리는 게 낫다","차라리 깨우는 게 낫다","차라리 낳는 게 낫다","차라리 찢는 게 낫다","차라리 감추는 게 낫다","차라리 어는 게 낫다","차라리 훔치는 게 낫다","차라리 부는 게 낫다","차라리 던지는 게 낫다","차라리 일어나는 게 낫다","차라리 타는 게 낫다","차라리 오르는 게 낫다","차라리 흔드는 게 낫다");
+const AUXILIARY_USED_TO_K = AUXILIARY_WOULD_K
+const AUXILIARY_SHOULD_HAVE_PP_K = new Array("행동했어야 했다","더했어야 했다","조언했어야 했다","동의했어야 했다","대답했어야 했다","도착했어야 했다","묻었어야 했다","구웠어야 했다","이었어야 했다","됐어야 했다","시작했어야 했다","믿었어야 했다","물었어야 했다","막았어야 했다","빌렸어야 했다","깨뜨렸어야 했다","가져왔어야 했다","닦았어야 했다","만들었어야 했다","탔어야 했다","사왔어야 했다","전화했어야 했다","보살폈어야 했다","휴대했어야 했다","잡았어야 했다","점검했어야 했다","확인했어야 했다","선택했어야 했다","올랐어야 했다","모았어야 했다","되었어야 했다","축하했어야 했다","제어했어야 했다","요리했어야 했다","복사했어야 했다","덮었어야 했다","건넜어야 했다","올랐어야 했다","잘랐어야 했다","춤췄어야 했다","결정했어야 했다","설계했어야 했다","죽었어야 했다","논의했어야 했다","나눴어야 했다","했어야 했다","그렸어야 했다","꿈꾸었어야 했다","마셨어야 했다","운전했어야 했다","떨어졌어야 했다","먹어야 했다","끝냈어야 했다","즐겼어야 했다","입장했어야 했다","훈련했어야 했다","실패했어야 했다","떨어졌어야 했다","느꼈어야 했다","싸웠어야 했다","채웠어야 했다","찾았어야 했다","마쳤어야 했다","고쳤어야 했다","고정했어야 했다","날았어야 했다","집중했어야 했다","잊었어야 했다","형성했어야 했다","튀겼어야 했다","받았어야 했다","전했어야 했다","갔어야 했다","성장했어야 했다","~라고 생각했어야 했다","안내했어야 했다","걸었어야 했다","싫어했어야 했다","가졌어야 했다","도왔어야 했다","쳤어야 했다","버텼어야 했다","잡았어야 했다","희망했어야 했다","사냥했어야 했다","빨리 ~했어야 했다","소개했어야 했다","초대했어야 했다","참여했어야 했다","유지했어야 했다","찼어야 했다","죽였어야 했다","알았어야 했다","배웠어야 했다","거짓말했어야 했다","좋아했어야 했다","들었어야 했다","살았어야 했다","봤어야 했다","사랑했어야 했다","만들었어야 했다","결혼했어야 했다","만났어야 했다","놓았어야 했다","움직였어야 했다","필요했어야 했다","열었어야 했다","그렸어야 했다","통과했어야 했다","지불했어야 했다","선택했어야 했다","계획했어야 했다","놀았어야 했다","인쇄했어야 했다","밀었어야 했다","넣었어야 했다","읽었어야 했다","기억했어야 했다","복귀했어야 했다","달렸어야 했다","절약했어야 했다","말했어야 했다","보았어야 했다","팔았어야 했다","보냈어야 했다","놀라게했어야 했다","보여줬어야 했다","노래했어야 했다","앉았어야 했다","잤어야 했다","냄새를 맡어야 했다","웃었어야 했다","말했어야 했다","세웠어야 했다","시작했어야 했다","머물렀어야 했다","멈췄어야 했다","공부했어야 했다","수영했어야 했다","걸렸어야 했다","말했어야 했다","가르쳤어야 했다","말했어야 했다","말했어야 했다","생각했어야 했다","만졌어야 했다","훈련했어야 했다","여행했어야 했다","노력했어야 했다","돌렸어야 했다","이해했어야 했다","이용했어야 했다","방문했어야 했다","기다렸어야 했다","깼어야 했다","걸었어야 했다","원했어야 했다","씻었어야 했다","관람했어야 했다","입었어야 했다","환영했어야 했다","우승했어야 했다","바랐어야 했다","일했어야 했다","걱정했어야 했다","쓰였어야 했다","울렸어야 했다","가라앉았어야 했다","뿌렸어야 했다","먹였어야 했다","쏘았어야 했다","이끌었어야 했다","기었어야 했다","쓸었어야 했다","울었어야 했다","떠났어야 했다","구부렸어야 했다","빌렸어야 했다","잃었어야 했다","소비했어야 했다","의미했어야 했다","찾았어야 했다","묶었어야 했다","감았어야 했다","두었어야 했다","들었어야 했다","미끄러졌어야 했다","팠어야 했다","빛났어야 했다","돌았어야 했다","때렸어야 했다","때렸어야 했다","깨웠어야 했다","낳았어야 했다","찢었어야 했다","감췄어야 했다","얼었어야 했다","훔쳤어야 했다","불었어야 했다","던졌어야 했다","일어났어야 했다","탔어야 했다","올랐어야 했다","흔들었어야 했다");
+const AUXILIARY_MUST_HAVE_PP_K = new Array();
+const AUXILIARY_CANNOT_HAVE_PP_K = new Array();
+const AUXILIARY_MAY_HAVE_PP_K = new Array();
 const MAY_IDIOMATIC_EXPRESSION_K = new Array();
 const AUXILIARY_SUMMARY = new Array();
+
 
 const GERUND_K = new Array("행동하는 것", "조언하는 것", "동의하는 것", "도착하는 것", "묻는 것", "굽는 것", "시작하는 것", "믿는 것", "깨뜨리는 것", "타는 것", "보살피는 것", "바꾸는 것", "확인하는 것", "선택하는 것", "오르는 것", "오는 것", "요리하는 것", "복사하는 것", "건너는 것", "우는 것", "자르는 것", "춤추는 것", "결정하는 것", "죽는 것", "하는 것", "그리는 것", "꿈꾸는 것", "마시는 것");
 const GERUND_E = new Array("acting", "advising", "agreeing", "arriving", "asking", "baking", "beginning", "believing", "breaking", "burning", "caring", "changing", "checking", "choosing", "climbing", "coming", "cooking", "copying", "crossing", "crying", "cutting", "dancing", "deciding", "dying", "doing", "drawing", "dreaming", "drinking");
@@ -548,7 +597,9 @@ const PARTICIPIAL_CONSTRUCTION_MEANING_2E = new Array("시간", "조건", "원�
 const PARTICIPIAL_CONSTRUCTION_NEGATIVE_K = new Array();
 const PARTICIPLE_IDIOMATIC_EXPRESSION_K = new Array("일반적으로 말해서", "솔직히 말해서", "엄밀히 말해서", "대략적으로 말해서", "~와 비교해 보면", "만일 ~라면", "~을 고려하면", "~로 판단하건데", "~얘기가 나와서 말인데");
 const PARTICIPLE_IDIOMATIC_EXPRESSION_E = new Array("generally speaking", "frankly speaking", "strictly speaking", "roughly speaking", "compared with", "supposing (that)", "considering (that)", "judging from", "speaking(talking) of");
-const PARTICIPLE_WITH_WITH_K = new Array();
+const PARTICIPLE_WITH_K = new Array('~한 채로 ', '~된 채로 ');
+const PARTICIPLE_WITH_E = new Array('with 목적어 현재분사(ing) ', 'with 목적어 과거분사(p.p.)'); 
+
 
 const PASSIVE_K = new Array();
 const PASSIVE_SENTENCE_K = new Array();
@@ -862,6 +913,24 @@ function articles() {
   document.getElementById('divRandom').innerText = valueK;
   document.getElementById('divRandom2').innerText = valueE;
 }
+//function0000 한방에
+// TODO 하나 여러개 넣기
+function function0000() {
+  let valueNumber = Math.floor(Math.random() * ONE_SHOT_CONCEPT_K.length);
+  let kWord = ONE_SHOT_CONCEPT_K[valueNumber];
+  let eWord = ONE_SHOT_CONCEPT_E[valueNumber] + " - " + ONE_SHOT_CONCEPT_2E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function0101 명사-개념
+// TODO 하나 여러개 넣기
+function function0101() {
+  let valueNumber = Math.floor(Math.random() * ONE_SHOT_CONCEPT_K.length);
+  let kWord = ONE_SHOT_CONCEPT_K[0];
+  let eWord = ONE_SHOT_CONCEPT_E[0] + " - " + ONE_SHOT_CONCEPT_2E[0];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
 //0102 명사-셀수 X 명사 세는 법
 // TODO 하나 여러개 넣기
 function function0102() {
@@ -882,19 +951,37 @@ function function0103() {
 //0103 명사-셀수 X 명사 세는 법
 //TODO a/an 판단 if문으로 구분
 function function0103more() {
-  let valueNumber = Math.floor(Math.random() * function0103K.length);
-  let valueNumber2 = Math.floor(Math.random() * noun3animalK.length);
-  let kWord = "하나의 " + noun3animalE[valueNumber] + " (" + noun3animalK[valueNumber] + ")";
-  let eWord = "a? an? 하나의 " + noun3animalK[valueNumber];
+  let valueNumber = Math.floor(Math.random() * noun3animalK.length);
+  let kWord = "하나의 " + noun3animalK[valueNumber] + " ( " + noun3animalE[valueNumber] + " )";
+  let eWord = noun3animalE[valueNumber];
+  if(eWord[0] == 'a' || eWord[0] == 'e' || eWord[0] == 'i' || eWord[0] == 'o' || eWord[0] == 'u'){
+    eWord = "an " + eWord;
+  }else{
+    eWord = "a " + eWord;
+  }
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
 //0104 명사-셀수 X 명사 세는 법
-//TODO s/es 판단 if문으로 구분
+//TODO giraffe 어쩌지? 뺀다 그리고 불규칙 뺀다 아님 animal에서 다른걸로
 function function0104() {
   let valueNumber = Math.floor(Math.random() * noun3animalE.length);
-  let kWord = noun3animalK[valueNumber] + "들";
-  let eWord = noun3animalE[valueNumber] + "s? es?";
+  let kWord = noun3animalK[valueNumber] + "들 ( " + noun3animalE[valueNumber] + " )";
+  let eWord = noun3animalE[valueNumber];
+  
+  if(eWord.endsWith('s') || eWord.endsWith('ss') || eWord.endsWith('sh') || eWord.endsWith('ch') || eWord.endsWith('x') || eWord.endsWith('o') ){
+    eWord = eWord + "es" ;
+  }else  if(eWord.endsWith('ay') || eWord.endsWith('ey') || eWord.endsWith('iy') || eWord.endsWith('oy') || eWord.endsWith('uy')){
+    eWord = eWord + "s" ;
+  }else  if(eWord.endsWith('y') ){
+    eWord = eWord.slice(0, -1) + "ies" ;
+  }else if(eWord.endsWith('fe')){
+    eWord = eWord.slice(0, -2) + "ves" ;
+  }else  if(eWord.endsWith('f') ){
+    eWord = eWord.slice(0, -1) + "ves" ;
+  }else{
+    eWord = eWord + "s";
+  }
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
@@ -909,7 +996,7 @@ function function0105() {
 
 //0107 명사-셀수 X 명사 세는 법
 function function0107() {
-  let valueNumber = Math.floor(Math.random() * function0103K.length);
+  let valueNumber = Math.floor(Math.random() * function0107K.length);
   let kWord = function0107K[valueNumber];
   let eWord = function0107E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
@@ -998,7 +1085,115 @@ function function0108() {
       break;
   }
 }
+//function0202 Be동사 평서문 개념
+function function0202() {
+  let valueNumber = Math.floor(Math.random() * VERB_BE_POSITIVE_K.length);
+  let kWord = VERB_BE_POSITIVE_K[valueNumber];
+  let eWord = VERB_BE_POSITIVE_E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
+//function0202 Be동사 평서문
+function function0202v2() {
+  let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_ALL_K.length);
+  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_ALL_K[valueNumber] + " / be동사 / 평서문";
+  let eWord = PRONOUN_PERSONAL_SUBJECTIVE_ALL_E[valueNumber] + " " + BE_VERB_SMALL_DOUBLE_E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
+//function0203 Be동사 부정문 개념
+function function0203() {
+  let valueNumber = Math.floor(Math.random() * VERB_BE_NEGATIVE_K.length);
+  let kWord = VERB_BE_NEGATIVE_K[valueNumber];
+  let eWord = VERB_BE_NEGATIVE_E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
+//function0203 Be동사 부정문
+function function0203v2() {
+  let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_ALL_K.length);
+  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_ALL_K[valueNumber] + " / be동사 / 부정문";
+  let eWord = PRONOUN_PERSONAL_SUBJECTIVE_ALL_E[valueNumber] + " " + BE_VERB_SMALL_DOUBLE_E[valueNumber] + " not";
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
+//function0204 Be동사 의문문 개념
+function function0204() {
+  let valueNumber = Math.floor(Math.random() * VERB_BE_QUESTION_K.length);
+  let kWord = VERB_BE_QUESTION_K[valueNumber];
+  let eWord = VERB_BE_QUESTION_E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
+//function0204v2 Be동사 의문문
+function function0204v2() {
+  let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_ALL_K.length);
+  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_ALL_K[valueNumber] + " / be동사 / 의문문";
+  let eWord = BE_VERB_DOUBLE_E[valueNumber] + " " + PRONOUN_PERSONAL_SUBJECTIVE_SMALL_DOUBLE_E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
 
+//function0205 일반동사 평서문 개념
+function function0205() {
+  let valueNumber = Math.floor(Math.random() * VERB_GENERAL_POSITIVE_K.length);
+  let kWord = VERB_GENERAL_POSITIVE_K[valueNumber];
+  let eWord = VERB_GENERAL_POSITIVE_E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
+//function0205 일반동사 평서문
+function function0205v2() {
+  let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_ALL_K.length);
+  let valueNumber2 = Math.floor(Math.random() * BE_VERB_SMALL_DOUBLE_E.length);
+  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_ALL_K[valueNumber] + " / 일반동사 / 평서문";
+  let eWord = PRONOUN_PERSONAL_SUBJECTIVE_ALL_E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
+//function0205v2 일반동사 평서문-응용
+function function0205v2() {
+  let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_ALL_K.length);
+  let valueNumber2 = Math.floor(Math.random() * BE_VERB_SMALL_DOUBLE_E.length);
+  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_ALL_K[valueNumber] + " / 일반동사 / 평서문";
+  let eWord = PRONOUN_PERSONAL_SUBJECTIVE_ALL_E[valueNumber] + " " + BE_VERB_SMALL_DOUBLE_E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
+//function0206 일반동사 부정문 개념
+function function0206() {
+  let valueNumber = Math.floor(Math.random() * VERB_GENERAL_NEGATIVE_K.length);
+  let kWord = VERB_GENERAL_NEGATIVE_K[valueNumber];
+  let eWord = VERB_GENERAL_NEGATIVE_E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
+//function0206 일반동사 부정문
+function function0206v2() {
+  let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_ALL_K.length);
+  let valueNumber2 = Math.floor(Math.random() * BE_VERB_SMALL_DOUBLE_E.length);
+  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_ALL_K[valueNumber] + " / 일반동사 / 부정문";
+  let eWord = PRONOUN_PERSONAL_SUBJECTIVE_DO_NEGATIVE_ALL_E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
+//function0207 일반동사 의문문 개념
+function function0207() {
+  let valueNumber = Math.floor(Math.random() * VERB_GENERAL_QUESTION_K.length);
+  let kWord = VERB_GENERAL_QUESTION_K[valueNumber];
+  let eWord = VERB_GENERAL_QUESTION_E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
+//function0207 일반동사 의문문
+function function0207v2() {
+  let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_ALL_K.length);
+  let valueNumber2 = Math.floor(Math.random() * BE_VERB_DOUBLE_E.length);
+  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_ALL_K[valueNumber] + " / 일반동사 / 의문문";
+  let eWord = PRONOUN_PERSONAL_SUBJECTIVE_DO_QUESTION_ALL_E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
 //0303 수량 형용사
 function function0303() {
   let valueNumber = Math.floor(Math.random() * adjectiveCountableK1.length);
@@ -1147,11 +1342,11 @@ function function0504() {
   document.getElementById('divRandom').innerText = kWord;
   document.getElementById('divRandom2').innerText = eWord;
 }
-//0505 PRONOUN_PERSONAL_SUBJECTIVE_K
+//0505 PRONOUN_PERSONAL_SUBJECTIVE_ALL_K
 // TODO 나는 이랑 내가 랑 따로도 ㅇㅇ 
 function function0505() {
-  let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_K.length);
-  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_K[valueNumber];
+  let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_ALL_K.length);
+  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_ALL_K[valueNumber];
   let eWord = PRONOUN_PERSONAL_SUBJECTIVE_E[valueNumber];
   document.getElementById('divRandom').innerText = kWord;
   document.getElementById('divRandom2').innerText = eWord;
@@ -1313,6 +1508,14 @@ function function0524() {
   document.getElementById('divRandom').innerText = kWord;
   document.getElementById('divRandom2').innerText = eWord;
 }
+//function0601 CONJUNCTION_CONCEPT_K
+function function0601() {
+  let valueNumber = Math.floor(Math.random() * CONJUNCTION_CONCEPT_K.length);
+  let kWord = CONJUNCTION_CONCEPT_K[valueNumber];
+  let eWord = CONJUNCTION_CONCEPT_E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
 //0602 conjunctionCoordinate
 function function0602() {
   let valueNumber = Math.floor(Math.random() * conjunctionCoordinateK.length);
@@ -1377,6 +1580,14 @@ function function0701() {
   let valueNumber = Math.floor(Math.random() * conjunctiveAdverb2K.length);
   let kWord = conjunctiveAdverb2K[valueNumber];
   let eWord = conjunctiveAdverb2E[valueNumber];
+  document.getElementById('divRandom').innerText = kWord;
+  document.getElementById('divRandom2').innerText = eWord;
+}
+//function0801 PREPOSITION_CONCEPT_K
+function function0801() {
+  let valueNumber = Math.floor(Math.random() * PREPOSITION_CONCEPT_K.length);
+  let kWord = PREPOSITION_CONCEPT_K[valueNumber];
+  let eWord = PREPOSITION_CONCEPT_E[valueNumber];
   document.getElementById('divRandom').innerText = kWord;
   document.getElementById('divRandom2').innerText = eWord;
 }
@@ -1487,13 +1698,30 @@ function function0905() {
   document.getElementById('divRandom').innerText = kWord;
   document.getElementById('divRandom2').innerText = eWord;
 }
-//1001 TENSE_CONCEPT
-// TODO 나는 춤춘다 춤췄다 춤출것이다 춤춰왔다  --- 현재 과거 미래 현재완료
+
+
+
+//function1001 TENSE_CONCEPT_K
 function function1001() {
-  let valueNumber = Math.floor(Math.random() * VERB_SENTENCE_FORM_1_K.length);
-  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
-  let kWord = pronounBoxK[valueNumber2] + VERB_SENTENCE_FORM_1_K[valueNumber];
-  let eWord = pronounBoxE[valueNumber2] + VERB_SENTENCE_FORM_1_E[valueNumber];
+  let valueNumber = Math.floor(Math.random() * TENSE_CONCEPT_K.length);
+  let kWord = TENSE_CONCEPT_K[valueNumber];
+  let eWord = TENSE_CONCEPT_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1001a TENSE_12_K
+function function1001a() {
+  let valueNumber = Math.floor(Math.random() * TENSE_12_K.length);
+  let kWord = TENSE_12_K[valueNumber];
+  let eWord = TENSE_12_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1001b TENSE_12_2K
+function function1001b() {
+  let valueNumber = Math.floor(Math.random() * TENSE_12_2K.length);
+  let kWord = TENSE_12_2K[valueNumber];
+  let eWord = TENSE_12_2E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
@@ -1612,7 +1840,7 @@ TENSE_FUTURE_2K
 PRESENT_PERFECT_USAGE_K
 PRESENT_PERFECT_USAGE_2K
 
-//1102 AUXILIARY_CAN_K
+//function1102 AUXILIARY_CAN_K
 function function1102() {
   let valueNumber = Math.floor(Math.random() * AUXILIARY_CAN_K.length);
   let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
@@ -1621,7 +1849,7 @@ function function1102() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//1103 AUXILIARY_MAY_K
+//function1103 AUXILIARY_MAY_K
 function function1103() {
   let valueNumber = Math.floor(Math.random() * AUXILIARY_MAY_K.length);
   let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
@@ -1630,7 +1858,7 @@ function function1103() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//1104 AUXILIARY_WILL_K
+//function1104 AUXILIARY_WILL_K
 function function1104() {
   let valueNumber = Math.floor(Math.random() * AUXILIARY_WILL_K.length);
   let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
@@ -1639,16 +1867,34 @@ function function1104() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//1105 AUXILIARY_BeGoingTo_K
+//function1105 AUXILIARY_BeGoingTo_K
 function function1105() {
-  let valueNumber = Math.floor(Math.random() * AUXILIARY_WILL_K.length);
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_BeGoingTo_K.length);
   let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
-  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_WILL_K[valueNumber];
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_BeGoingTo_K[valueNumber];
   let eWord = pronounBoxBeE[valueNumber2] + "going to " + VERB_SENTENCE_FORM_1_E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//1107 AUXILIARY_MUST_K
+//function1106 AUXILIARY_WOULD_K
+function function1106() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_WOULD_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_WOULD_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "would " + VERB_ALL_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1106v2 AUXILIARY_WOULD_LIKE_TO_K
+function function1106v2() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_WOULD_LIKE_TO_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_WOULD_LIKE_TO_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "would like to " + VERB_ALL_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1107 AUXILIARY_MUST_K
 function function1107() {
   let valueNumber = Math.floor(Math.random() * AUXILIARY_MUST_K.length);
   let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
@@ -1657,7 +1903,7 @@ function function1107() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//1108 AUXILIARY_HaveTo_K
+//function1108 AUXILIARY_HaveTo_K
 function function1108() {
   let valueNumber = Math.floor(Math.random() * AUXILIARY_HaveTo_K.length);
   let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
@@ -1666,7 +1912,7 @@ function function1108() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//1109 AUXILIARY_SHOULD_K
+//function1109 AUXILIARY_SHOULD_K
 function function1109() {
   let valueNumber = Math.floor(Math.random() * AUXILIARY_SHOULD_K.length);
   let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
@@ -1675,12 +1921,57 @@ function function1109() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//1109_2 AUXILIARY_OughtTo_K
+//function1109v2 AUXILIARY_OughtTo_K
 function function1109v2() {
   let valueNumber = Math.floor(Math.random() * AUXILIARY_OughtTo_K.length);
   let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
   let kWord = pronounBoxK[valueNumber2] + AUXILIARY_OughtTo_K[valueNumber];
   let eWord = pronounBoxE[valueNumber2] + "ought to " + VERB_SENTENCE_FORM_1_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1110 AUXILIARY_HAD_BETTER_K
+function function1110() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_HAD_BETTER_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_HAD_BETTER_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "had better " + VERB_ALL_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1111 AUXILIARY_WOULD_RATHER_K
+function function1111() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_WOULD_RATHER_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_WOULD_RATHER_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "would rather " + VERB_ALL_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1112 AUXILIARY_USED_TO_K
+function function1112() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_USED_TO_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_USED_TO_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "used to " + VERB_ALL_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1113a AUXILIARY_SHOULD_HAVE_PP_K
+function function1113a() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_SHOULD_HAVE_PP_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_SHOULD_HAVE_PP_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "should have " + VERB_ALL_PAST_PARTICIPLE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1113b AUXILIARY_MUST_HAVE_PP_K
+function function1113b() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_MUST_HAVE_PP_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_MUST_HAVE_PP_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "must have " + VERB_ALL_PAST_PARTICIPLE_E[valueNumber];
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
@@ -1836,7 +2127,22 @@ function function1308() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
-//1309 PARTICIPLE_WITH_WITH_K
+//function1309 PARTICIPLE_WITH_K
+function function1309() {
+  let valueNumber = Math.floor(Math.random() * PARTICIPLE_WITH_K.length);
+  let kWord = PARTICIPLE_WITH_K[valueNumber];
+  let eWord = PARTICIPLE_WITH_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1309v2 PARTICIPLE_WITH_2K
+function function1309v2() {
+  let valueNumber = Math.floor(Math.random() * PRONOUN_PERSONAL_SUBJECTIVE_2K.length);
+  let kWord = PRONOUN_PERSONAL_SUBJECTIVE_2K[valueNumber] + " 동사한/당한" + " 채로";
+  let eWord = "with " + PRONOUN_PERSONAL_OBJECTIVE_E[valueNumber] + " 동사ing/p.p";
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
 
 //1401 PASSIVE_K
 //1402 PASSIVE_SENTENCE_K
@@ -2418,577 +2724,21 @@ SENTENCE_PATTERN_5_K
 SENTENCE_PATTERN_5_2K 
 SENTENCE_PATTERN_5_3K 
 
-
-
-
-//인칭대명사-소유격-인칭대명사
-function pronoun8() {
-  const firstArray = new Array(
-    '나의 ',
-    '너의 ',
-    '그의 ',
-    '그녀의 ',
-    '그것의 ',
-    '우리의 ',
-    '너희들의 ',
-    '그들의 '
-  );
-  let result = getRandomTwoChar(firstArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-//인칭대명사-소유대명사
-function pronoun9() {
-  const firstArray = new Array(
-    '나의 것 ',
-    '너의 것 ',
-    '그의 것 ',
-    '그녀의 것 ',
-    '그것의 것 ',
-    '우리의 것 ',
-    '너희들의 것 ',
-    '그들의 것 '
-  );
-  let result = getRandomTwoChar(firstArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-//인칭대명사-목적격
-function pronoun10() {
-  const firstArray = new Array(
-    '나를',
-    '너를 ',
-    '그를 ',
-    '그녀를 ',
-    '그것을 ',
-    '우리를 ',
-    '너희들을 ',
-    '그들을 '
-  );
-  let result = getRandomTwoChar(firstArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-
-//지시대명사
-function pronoun2() {
-  const firstArray = new Array(
-    '이것 ',
-    '저것 ',
-    '그것 ',
-    '이것들 ',
-    '저것들 ',
-    '그것들 '
-  );
-  let result = getRandomTwoChar(firstArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-//의문사
-function pronoun3() {
-  const firstArray = new Array('누구', '무엇', '어디', '언제', '왜', '어떻게');
-
-  let result = getRandomTwoChar(firstArray) + '?';
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-//재귀대명사
-function pronoun13() {
-  const firstArray = new Array(
-    '나자신',
-    '너자신 ',
-    '그자신 ',
-    '그녀자신 ',
-    '그것자신 ',
-    '우리자신들 ',
-    '너희자신들 ',
-    '그들자신들 '
-  );
-  let result = getRandomTwoChar(firstArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-
-//be동사
-function getRandomDouble0() {
-  const secondArray = new Array(
-    '새롭다 ',
-    '학생이다 ',
-    '선생님이다 ',
-    '거기에 있다 ',
-    '교실에 있다 ',
-    '책상 위에 있다 ',
-    '크다',
-    '작다',
-    '빠르다',
-    '느리다',
-    '좋다',
-    '나쁘다',
-    '비싸다',
-    '싸다',
-    '두껍다',
-    '얇다',
-    '시끄럽다',
-    '조용하다',
-    '똑똑하다',
-    '멍청하다',
-    '젖었다',
-    '말랐다',
-    '무겁다',
-    '가볍다',
-    '딱딱하다',
-    '부드럽다',
-    '얕다',
-    '깊다',
-    '쉽다',
-    '어렵다',
-    '좁다',
-    '넓다',
-    '광대하다',
-    '약하다',
-    '강하다',
-    '부유하다',
-    '가난하다',
-    '젊다',
-    '늙다',
-    '길다',
-    '짧다',
-    '  높다',
-    '  낮다',
-    '  관대하다',
-    '  인색하다',
-    '  진실하다  ',
-    '  거짓이다',
-    '  아름답다',
-    '  못생겼다',
-    '  새롭다',
-    '  오래됐다',
-    '행복하다',
-    '슬프다',
-    '안전하다',
-    '위험하다',
-    '이르다',
-    '크지 않다',
-    '작지 않다',
-    '빠르지 않다',
-    '느리지 않다',
-    '좋지 않다',
-    '나쁘지 않다',
-    '비싸지 않다',
-    '싸지 않다',
-    '두껍지 않다',
-    '얇지 않다',
-    '시끄럽지 않다',
-    '조용하지 않다',
-    '똑똑하지 않다',
-    '멍청하지 않다',
-    '젖지 않았다',
-    '마르지 않다',
-    '무겁지 않다',
-    '가볍지 않다',
-    '딱딱하지 않다',
-    '부드럽지 않다',
-    '얕지 않다',
-    '깊지 않다',
-    '쉽지 않다',
-    '어렵지 않다',
-    '좁지 않다',
-    '넓지 않다',
-    '광대하지 않다',
-    '약하지 않다',
-    '강하지 않다',
-    '부유하지 않다',
-    '가난하지 않다',
-    '젊지 않다',
-    '늙지 않다',
-    '길지 않다',
-    '짧지 않다',
-    '  높지 않다',
-    '  낮지 않다',
-    '  관대하지 않다',
-    '  인색하지 않다',
-    '  진실하지 않다  ',
-    '  거짓이지 않다',
-    '  아름답지 않다',
-    '  못생기지 않다',
-    '  새롭지 않다',
-    '  안오래됐다',
-    '행복하지 않다',
-    '슬프지 않다',
-    '안전하지 않다',
-    '위험하지 않다',
-    '이르지 않다',
-    '크니?',
-    '작니?',
-    '빠르니?',
-    '느리니?',
-    '좋니?',
-    '나쁘니?',
-    '비싸니?',
-    '싸니?',
-    '두껍니?',
-    '얇니?',
-    '시끄럽니?',
-    '조용하니?',
-    '똑똑하니?',
-    '멍청하니?',
-    '젖었니?',
-    '말랐니?',
-    '무겁니?',
-    '가볍니?',
-    '딱딱하니?',
-    '부드럽니?',
-    '얕니?',
-    '깊니?',
-    '쉽니?',
-    '어렵니?',
-    '좁니?',
-    '넓니?',
-    '광대하니?',
-    '약하니?',
-    '강하니?',
-    '부유하니?',
-    '가난하니?',
-    '젊니?',
-    '늙었니?',
-    '기니?',
-    '짧니?',
-    '  높니?',
-    '  낮니?',
-    '  관대하니?',
-    '  인색하니?',
-    '  진실하니?  ',
-    '  거짓이니?',
-    '  아름답니?',
-    '  못생겼니?',
-    '  새롭니?',
-    '  오래됐니?  ',
-    '행복하니?',
-    '슬프니?',
-    '안전하니?',
-    '위험하니?',
-    '이르니?'
-  );
-  const thirdArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
-  let result =
-    getRandomTwoChar(pronounBox) +
-    getRandomTwoChar(secondArray) +
-    getRandomTwoChar(thirdArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-
-//일반동사 & 단순
-function getRandomDouble1() {
-  const secondArray = new Array(
-    '사랑한다 ',
-    '좋아한다 ',
-    '즐긴다 ',
-    '시작한다 ',
-    '멈춘다',
-    '연다',
-    '닫는다',
-    '요리한다',
-    '먹는다',
-    '대화한다',
-    '달린다',
-    '난다',
-    '시작한다',
-    '그만둔다',
-    '말한다',
-    '간다',
-    '온다',
-    '말한다',
-    '본다',
-    '보인다',
-    '가지고 있다',
-    '마신다',
-    '점프한다',
-    '잡는다',
-    '이야기한다',
-    '씻는다',
-    '걷는다',
-    '일어선다',
-    '앉는다',
-    '넘어진다',
-    '논다',
-    '공부한다',
-    '돕는다',
-    '듣는다',
-    '본다',
-    '  당긴다',
-    '  민다',
-    '  그린다',
-    '  들린다',
-    '  보인다  ',
-    '  자른다',
-    '  읽는다',
-    '  움직인다',
-    '  묻는다',
-    '  사용한다  ',
-    '한다',
-    ' 하게 한다',
-    ' 운다',
-    ' 수영한다',
-    '잔다',
-    '사랑하지 않는다 ',
-    '좋아하지 않는다 ',
-    '즐기지 않는다 ',
-    '시작하지 않는다 ',
-    '멈추지 않는다',
-    '열지 않는다',
-    '닫지 않는다',
-    '요리하지 않는다',
-    '먹지 않는다',
-    '대화하지 않는다',
-    '달리지 않는다',
-    '날지 않는다',
-    '시작하지 않는다',
-    '그만두지 않는다',
-    '말하지 않는다',
-    '가지 않는다',
-    '오지 않는다',
-    '말하지 않는다',
-    '보지 않는다',
-    '보이지 않는다',
-    '가지고 있지 않다',
-    '마시지 않는다',
-    '점프하지 않는다',
-    '잡지 않는다',
-    '이야기하지 않는다',
-    '씻지 않는다',
-    '걷지 않는다',
-    '일어서지 않는다',
-    '앉지 않는다',
-    '넘어지지 않는다',
-    '놀지 않는다',
-    '공부하지 않는다',
-    '돕지 않는다',
-    '듣지 않는다',
-    '보지 않는다',
-    '  안당긴다',
-    '  안민다',
-    '  안그린다',
-    '  안들린다',
-    '  안보인다  ',
-    ' 안자른다',
-    '  안읽는다',
-    '  안움직인다',
-    '  안묻는다',
-    '  안사용한다  ',
-    '안한다',
-    ' 하게 안한다',
-    ' 울지 않는다',
-    '안잔다',
-    '사랑하니? ',
-    '좋아하니? ',
-    '즐기니? ',
-    '시작하니? ',
-    '멈추니?',
-    '여니?',
-    '닫니?',
-    '요리하니?',
-    '먹니?',
-    '대화하니?',
-    '달리니?',
-    '날아가니?',
-    '시작하니?',
-    '그만두니?',
-    '말하니?',
-    '가니?',
-    '오니?',
-    '말하니?',
-    '보니?',
-    '보이니?',
-    '가지니?',
-    '마시니?',
-    '점프하니?',
-    '잡니?',
-    '이야기하니?',
-    '씻니?',
-    '걷니?',
-    '서있니?',
-    '앉니?',
-    '넘어지니?',
-    '노니?',
-    '공부하니?',
-    '돕니?',
-    '듣니?',
-    '보니?',
-    '  당기니?',
-    '  미니?',
-    '  그리니?',
-    '  들리니?',
-    '  보이니?  ',
-    '  자르니?',
-    '  읽니?',
-    '  움직이니?',
-    '  묻니?',
-    '  사용하니?  ',
-    '하니?',
-    ' 하게 하니?',
-    ' 우니?',
-    ' 수영하니?',
-    '자니?'
-  );
-  const thirdArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
-  let result =
-    getRandomTwoChar(pronounBox) +
-    getRandomTwoChar(secondArray) +
-    getRandomTwoChar(thirdArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-
-// 과거 시제
-function getRandomPast() {
-  const secondArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
-  const thirdArray = new Array(
-    '사랑했다 ',
-    '좋아했다 ',
-    '즐겼다 ',
-    '시작했다 ',
-    '멈췄다 ',
-    '말했다 ',
-    '이야기했다 ',
-    '물었다 ',
-    '읽었다 ',
-    '움직였다 ',
-    ' 앉았다',
-    '일어섰다 ',
-    '걸었다 ',
-    '달렸다 ',
-    '날았다 ',
-    '넘어졌다 ',
-    '뛰었다 ',
-    '잡았다 ',
-    '따랐다 ',
-    '자랐다 ',
-    '도착했다 ',
-    '봤다 ',
-    '들었다 ',
-    '왔다 ',
-    '갔다 ',
-    '줬다 '
-  );
-  let result =
-    getRandomTwoChar(pronounBox) +
-    getRandomTwoChar(secondArray) +
-    getRandomTwoChar(thirdArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-
-
-
-// 진행 시제
-function getRandomContinuous() {
-  const secondArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
-  const thirdArray = new Array(
-    '가고 있다 ',
-    '먹고 있다 ',
-    '읽고 있다 ',
-    '쓰고 있다 ',
-    '놀고 있다 ',
-    '잡고 있다 '
-  );
-  let result =
-    getRandomTwoChar(pronounBox) +
-    getRandomTwoChar(secondArray) +
-    getRandomTwoChar(thirdArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-
-// 완료 시제
-function getRandomPerfect() {
-  const secondArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
-  const thirdArray = new Array(
-    '갔다 왔다 ',
-    '먹어왔다 ',
-    '읽어 왔다 ',
-    '써왔다 ',
-    '놀아왔다 ',
-    '잡아왔다 '
-  );
-  let result =
-    getRandomTwoChar(pronounBox) +
-    getRandomTwoChar(secondArray) +
-    getRandomTwoChar(thirdArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-
-// 완료 진행 시제
-function getRandomPerfectContinuous() {
-  const secondArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
-  const thirdArray = new Array(
-    '게임을 해오는 중이다 ',
-    '읽어오는 중이다 ',
-    '함께 놀아오고 있는 중이다 ',
-    '써왔다 '
-  );
-  let result =
-    getRandomTwoChar(pronounBox) +
-    getRandomTwoChar(secondArray) +
-    getRandomTwoChar(thirdArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-
-// 과거 완료 시제
-function getRandomPastPerfect() {
-  const secondArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
-  const thirdArray = new Array(
-    '갔다 왔었다 ',
-    '먹어왔었다 ',
-    '읽어 왔었다 ',
-    '써왔었다 ',
-    '놀아왔었다 ',
-    '잡아왔었다 '
-  );
-  let result =
-    getRandomTwoChar(pronounBox) +
-    getRandomTwoChar(secondArray) +
-    getRandomTwoChar(thirdArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-
-// 미래 완료 시제
-function getRandomFuturePerfect() {
-  const secondArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
-  const thirdArray = new Array(
-    '갔다 왔을 거다 ',
-    '먹어왔을 거다 ',
-    '읽어 왔을 거다 ',
-    '써왔을 거다 ',
-    '놀아왔을 거다 ',
-    '잡아왔을 거다 '
-  );
-  let result =
-    getRandomTwoChar(pronounBox) +
-    getRandomTwoChar(secondArray) +
-    getRandomTwoChar(thirdArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-
-
+const VERB_BE_POSITIVE_K = new Array("이다","있다","입니다","있습니다","이예요","있어요","이야","있어");
+const VERB_BE_POSITIVE_E = new Array("Be동사 / 평서문","Be동사 / 평서문","Be동사 / 평서문","Be동사 / 평서문","Be동사 / 평서문","Be동사 / 평서문","Be동사 / 평서문","Be동사 / 평서문");
+const VERB_BE_NEGATIVE_K = new Array("아니다","없다","아니예요","없어요","아닙니다","없습니다","아니야","없어");
+const VERB_BE_NEGATIVE_E = new Array("Be동사 / 부정문","Be동사 / 부정문","Be동사 / 부정문","Be동사 / 부정문","Be동사 / 부정문","Be동사 / 부정문","Be동사 / 부정문","Be동사 / 부정문");
+const VERB_BE_QUESTION_K = new Array("이니?","있니?","이나요?","있나요?","입니까?","있습니까?","이야?","있어?");
+const VERB_BE_QUESTION_E = new Array("Be동사 / 의문문","Be동사 / 의문문","Be동사 / 의문문","Be동사 / 의문문","Be동사 / 의문문","Be동사 / 의문문","Be동사 / 의문문","Be동사 / 의문문");
+const VERB_GENERAL_POSITIVE_K = new Array("한다","다","합니다","해요","~야","~해");
+const VERB_GENERAL_POSITIVE_E = new Array("일반동사 / 평서문","일반동사 / 평서문","일반동사 / 평서문","일반동사 / 평서문","일반동사 / 평서문","일반동사 / 평서문");
+const VERB_GENERAL_NEGATIVE_K = new Array("안 한다","안 해요","안 합니다","안 해");
+const VERB_GENERAL_NEGATIVE_E = new Array("일반동사 / 부정문","일반동사 / 부정문","일반동사 / 부정문","일반동사 / 부정문");
+const VERB_GENERAL_QUESTION_K = new Array("하니?","하나요?","합니까?","하십니까?");
+const VERB_GENERAL_QUESTION_E = new Array("일반동사 / 의문문","일반동사 / 의문문","일반동사 / 의문문","일반동사 / 의문문");
+const VERB_BE_POSITIVE_NEGATIVE_QUESTION_K = new Array('새롭다 ','학생이다 ','선생님이다 ','거기에 있다 ','교실에 있다 ','책상 위에 있다 ','크다','작다','빠르다','느리다','좋다','나쁘다','비싸다','싸다','두껍다','얇다','시끄럽다','조용하다','똑똑하다','멍청하다','젖었다','말랐다','무겁다','가볍다','딱딱하다','부드럽다','얕다','깊다','쉽다','어렵다','좁다','넓다','광대하다','약하다','강하다','부유하다','가난하다','젊다','늙다','길다','짧다','높다','낮다','관대하다','인색하다','진실하다  ','거짓이다','아름답다','못생겼다','새롭다','오래됐다','행복하다','슬프다','안전하다','위험하다','이르다','크지 않다','작지 않다','빠르지 않다','느리지 않다','좋지 않다','나쁘지 않다','비싸지 않다','싸지 않다','두껍지 않다','얇지 않다','시끄럽지 않다','조용하지 않다','똑똑하지 않다','멍청하지 않다','젖지 않았다','마르지 않다','무겁지 않다','가볍지 않다','딱딱하지 않다','부드럽지 않다','얕지 않다','깊지 않다','쉽지 않다','어렵지 않다','좁지 않다','넓지 않다','광대하지 않다','약하지 않다','강하지 않다','부유하지 않다','가난하지 않다','젊지 않다','늙지 않다','길지 않다','짧지 않다','높지 않다','낮지 않다','관대하지 않다','인색하지 않다','진실하지 않다  ','거짓이지 않다','아름답지 않다','못생기지 않다','새롭지 않다','안오래됐다','행복하지 않다','슬프지 않다','안전하지 않다','위험하지 않다','이르지 않다','크니?','작니?','빠르니?','느리니?','좋니?','나쁘니?','비싸니?','싸니?','두껍니?','얇니?','시끄럽니?','조용하니?','똑똑하니?','멍청하니?','젖었니?','말랐니?','무겁니?','가볍니?','딱딱하니?','부드럽니?','얕니?','깊니?','쉽니?','어렵니?','좁니?','넓니?','광대하니?','약하니?','강하니?','부유하니?','가난하니?','젊니?','늙었니?','기니?','짧니?','높니?','낮니?','관대하니?','인색하니?','진실하니?  ','거짓이니?','아름답니?','못생겼니?','새롭니?','오래됐니?  ','행복하니?','슬프니?','안전하니?','위험하니?','이르니?');
+const VERB_BE_POSITIVE_NEGATIVE_QUESTION_E = new Array();
+const VERB_100_POSITIVE_NEGATIVE_QUESTION = new Array('사랑한다 ','좋아한다 ','즐긴다 ','시작한다 ','멈춘다','연다','닫는다','요리한다','먹는다','대화한다','달린다','난다','시작한다','그만둔다','말한다','간다','온다','말한다','본다','보인다','가지고 있다','마신다','점프한다','잡는다','이야기한다','씻는다','걷는다','일어선다','앉는다','넘어진다','논다','공부한다','돕는다','듣는다','본다','당긴다','민다','그린다','들린다','보인다  ','자른다','읽는다','움직인다','묻는다','사용한다  ','한다','하게 한다','운다','수영한다','잔다','사랑하지 않는다 ','좋아하지 않는다 ','즐기지 않는다 ','시작하지 않는다 ','멈추지 않는다','열지 않는다','닫지 않는다','요리하지 않는다','먹지 않는다','대화하지 않는다','달리지 않는다','날지 않는다','시작하지 않는다','그만두지 않는다','말하지 않는다','가지 않는다','오지 않는다','말하지 않는다','보지 않는다','보이지 않는다','가지고 있지 않다','마시지 않는다','점프하지 않는다','잡지 않는다','이야기하지 않는다','씻지 않는다','걷지 않는다','일어서지 않는다','앉지 않는다','넘어지지 않는다','놀지 않는다','공부하지 않는다','돕지 않는다','듣지 않는다','보지 않는다','안당긴다','안민다','안그린다','안들린다','안보인다  ','안자른다','안읽는다','안움직인다','안묻는다','안사용한다  ','안한다','하게 안한다','울지 않는다','안잔다','사랑하니? ','좋아하니? ','즐기니? ','시작하니? ','멈추니?','여니?','닫니?','요리하니?','먹니?','대화하니?','달리니?','날아가니?','시작하니?','그만두니?','말하니?','가니?','오니?','말하니?','보니?','보이니?','가지니?','마시니?','점프하니?','잡니?','이야기하니?','씻니?','걷니?','서있니?','앉니?','넘어지니?','노니?','공부하니?','돕니?','듣니?','보니?','당기니?','미니?','그리니?','들리니?','보이니?  ','자르니?','읽니?','움직이니?','묻니?','사용하니?  ','하니?','하게 하니?','우니?','수영하니?','자니?');
 
 // may
 function getRandomMay() {
@@ -3005,27 +2755,6 @@ function getRandomMay() {
   );
   let result =
     getRandomTwoChar(firstArray) +
-    getRandomTwoChar(secondArray) +
-    getRandomTwoChar(thirdArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-
-// should
-function getRandomShould() {
-  const secondArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
-  const thirdArray = new Array(
-    '걸어야 된다 ',
-    '들어와야 한다',
-    '영어로 말 해야 한다',
-    '춤 춰야 한다',
-    '숙제를 해야만 한다',
-    '이겨야 한다',
-    '노래해야만 한다'
-  );
-  let result =
-    getRandomTwoChar(pronounBox) +
     getRandomTwoChar(secondArray) +
     getRandomTwoChar(thirdArray);
   document.getElementById('divRandom').innerText = result;
@@ -3248,16 +2977,7 @@ function getRandomPassive3() {
 }
 // 분사 ing
 function getRandomParticipleSentence() {
-  const firstArray = new Array(
-    '나의 ',
-    '너의 ',
-    '그의 ',
-    '그녀의 ',
-    '우리의 ',
-    '그들의 ',
-    '그 ',
-    '한 '
-  );
+  const firstArray = PRONOUN_PERSONAL_POSSESSIVE_2K
   const secondArray = new Array(
     '춤추고 있는 ',
     '노래하고 있는 ',
@@ -3344,39 +3064,6 @@ function getRandomParticiple2() {
   document.getElementById('divRandom2').innerText = ' ';
 }
 
-// 비인칭 독립 분사구문
-function getRandomParticiple3() {
-  const firstArray = new Array(
-    '일반적으로 말해서 ',
-    '솔직히 말해서 ',
-    '엄밀히 말해서 ',
-    '대략적으로 말해서 ',
-    '~와 비교해 보면',
-    '만일 ~라면',
-    '~을 고려하면 ',
-    '~로 판단하건데',
-    '~얘기가 나와서 말인데'
-  );
-  const secondArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
-  let result = getRandomTwoChar(firstArray) + getRandomTwoChar(secondArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
-
-// with 목적어 분사
-function getRandomParticiple4() {
-  const firstArray = new Array('~한 채로 ', '~된 채로 ');
-  const secondArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
-  const thirdArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
-  let result =
-    getRandomTwoChar(firstArray) +
-    getRandomTwoChar(secondArray) +
-    getRandomTwoChar(thirdArray);
-  document.getElementById('divRandom').innerText = result;
-  valueOfRandomResult = result;
-  document.getElementById('divRandom2').innerText = ' ';
-}
 // with 목적어 분사-응용
 function getRandomParticiple5() {
   const firstArray = new Array(
@@ -3616,157 +3303,7 @@ function getRandomReletivesWhat() {
 */
 // 관계사부사
 function getRandomReletives4() {
-  const secondArray = new Array(
-    '사랑한다 ',
-    '좋아한다 ',
-    '즐긴다 ',
-    '시작한다 ',
-    '멈춘다',
-    '연다',
-    '닫는다',
-    '요리한다',
-    '먹는다',
-    '대화한다',
-    '달린다',
-    '난다',
-    '시작한다',
-    '그만둔다',
-    '말한다',
-    '간다',
-    '온다',
-    '말한다',
-    '본다',
-    '보인다',
-    '가지고 있다',
-    '마신다',
-    '점프한다',
-    '잡는다',
-    '이야기한다',
-    '씻는다',
-    '걷는다',
-    '일어선다',
-    '앉는다',
-    '넘어진다',
-    '논다',
-    '공부한다',
-    '돕는다',
-    '듣는다',
-    '본다',
-    '  당긴다',
-    '  민다',
-    '  그린다',
-    '  들린다',
-    '  보인다  ',
-    '  자른다',
-    '  읽는다',
-    '  움직인다',
-    '  묻는다',
-    '  사용한다  ',
-    '한다',
-    ' 하게 한다',
-    ' 운다',
-    ' 수영한다',
-    '잔다',
-    '사랑하지 않는다 ',
-    '좋아하지 않는다 ',
-    '즐기지 않는다 ',
-    '시작하지 않는다 ',
-    '멈추지 않는다',
-    '열지 않는다',
-    '닫지 않는다',
-    '요리하지 않는다',
-    '먹지 않는다',
-    '대화하지 않는다',
-    '달리지 않는다',
-    '날지 않는다',
-    '시작하지 않는다',
-    '그만두지 않는다',
-    '말하지 않는다',
-    '가지 않는다',
-    '오지 않는다',
-    '말하지 않는다',
-    '보지 않는다',
-    '보이지 않는다',
-    '가지고 있지 않다',
-    '마시지 않는다',
-    '점프하지 않는다',
-    '잡지 않는다',
-    '이야기하지 않는다',
-    '씻지 않는다',
-    '걷지 않는다',
-    '일어서지 않는다',
-    '앉지 않는다',
-    '넘어지지 않는다',
-    '놀지 않는다',
-    '공부하지 않는다',
-    '돕지 않는다',
-    '듣지 않는다',
-    '보지 않는다',
-    '  안당긴다',
-    '  안민다',
-    '  안그린다',
-    '  안들린다',
-    '  안보인다  ',
-    ' 안자른다',
-    '  안읽는다',
-    '  안움직인다',
-    '  안묻는다',
-    '  안사용한다  ',
-    '안한다',
-    ' 하게 안한다',
-    ' 울지 않는다',
-    '안잔다',
-    '사랑하니? ',
-    '좋아하니? ',
-    '즐기니? ',
-    '시작하니? ',
-    '멈추니?',
-    '여니?',
-    '닫니?',
-    '요리하니?',
-    '먹니?',
-    '대화하니?',
-    '달리니?',
-    '날아가니?',
-    '시작하니?',
-    '그만두니?',
-    '말하니?',
-    '가니?',
-    '오니?',
-    '말하니?',
-    '보니?',
-    '보이니?',
-    '가지니?',
-    '마시니?',
-    '점프하니?',
-    '잡니?',
-    '이야기하니?',
-    '씻니?',
-    '걷니?',
-    '서있니?',
-    '앉니?',
-    '넘어지니?',
-    '노니?',
-    '공부하니?',
-    '돕니?',
-    '듣니?',
-    '보니?',
-    '  당기니?',
-    '  미니?',
-    '  그리니?',
-    '  들리니?',
-    '  보이니?  ',
-    '  자르니?',
-    '  읽니?',
-    '  움직이니?',
-    '  묻니?',
-    '  사용하니?  ',
-    '하니?',
-    ' 하게 하니?',
-    ' 우니?',
-    ' 수영하니?',
-    '자니?'
-  );
+  const secondArray = VERB_100_POSITIVE_NEGATIVE_QUESTION
   const thirdArray = new Array(' ', ' ', ' ', ' ', ' ', ' ', ' ');
   let result =
     getRandomTwoChar(pronounBox) +

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>CLS|SpeakingRandom</title>
+  <title>CLS | Speaking Random</title>
   <!-- Bulma Version 0.9.0-->
   <link rel='stylesheet prefetch' href='https://unpkg.com/bulma@0.9.0/css/bulma.min.css'>
 
@@ -58,7 +58,7 @@
       <div class="level-item">
         <div class="field has-addons">
           <p class="control">
-            <input class="input" id="inputCardNumber" type="text" placeholder="Card Number OOOO"
+            <input class="input" id="inputCardNumber" type="text" placeholder="Page OOO Card OOOO"
               onfocus="this.value='';return true;" />
           </p>
           <p class="control">
@@ -195,6 +195,8 @@
 
                 <div class="tabs is-boxed is-centered main-menu" id="nav">
                   <ul>
+                    <li data-target="pane-0" id="0">
+                      <button class="button" onclick="function0000(); getPageNumber('003')">한방에</button>
                     <li data-target="pane-1" id="1">
                       <a style="text-decoration:none">
                         <!-- <span class="icon is-small"><i class="fa fa-image"></i></span>-->
@@ -235,6 +237,7 @@
                         <button class="dropdown-btn button is-light is-warning" onclick="pronoun5()">1 명사</button>
                         <div class="dropdown-container">
                           <button class="button" onclick="pronoun5()" Disabled>0 명사전체</button>
+                          <button class="button" onclick="function0101(); putCardNumber('0101')">1 명사-개념</button>
                           <button class="button" onclick="" Disabled>1 명사-2/5가지 분류</button> 
                           <button class="button" onclick="function0102(); putCardNumber('0102')">2 명사-셀 수 OX 명사</button>
                           <button class="button" onclick="function0103(); putCardNumber('0103a')">3 명사-단수 a/an</button>
@@ -250,12 +253,20 @@
                         <div class="dropdown-container">
                           <button class="button" onclick="" Disabled>0 동사전체</button>
                           <button class="button" onclick="pronoun5()" Disabled>1 동사-be/일반구분</button>
-                          <button class="button" onclick="getRandomDouble0()">2 동사-be동사-현재형</button>
-                          <button class="button" onclick="pronoun5()" Disabled>3 동사-be동사-부정문</button>
-                          <button class="button" onclick="pronoun5()" Disabled>4 동사-be동사-의문문</button>
-                          <button class="button" onclick="getRandomDouble1()">5 동사-일반동사-현재형</button>
-                          <button class="button" onclick="pronoun5()" Disabled>6 동사-일반동사-부정문</button>
-                          <button class="button" onclick="pronoun5()" Disabled>7 동사-일반동사-의문문</button>
+                          <button class="button" onclick="function0202()">2 동사-be동사-현재형-개념</button>
+                          <button class="button" onclick="function0202v2()">2 동사-be동사-현재형</button>
+                          <button class="button" onclick="getRandomDouble0()" Disabled>2 동사-be동사-현재형-응용</button>
+                          <button class="button" onclick="function0203()" >3 동사-be동사-부정문-개념</button>
+                          <button class="button" onclick="function0203v2()" >3 동사-be동사-부정문</button>
+                          <button class="button" onclick="function0204()">4 동사-be동사-의문문-개념</button>
+                          <button class="button" onclick="function0204v2()">4 동사-be동사-의문문</button>
+                          <button class="button" onclick="function0205()">5 동사-일반동사-현재형-개념</button>
+                          <button class="button" onclick="function0205v2()">5 동사-일반동사-현재형</button>
+                          <button class="button" onclick="function0206()">6 동사-일반동사-부정문-개념</button>
+                          <button class="button" onclick="function0206v2()">6 동사-일반동사-부정문</button>
+                          <button class="button" onclick="function0207()">7 동사-일반동사-의문문-개념</button>
+                          <button class="button" onclick="function0207v2()">7 동사-일반동사-의문문</button>
+                          <button class="button" onclick="function1005()">8 동사-be/일반구분</button>
                         </div>
                         <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">3 형용사</button>
                         <div class="dropdown-container">
@@ -317,6 +328,7 @@
                         <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">6 접속사</button>
                         <div class="dropdown-container">
                           <button class="button" onclick="" Disabled>0 접속사전체</button>
+                          <button class="button" onclick="function0601(); putCardNumber('0601')">1 접속사-정의</button>
                           <button class="button" onclick="function0602(); putCardNumber('0602')">2 접속사-등위 접속사</button>
                           <button class="button" onclick="" Disabled>3 접속사-종속 접속사</button>
                           <button class="button" onclick="function0604(); putCardNumber('0604')">4 접속사-종속 접속사-명사절-that if whether</button>
@@ -333,6 +345,7 @@
                         <button class="dropdown-btn button is-warning is-light" onclick="pronoun5()">8 전치사</button>
                         <div class="dropdown-container">
                           <button class="button" onclick="" Disabled>0 전치사전체</button>
+                          <button class="button" onclick="function0801(); putCardNumber('0801')">2 전치사-시간 전치사 in on at</button>
                           <button class="button" onclick="function0802(); putCardNumber('0802')">2 전치사-시간 전치사 in on at</button>
                           <button class="button" onclick="function0803(); putCardNumber('0803')">3 전치사-시간 전치사 2</button>
                           <button class="button" onclick="function0804(); putCardNumber('0804')">4 전치사-장소 전치사 in on at</button>
@@ -359,7 +372,9 @@
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">10 시제</button>
                         <div class="dropdown-container">
                           <button class="button" onclick="function1000(); putCardNumber('1000')" Disabled>0 시제전체</button>
-                          <button class="button" onclick="function1001(); putCardNumber('1001')" Disabled>1 시제-개념</button>
+                          <button class="button" onclick="function1001(); putCardNumber('1001')">1 시제-개념</button>
+                          <button class="button" onclick="function1001a(); putCardNumber('1001')">1 시제-12시제 맞추기</button>
+                          <button class="button" onclick="function1001b(); putCardNumber('1001')">1 시제-12시제 맞추기-영어로</button>
                           <button class="button" onclick="function1002(); putCardNumber('1002')" Disabled>2 시제-현재</button>
                           <button class="button" onclick="getRandomPast(); putCardNumber('1003')" Disabled>3 시제-과거</button>
                           <button class="button" onclick="function1004(); putCardNumber('1004')">4 시제-과거 규칙</button>
@@ -388,19 +403,20 @@
                           <button class="button" onclick="function1103(); putCardNumber('1103')">3 조동사 may</button>
                           <button class="button" onclick="function1104(); putCardNumber('1104')">4 조동사 will </button>
                           <button class="button" onclick="function1105(); putCardNumber('1105')">5 조동사 be going to</button>
-                          <button class="button" onclick="function1106(); putCardNumber('1106')" Disabled>6 조동사 would</button>
+                          <button class="button" onclick="function1106(); putCardNumber('1106')">6 조동사 would</button>
+                          <button class="button" onclick="function1106v2(); putCardNumber('1106')">6 조동사 would like to</button>
                           <button class="button" onclick="function1107(); putCardNumber('1107')">7 조동사 must</button>
                           <button class="button" onclick="function1108(); putCardNumber('1108')">8 조동사 have to</button>
                           <button class="button" onclick="function1109(); putCardNumber('1109')">9 조동사 should</button>
                           <button class="button" onclick="function1109v2(); putCardNumber('1109')">9 조동사 ought to</button>
-                          <button class="button" onclick="function1110(); putCardNumber('1110')" Disabled>10 조동사 had better</button>
-                          <button class="button" onclick="function1111(); putCardNumber('1111')" Disabled>11 조동사 would rather</button>
-                          <button class="button" onclick="function1112(); putCardNumber('1112')" Disabled>12 조동사 used to</button>
-                          <button class="button" onclick="function1113(); putCardNumber('1113')" Disabled>13 조동사 should have p.p.</button>
-                          <button class="button" onclick="function1113(); putCardNumber('1113')" Disabled>13 조동사 must have p.p.</button>
-                          <button class="button" onclick="function1113(); putCardNumber('1113')" Disabled>13 조동사 cannot have p.p.</button>
-                          <button class="button" onclick="function1113(); putCardNumber('1113')" Disabled>13 조동사 may have p.p.</button>
-                          <button class="button" onclick="function1113(); putCardNumber('1113')" Disabled>13 조동사 have p.p. 전체</button>
+                          <button class="button" onclick="function1110(); putCardNumber('1110')">10 조동사 had better</button>
+                          <button class="button" onclick="function1111(); putCardNumber('1111')">11 조동사 would rather</button>
+                          <button class="button" onclick="function1112(); putCardNumber('1112')">12 조동사 used to</button>
+                          <button class="button" onclick="function1113a(); putCardNumber('1113')">13 조동사 should have p.p.</button>
+                          <button class="button" onclick="function1113b(); putCardNumber('1113')" Disabled>13 조동사 must have p.p.</button>
+                          <button class="button" onclick="function1113c(); putCardNumber('1113')" Disabled>13 조동사 cannot have p.p.</button>
+                          <button class="button" onclick="function1113d(); putCardNumber('1113')" Disabled>13 조동사 may have p.p.</button>
+                          <button class="button" onclick="function1113e(); putCardNumber('1113')" Disabled>13 조동사 have p.p. 전체</button>
                           <button class="button" onclick="function1114(); putCardNumber('1114')" Disabled>14 조동사 may well / may as well</button>
                         </div>
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">12 동명사</button>
@@ -438,8 +454,8 @@
                           <button class="button" onclick="function1306v2(); putCardNumber('1306')">6 분사-분사구문-의미</button>
                           <button class="button" onclick="function1307(); putCardNumber('1307')" Disabled>7 분사-분사구문-부정</button>
                           <button class="button" onclick="function1308(); putCardNumber('1308')" Disabled>8 분사-비인칭 독립 분사 구문</button>
-                          <button class="button" onclick="function1309(); putCardNumber('1309')" Disabled>9 분사-with (대)명사 분사</button>
-                          <button class="button" onclick="function1309(); putCardNumber('1309')" Disabled>9 분사-with (대)명사 분사-응용</button>
+                          <button class="button" onclick="function1309(); putCardNumber('1309')">9 분사-with (대)명사 분사</button>
+                          <button class="button" onclick="function1309v2(); putCardNumber('1309')" Disabled>9 분사-with (대)명사 분사-응용</button>
                         </div>
                         <button class="dropdown-btn button is-success is-light" onclick="pronoun5()">14 수동태</button>
                         <div class="dropdown-container">

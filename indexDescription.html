@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+</head>
+
+<body>
+    <style>
+        
+.toggleSwitch {
+  width: 2.5rem;
+  margin: 1rem;
+  height: 1.5rem;
+  display: block;
+  margin-left: auto;
+  position: relative;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 0.5rem 1px rgba(0 0 0 / 15%);
+  cursor: pointer;
+}
+
+.toggleSwitch .toggleButton {
+  width: 1.3rem;
+  height: 1.3rem;
+  position: absolute;
+  top: 50%;
+  left: .1rem;
+  transform: translateY(-50%);
+  border-radius: 60%;
+  background: hsl(171, 100%, 41%);
+}
+
+/* 체크박스가 체크되면 변경 이벤트 */
+#switchRoundedDefault:checked~.toggleSwitch {
+  background: hsl(171, 100%, 41%);
+}
+
+#switchRoundedDefault:checked~.toggleSwitch .toggleButton {
+  left: calc(100% - 1.4rem);
+  background: #fff;
+}
+#switchRoundedInfo:checked~.toggleSwitch .toggleButton {
+  left: calc(100% - 1.4rem);
+  background: hsl(171, 100%, 41%);
+}
+
+
+.toggleSwitch,
+.toggleButton {
+  transition: all 0.2s;
+}
+
+/* 체크박스가 체크되면 변경 이벤트2 */
+
+#switchRoundedDanger:checked~.toggleSwitch {
+  background: hsl(348, 100%, 61%);
+}
+
+#switchRoundedDanger:checked~.toggleSwitch .toggleButton {
+  left: calc(100% - 1.4rem);
+  background: #fff;
+}
+
+.toggleSwitch,
+.toggleButton {
+  transition: all 0.2s;
+}
+
+/* 체크박스가 체크되면 변경 이벤트3 */
+
+#switchRoundedWarning:checked~.toggleSwitch {
+  background: hsl(48, 100%, 67%);
+}
+
+#switchRoundedWarning:checked~.toggleSwitch .toggleButton {
+  left: calc(100% - 1.4rem);
+  background: #fff;
+}
+
+    </style>
+    <div id="app">
+        <!-- Buefy components goes here -->
+    </div>
+
+    <script src="https://unpkg.com/vue@2"></script>
+    <!-- Full bundle -->
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+
+    <!-- Individual components -->
+    <script src="https://unpkg.com/buefy/dist/components/table"></script>
+    <script src="https://unpkg.com/buefy/dist/components/input"></script>
+
+    <script>
+        //start button을 누르면
+        //랜덤 돌려서
+        // Math.floor((Math.random() * (최대값 - 최소값)) + 최소값)
+        //화면에 뿌려주기
+        function randomImg() {
+            let valueNumber = Math.floor(Math.random() * (16 - 1) + 1);
+            document.getElementById("imgBox").innerText = valueNumber;
+            console.log(valueNumber)
+            let y = '<img src="../images/description1/slide' + valueNumber + '.png' + '" alt="CLS Speaking Description Pictures">';
+            document.getElementById('imgBox').innerHTML = y;
+        }
+
+    </script>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                CLS Speaking Description
+            </h1>
+            <p class="subtitle">
+                그림을 설명하세요! 10초 연습 후 <strong>30초 말하기</strong>!
+            </p>
+        </div>
+    </section>
+    <section class="container">
+        <div class="columns is-multiline">
+            <div class="column register">
+                <div class="columns">
+                    <div class="column left is-8">
+                        <article class="tile is-child notification">
+                            <p class="title">Picture</p>
+                            <!-- Count Down -->
+                            <div id="demo"> 30초</div>
+                            <!-- Content -->
+                            <button class="is-danger is-light" id="startButton"
+                                onclick="randomImg();countDown(10)">Start</button>
+                            <div class="box" id="imgBox">
+                            </div>
+                        </article>
+                    </div>
+                    <div class="column right is-3 has-text-centered">
+                        <article class="tile is-child notification">
+                            <div class="content">
+                                <p class="title">Recording</p>
+
+                                    <!-- Content -->
+                                    
+                                    <button id="btn_start">시작</button>
+                                    <button id="btn_stop">정지</button>
+                                    <br>
+                                    <button id="btn_save_video">영상 저장</button>
+                                    <button id="btn_save_script">스크립트 저장</button>
+                                    <br>
+                                    <br>
+                                    실시간 영상 재생용
+                                    <video id="video_realtime" controls>실시간 영상 재생용</video>
+                                    <br>
+                                    녹화된 영상 재생용
+                                    <video id="video_record" controls>녹화된 영상 재생용</video>
+
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-12">
+
+                <br>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+
+
+<script>
+
+    function countDown(time) {
+        var min = ""; //기준시간 작성
+        var sec = ""; //기준시간 작성
+        //setInterval(함수, 시간) : 주기적인 실행
+        var x = setInterval(function () {
+            //parseInt() : 정수를 반환
+            min = parseInt(time / 60); // 몫을 계산
+            sec = time % 60; //나머지를 계산
+            // document.getElementById("demo").innerHTML = min + "분" + sec + "초";
+            document.getElementById("demo").innerHTML = sec + "초";
+            time--;
+            //타임아웃 시
+            if (time < 0) {
+                clearInterval(x); //setInterval() 실행을 끝냄
+                alert("30초 시작!")
+                countDown(30);
+                if (time < -30) {
+                    alert("시험 종료")
+                }
+            }
+        }, 1000);
+    }
+
+
+
+
+
+
+    // 여기서부터
+    // video, button 엘리먼트 취득
+    const $video_realtime = document.querySelector("#video_realtime");
+    const $video_record = document.querySelector("#video_record");
+    const $btn_start = document.querySelector("#btn_start");
+    const $btn_stop = document.querySelector("#btn_stop");
+
+    // MediaRecorder(녹화기) 변수 선언
+    let mediaRecorder = null;
+
+    // 영상 데이터를 담아줄 배열 선언
+    const arrVideoData = [];
+
+
+    // 시작 버튼 이벤트 처리
+    $btn_start.onclick = async function (event) {
+
+        // 카메라 입력영상 스트림 생성
+        const mediaStream = await navigator.mediaDevices.getUserMedia({
+            audio: true,
+            video: true
+        });
+
+        // 실시간 영상 재생 처리: 첫번째 video태그에서 재생
+        $video_realtime.srcObject = mediaStream;
+        $video_realtime.onloadedmetadata = (event) => {
+            $video_realtime.play();
+        }
+
+        // mediaRecorder객체(녹화기) 생성
+        mediaRecorder = new MediaRecorder(mediaStream);
+
+
+        // 녹화 데이터 입력 이벤트 처리
+        mediaRecorder.ondataavailable = (event) => {
+            // 녹화 데이터(Blob)가 들어올 때마다 배열에 담아두기
+            arrVideoData.push(event.data);
+        }
+
+
+        // 녹화 종료 이벤트 처리
+        mediaRecorder.onstop = (event) => {
+            // 배열에 담아둔 녹화 데이터들을 통합한 Blob객체 생성
+            const videoBlob = new Blob(arrVideoData);
+
+            // BlobURL(ObjectURL) 생성
+            const blobURL = window.URL.createObjectURL(videoBlob);
+
+            // 녹화된 영상 재생: 두번째 video태그에서 재생
+            $video_record.src = blobURL;
+            $video_record.play();
+
+            // 기존 녹화 데이터 제거
+            arrVideoData.splice(0);
+
+        }
+
+        // 녹화 시작!
+        mediaRecorder.start();
+    }
+
+
+    // 종료 버튼 이벤트 처리
+    $btn_stop.onclick = (event) => {
+        // 녹화 종료!
+        mediaRecorder.stop();
+    }
+</script>
+<script>
+    new Vue({
+        el: '#app'
+    })
+</script>
+</body>
+
+</html>

@@ -119,8 +119,3 @@ footer {
   left: calc(100% - 1.4rem);
   background: #fff;
 }
-
-.toggleSwitch,
-.toggleButton {
-  transition: all 0.2s;
-}

@@ -433,6 +433,10 @@ const adverbWithVerbE = new Array("put it on", "put it off", "pick it up", "wake
 
 const PRONOUN_DEMONSTRATIVE_K = new Array("이것", "저것", "그것", "이것들", "저것들");
 const PRONOUN_DEMONSTRATIVE_E = new Array("this", "that", "it", "these", "those");
+const PRONOUN_DEMONSTRATIVE_Capital_E = new Array("This", "That", "It", "These", "Those");
+const PRONOUN_DEMONSTRATIVE_Capital_Be_E = new Array("This is", "That is", "It is", "These are", "Those are");
+const PRONOUN_DEMONSTRATIVE_Capital_PAST_Be_E = new Array("This was", "That was", "It was", "These were", "Those were");
+const PRONOUN_DEMONSTRATIVE_Capital_HAVE_E = new Array("This has", "That has", "It has", "These have", "Those have");
 const PRONOUN_DEMONSTRATIVE_2K = new Array("소개, 전화할 때", "앞에 나온 명사", "(~하는) 사람들", "이", "저", "이 정도로", "저 정도로");
 const PRONOUN_DEMONSTRATIVE_2E = new Array("this", "that / those ", "those (who) ", "this, these", "that, those", "this", "that");
 const IMPERSONAL_SUBJECT_K = new Array("비인칭주어 it ( 날짜 )", "비인칭주어 it ( 날씨 )", "비인칭주어 it ( 요일 )", "비인칭주어 it ( 거리 )", "비인칭주어 it ( 시간 )", "비인칭주어 it ( 계절 )", "비인칭주어 it ( 명암 )");
@@ -451,6 +455,7 @@ const PRONOUN_PERSONAL_SUBJECTIVE_SMALL_E = new Array("I", "you", "he", "she", "
 const PRONOUN_PERSONAL_SUBJECTIVE_SMALL_DOUBLE_E = new Array("I", "I", "you", "you", "he", "he", "she", "she", "it", "it", "we", "we", "you", "you", "they", "they", "they", "they");
 const PRONOUN_PERSONAL_SUBJECTIVE_WITH_BE_K = new Array("나는, 내가 ~이다", "너는, 네가 ~이다", "그는, 그가 ~이다", "그녀는, 그녀가 ~이다", "그것은, 그것이 ~이다", "우리들은, 우리들이 ~이다", "너희들은, 너희들이 ~이다", "그들은, 그들이 ~이다", "그것들은, 그것들이 ~이다");
 const PRONOUN_PERSONAL_SUBJECTIVE_WITH_BE_E = new Array("I am", "You are", "He is", "She is", "It is", "We are", "You are", "They are", "They are");
+const PRONOUN_PERSONAL_SUBJECTIVE_WITH_PAST_BE_E = new Array("I was", "You were", "He was", "She was", "It was", "We were", "You were", "They were", "They were");
 const BE_VERB_E = new Array("Am","Are","Is","Is","Is","Are","Are","Are","Are");
 const BE_VERB_DOUBLE_E = new Array("Am","Am","Are","Are","Is","Is","Is","Is","Is","Is","Are","Are","Are","Are","Are","Are","Are","Are");
 const BE_VERB_SMALL_DOUBLE_E = new Array("am","am","are","are","is","is","is","is","is","is","are","are","are","are","are","are","are","are");
@@ -592,12 +597,12 @@ const AUXILIARY_HAD_BETTER_K = new Array("행동하는 게 낫다","더하는 �
 const AUXILIARY_WOULD_RATHER_K = new Array("차라리 행동하는 게 낫다","차라리 더하는 게 낫다","차라리 조언하는 게 낫다","차라리 동의하는 게 낫다","차라리 대답하는 게 낫다","차라리 도착하는 게 낫다","차라리 묻는 게 낫다","차라리 굽는 게 낫다","차라리 ~인 게 낫다","차라리 되는 게 낫다","차라리 시작하는 게 낫다","차라리 믿는 게 낫다","차라리 무는 게 낫다","차라리 막는 게 낫다","차라리 빌리는 게 낫다","차라리 깨뜨리는 게 낫다","차라리 가져오는 게 낫다","차라리 닦는 게 낫다","차라리 만드는 게 낫다","차라리 타는 게 낫다","차라리 사는 게 낫다","차라리 전화하는 게 낫다","차라리 보살피는 게 낫다","차라리 휴대하는 게 낫다","차라리 잡는 게 낫다","차라리 점검하는 게 낫다","차라리 확인하는 게 낫다","차라리 선택하는 게 낫다","차라리 오르는 게 낫다","차라리 모으는 게 낫다","차라리 되는 게 낫다","차라리 축하하는 게 낫다","차라리 제어하는 게 낫다","차라리 요리하는 게 낫다","차라리 복사하는 게 낫다","차라리 덮는 게 낫다","차라리 건너는 게 낫다","차라리 오르는 게 낫다","차라리 자르는 게 낫다","차라리 춤추는 게 낫다","차라리 결정하는 게 낫다","차라리 설계하는 게 낫다","차라리 죽는 게 낫다","차라리 논의하는 게 낫다","차라리 나누는 게 낫다","차라리 하는 게 낫다","차라리 그리는 게 낫다","차라리 꿈꾸는 게 낫다","차라리 마시는 게 낫다","차라리 운전하는 게 낫다","차라리 떨어지는 게 낫다","차라리 먹는 게 낫다","차라리 끝내는 게 낫다","차라리 즐기는 게 낫다","차라리 입장하는 게 낫다","차라리 훈련하는 게 낫다","차라리 실패하는 게 낫다","차라리 떨어지는 게 낫다","차라리 느끼는 게 낫다","차라리 싸우는 게 낫다","차라리 채우는 게 낫다","차라리 찾는 게 낫다","차라리 미치는 게 낫다","차라리 고치는 게 낫다","차라리 고정하는 게 낫다","차라리 나는 게 낫다","차라리 집중하는 게 낫다","차라리 잊는 게 낫다","차라리 형성하는 게 낫다","차라리 튀기는 게 낫다","차라리 받는 게 낫다","차라리 전하는 게 낫다","차라리 가는 게 낫다","차라리 성장하는 게 낫다","차라리 ~라고 생각하는 게 낫다","차라리 안내하는 게 낫다","차라리 거는 게 낫다","차라리 싫어하는 게 낫다","차라리 가지는 게 낫다","차라리 돕는 게 낫다","차라리 치는 게 낫다","차라리 버티는 게 낫다","차라리 잡는 게 낫다","차라리 희망하는 게 낫다","차라리 사냥하는 게 낫다","차라리 빨리 ~하는 게 낫다","차라리 소개하는 게 낫다","차라리 초대하는 게 낫다","차라리 참여하는 게 낫다","차라리 유지하는 게 낫다","차라리 치는 게 낫다","차라리 죽이는 게 낫다","차라리 아는 게 낫다","차라리 배우는 게 낫다","차라리 거짓말하는 게 낫다","차라리 좋아하는 게 낫다","차라리 듣는 게 낫다","차라리 사는 게 낫다","차라리 보는 게 낫다","차라리 사랑하는 게 낫다","차라리 만드는 게 낫다","차라리 결혼하는 게 낫다","차라리 만나는 게 낫다","차라리 놓는 게 낫다","차라리 움직이는 게 낫다","차라리 필요하는 게 낫다","차라리 여는 게 낫다","차라리 그리는 게 낫다","차라리 통과하는 게 낫다","차라리 지불하는 게 낫다","차라리 선택하는 게 낫다","차라리 계획하는 게 낫다","차라리 노는 게 낫다","차라리 인쇄하는 게 낫다","차라리 미는 게 낫다","차라리 하는 게 낫다","차라리 읽는 게 낫다","차라리 기억하는 게 낫다","차라리 복귀하는 게 낫다","차라리 달리는 게 낫다","차라리 절약하는 게 낫다","차라리 말하는 게 낫다","차라리 보는 게 낫다","차라리 파는 게 낫다","차라리 보내는 게 낫다","차라리 놀라는 게 낫다","차라리 보여주는 게 낫다","차라리 노래하는 게 낫다","차라리 앉는 게 낫다","차라리 자는 게 낫다","차라리 냄새맡는 게 낫다","차라리 웃는 게 낫다","차라리 말하는 게 낫다","차라리 세우는 게 낫다","차라리 시작는 게 낫다","차라리 머무르는 게 낫다","차라리 멈추는 게 낫다","차라리 공부하는 게 낫다","차라리 수영하는 게 낫다","차라리 걸리는 게 낫다","차라리 말하는 게 낫다","차라리 가르치는 게 낫다","차라리 말하는 게 낫다","차라리 말하는 게 낫다","차라리 생각하는 게 낫다","차라리 만지는 게 낫다","차라리 훈련하는 게 낫다","차라리 여행하는 게 낫다","차라리 노력하는 게 낫다","차라리 돌리는 게 낫다","차라리 이해하는 게 낫다","차라리 이용하는 게 낫다","차라리 방문하는 게 낫다","차라리 기다리는 게 낫다","차라리 깨는 게 낫다","차라리 걷는 게 낫다","차라리 원하는 게 낫다","차라리 씻는 게 낫다","차라리 관람하는 게 낫다","차라리 입는 게 낫다","차라리 환영하는 게 낫다","차라리 우승하는 게 낫다","차라리 바라는 게 낫다","차라리 일하는 게 낫다","차라리 걱정하는 게 낫다","차라리 쓰이는 게 낫다","차라리 울려오는 게 낫다","차라리 가라앉는 게 낫다","차라리 뿌리는 게 낫다","차라리 먹이는 게 낫다","차라리 쏘는 게 낫다","차라리 이끄는 게 낫다","차라리 기는 게 낫다","차라리 쓰는 게 낫다","차라리 우는 게 낫다","차라리 떠나는 게 낫다","차라리 구부리는 게 낫다","차라리 빌리는 게 낫다","차라리 잃는 게 낫다","차라리 소비하는 게 낫다","차라리 의미하는 게 낫다","차라리 찾는 게 낫다","차라리 묶는 게 낫다","차라리 감는 게 낫다","차라리 두는 게 낫다","차라리 듣는 게 낫다","차라리 미끄러지는 게 낫다","차라리 파는 게 낫다","차라리 빛나는 게 낫다","차라리 도는 게 낫다","차라리 때리는 게 낫다","차라리 때리는 게 낫다","차라리 깨우는 게 낫다","차라리 낳는 게 낫다","차라리 찢는 게 낫다","차라리 감추는 게 낫다","차라리 어는 게 낫다","차라리 훔치는 게 낫다","차라리 부는 게 낫다","차라리 던지는 게 낫다","차라리 일어나는 게 낫다","차라리 타는 게 낫다","차라리 오르는 게 낫다","차라리 흔드는 게 낫다");
 const AUXILIARY_USED_TO_K = AUXILIARY_WOULD_K
 const AUXILIARY_SHOULD_HAVE_PP_K = new Array("행동했어야 했다","더했어야 했다","조언했어야 했다","동의했어야 했다","대답했어야 했다","도착했어야 했다","묻었어야 했다","구웠어야 했다","이었어야 했다","됐어야 했다","시작했어야 했다","믿었어야 했다","물었어야 했다","막았어야 했다","빌렸어야 했다","깨뜨렸어야 했다","가져왔어야 했다","닦았어야 했다","만들었어야 했다","탔어야 했다","사왔어야 했다","전화했어야 했다","보살폈어야 했다","휴대했어야 했다","잡았어야 했다","점검했어야 했다","확인했어야 했다","선택했어야 했다","올랐어야 했다","모았어야 했다","되었어야 했다","축하했어야 했다","제어했어야 했다","요리했어야 했다","복사했어야 했다","덮었어야 했다","건넜어야 했다","올랐어야 했다","잘랐어야 했다","춤췄어야 했다","결정했어야 했다","설계했어야 했다","죽었어야 했다","논의했어야 했다","나눴어야 했다","했어야 했다","그렸어야 했다","꿈꾸었어야 했다","마셨어야 했다","운전했어야 했다","떨어졌어야 했다","먹어야 했다","끝냈어야 했다","즐겼어야 했다","입장했어야 했다","훈련했어야 했다","실패했어야 했다","떨어졌어야 했다","느꼈어야 했다","싸웠어야 했다","채웠어야 했다","찾았어야 했다","마쳤어야 했다","고쳤어야 했다","고정했어야 했다","날았어야 했다","집중했어야 했다","잊었어야 했다","형성했어야 했다","튀겼어야 했다","받았어야 했다","전했어야 했다","갔어야 했다","성장했어야 했다","~라고 생각했어야 했다","안내했어야 했다","걸었어야 했다","싫어했어야 했다","가졌어야 했다","도왔어야 했다","쳤어야 했다","버텼어야 했다","잡았어야 했다","희망했어야 했다","사냥했어야 했다","빨리 ~했어야 했다","소개했어야 했다","초대했어야 했다","참여했어야 했다","유지했어야 했다","찼어야 했다","죽였어야 했다","알았어야 했다","배웠어야 했다","거짓말했어야 했다","좋아했어야 했다","들었어야 했다","살았어야 했다","봤어야 했다","사랑했어야 했다","만들었어야 했다","결혼했어야 했다","만났어야 했다","놓았어야 했다","움직였어야 했다","필요했어야 했다","열었어야 했다","그렸어야 했다","통과했어야 했다","지불했어야 했다","선택했어야 했다","계획했어야 했다","놀았어야 했다","인쇄했어야 했다","밀었어야 했다","넣었어야 했다","읽었어야 했다","기억했어야 했다","복귀했어야 했다","달렸어야 했다","절약했어야 했다","말했어야 했다","보았어야 했다","팔았어야 했다","보냈어야 했다","놀라게했어야 했다","보여줬어야 했다","노래했어야 했다","앉았어야 했다","잤어야 했다","냄새를 맡어야 했다","웃었어야 했다","말했어야 했다","세웠어야 했다","시작했어야 했다","머물렀어야 했다","멈췄어야 했다","공부했어야 했다","수영했어야 했다","걸렸어야 했다","말했어야 했다","가르쳤어야 했다","말했어야 했다","말했어야 했다","생각했어야 했다","만졌어야 했다","훈련했어야 했다","여행했어야 했다","노력했어야 했다","돌렸어야 했다","이해했어야 했다","이용했어야 했다","방문했어야 했다","기다렸어야 했다","깼어야 했다","걸었어야 했다","원했어야 했다","씻었어야 했다","관람했어야 했다","입었어야 했다","환영했어야 했다","우승했어야 했다","바랐어야 했다","일했어야 했다","걱정했어야 했다","쓰였어야 했다","울렸어야 했다","가라앉았어야 했다","뿌렸어야 했다","먹였어야 했다","쏘았어야 했다","이끌었어야 했다","기었어야 했다","쓸었어야 했다","울었어야 했다","떠났어야 했다","구부렸어야 했다","빌렸어야 했다","잃었어야 했다","소비했어야 했다","의미했어야 했다","찾았어야 했다","묶었어야 했다","감았어야 했다","두었어야 했다","들었어야 했다","미끄러졌어야 했다","팠어야 했다","빛났어야 했다","돌았어야 했다","때렸어야 했다","때렸어야 했다","깨웠어야 했다","낳았어야 했다","찢었어야 했다","감췄어야 했다","얼었어야 했다","훔쳤어야 했다","불었어야 했다","던졌어야 했다","일어났어야 했다","탔어야 했다","올랐어야 했다","흔들었어야 했다");
-const AUXILIARY_MUST_HAVE_PP_K = new Array();
-const AUXILIARY_CANNOT_HAVE_PP_K = new Array();
-const AUXILIARY_MAY_HAVE_PP_K = new Array();
-const MAY_IDIOMATIC_EXPRESSION_K = new Array();
-const AUXILIARY_SUMMARY = new Array();
-
+const AUXILIARY_MUST_HAVE_PP_K = new Array("행동했음에 틀림없다","더했음에 틀림없다","조언했음에 틀림없다","동의했음에 틀림없다","대답했음에 틀림없다","도착했음에 틀림없다","묻었음에 틀림없다","구웠음에 틀림없다","이었음에 틀림없다","됐음에 틀림없다","시작했음에 틀림없다","믿었음에 틀림없다","물었음에 틀림없다","막았음에 틀림없다","빌렸음에 틀림없다","깨뜨렸음에 틀림없다","가져왔음에 틀림없다","닦았음에 틀림없다","만들었음에 틀림없다","탔음에 틀림없다","샀음에 틀림없다","전화했음에 틀림없다","보살폈음에 틀림없다","휴대했음에 틀림없다","잡았음에 틀림없다","점검했음에 틀림없다","확인했음에 틀림없다","선택했음에 틀림없다");
+const AUXILIARY_CANNOT_HAVE_PP_K = new Array("행동했을 리가 없다","더했을 리가 없다","조언했을 리가 없다","동의했을 리가 없다","대답했을 리가 없다","도착했을 리가 없다","묻었을 리가 없다","구웠을 리가 없다","이었을 리가 없다","됐을 리가 없다","시작했을 리가 없다","믿었을 리가 없다","물었을 리가 없다","막았을 리가 없다","빌렸을 리가 없다","깨뜨렸을 리가 없다","가졌을 리가 없다","닦았을 리가 없다","만들었을 리가 없다","탔을 리가 없다","샀을 리가 없다","전화했을 리가 없다","보살폈을 리가 없다","휴대했을 리가 없다","잡을 리가 없다","점검했을 리가 없다","확인했을 리가 없다","선택했을 리가 없다");
+const AUXILIARY_MAY_HAVE_PP_K = new Array("행동했을지도 모른다","더했을지도 모른다","조언했을지도 모른다","동의했을지도 모른다","대답했을지도 모른다","도착했을지도 모른다","묻었을지도 모른다","구웠을지도 모른다","이었을지도 모른다","됐을지도 모른다","시작했을지도 모른다","믿었을지도 모른다","물었을지도 모른다","막았을지도 모른다","빌렸을지도 모른다","깨뜨렸을지도 모른다","가졌을지도 모른다","닦았을지도 모른다","만들었을지도 모른다","탔했을지도 모른다","샀을지도 모른다","전화했을지도 모른다","보살폈을지도 모른다","휴대했을지도 모른다","잡았을지도 모른다","점검했을지도 모른다","확인했을지도 모른다","선택했을지도 모른다");
+const AUXILIARY_COULD_HAVE_PP_K = new Array("행동할 수도 있었다","더할 수도 있었다","조언할 수도 있었다","동의할 수도 있었다","대답할 수도 있었다","도착할 수도 있었다","묻을 수도 있었다","구울 수도 있었다","일 수도 있었다","될 수도 있었다","시작할 수도 있었다","믿을 수도 있었다","물었을 수도 있었다","막았을 수도 있었다","빌릴 수도 있었다","깨뜨릴 수도 있었다","가졌을 수도 있었다","닦았을 수도 있었다","만들었을 수도 있었다","탈 수도 있었다","살수도 있었다","전화할 수도 있었다","보살필 수도 있었다","휴대할 수도 있었다","잡을 수도 있었다","점검할 수도 있었다","확인할 수도 있었다","선택할 수도 있었다");
+const MAY_IDIOMATIC_EXPRESSION_1K = new Array("행동하는 것이 당연하다","더하는 것이 당연하다","조언하는 것이 당연하다","동의하는 것이 당연하다","대답하는 것이 당연하다","도착하는 것이 당연하다","묻는 것이 당연하다","굽는 것이 당연하다","인 것이 당연하다","되는 것이 당연하다","시작하는 것이 당연하다","믿는 것이 당연하다","무는 것이 당연하다","막는 것이 당연하다","빌리는 것이 당연하다","깨뜨리는 것이 당연하다","가져오는 것이 당연하다","닦는 것이 당연하다","만드는 것이 당연하다","타는 것이 당연하다","사는 것이 당연하다","전화하는 것이 당연하다","보살피는 것이 당연하다","휴대하는 것이 당연하다","잡는 것이 당연하다","점검하는 것이 당연하다","확인하는 것이 당연하다","선택하는 것이 당연하다");
+const MAY_IDIOMATIC_EXPRESSION_2K = new Array("행동하는 편이 낫다","더하는 편이 낫다","조언하는 편이 낫다","동의하는 편이 낫다","대답하는 편이 낫다","도착하는 편이 낫다","묻는 편이 낫다","굽는 편이 낫다","인 편이 낫다","되는 편이 낫다","시작하는 편이 낫다","믿는 편이 낫다","무는 편이 낫다","막는 편이 낫다","빌리는 편이 낫다","깨뜨리는 편이 낫다","가져오는 편이 낫다","닦는 편이 낫다","만드는 편이 낫다","타는 편이 낫다","사는 편이 낫다","전화하는 편이 낫다","보살피는 편이 낫다","휴대하는 편이 낫다","잡는 편이 낫다","점검하는 편이 낫다","확인하는 편이 낫다","선택하는 편이 낫다");
 
 const GERUND_K = new Array("행동하는 것", "조언하는 것", "동의하는 것", "도착하는 것", "묻는 것", "굽는 것", "시작하는 것", "믿는 것", "깨뜨리는 것", "타는 것", "보살피는 것", "바꾸는 것", "확인하는 것", "선택하는 것", "오르는 것", "오는 것", "요리하는 것", "복사하는 것", "건너는 것", "우는 것", "자르는 것", "춤추는 것", "결정하는 것", "죽는 것", "하는 것", "그리는 것", "꿈꾸는 것", "마시는 것");
 const GERUND_E = new Array("acting", "advising", "agreeing", "arriving", "asking", "baking", "beginning", "believing", "breaking", "burning", "caring", "changing", "checking", "choosing", "climbing", "coming", "cooking", "copying", "crossing", "crying", "cutting", "dancing", "deciding", "dying", "doing", "drawing", "dreaming", "drinking");
@@ -644,9 +649,16 @@ const PARTICIPLE_WITH_K = new Array('~한 채로 ', '~된 채로 ');
 const PARTICIPLE_WITH_E = new Array('with 목적어 현재분사(ing) ', 'with 목적어 과거분사(p.p.)'); 
 
 
-const PASSIVE_K = new Array();
-const PASSIVE_SENTENCE_K = new Array();
-const PASSIVE_TENSE_K = new Array();
+const PASSIVE_K = new Array("행동되다","더해지다","조언받다","동의되다","대답되다","도착되다","요청되다","구워지다","되다","되다","시작되다","믿어지다","물리다","막아지다","빌려지다","깨뜨려지다","가져와지다","닦아지다","만들어지다","타지다","사지다","전화되다","보살펴지다","휴대되다","잡아지다","점검되다","확인되다","선택되다");
+const PASSIVE_SENTENCE_K = new Array("행동되었다","더해졌다","조언받았다","동의되었다","대답되었다","도착되었다","요청되었다","구워졌다","되었다","되었다","시작되었다","믿어졌다","물렸다","막아졌다","빌려졌다","깨뜨려졌다","가져와졌다","닦아졌다","만들어졌다","타졌다","사졌다","전화되었다","보살펴졌다","휴대되었다","잡아졌다","점검되었다","확인되었다","선택되었다");
+const PASSIVE_TENSE_SIMPLE_PRESENT_K = new Array("행동되다","더해지다","조언받다","동의되다","대답되다","도착되다","요청되다","구워지다","되다","되다","시작되다","믿어지다","물리다","막아지다","빌려지다","깨뜨려지다","가져와지다","닦아지다","만들어지다","타지다","사지다","전화되다","보살펴지다","휴대되다","잡아지다","점검되다","확인되다","선택되다");
+const PASSIVE_TENSE_SIMPLE_PAST_K = new Array("행동되었다","더해졌다","조언받았다","동의되었다","대답되었다","도착되었다","요청되었다","구워졌다","되었다","되었다","시작되었다","믿어졌다","물렸다","막아졌다","빌려졌다","깨뜨려졌다","가져와졌다","닦아졌다","만들어졌다","타졌다","사졌다","전화되었다","보살펴졌다","휴대되었다","잡아졌다","점검되었다","확인되었다","선택되었다");
+const PASSIVE_TENSE_SIMPLE_FUTURE_K = new Array("행동될 것이다","더해질 것이다","조언받을 것이다","동의될 것이다","대답될 것이다","도착될 것이다","요청될 것이다","구워질 것이다","될 것이다","될 것이다","시작될 것이다","믿어질 것이다","물릴 것이다","막아질 것이다","빌려질 것이다","깨뜨려질 것이다","가져와질 것이다","닦아질 것이다","만들어질 것이다","타질 것이다","사질 것이다","전화될 것이다","보살펴질 것이다","휴대될 것이다","잡아질 것이다","점검될 것이다","확인될 것이다","선택될 것이다");
+const PASSIVE_TENSE_PROGRESSIVE_PRESENT_K = new Array("행동되고 있다","더해져 있다","조언받고 있다","동의되고 있다","대답되고 있다","도착되고 있다","요청되고 있다","구워지고 있다","되고 있다","되고 있다","시작되고 있다","믿어지고 있다","물리고 있다","막아지고 있다","빌려지고 있다","깨뜨려지고 있다","가져와지고 있다","닦아지고 있다","만들어지고 있다","타지고 있다","사지고 있다","전화되고 있다","보살펴지고 있다","휴대되고 있다","잡아지고 있다","점검되고 있다","확인되고 있다","선택되고 있다");
+const PASSIVE_TENSE_PROGRESSIVE_PAST_K = new Array("행동되고 있었다","더해지고 있었다","조언받아지고 있었다","동의되고 있었다","대답되고 있었다","도착되고 있었다","요청되고 있었다","구워지고 있었다","되어지고 있었다","되어지고 있었다","시작되어지고 있었다","믿어지고 있었다","물리고 있었다","막아지고 있었다","빌려지고 있었다","깨뜨려지고 있었다","가져와지고 있었다","닦아지고 있었다","만들어지고 있었다","타지고 있었다","사지고 있었다","전화되고 있었다","보살펴지고 있었다","휴대되고 있었다","잡아지고 있었다","점검되고 있었다","확인되고 있었다","선택되고 있었다");
+const PASSIVE_TENSE_PERFECT_PRESENT_K = new Array("행동되어 왔다","더해져 왔다","조언되어 왔다","동의되어 왔다","대답되어 왔다","도착되어 왔다","요청되어 왔다","구워지고 왔다","되어 왔다","되어 왔다","시작되어 왔다","믿어져 왔다","물어 왔다","막아지고 왔다","빌려져 왔다","깨뜨려져 왔다","가져 왔다","닦아져 왔다","만들어져 왔다","타져 왔다","사져 왔다","전화되어 왔다","보살펴 왔다","휴대되어 왔다","잡아져 왔다","점검되어 왔다","확인되어 왔다","선택되어 왔다");
+const PASSIVE_TENSE_PERFECT_PAST_K = new Array("행동되어 왔었다","더해져 왔었다","조언되어 왔었다","동의되어 왔었다","대답되어 왔었다","도착되어 왔었다","요청되어 왔었다","구워져 왔었다","되어 왔었다","되어 왔었다","시작되어 왔었다","믿어져 왔었다","물어 왔었다","막아져 왔었다","빌려져 왔었다","깨뜨려져 왔었다","가져 왔었다","닦아져 왔었다","만들어져 왔었다","타져 왔었다","사져 왔었다","전화되어 왔었다","보살펴 왔었다","휴대되어 왔었다","잡아져 왔었다","점검되어 왔었다","확인되어 왔었다","선택되어 왔었다");
+const PASSIVE_TENSE_PERFECT_FUTURE_K = new Array("행동되어질 것이다","더해질 것이다","조언되어질 것이다","동의되어질 것이다","대답되어질 것이다","도착되어질 것이다","요청되어질 것이다","구워질 것이다","되어질 것이다","되어질 것이다","시작되어질 것이다","믿어질 것이다","물어질 것이다","막아질 것이다","빌려질 것이다","깨뜨려질 것이다","가져질 것이다","닦아질 것이다","만들어질 것이다","타질 것이다","사질 것이다","전화되어질 것이다","보살펴질 것이다","휴대되어질 것이다","잡아질 것이다","점검되어질 것이다","확인되어질 것이다","선택되어질 것이다");
 const PASSIVE_NO_OBJECTIVE_K = new Array();
 const PASSIVE_IDIOMATIC_PREP_K = new Array("로서 알려져 있다", "로 유명하다", "에게 알려져 있다", "로 가득 차 있다", "로 덮여 있다", "로 붐비다", "에 흥미가 있다", "에 대해 기뻐하다", "에 만족하다", "에 실망하다", "에 진저리가 나다");
 const PASSIVE_IDIOMATIC_PREP_E = new Array("be known as ", "be known for ", "be known to ", "be filled with ", "be covered with ", "be crowded with ", "be interested in ", "be pleased with/about ", "be satisfied with ", "be disappointed with/at/in ", "be fed up with ");
@@ -2018,6 +2030,51 @@ function function1113b() {
   document.getElementById("divRandom").innerText = kWord;
   document.getElementById("divRandom2").innerText = eWord;
 }
+//function1113c AUXILIARY_CANNOT_HAVE_PP_K
+function function1113c() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_CANNOT_HAVE_PP_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_CANNOT_HAVE_PP_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "must have " + VERB_ALL_PAST_PARTICIPLE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1113d AUXILIARY_MAY_HAVE_PP_K
+function function1113d() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_MAY_HAVE_PP_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_MAY_HAVE_PP_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "must have " + VERB_ALL_PAST_PARTICIPLE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1113d AUXILIARY_COULD_HAVE_PP_K
+function function1113e() {
+  let valueNumber = Math.floor(Math.random() * AUXILIARY_COULD_HAVE_PP_K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + AUXILIARY_COULD_HAVE_PP_K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "must have " + VERB_ALL_PAST_PARTICIPLE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1114a MAY_IDIOMATIC_EXPRESSION_1K
+function function1114a() {
+  let valueNumber = Math.floor(Math.random() * MAY_IDIOMATIC_EXPRESSION_1K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + MAY_IDIOMATIC_EXPRESSION_1K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "may well " + VERB_ALL_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1114b MAY_IDIOMATIC_EXPRESSION_2K
+function function1114b() {
+  let valueNumber = Math.floor(Math.random() * MAY_IDIOMATIC_EXPRESSION_2K.length);
+  let valueNumber2 = Math.floor(Math.random() * pronounBoxK.length);
+  let kWord = pronounBoxK[valueNumber2] + MAY_IDIOMATIC_EXPRESSION_2K[valueNumber];
+  let eWord = pronounBoxE[valueNumber2] + "may as well " + VERB_ALL_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
 
 //1201 GERUND_K
 function function1201() {
@@ -2187,9 +2244,92 @@ function function1309v2() {
   document.getElementById("divRandom2").innerText = eWord;
 }
 
-//1401 PASSIVE_K
+//function1401 PASSIVE_K
+function function1401() {
+  let valueNumber = Math.floor(Math.random() * PASSIVE_K.length);
+  let kWord = PASSIVE_K[valueNumber];
+  let eWord = PASSIVE_K[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
 //1402 PASSIVE_SENTENCE_K
 //1403 PASSIVE_TENSE_K
+PASSIVE_TENSE_SIMPLE_PRESENT_K
+//function1403a PASSIVE_TENSE_SIMPLE_PRESENT_K
+function function1403a() {
+  let valueNumber = Math.floor(Math.random() * PASSIVE_TENSE_SIMPLE_PRESENT_K.length);
+  let valueNumber2 = Math.floor(Math.random() * PRONOUN_DEMONSTRATIVE_K.length);
+  let kWord = PRONOUN_DEMONSTRATIVE_K[valueNumber2] + "은 " + PASSIVE_TENSE_SIMPLE_PRESENT_K[valueNumber];
+  let eWord = PRONOUN_DEMONSTRATIVE_Capital_Be_E[valueNumber2] + " " + VERB_ALL_PAST_PARTICIPLE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1403b PASSIVE_TENSE_SIMPLE_PAST_K
+function function1403b() {
+  let valueNumber = Math.floor(Math.random() * PASSIVE_TENSE_SIMPLE_PRESENT_K.length);
+  let valueNumber2 = Math.floor(Math.random() * PRONOUN_DEMONSTRATIVE_K.length);
+  let kWord = PRONOUN_DEMONSTRATIVE_K[valueNumber2] + "은 " + PASSIVE_TENSE_SIMPLE_PRESENT_K[valueNumber];
+  let eWord = PRONOUN_DEMONSTRATIVE_Capital_PAST_Be_E[valueNumber2] + " " + VERB_ALL_PAST_PARTICIPLE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1403c PASSIVE_TENSE_SIMPLE_FUTURE_K
+function function1403c() {
+  let valueNumber = Math.floor(Math.random() * PASSIVE_TENSE_SIMPLE_FUTURE_K.length);
+  let valueNumber2 = Math.floor(Math.random() * PRONOUN_DEMONSTRATIVE_K.length);
+  let kWord = PRONOUN_DEMONSTRATIVE_K[valueNumber2] + "은 " + PASSIVE_TENSE_SIMPLE_FUTURE_K[valueNumber];
+  let eWord = PRONOUN_DEMONSTRATIVE_Capital_E[valueNumber2] + " will be " + VERB_ALL_PAST_PARTICIPLE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1403d PASSIVE_TENSE_PROGRESSIVE_PRESENT_K
+function function1403d() {
+  let valueNumber = Math.floor(Math.random() * PASSIVE_TENSE_PROGRESSIVE_PRESENT_K.length);
+  let valueNumber2 = Math.floor(Math.random() * PRONOUN_DEMONSTRATIVE_K.length);
+  let kWord = PRONOUN_DEMONSTRATIVE_K[valueNumber2] + "은 " + PASSIVE_TENSE_PROGRESSIVE_PRESENT_K[valueNumber];
+  let eWord = PRONOUN_DEMONSTRATIVE_Capital_Be_E[valueNumber2] + " being " + VERB_ALL_PAST_PARTICIPLE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+//function1403e PASSIVE_TENSE_PROGRESSIVE_PAST_K
+function function1403e() {
+  let valueNumber = Math.floor(Math.random() * PASSIVE_TENSE_PROGRESSIVE_PAST_K.length);
+  let valueNumber2 = Math.floor(Math.random() * PRONOUN_DEMONSTRATIVE_K.length);
+  let kWord = PRONOUN_DEMONSTRATIVE_K[valueNumber2] + "은 " + PASSIVE_TENSE_PROGRESSIVE_PAST_K[valueNumber];
+  let eWord = PRONOUN_DEMONSTRATIVE_Capital_PAST_Be_E[valueNumber2] + " being " + VERB_ALL_PAST_PARTICIPLE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+
+//function1403f PASSIVE_TENSE_PERFECT_PRESENT_K
+function function1403f() {
+  let valueNumber = Math.floor(Math.random() * PASSIVE_TENSE_PERFECT_PRESENT_K.length);
+  let valueNumber2 = Math.floor(Math.random() * PRONOUN_DEMONSTRATIVE_K.length);
+  let kWord = PRONOUN_DEMONSTRATIVE_K[valueNumber2] + "은 " + PASSIVE_TENSE_PERFECT_PRESENT_K[valueNumber];
+  let eWord = PRONOUN_DEMONSTRATIVE_Capital_HAVE_E[valueNumber2] + " been " + VERB_ALL_PAST_PARTICIPLE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+
+//function1403g PASSIVE_TENSE_PERFECT_PAST_K
+function function1403g() {
+  let valueNumber = Math.floor(Math.random() * PASSIVE_TENSE_PERFECT_PAST_K.length);
+  let valueNumber2 = Math.floor(Math.random() * PRONOUN_DEMONSTRATIVE_K.length);
+  let kWord = PRONOUN_DEMONSTRATIVE_K[valueNumber2] + "은 " + PASSIVE_TENSE_PERFECT_PAST_K[valueNumber];
+  let eWord = PRONOUN_DEMONSTRATIVE_Capital_E[valueNumber2] + " had been " + VERB_ALL_PAST_PARTICIPLE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
+
+//function1403g PASSIVE_TENSE_PERFECT_FUTURE_K
+function function1403h() {
+  let valueNumber = Math.floor(Math.random() * PASSIVE_TENSE_PERFECT_FUTURE_K.length);
+  let valueNumber2 = Math.floor(Math.random() * PRONOUN_DEMONSTRATIVE_K.length);
+  let kWord = PRONOUN_DEMONSTRATIVE_K[valueNumber2] + "은 " + PASSIVE_TENSE_PERFECT_FUTURE_K[valueNumber];
+  let eWord = PRONOUN_DEMONSTRATIVE_Capital_E[valueNumber2] + " will have been " + VERB_ALL_PAST_PARTICIPLE_E[valueNumber];
+  document.getElementById("divRandom").innerText = kWord;
+  document.getElementById("divRandom2").innerText = eWord;
+}
 //1404 PASSIVE_NO_OBJECTIVE_K
 //1405 PASSIVE_IDIOMATIC_PREP_K
 function function1405() {
